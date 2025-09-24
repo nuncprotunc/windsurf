@@ -1,0 +1,133 @@
+front: What factors determine whether interference is unreasonable in private nuisance?
+back: 'In private nuisance, the question is whether the defendant''s interference
+  with the plaintiff''s use or enjoyment of land is unreasonable. Courts apply a multi-factorial
+  test, balancing competing land uses.
+
+
+  **Sensitivity of Plaintiff** – Only ordinary sensitivity is protected (*Robinson
+  v Kilvert* (1889) 41 Ch D 88 at 96 (CA)).
+
+
+  **Locality** – Reasonableness depends on neighbourhood character (*Sturges v Bridgman*
+  (1879) 11 Ch D 852 at 865 (CA)); planning permits and zoning schemes may affect
+  this assessment.
+
+
+  **Duration & Frequency** – Persistent interference is more likely actionable (*Munro
+  v Southern Dairies Ltd* [1955] VLR 332 at 336 (VSC)); temporary events rarely suffice.
+
+
+  **Utility of Defendant''s Conduct** – Public benefit does not excuse a nuisance
+  (*Bamford v Turnley* (1862) 122 ER 25 at 32–3 (Ex Ch)).
+
+
+  **Malice** – Deliberate interference tips the balance (*Hollywood Silver Fox Farm
+  Ltd v Emmett* [1936] 2 KB 468 at 476 (CA)).
+
+
+  **Type of Harm** – Physical damage (*Sedleigh-Denfield v O''Callaghan* [1940] AC
+  880 at 903 (HL)) or amenity interference such as noise/odour (*Bone v Seale* [1975]
+  1 WLR 797 at 804 (CA)).
+
+
+  **Australian Authorities**: *Hargrave v Goldman* (1963) 110 CLR 40 at 66–7 (HCA)
+  (liability to abate natural hazards); *Pullen v Gutteridge Haskins & Davey Pty Ltd*
+  [1993] 1 VR 27 at 34–5 (VSC, nuisance from construction); *Fennell v Robson Excavations
+  Pty Ltd* (1977) 136 CLR 444 at 456 (HCA, blasting dust/noise); *Butt v M''Donald*
+  (1896) 7 QLJ 68 (QSC, planning/environment interaction).
+
+
+  **Remedies**: Damages (compensatory), injunctions (subject to the *Shelfer* proportionality
+  test, where damages may be substituted: *Shelfer v City of London Electric Lighting
+  Co* [1895] 1 Ch 287 at 322 (CA)), damages in lieu of injunction under *Supreme Court
+  Act 1986* (Vic) s 38, and abatement (self-help must be proportionate, with notice
+  and minimal force).
+
+
+  **Defences**: Statutory authority under *Wrongs Act 1958* (Vic) pt XII ss 83–85
+  (public authorities not liable if acting within authority unless negligence shown);
+  prescription (20 years'' uninterrupted nuisance); contributory negligence.
+
+
+  **Statutory Overlays**: *Wrongs Act 1958* (Vic); *Environment Protection Act 2017*
+  (Vic) pt 5.3 (noise/odour controls, s 166 environmental noise); *Charter of Human
+  Rights and Responsibilities Act 2006* (Vic) (balancing rights to privacy and home
+  life).
+
+  '
+why_it_matters: 'Private nuisance is a frequent MLS exam topic because it forces candidates
+  to balance doctrine, remedies, and statutory overlays. The unreasonableness test
+  is inherently contextual: sensitivity, locality, duration, utility, malice, and
+  type of harm must be weighed against modern statutory frameworks. Fact patterns
+  often place students in "borderline" situations — eg, construction works near homes,
+  licensed venues with noise permits, or odours regulated under EPA licences.
+
+
+  Examiners reward answers that integrate both English principles and Australian apex
+  authority (Hargrave, Fennell, Pullen). Remedy choice is examinable: injunctions
+  are not automatic and may be refused if damages suffice (per Shelfer); damages in
+  lieu are statutorily authorised; abatement must be proportionate and carefully applied.
+
+
+  Policy coherence is key: nuisance must fit alongside environmental regulation and
+  planning approvals. Courts weigh individual rights to exclusive possession against
+  broader social and economic utility. Human rights overlays under the Charter can
+  further complicate the balance. Candidates who demonstrate this statutory–common
+  law interaction and identify exam pitfalls (eg, assuming public benefit is a defence)
+  will achieve H1-level coherence and depth.
+
+  '
+mnemonic: SLURDMT (Sensitivity, Locality, Utility, Remedies, Duration, Malice, Type
+  of harm)
+diagram: "mindmap\nroot((Private Nuisance – Unreasonableness Factors))\nFactors\n\
+  \  Sensitivity\n  Locality (zoning/planning)\n  Duration/Frequency\n  Utility\n\
+  \  Malice\n  Type_of_Harm\nRemedies\n  Damages\n  Injunction (Shelfer test)\n  Damages_in_lieu\
+  \ (Supreme Court Act 1986 (Vic) s 38)\n  Abatement (proportionate)\nDefences\n \
+  \ Statutory_Authority (Wrongs Act pt XII)\n  Prescription\n  Contributory_Negligence\n\
+  Overlaps/Borderlines\n  Trespass\n  Negligence\n  Environmental_Regulation\n  Charter_Rights\n"
+tripwires:
+- Confusing nuisance with trespass (direct vs indirect interference)
+- Ignoring remedies or defaulting to damages only
+- Assuming public benefit is a defence
+- Treating extraordinary sensitivity as actionable
+- Overlooking statutory authority defence under Wrongs Act 1958 (Vic)
+- Forgetting malice can make lawful conduct unreasonable
+- Neglecting proportionality in injunctions (Shelfer test)
+- Omitting statutory overlays (EPA, Charter, planning permits)
+anchors:
+  cases:
+  - Sedleigh-Denfield v O'Callaghan [1940] AC 880 at 903 (HL)
+  - Robinson v Kilvert (1889) 41 Ch D 88 at 96 (CA)
+  - Sturges v Bridgman (1879) 11 Ch D 852 at 865 (CA)
+  - Munro v Southern Dairies Ltd [1955] VLR 332 at 336 (VSC)
+  statutes:
+  - Wrongs Act 1958 (Vic) pt XII ss 83–85
+  - Environment Protection Act 2017 (Vic) pt 5.3; s 166
+  - Charter of Human Rights and Responsibilities Act 2006 (Vic) pt 2
+keywords:
+- sensitivity
+- locality
+- duration
+- frequency
+- utility
+- malice
+- remedies
+- injunction
+- damages
+- statutory-authority
+- prescription
+- nuisance
+- trespass
+- negligence
+- environmental-regulation
+- charter-rights
+- unreasonableness
+- private-nuisance
+- land-use
+- balancing-test
+reading_level: JD-ready
+tags:
+- Torts
+- nuisance
+- Exam_Fundamentals
+- MLS_H1

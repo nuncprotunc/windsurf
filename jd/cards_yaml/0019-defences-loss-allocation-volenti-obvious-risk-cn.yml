@@ -1,0 +1,80 @@
+front: "Defences & Loss Allocation: Consent (Volenti), Obvious Risks & Contributory Negligence (Vic)"
+back: |
+  Issue. When will consent or “obvious/inherent risk” defeat liability, and how are damages reduced for contributory negligence (CN) in Victoria?
+
+  Rule. Volenti requires free and voluntary acceptance of the legal risk, not mere knowledge (rare): Scanlon v American Cigarette (No 3) [1987] VR 289; cf sports: Rootes v Shelton (1967) 116 CLR 383. Statutory overlays: Wrongs Act 1958 (Vic) ss 53–56 (s 54 rebuttable presumption of awareness; s 56 onus; see also s 50 duty to warn — reasonable care) and Div 7 ss 62–63 (CN incl. claim-defeating 100%). Apportionment principles: compare culpability and causal potency: Pennington v Norris (1956) 96 CLR 10, 16; Podrebersek v Australian Iron & Steel Pty Ltd (1985) 59 ALJR 492, 494; 59 ALR 529, 532. Employee CN caution: Bankstown Foundry v Braistina (1986) 160 CLR 301, 310. Intoxication context: Joslyn v Berryman [2003] HCA 34; 214 CLR 552; and limits on protective duties: Cole v South Tweed Heads Rugby League Football Club Ltd (2004) 217 CLR 469, [6].
+
+  Application. First, identify if the risk was obvious (s 53) or inherent (s 55). If inherent (s 55: cannot be avoided by reasonable care) and it materialised, negligence is barred, but s 55(3) preserves warning duties where reasonable care under s 50 demands it (and s 56 puts the onus on the plaintiff where “failure to warn” is alleged). Volenti still demands proof of actual acceptance of the risk’s legal consequences (rare; narrow in sport). If liability remains, assess CN (s 62 standard): articulate plaintiff’s departures (fact-specific), then apportion (s 26) by culpability vs causal potency with comparative reasons anchored in evidence and context (employment pressures may temper CN). In intoxication cases, weigh s 14G and Joslyn factors.
+
+  Conclusion. If s 55 applies or genuine volenti is made out, claim fails. Otherwise, reduce damages “just and equitable” (s 26), including up to 100% under s 63 where warranted.
+why_it_matters: |
+  MLS exams reward sequencing and coherence. Start with duty/breach causation already resolved, then run defences in order: (1) s 55 inherent risk (complete bar if truly unavoidable by reasonable care), (2) volenti (rare—demand evidence of informed acceptance of the legal risk; don’t equate with mere participation), (3) s 56 onus where failure-to-warn alleged, (4) CN under s 26, applying the Pennington/Podrebersek matrix (culpability vs causal potency) with specific factual anchors, (5) consider s 62–63 (including claim-defeating CN) and s 14G (intoxication/illegality). Add a Commonwealth overlay where waivers for recreational services are pleaded (CCA/ACL), and preserve coherence between tort, statute and contract. Policy tensions: personal responsibility vs protective obligations (Cole); floodgates vs fairness in apportionment; statutory certainty vs common-law nuance. High-band answers write short, reasoned apportionment paragraphs (numbers + reasons) and explicitly address why volenti is not made out in most scenarios.
+mnemonic: "BAR–VOL–ONUS–CN–%: Bar (s55) → Volenti → Onus (s56) → Contrib Neg (s26/62) → % incl. up to 100% (s63)"
+diagram: |
+  mindmap
+    root((Defences & Loss Allocation))
+      Volenti
+        Free & voluntary acceptance of the legal risk
+        Rare; knowledge ≠ consent
+        Rootes; Scanlon
+      Obvious/Inherent Risk
+        s53 'obvious risk'
+        s54 volenti presumption (obvious risk)
+        s55 inherent risk → bar (cannot be avoided by reasonable care)
+        s56 plaintiff's onus on unawareness
+      Contributory Negligence
+        s26 apportion (just & equitable)
+        s62 standard of care (plaintiff)
+        s63 up to 100% reduction
+        Pennington; Podrebersek
+      Overlays
+        s14G intoxication/illegality
+        Employment context: Bankstown
+        Recreation waivers: ACL/CCA
+      Overlaps / borderlines
+        Volenti vs obvious risk presumptions
+        Warnings vs s55(3)/s56
+        CN vs claim-defeating CN (s63)
+tripwires:
+  - Treating “obvious risk” as an automatic no-duty rule in Victoria.
+  - Equating mere knowledge/participation with volenti.
+  - Presumption of awareness under s 54 ≠ proof of acceptance of legal risk (volenti still requires acceptance).
+  - Skipping s 56 onus when alleging failure to warn.
+  - Forgetting s 14G in intoxication/illegality scenarios.
+  - Apportioning CN without reasons tied to culpability and causal potency.
+  - Ignoring employment context tempering CN (pressure/inattention).
+  - Citing Wynbergen without noting s 63 reform in Victoria.
+anchors:
+  - "Pennington v Norris (1956) 96 CLR 10, 16 (HCA)."
+  - "Podrebersek v Australian Iron & Steel Pty Ltd (1985) 59 ALJR 492, 494; 59 ALR 529, 532 (HCA)."
+  - "Bankstown Foundry Pty Ltd v Braistina (1986) 160 CLR 301, 310 (HCA)."
+  - "Joslyn v Berryman [2003] HCA 34; 214 CLR 552."
+  - "Cole v South Tweed Heads Rugby League Football Club Ltd (2004) 217 CLR 469, [6] (HCA)."
+  - "Scanlon v American Cigarette Co (Overseas) Pty Ltd (No 3) [1987] VR 289."
+  - "Rootes v Shelton (1967) 116 CLR 383, 391 (Barwick CJ) (HCA)."
+  - "Wrongs Act 1958 (Vic) s 50; s 53 (definition of obvious risk); s 54; s 55; s 56; s 26; ss 62–63; s 14G."
+  - "Competition and Consumer Act 2010 (Cth) s 139A(1)–(4); Sch 2 (ACL) (recreational services waivers)."
+keywords:
+  - volenti
+  - obvious risk
+  - inherent risk
+  - contributory negligence
+  - culpability vs causal potency
+  - intoxication (s 14G)
+  - duty to warn (s 50)
+  - recreational services waiver
+  - apportionment percentages
+  - claim-defeating CN (s 63)
+  - warnings (s 56)
+  - sports/recreation injuries
+  - employment context
+  - coherence
+reading_level: "JD-ready (MLS)"
+tags:
+  - Torts
+  - Defences
+  - Exam_Fundamentals
+  - MLS_H1
+  - Victoria
+  - Negligence
+  - Remedies-Apportionment

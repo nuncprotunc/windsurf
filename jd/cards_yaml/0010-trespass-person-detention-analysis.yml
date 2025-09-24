@@ -1,0 +1,122 @@
+front: 'Shopkeeper/police detention: classify battery, assault and false imprisonment;
+  elements, onus, statutory authority (entry/force), Charter overlays, and remedies.'
+back: 'Trespass to the person protects bodily integrity and liberty via three actionable‑per‑se
+  torts. In detention hypotheticals, move fast: classify the tort, test lawful authority
+  (including entry and force), then calibrate remedies.
+
+
+  Elements and burdens
+
+  • Battery: direct, voluntary contact without lawful justification. Hostility is
+  unnecessary; everyday social touching generally outside liability (Collins v Wilcock
+  [1984] 1 WLR 1172, 1178 (persuasive)). Direct interferences are actionable even
+  where negligence is absent: Williams v Milotin (1957) 97 CLR 465, 474.
+
+  • Assault: conduct causing a reasonable apprehension of imminent unlawful contact;
+  words/conditional threats can suffice (Zanker v Vartzokas (1988) 34 A Crim R 11,
+  18).
+
+  • False imprisonment (FI): intentional total restraint without lawful authority
+  or consent. Awareness is not required (Murray v MoD [1988] 1 WLR 692 (HL)). Once
+  restraint is shown, the onus shifts to the defendant to justify (Ruddock v Taylor
+  (2005) 222 CLR 612 at [140]; Myer Stores Ltd v Soo [1991] 2 VR 597, 611).
+
+
+  Authority, entry and force
+
+  • Victorian arrest/force powers: Crimes Act 1958 (Vic) s 458 (citizen’s arrest),
+  s 459 (police arrest), s 459A (entry to arrest), s 461 (use of force in arrest),
+  s 462A (reasonable force to prevent indictable offences). Federal overlays for federal
+  offences: Crimes Act 1914 (Cth) s 3W (arrest without warrant), s 3ZC (reasonable
+  force).
+
+  • Entry constraint: implied licence for residential premises (Halliday v Nevill
+  (1984) 155 CLR 1, 10–11). Unlawful entry taints the arrest and FI analysis.
+
+  • Reasonable grounds are objective (especially under s 459). Excessive force converts
+  to battery.
+
+
+  Public law overlays and vicarious liability
+
+  • Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 10 (bodily integrity),
+  12 (movement), 13(a) (privacy/home), 21 (liberty), 38 (public authority obligations)
+  inform proportionality and statutory construction.
+
+  • Public authorities can be vicariously liable for police torts (NSW v Ibbett (2006)
+  229 CLR 638).
+
+
+  Remedies and limitation
+
+  • Nominal damages vindicate rights; aggravated damages for indignity/humiliation;
+  exemplary damages punish egregious abuses (Fontin v Katapodis (1962) 108 CLR 177;
+  Ibbett). Injunctions may restrain ongoing trespass.
+
+  • Limitation: personal injury claims engage Limitation of Actions Act 1958 (Vic)
+  Pt IIA (discoverability); pure FI otherwise within s 5’s period.
+
+
+  Practical structure (R‑LARF / E‑F‑R)
+
+  1) Restraint (total?) 2) Lawful authority (powers satisfied?) 3) Reasonable force
+  4) FI/Battery/Assault classification 5) Remedies. Separately: Entry → Force → Remedies.
+
+  '
+why_it_matters: 'MLS exams love detention fact patterns. High‑scoring answers: (1)
+  pin the tort (battery/assault/FI), (2) interrogate statutory preconditions (s 458/459/459A/461/462A;
+  3W/3ZC), (3) apply entry limits (Halliday implied licence), (4) assess force and
+  objective “reasonable grounds”, (5) overlay Charter proportionality for state actors,
+  and (6) finish with a strategic remedies calibration (nominal/aggravated/exemplary;
+  injunctions). Flag onus shift in FI and that awareness is unnecessary. Use R‑LARF
+  and E‑F‑R heuristics to stay disciplined under exam time pressure.
+
+  '
+mnemonic: R‑LARF / E‑F‑R
+diagram: "mindmap\nroot((trespass_person_detention))\n  Elements\n    Battery\n  \
+  \  Assault\n    False_imprisonment\n    Onus_shift\n  Authority_Force\n    s458_s459_s459A_s461_s462A\n\
+  \    Cth_3W_3ZC\n    Reasonable_grounds\n    Excessive_force→battery\n  Entry_Charter\n\
+  \    Implied_licence_(Halliday)\n    Charter_ss10_12_13a_21_38\n    Proportionality\n\
+  \  Remedies_Liability\n    Nominal_Aggravated_Exemplary\n    Injunction\n    Vicarious_liability\n"
+tripwires:
+- Treating partial obstruction as FI (Bird v Jones foil)
+- Requiring hostility for battery
+- Ignoring onus shift once total restraint is proved (Ruddock; Soo)
+- Treating suspicion as “reasonable grounds” under s 459 without objective basis
+- Unchecked entry—implied licence limits (Halliday) taint arrest
+- Assuming awareness is required for FI (Murray says no)
+- Failing to convert excessive force to battery
+anchors:
+  cases:
+  - New South Wales v Ibbett (2006) 229 CLR 638; [2006] HCA 57, 647 [28]
+  - Fontin v Katapodis (1962) 108 CLR 177, 183–84
+  - Myer Stores Ltd v Soo [1991] 2 VR 597, 611
+  - Ruddock v Taylor (2005) 222 CLR 612; [2005] HCA 48 at [140]
+  statutes:
+  - Crimes Act 1958 (Vic) ss 458, 459, 459A, 461, 462A
+  - Crimes Act 1914 (Cth) ss 3W, 3ZC
+  - Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 10, 12, 13(a),
+    21, 38
+keywords:
+- battery
+- assault
+- false-imprisonment
+- lawful-authority
+- reasonable-grounds
+- reasonable-force
+- implied-licence
+- citizen-arrest
+- vicarious-liability
+- charter
+- aggravated-damages
+- exemplary-damages
+- nominal-damages
+- detention
+- shopkeeper
+- police-powers
+reading_level: JD-ready
+tags:
+- Torts
+- Trespass
+- Exam_Fundamentals
+- MLS_H1

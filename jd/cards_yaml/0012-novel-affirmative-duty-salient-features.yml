@@ -1,0 +1,113 @@
+front: In a novel or affirmative-duty scenario (incl public authorities), how would
+  you determine whether a duty of care should be recognised under Victorian law?
+back: 'Issue. When facts do not fit a settled category, should the court recognise
+  a (often positive) duty on D to act to protect P?
+
+
+  Rule. Apply the salient-features approach: is it appropriate to impose a duty given
+  the relationship and context (Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA
+  258; (2009) 75 NSWLR 649 at [103] (Allsop P))? Foreseeability is necessary, not
+  sufficient; the law must remain coherent with other regimes (Sullivan v Moody [2001]
+  HCA 59; (2001) 207 CLR 562 at [42] (Gleeson CJ, Gaudron, McHugh, Hayne, Callinan
+  JJ)).
+
+
+  Application scaffold.
+
+  Recognised category? If yes, apply it (e.g., teacher–student supervision duty once
+  authority assumed: Geyer v Downs [1977] HCA 64; (1977) 138 CLR 91 (Mason J, Stephen,
+  Jacobs, Murphy, Aickin JJ)).
+
+  If not, weigh salient features: foreseeability; vulnerability/ability to self-protect;
+  control/created risk; assumption of responsibility/reliance; indeterminacy; autonomy;
+  coherence with statutes/policy.
+
+  Public authorities: integrate Wrongs Act 1958 (Vic) s 83 (resource constraints and
+  scope), s 84 (statutory duty threshold) and s 85 (no duty merely from existence
+  of a function) and keep breach distinct under s 48.
+
+
+  Limits (illustrations). No general duty to prevent third-party crime: Modbury Triangle
+  Shopping Centre Pty Ltd v Anzil [2000] HCA 61; (2000) 205 CLR 254 at [17], [35]
+  (Gleeson CJ; majority). Police/mental health: no duty absent control or statutory
+  preconditions: Stuart v Kirkland-Veenstra [2009] HCA 15; (2009) 237 CLR 215 (French
+  CJ, Gummow, Hayne, Heydon, Crennan, Kiefel JJ). Policy/public risk: avoid indeterminate
+  liability (cf State of New South Wales v Godfrey [2004] NSWCA 113). Coherence overlays
+  may point to ACL s 18 (Competition and Consumer Act 2010 (Cth) sch 2). Modern analogue
+  to the statutory police power considered in Stuart is Mental Health Act 2014 (Vic)
+  s 351. Mental harm overlay: Wrongs Act 1958 (Vic) Pt XI (eg s 72) limits pure mental
+  harm duties in parallel.
+
+
+  Conclusion. Decide duty factor-by-factor, then analyse breach (s 48), causation
+  and damage separately.
+
+  '
+why_it_matters: 'MLS problems often hinge on novel or omissions duty. Markers reward:
+  (1) sequencing (recognised category → salient features → coherence), (2) a public-authority
+  discipline pass (Wrongs Act ss 83–85), and (3) clean separation of duty from breach
+  (s 48), causation and damages. Use factor signposts as paragraph headings and justify
+  why particular features decide these facts (do not checklist Stavar). Policy levers
+  to mention: indeterminacy/floodgates, autonomy (no general rescue duty), statutory
+  purpose and resources (coherence), and over-deterrence if courts impose broad affirmative
+  duties. Tie reliance/assumption questions to ACL s 18 to show awareness of statutory
+  remedies and potential duplication/conflict. If you apply this scaffold in 10–12
+  minutes, you will give a principled yes/no on duty and bank H1-level structure.
+
+  '
+mnemonic: FVC-CARC → Foreseeability, Vulnerability, Control; Coherence, Assumption/reliance,
+  Range/indeterminacy, Choice/autonomy
+diagram: "mindmap\nroot((Novel/Affirmative Duty))\n  \"1) Recognised category?\"\n\
+  \    Teacher–student (Geyer)\n    Occupier–entrant\n  \"2) Salient features\"\n\
+  \    Foreseeability & kind of harm\n    Vulnerability / self-protection\n    Control\
+  \ / created risk\n    Assumption of responsibility / reliance\n    Indeterminacy\
+  \ / floodgates\n    Autonomy (no general rescue duty)\n    Coherence with statutes/policy\n\
+  \  \"3) Public authority overlay\"\n    Wrongs Act ss 83–85 (purpose/resources;\
+  \ no duty merely from a power)\n    Keep breach separate (s 48)\n  \"Overlaps /\
+  \ borderlines\"\n    Third-party wrongdoing (Modbury)\n    Mental-health/police\
+  \ powers (Stuart; MHA s 351)\n    Economic-loss reliance (Perre) → ACL s 18\n"
+tripwires:
+- Treating foreseeability as sufficient for duty (see Sullivan v Moody (2001) 207
+  CLR 562 at [42]).
+- Checklist-dumping all Stavar factors without explaining which ones decide the case.
+- Conflating duty with breach—reserve Wrongs Act s 48 for breach.
+- Imposing affirmative duties on police/authorities without control or statutory preconditions
+  (Stuart v Kirkland-Veenstra (2009) 237 CLR 215).
+- Creating indeterminate liability to the public at large (cf State of New South Wales
+  v Godfrey [2004] NSWCA 113).
+anchors:
+  cases:
+  - Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258; (2009) 75 NSWLR 649
+    at [103]
+  - Sullivan v Moody [2001] HCA 59; (2001) 207 CLR 562 at [42]
+  - Modbury Triangle Shopping Centre Pty Ltd v Anzil [2000] HCA 61; (2000) 205 CLR
+    254 at [17], [35]
+  - Stuart v Kirkland-Veenstra [2009] HCA 15; (2009) 237 CLR 215
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
+  - Wrongs Act 1958 (Vic) ss 83–85
+  - Competition and Consumer Act 2010 (Cth) sch 2 (Australian Consumer Law) s 18
+keywords:
+- salient features
+- coherence
+- vulnerability
+- control
+- assumption of responsibility
+- reliance
+- indeterminacy
+- autonomy
+- public authority
+- Wrongs Act s 48
+- Wrongs Act ss 83–85
+- ACL s 18
+- assumption of statutory power
+- third-party wrongdoing
+- omissions
+reading_level: JD-ready
+tags:
+- Exam_Fundamentals
+- MLS_H1
+- Negligence
+- Duty_of_Care
+- Victoria
+- Public_Authorities

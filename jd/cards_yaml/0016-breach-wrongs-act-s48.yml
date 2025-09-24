@@ -1,0 +1,87 @@
+front: "Breach — How do you run the Wrongs Act 1958 (Vic) s 48 calculus (vs common-law Shirt) when assessing reasonable precautions?"
+back: |
+  Issue. Did D breach the standard of care owed to P under Victorian negligence law?
+
+  Rule. Wrongs Act 1958 (Vic) s 48(1)–(2) codifies the breach calculus without displacing Wyong Shire Council v Shirt [1980] HCA 12; (1980) 146 CLR 40 at 47–48 (Mason J). First, isolate a foreseeable risk (known or ought to have been known) that is “not insignificant” (insignificant = far-fetched or fanciful) (s 48(1)(a)–(b)). Second, confirm that, in the circumstances, a reasonable person in the defendant’s position would have taken precautions (s 48(1)(c)). Third, weigh the s 48(2) factors—(a) probability of harm, (b) likely seriousness, (c) burden of precautions, (d) social utility of the activity—treating the list as a contextual framework rather than a closed checklist (RTA v Dederer [2007] HCA 42; (2007) 234 CLR 330 at [136]).
+
+  Public-land and recreational authorities stress fact-sensitivity and timing: Vairy v Wyong Shire Council [2005] HCA 62; (2005) 223 CLR 422; Romeo v Conservation Commission (NT) [1998] HCA 5; (1998) 192 CLR 431 at 487–488 [152]; Tapp v Australian Bushmen’s Campdraft & Rodeo Assn Ltd [2022] HCA 11; (2022) 396 ALR 1 at [127]–[129], [150]–[156]. Section 49 guards against hindsight, s 50 frames warning duties, and ss 53–56 address obvious/inherent risks, voluntary assumption, and plaintiff awareness. Commonwealth overlays—ACL (Cth) sch 2 s 60 (due care in services) and CCA s 139A (recreational waivers limited to personal injury/death)—may reframe obligations.
+
+  Application. (1) Articulate the specific risk at the correct generality. (2) Confirm it was foreseeable, not insignificant, and that a reasonable person would have taken some precautions on the information available when action was required. (3) Apply s 48(2)(a)–(d): probability (time-slice per Tapp), seriousness, burden, social utility/competing responsibilities (cf Cole v South Tweed Heads RLFC [2004] HCA 29; (2004) 217 CLR 469). (4) Factor in context: public authority constraints (Vairy; Romeo), recreational risk characterisation (Tapp), maintenance/operation failures versus inherent risk. (5) Address statutory overlays—warnings (s 50), obvious risk/volenti (ss 53–56), causation guardrails (s 51 scope/factual causation; s 52 burden), and ACL/CCA implications. (6) Weigh the features holistically—do not tick boxes—and conclude whether a reasonable person in D’s position would have taken additional precautions.
+
+  Conclusion. D breaches the standard of care only if a reasonable person, applying the s 48 calculus and contextual principles, would have taken cost-justified precautions at the relevant time; obvious risk or hindsight alone does not defeat liability where D created or exacerbated the risk.
+why_it_matters: |
+  MLS breach problems are designed to catch students who parrot Shirt without engaging with the Victorian statutory structure. Starting with s 48(1) forces you to pin down the precise risk and confirm it was “not insignificant.” The s 48(2) calculus then guides a disciplined balance between probability/seriousness and practical burdens/utility, with public-authority and recreational cases highlighting how timing, resource constraints and social utility shape reasonableness. Sections 49–56 provide guardrails: anti-hindsight, nuanced warning duties, and limits on “obvious risk” defences. Overlaying ACL s 60 and CCA s 139A shows examiners you can integrate parallel obligations and waiver limits. This structured approach keeps breach distinct from duty and causation, surfaces policy tensions (safety vs autonomy/resource allocation), and demonstrates H1-level command of statutory mechanics.
+mnemonic: "F-NIS → CALC (Prob, Serious, Burden, Utility) → CONTEXT (Warnings/Obvious) → CAUSATION"
+diagram: |
+  mindmap
+    root((Breach – Wrongs Act s 48))
+      Threshold
+        Foreseeable risk (known/ought know)
+        Not insignificant (exclude far-fetched/fanciful)
+        Time-slice for probability (Tapp)
+      Calculus s 48(2)
+        Probability (a)
+        Seriousness (b)
+        Burden (c)
+        Social utility (d)
+      Contextual Overlays
+        s 49 anti-hindsight
+          s 49: doing it differently later ≠ breach
+        s 50 warnings
+        ss 53–56 obvious/inherent risk & volenti
+        ACL s 60 / CCA s 139A
+      Case Guides
+        Shirt 146 CLR 40 at 47–48 (Mason J)
+        Dederer 234 CLR 330 [136] (Gummow, Hayne & Heydon JJ)
+        Tapp [2022] HCA 11 [127]–[129], [150]–[156] (Kiefel CJ, Keane, Gordon, Edelman & Gleeson JJ)
+        Vairy 223 CLR 422 at 431 [3]–[9]; 451 [40]–[42]
+        Romeo 192 CLR 431 [152]
+        Cole 217 CLR 469 at 473 [1]–[5]; 516 [98]–[100]
+        Adeels 239 CLR 420 at 435 [43]
+      Overlaps / Borderlines
+        Duty vs breach (risk characterisation)
+        Breach vs causation (s 51 scope)
+        Recreational waivers vs negligence (s 139A)
+tripwires:
+  - Treating foreseeability alone as breach without proving “not insignificant” risk (s 48(1)).
+  - Framing the risk too broadly/narrowly, skewing the calculus.
+  - Using hindsight to argue breach contrary to s 49 and Dederer.
+  - Relying on “obvious risk” as a complete defence when D’s maintenance/operations created the hazard.
+  - Ignoring the practical burden/social utility of precautions in public-resource contexts.
+  - Confusing obvious risk (s 53) with inherent risk (s 55) or mere plaintiff awareness (s 56).
+  - Treating risk characterisation as outcome-driven rather than ex ante (cf Tapp).
+  - Importing NSW Civil Liability Act wording as binding rather than persuasive.
+  - Collapsing breach and causation without separately applying s 51/s 52.
+anchors:
+  - Wyong Shire Council v Shirt [1980] HCA 12; (1980) 146 CLR 40 at 47–48 (Mason J)
+  - Roads and Traffic Authority (NSW) v Dederer [2007] HCA 42; (2007) 234 CLR 330 at [136] (Gummow, Hayne & Heydon JJ)
+  - Tapp v Australian Bushmen’s Campdraft & Rodeo Assn Ltd [2022] HCA 11; (2022) 396 ALR 1 at [127]–[129], [150]–[156] (Kiefel CJ, Keane, Gordon, Edelman & Gleeson JJ)
+  - Vairy v Wyong Shire Council [2005] HCA 62; (2005) 223 CLR 422 at 431 [3]–[9] (Gleeson CJ & Kirby J); 451 [40]–[42] (McHugh J)
+  - Romeo v Conservation Commission (NT) [1998] HCA 5; (1998) 192 CLR 431 at 487–488 [152] (Hayne J)
+  - Cole v South Tweed Heads Rugby League Football Club Ltd [2004] HCA 29; (2004) 217 CLR 469 at 473 [1]–[5] (Gleeson CJ); 516 [98]–[100] (Kirby J)
+  - Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem [2009] HCA 48; (2009) 239 CLR 420 at 435 [43] (French CJ, Gummow, Hayne, Heydon & Crennan JJ)
+  - Wrongs Act 1958 (Vic) ss 48–56; Competition and Consumer Act 2010 (Cth) sch 2 s 60; s 139A
+keywords:
+  - Wrongs Act s 48
+  - not insignificant risk
+  - negligence calculus
+  - probability vs seriousness
+  - burden of precautions
+  - social utility
+  - anti-hindsight principle
+  - obvious risk defence
+  - warnings duty
+  - public authority context
+  - recreational risk
+  - ACL s 60
+  - CCA s 139A
+  - causation guardrails
+  - resource allocation policy
+reading_level: JD-ready
+tags:
+  - Torts
+  - Negligence
+  - Breach
+  - Wrongs_Act_Vic
+  - Exam_Fundamentals
+  - MLS_H1

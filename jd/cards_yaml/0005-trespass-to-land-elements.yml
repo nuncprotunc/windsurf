@@ -1,0 +1,97 @@
+front: What are the elements of trespass to land at common law?
+back: "**Elements of Trespass to Land (Common Law and Statutory Context):**\n\nTrespass\
+  \ to land protects a person's right to exclusive possession. It is actionable per\
+  \ se (no need to prove damage). The elements are:\n\n**1. Direct Interference**\n\
+  There must be a direct physical intrusion upon land in the plaintiff's possession.\
+  \ Entry may be by a person, object, or remaining after consent is revoked. *Kuru\
+  \ v State of NSW* [2008] HCA 26, (2008) 236 CLR 1, 19 [43] confirms that presence\
+  \ without authority is actionable.\n\n**2. Voluntary Act / Intention**\nThe defendant\
+  \ must voluntarily cause the interference, though no intent to trespass or cause\
+  \ damage is required. *Plenty v Dillon* [1991] HCA 5, (1991) 171 CLR 635, 647 (Mason\
+  \ CJ, Brennan & Toohey JJ) held police entry without warrant was trespass. Mistake\
+  \ is not a defence.\n\n**3. Without Lawful Justification**\nAbsent valid consent,\
+  \ licence, or statutory authority. *Halliday v Nevill* [1984] HCA 80, (1984) 155\
+  \ CLR 1, 7–8 recognised an implied licence for visitors, but this is revocable.\
+  \ *Lenah Game Meats Pty Ltd v ABC* [2001] HCA 63, (2001) 208 CLR 199, 224 [40] (Gleeson\
+  \ CJ) linked trespass with privacy concerns, highlighting modern policy intersections.\
+  \ \n\n**Statutory Overlays:**\n- *Wrongs Act 1958* (Vic) Pt IIA, s 14A (definitions)\
+  \ and s 14B (duties of occupiers)\n- *Competition and Consumer Act 2010* (Cth) sch\
+  \ 2 (ACL) ss 18, 20–22 where misleading conduct intersects with property rights\n\
+  \n**Defences:** \n- Consent (express/implied)\n- Necessity (*Southwark LBC v Williams*\
+  \ [1971] Ch 734, persuasive only)\n- Lawful authority (e.g., warrants)\n- Statutory\
+  \ authority\n\n**Remedies:**\n- Nominal damages (to vindicate rights)\n- Substantial\
+  \ damages\n- Injunctions (especially for continuing trespass)\n- In rare cases,\
+  \ exemplary damages (*Graham v K D Morris & Sons Pty Ltd* (1964) 111 CLR 321, 335)\n\
+  - Mesne profits for wrongful occupation\n\n**Policy Considerations:**\nThe doctrine\
+  \ balances the autonomy of landowners and protection of exclusive possession against\
+  \ implied licence and necessity. It contrasts with negligence where \"salient features\"\
+  \ control duty and economic loss cases focus on \"relational loss\". Courts are\
+  \ cautious not to unduly restrict social interaction, yet protect core proprietary\
+  \ rights. Broader rights debates arise where trespass interacts with human rights\
+  \ instruments (e.g., freedom of movement vs proprietary rights under the *Charter\
+  \ of Human Rights and Responsibilities Act 2006* (Vic)).\n"
+why_it_matters: "Trespass to land is an exam favourite because it is actionable per\
+  \ se, giving students the opportunity to demonstrate precision in distinguishing\
+  \ it from nuisance and negligence. Its elements appear deceptively simple, but the\
+  \ law's subtleties – such as the scope of implied licence (*Halliday v Nevill*),\
+  \ revocation of consent (*Kuru*), and the role of necessity – are fertile ground\
+  \ for problem questions. \n\nRemedies highlight doctrinal coherence: injunctions\
+  \ prevent continuing trespass, while nominal damages affirm rights even without\
+  \ loss. Importantly, statutory overlays require careful integration: the *Wrongs\
+  \ Act 1958* (Vic) Pt IIA (s 14A definitions; s 14B duties) modifies duties of occupiers,\
+  \ while the Australian Consumer Law (ACL) may affect property dealings in misleading\
+  \ conduct contexts. \n\nPolicy tensions also drive assessment: the balance between\
+  \ autonomy of landowners and freedom of movement, the chilling effects of over-enforcement,\
+  \ and resource allocation in courts. \n\nStrong answers triage quickly: \n1. Identify\
+  \ possession\n2. Classify interference as direct\n3. Check for voluntary act\n4.\
+  \ Exclude lawful justification\n5. Run through realistic defences\n6. Evaluate remedies\n\
+  \nWeak answers often collapse trespass into negligence or forget that damage is\
+  \ unnecessary. This card helps you anchor the per se nature of trespass and the\
+  \ doctrinal/policy contrasts that MLS markers expect at H1 level.\n"
+mnemonic: D-I-W-R (Direct, Intention, Without justification, Remedies)
+diagram: "mindmap\n  root((trespass_to_land))\n    Elements\n      Direct_Interference\n\
+  \      Intention\n      Without_Justification\n    Remedies\n      Nominal\n   \
+  \   Substantial\n      Injunctions\n      Exemplary\n      Mesne_Profits\n    Overlaps_Borderlines\n\
+  \      Trespass_vs_Nuisance\n      Trespass_vs_Negligence\n      Continuing_Trespass\n"
+tripwires:
+- Confusing trespass with nuisance (indirect interference)
+- Forgetting actionable per se (no need to prove damage)
+- Overstating implied licence (scope limited, revocable)
+- Assuming mistake is a defence (it is not)
+- Ignoring remedies (especially injunctions for continuing trespass)
+- Neglecting statutory overlays (Wrongs Act occupiers' liability)
+- Misapplying necessity beyond narrow limits
+anchors:
+  cases:
+  - Kuru v State of NSW [2008] HCA 26, (2008) 236 CLR 1, 19 [43]
+  - Plenty v Dillon [1991] HCA 5, (1991) 171 CLR 635, 647
+  - Halliday v Nevill [1984] HCA 80, (1984) 155 CLR 1, 7–8
+  - Graham v K D Morris & Sons Pty Ltd (1964) 111 CLR 321, 335
+  statutes:
+  - Wrongs Act 1958 (Vic) Pt IIA ss 14A–14B
+  - Competition and Consumer Act 2010 (Cth) sch 2 (Australian Consumer Law) ss 18,
+    20–22
+  - Charter of Human Rights and Responsibilities Act 2006 (Vic) s 12
+keywords:
+- trespass
+- exclusive-possession
+- direct-interference
+- intention
+- lawful-justification
+- consent
+- necessity
+- statutory-authority
+- remedies
+- injunction
+- nuisance
+- negligence
+- continuing-trespass
+- salient-features
+- relational-loss
+- policy
+reading_level: JD-ready
+tags:
+- Torts
+- Trespass
+- Exam_Fundamentals
+- MLS_H1
