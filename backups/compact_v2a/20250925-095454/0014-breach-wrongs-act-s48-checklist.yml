@@ -1,0 +1,113 @@
+front: 'Breach — Wrongs Act s 48 checklist: how do you triage foreseeability, precautions,
+  and statutory overlays under exam pressure?'
+back: 'Issue. How should you triage Wrongs Act s 48 breach analysis under exam pressure
+  so that foreseeability, precautions, and statutory overlays are covered systematically?
+
+
+  Rule. Wrongs Act 1958 (Vic) s 48 requires: (i) a foreseeable risk known or ought
+  to have been known; (ii) the risk must be “not insignificant”; (iii) a reasonable
+  person would have taken precautions; (iv) s 48(2) factors (probability, seriousness,
+  burden, social utility) must be weighed contextually (Wyong v Shirt (1980) 146 CLR
+  40; RTA v Dederer (2007) 234 CLR 330 at [136]). Sections 49–56 add guardrails on
+  hindsight, warnings, and obvious/inherent risk, while ACL s 60 and CCA s 139A can
+  overlay or confine obligations.
+
+
+  Application scaffold. 1) Frame the risk precisely at the relevant ex ante time-slice
+  (Tapp v ABCRA [2022] HCA 11 at [127]–[129], [150]–[156]). 2) Apply s 48(1): confirm
+  foreseeability and “not insignificant” status (exclude far-fetched/fanciful). 3)
+  Run s 48(2)(a)–(d): probability, seriousness, burden, social utility, factoring
+  public authority or venue realities (Vairy; Romeo; Cole). 4) Check statutory overlays:
+  s 49 anti-hindsight, s 50 warnings/signage, ss 53–56 obvious/inherent risk & volenti.
+  5) Keep breach separate from causation: apply s 51 scope/factual causation and s
+  52 burden (Adeels Palace (2009) 239 CLR 420 at 435 [43]). 6) Flag Commonwealth overlays
+  (ACL s 60 due care; CCA s 139A waiver limits) before concluding whether additional
+  precautions were reasonably required.
+
+
+  Authorities map. Core framework: Wyong v Shirt; Wrongs Act s 48. Risk/time-slice
+  discipline: Tapp [2022] HCA 11. Public authority/recreation: Vairy (2005) 223 CLR
+  422; Romeo (1998) 192 CLR 431; Cole (2004) 217 CLR 469. Crowd control/causation
+  link: Adeels Palace (2009) 239 CLR 420. Statutory overlays: Wrongs Act ss 49–56;
+  ACL s 60; CCA s 139A.
+
+
+  Statutory hook. Wrongs Act 1958 (Vic) ss 48–56; ACL (Cth) s 60; CCA 2010 (Cth) s
+  139A.
+
+
+  Tripwires. Treating foreseeability as breach without proving “not insignificant”.
+  Reframing the risk with hindsight instead of ex ante evidence. Treating “obvious
+  risk” as absolute when D heightened the danger. Ignoring public-resource burden
+  in s 48(2)(c). Collapsing breach and causation without applying s 51/s 52. Forgetting
+  ACL/CCA overlays when services or recreational waivers arise.
+
+
+  Conclusion. A disciplined s 48 checklist demands precise risk characterisation,
+  contextual balancing of the s 48(2) factors, and explicit handling of statutory
+  overlays; only then can you justify whether additional precautions were required
+  or reasonable inaction was defensible.
+
+  '
+why_it_matters: 'MLS scripts lose marks when they cite Shirt but ignore Victorian
+  statutory rails. This checklist forces you to apply s 48(1)–(2) methodically, integrate
+  public authority and recreational authorities, and separate breach from causation
+  while acknowledging ACL/CCA overlays—hallmarks of an H1 answer under pressure.
+
+  '
+mnemonic: F-NIS → CALC → s49 → WARN/OBVIOUS → CAUSATION → ACL/CCA
+diagram: "```mermaid\nmindmap\n  root((Wrongs Act s 48 Checklist))\n    Threshold\
+  \ (s 48(1))\n      Foreseeable risk\n      Not insignificant\n      Ex ante time-slice\
+  \ (Tapp)\n    Calculus (s 48(2))\n      Probability\n      Seriousness\n      Burden\n\
+  \      Social utility\n    Statutory overlays\n      s 49 anti-hindsight\n     \
+  \ s 50 warnings\n      ss 53–56 obvious/inherent risk & volenti\n    Parallel regimes\n\
+  \      ACL s 60 duties\n      CCA s 139A waiver limits\n    Causation handoff\n\
+  \      s 51 scope/factual causation\n      s 52 burden on plaintiff\n```\n"
+tripwires:
+- Treating foreseeability as sufficient without satisfying the “not insignificant”
+  test.
+- Reframing the risk with hindsight rather than the ex ante time-slice.
+- Assuming obvious risk defeats liability when D heightened the hazard.
+- Ignoring the burden/social utility factor for public authorities or venues.
+- Blurring breach with causation instead of applying s 51/s 52.
+- Omitting ACL s 60 or misreading CCA s 139A limits.
+anchors:
+  cases:
+  - Wyong Shire Council v Shirt [1980] HCA 12; (1980) 146 CLR 40 at 47–48
+  - Roads and Traffic Authority (NSW) v Dederer [2007] HCA 42; (2007) 234 CLR 330
+    at [136]
+  - Tapp v Australian Bushmen’s Campdraft & Rodeo Assn Ltd [2022] HCA 11; (2022) 396
+    ALR 1 at [127]–[129], [150]–[156]
+  - Vairy v Wyong Shire Council [2005] HCA 62; (2005) 223 CLR 422 at 431 [3]–[9];
+    451 [40]–[42]
+  - Romeo v Conservation Commission (NT) [1998] HCA 5; (1998) 192 CLR 431 at 487–488
+    [152]
+  - Cole v South Tweed Heads Rugby League Football Club Ltd [2004] HCA 29; (2004)
+    217 CLR 469 at 473 [1]–[5]; 516 [98]–[100]
+  - Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem [2009] HCA
+    48; (2009) 239 CLR 420 at 435 [43]
+  statutes:
+  - Wrongs Act 1958 (Vic) ss 48–56
+  - Australian Consumer Law (Cth) s 60
+  - Competition and Consumer Act 2010 (Cth) s 139A
+  notes: []
+keywords:
+- wrongs-act-s48
+- not-insignificant-risk
+- breach-calculus
+- statutory-overlays
+- public-authority-context
+- recreational-risk
+- anti-hindsight
+- warnings-duty
+- causation-ss51-52
+- acl-cca
+reading_level: Plain English (JD)
+tags:
+- LAWS50025 - Torts
+- Torts
+- Negligence
+- Breach
+- Wrongs_Act_Vic
+- Exam_Fundamentals
+- MLS_H1

@@ -1,0 +1,104 @@
+front: 'Shopkeeper/police detention: classify battery, assault, false imprisonment,
+  authority and remedies?'
+back: 'Issue. In detention fact patterns, which trespass torts arise (battery, assault,
+  false imprisonment) and is the restraint justified by statutory authority or consent?
+
+
+  Rule. Battery is direct, voluntary contact without lawful justification (Williams
+  v Milotin (1957) 97 CLR 465, 474). Assault requires conduct causing reasonable apprehension
+  of imminent unlawful contact (Zanker v Vartzokas (1988) 34 A Crim R 11, 18). False
+  imprisonment (FI) is intentional total restraint without lawful authority or consent;
+  awareness is unnecessary (Murray v MoD [1988] 1 WLR 692). Once restraint is proved,
+  the onus shifts to the defendant to justify (Ruddock v Taylor (2005) 222 CLR 612,
+  [140]; Myer Stores Ltd v Soo [1991] 2 VR 597, 611). Statutory powers for arrest/entry/force
+  derive from Crimes Act 1958 (Vic) ss 458, 459, 459A, 461, 462A and Crimes Act 1914
+  (Cth) ss 3W, 3ZC, constrained by implied licence limits (Halliday v Nevill (1984)
+  155 CLR 1, 10–11). Excessive force converts to battery.
+
+
+  Application scaffold. 1) Identify the trespass type: total restraint (FI), contact
+  (battery), or apprehension (assault). 2) Test statutory power preconditions (reasonable
+  suspicion/grounds, arrestable offence, necessity, proportional force). 3) Check
+  entry authority and implied licence limits; unlawful entry taints subsequent restraint.
+  4) Assess force used; excessive force triggers battery/aggravated damages. 5) Remedies:
+  nominal, compensatory, aggravated/exemplary damages (Fontin v Katapodis (1962) 108
+  CLR 177; NSW v Ibbett [2006] HCA 57; (2006) 229 CLR 638); injunctions for ongoing
+  trespass.
+
+
+  Authorities map. FI/burden: Murray [1988] 1 WLR 692; Ruddock 222 CLR 612, [140];
+  Soo [1991] 2 VR 597, 611. Entry/licence: Halliday 155 CLR 1, 10–11. Battery: Williams
+  v Milotin 97 CLR 465, 474. Assault: Zanker 34 A Crim R 11, 18. Remedies: Fontin
+  108 CLR 177; NSW v Ibbett 229 CLR 638, 647 [28].
+
+
+  Statutory hook. Crimes Act 1958 (Vic) ss 458, 459, 459A, 461, 462A; Crimes Act 1914
+  (Cth) ss 3W, 3ZC; Charter of Human Rights and Responsibilities Act 2006 (Vic) ss
+  10, 12, 13(a), 21, 38.
+
+
+  Tripwires. Treating partial obstruction as FI. Requiring hostility for battery.
+  Ignoring the onus shift once restraint is shown. Treating mere suspicion as reasonable
+  grounds. Overlooking implied-licence limits on entry.
+
+
+  Conclusion. Classify the trespass, demand statutory justification, scrutinise force
+  and entry, then articulate remedies and potential aggravated/exemplary damages when
+  authority is exceeded.
+
+  '
+why_it_matters: 'Shopkeeper/police detention problems are MLS staples. Examiners expect
+  you to classify each trespass, interrogate statutory authority, note onus shifting,
+  and structure remedies (including aggravated/exemplary damages) with precise pinpoints.
+
+  '
+mnemonic: 'B-A-FI-AR: Battery → Assault → False imprisonment → Authority/Remedies'
+diagram: "```mermaid\nmindmap\n  root((Detention — trespass analysis))\n    Classify\
+  \ tort (battery/assault/FI)\n    Statutory power checks (ss 458–462A)\n    Entry\
+  \ limits (implied licence)\n    Force assessment (conversion to battery)\n    Remedies\
+  \ & damages (Fontin/Ibbett)\n```\n"
+tripwires:
+- Treating partial obstruction as false imprisonment.
+- Requiring hostility to prove battery.
+- Ignoring the onus shift to the defendant after restraint is proven.
+- Equating mere suspicion with reasonable grounds under arrest powers.
+- Overlooking implied licence limits on entry when assessing authority.
+anchors:
+  cases:
+  - Williams v Milotin (1957) 97 CLR 465, 474
+  - Zanker v Vartzokas (1988) 34 A Crim R 11, 18
+  - Murray v Ministry of Defence [1988] 1 WLR 692
+  - Ruddock v Taylor (2005) 222 CLR 612, [140]
+  - Myer Stores Ltd v Soo [1991] 2 VR 597, 611
+  - Halliday v Nevill (1984) 155 CLR 1, 10–11
+  - Fontin v Katapodis (1962) 108 CLR 177, 183–184
+  - New South Wales v Ibbett [2006] HCA 57; (2006) 229 CLR 638, 647 [28]
+  statutes:
+  - Crimes Act 1958 (Vic) ss 458, 459, 459A, 461, 462A
+  - Crimes Act 1914 (Cth) ss 3W, 3ZC
+  - Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 10, 12, 13(a),
+    21, 38
+  notes: []
+keywords:
+- battery
+- assault
+- false-imprisonment
+- lawful-authority
+- reasonable-grounds
+- implied-licence
+- aggravated-damages
+- exemplary-damages
+- nominal-damages
+- police-powers
+reading_level: Plain English (JD)
+tags:
+- LAWS50025 - Torts
+- Trespass
+- Exam_Fundamentals
+- MLS_H1
+_lint_notes:
+- issue_contextualised
+- diagram_conceptual_branches
+- statutory_hook_listed
+- anchors_normalised
+- keywords_trimmed_<=10
