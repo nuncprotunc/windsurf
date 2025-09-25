@@ -1,50 +1,119 @@
-front: |
-  Mental harm duties (Vic): how do Wrongs Act Pt XI filters apply to rescuers,
-    secondary victims, and workplace trauma?
-back: |
-  Issue.
-  When does the Wrongs Act 1958 (Vic) Pt XI impose a duty to avoid mental harm in rescuers, secondary victims, or workplace trauma scenarios?
-  
-  Rule.
-  Part XI applies only to negligence (s 72(1)); intentional torts and breach of statutory duty sit outside. “Mental harm” covers both pure and consequential mental harm (s 72).
-  
-  Application scaffold.
-  1) Classify harm: pure (no physical injury) or consequential (flowing from physical injury). 2) For pure harm, apply s 72(1) normal-fortitude foreseeability with s 72(2) factors. 3) Check s 73(1)–(2) scene/relationship limits for shock-based claims; confirm derivative bar s 73(3).
-  
-  Authorities map.
-  Filters: Tame/Annetts 211 CLR 317; Jaensch v Coffey (1984) 155 CLR 549; Gifford v Strang Patrick (2003) 214 CLR 269. Rescuers: Wicks 241 CLR 60.
-  
-  Statutory hook.
-  Wrongs Act 1958 (Vic) Pt XI (ss 72–75, s 64); Wrongs Act ss 48, 51 (for breach/causation after duty); Evidence Act 1995 (Cth) s 79.
-  
-  Tripwires.
-  Treating “normal fortitude” as a plaintiff attribute rather than a foreseeability filter. Reintroducing discredited “sudden shock” control mechanisms apart from the s 72(2) factors.
-  
-  Conclusion.
-  Only plaintiffs who satisfy Pt XI filters and prove a recognised psychiatric illness engage a duty; consequential harm then follows ordinary negligence analysis, and pure mental harm hinges on statutory compliance before breach/cause/damages.
-  
-why_it_matters: |
-  MLS exams often pivot on Pt XI. Fast classification, s 72–75 pinpoints,
-    expert evidence, and Wrongs Act s 64 notice show statutory literacy and keep you
-    from reviving outlawed “shock” tests. The scaffold balances the floodgates concern
-    with compensation for foreseeable psychiatric injury.
-  
-    
-mnemonic: "CLASSIFY → FILTER → FACTORS → AUTHORITIES → CLINIC → NOTICE → EXIT"
-diagram: |
-  ```mermaid\nmindmap\n  root((Mental harm duty — Pt XI))\n    Classify (pure\
-    \ vs consequential)\n    Statutory filters (ss 72–73)\n    Recognised illness (ss\
-    \ 74–75 + evidence)\n    Contexts (rescuers, secondary victims, workplace)\n   \
-    \ Procedural handoff (s 64 notice, s 48 breach, s 51 causation)\n```\n
+front: "Mental harm duties (Vic): how do Wrongs Act Pt XI filters apply to rescuers,\n\
+  \  secondary victims, and workplace trauma?\n"
+back: 'Issue.
+
+  When does the Wrongs Act 1958 (Vic) Pt Part XI (XI) impose a duty to avoid mental
+  harm in rescuers, secondary victims, or workplace trauma scenarios?
+
+  __HD__0__
+
+  Part XI applies only to negligence (s 72(1)).
+
+  intentional torts and breach of statutory duty sit outside.
+
+  “Mental harm” covers both pure and consequential mental harm (s 72).
+
+  __HD__1__
+
+  1) Classify harm: pure (no physical injury) or consequential (flowing from physical
+  injury).
+
+  2) For pure harm, apply s 72(1) normal-fortitude foreseeability with s 72(2) factors.
+
+  3) Check s 73(1)-(2) scene/relationship limits for shock-based claims.
+
+  confirm derivative bar s 73(3).
+
+  __HD__2__
+
+  Filters: Tame/Annetts 211 Commonwealth Law Reports (Commonwealth Law Reports (CLR))
+  317.
+
+  Jaensch v Coffey (1984) 155 CLR 549.
+
+  Gifford v Strang Patrick (2003) 214 CLR 269.
+
+  Rescuers: Wicks 241 CLR 60.
+
+  __HD__3__
+
+  Wrongs Act 1958 (Vic) Pt XI (ss 72-75, s 64).
+
+  Wrongs Act ss 48, 51 (for breach/causation after duty).
+
+  Evidence Act 1995 (Cth) s 79.
+
+  __HD__4__
+
+  Treating “normal fortitude” as a plaintiff attribute rather than a foreseeability
+  filter.
+
+  Reintroducing discredited “sudden shock” control mechanisms apart from the s 72(2)
+  factors.
+
+  __HD__5__
+
+  Only plaintiffs who satisfy Pt XI filters and prove a recognised psychiatric illness
+  engage a duty.
+
+  consequential harm then follows ordinary negligence analysis, and pure mental harm
+  hinges on statutory compliance before breach/cause/damages.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Jaensch v Coffey (1984) 155 CLR 549, 558 (Deane J).
+
+  __HD__3__
+
+  Primary: Wrongs Act 1958 (Vic) s 48.
+
+  __HD__4__
+
+  - Don’t exceed statutory thresholds/caps
+
+  - Don’t conflate consequential with pure economic loss
+
+  - Apply coherence checks before extending duties.
+
+  '
+why_it_matters: "MLS exams often pivot on Pt XI. Fast classification, s 72–75 pinpoints,\n\
+  \  expert evidence, and Wrongs Act s 64 notice show statutory literacy and keep\
+  \ you\n  from reviving outlawed “shock” tests. The scaffold balances the floodgates\
+  \ concern\n  with compensation for foreseeable psychiatric injury.\n\n  \n"
+mnemonic: CLASSIFY → FILTER → FACTORS → AUTHORITIES → CLINIC → NOTICE → EXIT
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Treating normal fortitude as a plaintiff attribute instead of a foreseeability test."
-  - "Requiring sudden shock or direct perception beyond s 72(2)."
-  - "Skipping s 73(1)–(2) scene/relationship limits."
-  - "Extending Koehler to class-risk workplaces despite Kozarov."
-  - "Claiming damages without a recognised psychiatric illness or expert diagnosis."
+- Treating normal fortitude as a plaintiff attribute instead of a foreseeability test.
+- Requiring sudden shock or direct perception beyond s 72(2).
+- Skipping s 73(1)–(2) scene/relationship limits.
+- Extending Koehler to class-risk workplaces despite Kozarov.
+- Claiming damages without a recognised psychiatric illness or expert diagnosis.
 anchors:
   cases:
-    - "Jaensch v Coffey (1984) 155 CLR 549, 558 (Deane J)"
-    - "Tame v New South Wales; Annetts v Australian Stations Pty Ltd [2002] HCA 35; (2002) 211 CLR 317, 379 [185]"
-  statutes: []
+  - Jaensch v Coffey (1984) 155 CLR 549, 558 (Deane J)
+  - Tame v New South Wales; Annetts v Australian Stations Pty Ltd [2002] HCA 35; (2002)
+    211 CLR 317, 379 [185]
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
+  - Wrongs Act 1958 (Vic) s 26
+  - Wrongs Act 1958 (Vic) s 51
   notes: []
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+keywords:
+- torts
+- victoria
+- duty
+- breach
+- causation
+- damages

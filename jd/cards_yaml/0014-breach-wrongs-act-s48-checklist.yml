@@ -1,44 +1,107 @@
-front: |
-  Breach — Wrongs Act s 48 checklist: how do you triage foreseeability, precautions,
-    and statutory overlays under exam pressure?
-back: |
-  Issue.
-  How should you triage Wrongs Act s 48 breach analysis under exam pressure so that foreseeability, precautions, and statutory overlays are covered systematically?
-  
-  Rule.
-  Wrongs Act 1958 (Vic) s 48 requires: (i) a foreseeable risk known or ought to have been known; (ii) the risk must be “not insignificant”; (iii) a reasonable person would have taken precautions; (iv) s 48(2) factors (probability, seriousness, burden, social utility) must be weighed contextually (Wyong v
-  
-  Application scaffold.
-  1) Frame the risk precisely at the relevant ex ante time-slice (Tapp v ABCRA [2022] HCA 11 at [127]–[129], [150]–[156]). 2) Apply s 48(1): confirm foreseeability and “not insignificant” status (exclude far-fetched/fanciful).
-  
-  Authorities map.
-  Core framework: Wyong v Shirt; Wrongs Act s 48. Risk/time-slice discipline: Tapp [2022] HCA 11. Public authority/recreation: Vairy (2005) 223 CLR 422; Romeo (1998) 192 CLR 431; Cole (2004) 217 CLR 469.
-  
-  Statutory hook.
-  Wrongs Act 1958 (Vic) ss 48–56; ACL (Cth) s 60; CCA 2010 (Cth) s 139A.
-  
-  Tripwires.
-  Treating foreseeability as breach without proving “not insignificant”. Reframing the risk with hindsight instead of ex ante evidence. Treating “obvious risk” as absolute when D heightened the danger.
-  
-  Conclusion.
-  A disciplined s 48 checklist demands precise risk characterisation, contextual balancing of the s 48(2) factors, and explicit handling of statutory overlays; only then can you justify whether additional precautions were required or reasonable
-  
-why_it_matters: |
-  MLS scripts lose marks when they cite Shirt but ignore Victorian
-    statutory rails. This checklist forces you to apply s 48(1)–(2) methodically, integrate
-    public authority and recreational authorities, and separate breach from causation
-    while acknowledging ACL/CCA overlays—hallmarks of an H1 answer under pressure.
-  
-    
-mnemonic: "F-NIS → CALC → s49 → WARN/OBVIOUS → CAUSATION → ACL/CCA"
-diagram: |
-  ```mermaid\nmindmap\n  root((Wrongs Act s 48 Checklist))\n    Threshold\
-    \ (s 48(1))\n      Foreseeable risk\n      Not insignificant\n      Ex ante time-slice\
-    \ (Tapp)\n    Calculus (s 48(2))\n      Probability\n      Seriousness\n      Burden\n\
-    \      Social utility\n    Statutory overlays\n      s 49 anti-hindsight\n     \
-    \ s 50 warnings\n      ss 53–56 obvious/inherent risk & volenti\n    Parallel regimes\n\
-    \      ACL s 60 duties\n      CCA s 139A waiver limits\n    Causation handoff\n\
-    \      s 51 scope/factual causation\n      s 52 burden on plaintiff\n```\n
+front: "Breach — Wrongs Act s 48 checklist: how do you triage foreseeability, precautions,\n\
+  \  and statutory overlays under exam pressure?\n"
+back: 'Issue.
+
+  How should you triage Wrongs Act s 48 breach analysis under exam pressure so that
+  foreseeability, precautions, and statutory overlays are covered systematically?
+
+  __HD__0__
+
+  Wrongs Act 1958 (Vic) s 48 requires: (i) a foreseeable risk known or ought to have
+  been known.
+
+  (ii) the risk must be “not insignificant”.
+
+  (iii) a reasonable person would have taken precautions.
+
+  (iv) s 48(2) factors (probability, seriousness, burden, social utility) must be
+  weighed contextually (Wyong v Application scaffold.
+
+  1) Frame the risk precisely at the relevant ex ante time-slice (Tapp v Australian
+  Broadcasting Corporation Act (ABCRA) [2022] HCA 11 at [127]-[129], [150]-[156]).
+
+  2) Apply s 48(1): confirm foreseeability and “not insignificant” status (exclude
+  far-fetched/fanciful).
+
+  __HD__1__
+
+  Core framework: Wyong v Shirt.
+
+  Wrongs Act s 48.
+
+  Risk/time-slice discipline: Tapp [2022] HCA 11.
+
+  Public authority/recreation: Vairy (2005) 223 Commonwealth Law Reports (Commonwealth
+  Law Reports (CLR)) 422.
+
+  Romeo (1998) 192 CLR 431.
+
+  Cole (2004) 217 CLR 469.
+
+  __HD__2__
+
+  Wrongs Act 1958 (Vic) ss 48-56.
+
+  Australian Consumer Law (Australian Consumer Law (ACL)) (Cth) s 60.
+
+  Competition and Consumer Act 2010 (Cth) (Competition and Consumer Act (CCA)) 2010
+  (Cth) s 139A.
+
+  __HD__3__
+
+  Treating foreseeability as breach without proving “not insignificant”.
+
+  Reframing the risk with hindsight instead of ex ante evidence.
+
+  Treating “obvious risk” as absolute when D heightened the danger.
+
+  __HD__4__
+
+  A disciplined s 48 checklist demands precise risk characterisation, contextual balancing
+  of the s 48(2) factors, and explicit handling of statutory overlays.
+
+  only then can you justify whether additional precautions were required or reasonable.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Sullivan v Moody (2001) 207 CLR 562.
+
+  '
+why_it_matters: "MLS scripts lose marks when they cite Shirt but ignore Victorian\n\
+  \  statutory rails. This checklist forces you to apply s 48(1)–(2) methodically,\
+  \ integrate\n  public authority and recreational authorities, and separate breach\
+  \ from causation\n  while acknowledging ACL/CCA overlays—hallmarks of an H1 answer\
+  \ under pressure.\n\n  \n"
+mnemonic: F-NIS → CALC → s49 → WARN/OBVIOUS → CAUSATION → ACL/CCA
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Treating foreseeability as sufficient without satisfying the “not insignificant” test."
-anchors: {}
+- Treating foreseeability as sufficient without satisfying the “not insignificant”
+  test.
+- Don’t exceed statutory thresholds/caps
+- Don’t conflate consequential with pure economic loss
+anchors:
+  cases:
+  - Sullivan v Moody (2001) 207 CLR 562
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
+  - Wrongs Act 1958 (Vic) s 26
+  - Wrongs Act 1958 (Vic) s 51
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+keywords:
+- torts
+- victoria
+- duty
+- breach
+- causation
+- damages

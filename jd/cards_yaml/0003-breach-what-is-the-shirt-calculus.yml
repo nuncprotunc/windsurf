@@ -1,53 +1,121 @@
-front: "How do you apply the Shirt calculus to determine breach in negligence?"
-back: |
-  Issue.
-  Identify when a defendant falls below the reasonable-response standard under Wrongs Act 1958 (Vic) s 48 once duty is already established.
-  
+front: How do you apply the Shirt calculus to determine breach in negligence?
+back: 'Issue.
+
+  Identify when a defendant falls below the reasonable-response standard under Wrongs
+  Act 1958 (Vic) s 48 once duty is already established.
+
   Rule.
-  The Shirt calculus asks whether a reasonable person would have taken precautions by weighing: (1) foreseeability (not far‑fetched or fanciful) (Chapman v Hearse (1961) 106 CLR 112, 121; s 48(1)(a)); (2) not insignificant risk (s 48(1)(b)); (3) probability and seriousness of harm; (4) burden of precautions; and (5)
-  
-  Application scaffold.
-  1) Frame the specific risk without hindsight (s 49). 2) Establish foreseeability and “not insignificant” risk (s 48(1)(a)–(b)). 3) Evaluate s 48(2)(a)–(d): probability, seriousness, burden, social utility — cite fact anchors (public authority, recreation, vulnerable plaintiff).
-  
+
+  The Shirt calculus asks whether a reasonable person would have taken precautions
+  by weighing: (1) foreseeability (not far‑fetched or fanciful) (Chapman v Hearse
+  (1961) 106 Commonwealth Law Reports (Commonwealth Law Reports (CLR)) 112.
+
+  121.
+
+  s 48(1)(a)).
+
+  (2) not insignificant risk (s 48(1)(b)).
+
+  (3) probability and seriousness of harm.
+
+  (4) burden of precautions.
+
+  and (5) Application scaffold.
+
+  1) Frame the specific risk without hindsight (s 49).
+
+  2) Establish foreseeability and “not insignificant” risk (s 48(1)(a)-(b)).
+
+  3) Evaluate s 48(2)(a)-(d): probability, seriousness, burden, social utility .
+
+  cite fact anchors (public authority, recreation, vulnerable plaintiff).
+
   Authorities map.
-  Threshold and balancing: Wyong v Shirt 146 CLR 40, 47–48; Wrongs Act s 48(1)–(2). Foreseeability: Chapman 106 CLR 112, 121; Vairy 223 CLR 422.
-  
+
+  Threshold and balancing: Wyong v Shirt 146 CLR 40, 47-48.
+
+  Wrongs Act s 48(1)-(2).
+
+  Foreseeability: Chapman 106 CLR 112, 121.
+
+  Vairy 223 CLR 422.
+
   Statutory hook.
-  Wrongs Act 1958 (Vic) ss 48–49, 51.
-  
+
+  Wrongs Act 1958 (Vic) ss 48-49, 51.
+
   Tripwires.
-  
+
   Conclusion.
-  Breach is established only if the s 48 balance shows a reasonable person would have taken additional precautions; keep causation and CN in their own steps.
-  
-why_it_matters: |
-  This is the core exam scaffold for breach. Starting at s 48(1) forces
-    precise risk identification and the “not insignificant” screen; s 48(2) then structures
-    a proportional response to probability, seriousness, burden, and social utility,
-    with s 49–56 guardrails. Separating breach from causation (s 51) and CN earns method
-    marks.
-  
-    
-mnemonic: "F.P.B.S. – Foreseeability, Probability, Burden, Social utility"
-diagram: |
-  ```mermaid\nmindmap\n  root((Shirt calculus — s 48))\n    Risk framing (no\
-    \ hindsight)\n    Balance factors (probability vs seriousness vs burden)\n    Statutory\
-    \ overlays (ss 49–56)\n    Proof strategy (evidence & inferences)\n    Defences\
-    \ interface (volenti / CN handoff)\n```\n
+
+  Breach is established only if the s 48 balance shows a reasonable person would have
+  taken additional precautions.
+
+  keep causation and contributory negligence (CN) in their own steps.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Wyong Shire Council v Shirt (1980) 146 CLR 40, 47–48 (Mason J).
+
+  __HD__3__
+
+  Primary: Wrongs Act 1958 (Vic) s 48.
+
+  __HD__4__
+
+  - Don’t exceed statutory thresholds/caps
+
+  - Don’t conflate consequential with pure economic loss
+
+  - Apply coherence checks before extending duties.
+
+  __HD__5__
+
+  Tie the analysis back to the pleadings and the available remedies/defences.
+
+  '
+why_it_matters: "This is the core exam scaffold for breach. Starting at s 48(1) forces\n\
+  \  precise risk identification and the “not insignificant” screen; s 48(2) then\
+  \ structures\n  a proportional response to probability, seriousness, burden, and\
+  \ social utility,\n  with s 49–56 guardrails. Separating breach from causation (s\
+  \ 51) and CN earns method\n  marks.\n\n  \n"
+mnemonic: F.P.B.S. – Foreseeability, Probability, Burden, Social utility
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Treating foreseeability alone as breach without proving “not insignificant” (s 48(1))."
-  - "Framing the risk with hindsight rather than ex ante (s 49 guardrail)."
-  - "Reducing s 48(2) to a checklist instead of a balancing exercise."
-  - "Over‑relying on “obvious risk” where D’s operations created the hazard."
-  - "Collapsing breach with causation instead of applying s 51 separately."
+- Treating foreseeability alone as breach without proving “not insignificant” (s 48(1)).
+- Framing the risk with hindsight rather than ex ante (s 49 guardrail).
+- Reducing s 48(2) to a checklist instead of a balancing exercise.
+- Over‑relying on “obvious risk” where D’s operations created the hazard.
+- Collapsing breach with causation instead of applying s 51 separately.
 anchors:
   cases:
-    - "Wyong Shire Council v Shirt (1980) 146 CLR 40, 47–48 (Mason J)"
-    - "Chapman v Hearse (1961) 106 CLR 112, 121 (Windeyer J)"
-    - "Vairy v Wyong Shire Council [2005] HCA 62; (2005) 223 CLR 422"
-    - "Brodie v Singleton Shire Council (2001) 206 CLR 512"
-    - "Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182, 189 [23]"
-    - "Podrebersek v Australian Iron & Steel Pty Ltd (1985) 59 ALJR 492, 494"
-    - "Bolton v Stone [1951] AC 850, 860 (HL) — UK nuance: illustrates acceptable residual risk"
-  statutes: []
+  - Wyong Shire Council v Shirt (1980) 146 CLR 40, 47–48 (Mason J)
+  - Chapman v Hearse (1961) 106 CLR 112, 121 (Windeyer J)
+  - Vairy v Wyong Shire Council [2005] HCA 62; (2005) 223 CLR 422
+  - Brodie v Singleton Shire Council (2001) 206 CLR 512
+  - Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182, 189 [23]
+  - Podrebersek v Australian Iron & Steel Pty Ltd (1985) 59 ALJR 492, 494
+  - 'Bolton v Stone [1951] AC 850, 860 (HL) — UK nuance: illustrates acceptable residual
+    risk'
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
   notes: []
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+keywords:
+- torts
+- victoria
+- duty
+- breach
+- causation
+- damages

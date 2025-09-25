@@ -1,75 +1,128 @@
-front: "What factors determine whether interference is unreasonable in private nuisance?"
-back: |
-  Issue.
-  Which factors decide if interference with land use is unreasonable in private nuisance, and how do Victorian statutory overlays inform that balance?
-  
-  Rule.
-  Unreasonableness is multi-factorial: sensitivity (only ordinary users protected: Robinson v Kilvert (1889) 41 Ch D 88, 96 (CA)); locality (character of neighbourhood: Sturges v Bridgman (1879) 11 Ch D 852, 865 (CA), planning permits relevant); duration/frequency (persistent interference more actionable: Munro v Southern Dairies [1955] VLR 332, 336)
-  
-  Application scaffold.
-  1) Identify occupier status and interference (noise, odour, physical damage). 2) Apply the factors: sensitivity, locality, duration/frequency, utility, malice, type of harm; cite Hargrave/Fennell/Pullen for Australian context. 3) Examine statutory authority or planning approvals (Wrongs Act 1958 (Vic) pt XII ss 83–85; EPA licences).
-  
-  Authorities map.
-  Core factors: Robinson v Kilvert 41 Ch D 88, 96; Sturges v Bridgman 11 Ch D 852, 865; Munro [1955] VLR 332, 336; Bamford v Turnley 122 ER 25, 32–33; Hollywood Silver Fox Farm
-  
-  Statutory hook.
-  Wrongs Act 1958 (Vic) pt XII ss 83–85; Supreme Court Act 1986 (Vic) s 38; Environment Protection Act 2017 (Vic) pt 5.3; Charter of Human Rights and Responsibilities Act 2006
-  
-  Tripwires.
-  Conflating nuisance with trespass. Assuming public benefit excuses nuisance. Treating exceptional sensitivity as actionable. Ignoring statutory authority or planning approvals. Ordering blanket injunctions without Shelfer proportionality.
-  
-  Conclusion.
-  Argue unreasonableness by weighing the factors, then integrate statutory authorisations and tailored remedies; ensure Australian apex authority anchors your analysis.
-  
-why_it_matters: "Private nuisance fact patterns hinge on articulating the multi-factor balance and remedies. Bringing in Hargrave, Fennell, Pullen plus Wrongs Act pt XII, EPA overlays, and Shelfer reasoning shows MLS examiners you can integrate doctrine, statute and policy."
-mnemonic: "SLURDMT: Sensitivity → Locality → Utility → Remedies → Duration → Malice → Type"
-diagram: |
-  ```mermaid
-  mindmap
-    root((Private nuisance — unreasonableness))
-      Core factors (sensitivity/locality/duration)
-      Conduct context (utility, malice, harm type)
-      Statutory overlays (Wrongs Act, EPA, Charter)
-      Remedies (injunction, damages, abatement)
-      Defences & prescription
-  ```
+front: What factors determine whether interference is unreasonable in private nuisance?
+back: 'Issue.
+
+  Which factors decide if interference with land use is unreasonable in private nuisance,
+  and how do Victorian statutory overlays inform that balance?
+
+  __HD__0__
+
+  Unreasonableness is multi-factorial: sensitivity (only ordinary users protected:
+  Robinson v Kilvert (1889) 41 Ch D 88, 96 (CA)).
+
+  locality (character of neighbourhood: Sturges v Bridgman (1879) 11 Ch D 852, 865
+  (CA), planning permits relevant).
+
+  duration/frequency (persistent interference more actionable: Munro v Southern Dairies
+  [1955] Victorian Law Reports (Victorian Law Reports (VLR)) 332, 336) Application
+  scaffold.
+
+  1) Identify occupier status and interference (noise, odour, physical damage).
+
+  2) Apply the factors: sensitivity, locality, duration/frequency, utility, malice,
+  type of harm.
+
+  cite Hargrave/Fennell/Pullen for Australian context.
+
+  3) Examine statutory authority or planning approvals (Wrongs Act 1958 (Vic) pt XII
+  ss 83-85.
+
+  Environment Protection Authority (EPA) licences).
+
+  __HD__1__
+
+  Core factors: Robinson v Kilvert 41 Ch D 88, 96.
+
+  Sturges v Bridgman 11 Ch D 852, 865.
+
+  Munro [1955] VLR 332, 336.
+
+  Bamford v Turnley 122 English Reports (ER) 25, 32-33.
+
+  Hollywood Silver Fox Farm Statutory hook.
+
+  Wrongs Act 1958 (Vic) pt XII ss 83-85.
+
+  Supreme Court Act 1986 (Vic) s 38.
+
+  Environment Protection Act 2017 (Vic) pt 5.3.
+
+  Charter of Human Rights and Responsibilities Act 2006 Tripwires.
+
+  Conflating nuisance with trespass.
+
+  Assuming public benefit excuses nuisance.
+
+  Treating exceptional sensitivity as actionable.
+
+  Ignoring statutory authority or planning approvals.
+
+  Ordering blanket injunctions without Shelfer proportionality.
+
+  __HD__2__
+
+  Argue unreasonableness by weighing the factors, then integrate statutory authorisations
+  and tailored remedies.
+
+  ensure Australian apex authority anchors your analysis.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Robinson v Kilvert (1889) 41 Ch D 88, 96 (CA).
+
+  '
+why_it_matters: Private nuisance fact patterns hinge on articulating the multi-factor
+  balance and remedies. Bringing in Hargrave, Fennell, Pullen plus Wrongs Act pt XII,
+  EPA overlays, and Shelfer reasoning shows MLS examiners you can integrate doctrine,
+  statute and policy.
+mnemonic: 'SLURDMT: Sensitivity → Locality → Utility → Remedies → Duration → Malice
+  → Type'
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Conflating private nuisance with trespass (direct interference)."
-  - "Assuming public benefit excuses nuisance."
-  - "Treating extraordinary sensitivity as actionable."
-  - "Ignoring Wrongs Act pt XII statutory authority or planning approvals."
+- Conflating private nuisance with trespass (direct interference).
+- Assuming public benefit excuses nuisance.
+- Treating extraordinary sensitivity as actionable.
+- Ignoring Wrongs Act pt XII statutory authority or planning approvals.
 anchors:
   cases:
-    - "Robinson v Kilvert (1889) 41 Ch D 88, 96 (CA)"
-    - "Sturges v Bridgman (1879) 11 Ch D 852, 865 (CA)"
-    - "Munro v Southern Dairies Ltd [1955] VLR 332, 336 (VSC)"
-    - "Bamford v Turnley (1862) 122 ER 25, 32–33"
-    - "Hollywood Silver Fox Farm Ltd v Emmett [1936] 2 KB 468, 476 (CA)"
-    - "Sedleigh-Denfield v O'Callaghan [1940] AC 880, 903 (HL)"
-    - "Bone v Seale [1975] 1 WLR 797, 804 (CA)"
-    - "Hargrave v Goldman (1963) 110 CLR 40, 66–67"
+  - Robinson v Kilvert (1889) 41 Ch D 88, 96 (CA)
+  - Sturges v Bridgman (1879) 11 Ch D 852, 865 (CA)
+  - Munro v Southern Dairies Ltd [1955] VLR 332, 336 (VSC)
+  - Bamford v Turnley (1862) 122 ER 25, 32–33
+  - Hollywood Silver Fox Farm Ltd v Emmett [1936] 2 KB 468, 476 (CA)
+  - Sedleigh-Denfield v O'Callaghan [1940] AC 880, 903 (HL)
+  - Bone v Seale [1975] 1 WLR 797, 804 (CA)
+  - Hargrave v Goldman (1963) 110 CLR 40, 66–67
   statutes: []
   notes: []
 keywords:
-  - "private-nuisance"
-  - "unreasonableness-factors"
-  - "locality"
-  - "sensitivity"
-  - "duration-frequency"
-  - "utility-vs-harm"
-  - "malice"
-  - "statutory-authority"
-  - "nuisance-remedies"
-  - "environmental-overlays"
-reading_level: "Plain English (JD)"
+- private-nuisance
+- unreasonableness-factors
+- locality
+- sensitivity
+- duration-frequency
+- utility-vs-harm
+- malice
+- statutory-authority
+- nuisance-remedies
+- environmental-overlays
+reading_level: Plain English (JD)
 tags:
-  - "LAWS50025 - Torts"
-  - "Nuisance"
-  - "Exam_Fundamentals"
-  - "MLS_H1"
+- LAWS50025 - Torts
+- Nuisance
+- Exam_Fundamentals
+- MLS_H1
 _lint_notes:
-  - "issue_contextualised"
-  - "diagram_conceptual_branches"
-  - "statutory_hook_listed"
-  - "anchors_normalised"
-  - "keywords_trimmed_<=10"
+- issue_contextualised
+- diagram_conceptual_branches
+- statutory_hook_listed
+- anchors_normalised
+- keywords_trimmed_<=10

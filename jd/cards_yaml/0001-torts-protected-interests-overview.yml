@@ -1,54 +1,142 @@
-front: |
-  Protected interests in tort: identify and apply injury, property, and pure
-    economic loss?
-back: |
-  Issue.
-  Classify the claimant’s protected interest so correct Victorian framework and statutes anchor the answer before breach or remedy.
-  
+front: "Protected interests in tort: identify and apply injury, property, and pure\n\
+  \  economic loss?\n"
+back: 'Issue.
+
+  Classify the claimant’s protected interest so correct Victorian framework and statutes
+  anchor the answer before breach or remedy.
+
   Rule.
-  Personal injury uses negligence/intentional scaffolds with material-risk warnings (Rogers v Whitaker) and a foreseeability floor (Chapman v Hearse). Property turns on exclusive possession and direct interference (Entick) with remoteness kept to reasonable foreseeability (Wagon Mound (No 1) — persuasive).
-  
+
+  Personal injury uses negligence/intentional scaffolds with material-risk warnings
+  (Rogers v Whitaker) and a foreseeability floor (Chapman v Hearse).
+
+  Property turns on exclusive possession and direct interference (Entick) with remoteness
+  kept to reasonable foreseeability (Wagon Mound (No 1) .
+
+  persuasive).
+
   Application scaffold.
-  1) Name the factual interest and flag any overlap or consequential loss. 2) Apply the tailored test: injury — duty/breach plus mental-harm gates; property — possession, directness, nuisance reasonableness, remedies; economic — salient features and coherence.
-  
+
+  1) Name the factual interest and flag any overlap or consequential loss.
+
+  2) Apply the tailored test: injury .
+
+  duty/breach plus mental-harm gates.
+
+  property .
+
+  possession, directness, nuisance reasonableness, remedies.
+
+  economic .
+
+  salient features and coherence.
+
   Authorities map.
-  Injury: Rogers; Chapman. Property: Entick; Wagon Mound (No 1). Economic: Perre; Woolcock; Brookfield; Caltex Oil. Coherence: Sullivan v Moody; Modbury.
-  
+
+  Injury: Rogers.
+
+  Chapman.
+
+  Property: Entick.
+
+  Wagon Mound (No 1).
+
+  Economic: Perre.
+
+  Woolcock.
+
+  Brookfield.
+
+  Caltex Oil.
+
+  Coherence: Sullivan v Moody.
+
+  Modbury.
+
   Statutory hook.
-  Wrongs Act 1958 (Vic) ss 26, 48, 51, 54; Pt VBA (incl s 28G threshold).
-  
+
+  Wrongs Act 1958 (Vic) ss 26, 48, 51, 54.
+
+  Pt Victorian statutory damages part (Pt Victorian Bar Association (VBA)) (incl s
+  28G threshold).
+
   Tripwires.
-  Avoid collapsing consequential into pure economic loss, skipping Pt VBA thresholds, turning salient features into rigid elements, or ignoring mental-harm filters when reframing injury.
-  
+
+  Avoid collapsing consequential into pure economic loss, skipping Pt VBA thresholds,
+  turning salient features into rigid elements, or ignoring mental-harm filters when
+  reframing injury.
+
   Conclusion.
-  Lead with the interest classification, then integrate doctrine, statutes, and coherence so the remedy flows logically.
-  
-why_it_matters: |
-  Under exam pressure, triage by interest controls the entire answer.
-    Injury uses negligence/intentional‑tort scaffolds and Pt VBA caps; property turns
-    on possession, directness, and remoteness; economic loss demands salient features
-    and coherence. Sequencing avoids conflation and earns method marks. Pinpointing
-    Wrongs Act s 48/s 51 and leading authorities signals accuracy and statutory literacy.
-  
-    
-mnemonic: "3Ps → People, Property, Pure economic"
-diagram: |
-  ```mermaid\nmindmap\n  root((Protected interests — Vic))\n    Injury framework\
-    \ (duty/breach/Pt VBA)\n    Property framework (possession/directness/remedies)\n\
-    \    Pure economic loss (salient features)\n    Statutory overlays (ss 48, 51, Pt\
-    \ VBA)\n    Policy coherence (Sullivan v Moody / Modbury)\n```\n
+
+  Lead with the interest classification, then integrate doctrine, statutes, and coherence
+  so the remedy flows logically.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Rogers v Whitaker (1992) 175 Commonwealth Law Reports (CLR) 479, 490–493.
+
+  Lead: Rogers v Whitaker (1992) 175 CLR 479, 490–493.
+
+  __HD__3__
+
+  Primary: Wrongs Act 1958 (Vic) s 48.
+
+  __HD__4__
+
+  - Don’t exceed statutory thresholds/caps
+
+  - Don’t conflate consequential with pure economic loss
+
+  - Apply coherence checks before extending duties.
+
+  __HD__5__
+
+  Tie the analysis back to the pleadings and the available remedies/defences.
+
+  '
+why_it_matters: "Under exam pressure, triage by interest controls the entire answer.\n\
+  \  Injury uses negligence/intentional‑tort scaffolds and Pt VBA caps; property turns\n\
+  \  on possession, directness, and remoteness; economic loss demands salient features\n\
+  \  and coherence. Sequencing avoids conflation and earns method marks. Pinpointing\n\
+  \  Wrongs Act s 48/s 51 and leading authorities signals accuracy and statutory literacy.\n\
+  \n  \n"
+mnemonic: 3Ps → People, Property, Pure economic
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Conflating pure economic with consequential loss"
-  - "Ignoring Pt VBA thresholds/caps"
-  - "Treating salient features as elements"
-  - "Overlooking psychiatric-harm coherence limits"
-  - "Assuming relational loss is recoverable"
-  - "Treating trespass as ownership protection"
+- Conflating pure economic with consequential loss
+- Ignoring Pt VBA thresholds/caps
+- Treating salient features as elements
+- Overlooking psychiatric-harm coherence limits
+- Assuming relational loss is recoverable
+- Treating trespass as ownership protection
 anchors:
   cases:
-    - "Rogers v Whitaker (1992) 175 CLR 479, 490–493"
-    - "Chapman v Hearse (1961) 106 CLR 112"
-    - "Entick v Carrington (1765) 19 St Tr 1029"
-    - "Overseas Tankship (UK) Ltd v Morts Dock & Engineering Co Ltd (Wagon Mound No 1) [1961] AC 388 (PC) — persuasive remoteness nuance"
-  statutes: []
+  - Rogers v Whitaker (1992) 175 CLR 479, 490–493
+  - Chapman v Hearse (1961) 106 CLR 112
+  - Entick v Carrington (1765) 19 St Tr 1029
+  - Overseas Tankship (UK) Ltd v Morts Dock & Engineering Co Ltd (Wagon Mound No 1)
+    [1961] AC 388 (PC) — persuasive remoteness nuance
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
+  - Wrongs Act 1958 (Vic) s 26
+  - Wrongs Act 1958 (Vic) s 51
   notes: []
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+keywords:
+- torts
+- victoria
+- duty
+- breach
+- causation
+- damages

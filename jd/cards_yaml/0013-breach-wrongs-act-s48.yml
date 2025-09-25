@@ -1,46 +1,114 @@
-front: |
-  Breach (Vic): how do you run Wrongs Act s 48 against Shirt when testing reasonable
-    precautions?
-back: |
-  Issue.
-  Did D breach the Victorian negligence standard by failing to take reasonable precautions against a not-insignificant risk under Wrongs Act s 48?
-  
+front: "Breach (Vic): how do you run Wrongs Act s 48 against Shirt when testing reasonable\n\
+  \  precautions?\n"
+back: 'Issue.
+
+  Did D breach the Victorian negligence standard by failing to take reasonable precautions
+  against a not-insignificant risk under Wrongs Act s 48?
+
   Rule.
-  Wrongs Act 1958 (Vic) s 48(1)–(2) codifies (but does not replace) the Shirt calculus.
-  
+
+  Wrongs Act 1958 (Vic) s 48(1)-(2) codifies (but does not replace) the Shirt calculus.
+
   Application scaffold.
-  1) Classify the specific risk at the correct level of generality. 2) Test foreseeability and “not insignificant” threshold using information available when action was required. 3) Apply s 48(2)(a)–(d): probability (time-slice per Tapp), seriousness of harm, burden/cost of precautions, social utility or competing responsibilities.
-  
+
+  1) Classify the specific risk at the correct level of generality.
+
+  2) Test foreseeability and “not insignificant” threshold using information available
+  when action was required.
+
+  3) Apply s 48(2)(a)-(d): probability (time-slice per Tapp), seriousness of harm,
+  burden/cost of precautions, social utility or competing responsibilities.
+
   Authorities map.
-  Framework: Wyong v Shirt (1980) 146 CLR 40; Wrongs Act s 48.
-  
+
+  Framework: Wyong v Shirt (1980) 146 Commonwealth Law Reports (Commonwealth Law Reports
+  (CLR)) 40.
+
+  Wrongs Act s 48.
+
   Statutory hook.
-  Wrongs Act 1958 (Vic) ss 48–56; ACL (Cth) s 60; CCA 2010 (Cth) s 139A.
-  
+
+  Wrongs Act 1958 (Vic) ss 48-56.
+
+  Australian Consumer Law (Australian Consumer Law (ACL)) (Cth) s 60.
+
+  Competition and Consumer Act 2010 (Cth) (Competition and Consumer Act (CCA)) 2010
+  (Cth) s 139A.
+
   Tripwires.
-  Treating foreseeability alone as breach without proving “not insignificant” risk. Mischaracterising the risk (too broad/narrow). Arguing breach via hindsight contrary to s 49. Treating “obvious risk” as absolute where D created/exacerbated danger.
-  
+
+  Treating foreseeability alone as breach without proving “not insignificant” risk.
+
+  Mischaracterising the risk (too broad/narrow).
+
+  Arguing breach via hindsight contrary to s 49.
+
+  Treating “obvious risk” as absolute where D created/exacerbated danger.
+
   Conclusion.
-  Breach is established only if, on the information reasonably available, a prudent actor would have taken cost-justified precautions under the s 48 calculus; hindsight, obvious risk rhetoric or resource pressures do not excuse avoidable
-  
-why_it_matters: |
-  Exams target candidates who recite Shirt without engaging the Victorian
-    statute. Leading with s 48(1) forces precise risk definition and the “not insignificant”
-    filter. Weighing s 48(2) factors against contextual authorities (public land, recreation,
-    crowd control) shows disciplined statutory reasoning, keeps breach distinct from
-    duty and causation, and demonstrates you can integrate ACL/CCA overlays.
-  
-    
-mnemonic: "F-NIS → CALC → CONTEXT → STATUTES → CONCLUDE"
-diagram: |
-  ```mermaid\nmindmap\n  root((Wrongs Act s 48 Breach))\n    Threshold\n \
-    \     Foreseeable + not insignificant risk\n      Reasonable precautions question\n\
-    \    Calculus factors\n      Probability (s 48(2)(a))\n      Seriousness (s 48(2)(b))\n\
-    \      Burden (s 48(2)(c))\n      Social utility (s 48(2)(d))\n    Context overlays\n\
-    \      Public authority resources\n      Recreational risk characterisation\n  \
-    \    Obvious/inherent risk (ss 53–56)\n    Statutory guardrails\n      s 49 anti-hindsight\n\
-    \      s 50 warnings\n      s 51–s 52 causation link\n    Parallel regimes\n   \
-    \   ACL s 60 duties\n      CCA s 139A waiver limits\n```\n
+
+  Breach is established only if, on the information reasonably available, a prudent
+  actor would have taken cost-justified precautions under the s 48 calculus.
+
+  hindsight, obvious risk rhetoric or resource pressures do not excuse avoidable.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Sullivan v Moody (2001) 207 CLR 562.
+
+  __HD__3__
+
+  Primary: Wrongs Act 1958 (Vic) s 48.
+
+  __HD__4__
+
+  - Don’t exceed statutory thresholds/caps
+
+  - Don’t conflate consequential with pure economic loss
+
+  - Apply coherence checks before extending duties.
+
+  __HD__5__
+
+  Tie the analysis back to the pleadings and the available remedies/defences.
+
+  '
+why_it_matters: "Exams target candidates who recite Shirt without engaging the Victorian\n\
+  \  statute. Leading with s 48(1) forces precise risk definition and the “not insignificant”\n\
+  \  filter. Weighing s 48(2) factors against contextual authorities (public land,\
+  \ recreation,\n  crowd control) shows disciplined statutory reasoning, keeps breach\
+  \ distinct from\n  duty and causation, and demonstrates you can integrate ACL/CCA\
+  \ overlays.\n\n  \n"
+mnemonic: F-NIS → CALC → CONTEXT → STATUTES → CONCLUDE
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Treating foreseeability as sufficient without satisfying the “not insignificant” test."
-anchors: {}
+- Treating foreseeability as sufficient without satisfying the “not insignificant”
+  test.
+- Don’t exceed statutory thresholds/caps
+- Don’t conflate consequential with pure economic loss
+anchors:
+  cases:
+  - Sullivan v Moody (2001) 207 CLR 562
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
+  - Wrongs Act 1958 (Vic) s 26
+  - Wrongs Act 1958 (Vic) s 51
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+keywords:
+- torts
+- victoria
+- duty
+- breach
+- causation
+- damages

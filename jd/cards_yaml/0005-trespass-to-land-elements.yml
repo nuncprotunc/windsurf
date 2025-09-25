@@ -1,50 +1,115 @@
-front: "What are the elements of trespass to land at common law?"
-back: |
-  Issue.
-  Identify the elements of trespass to land and the limited statutory overlays that may modify remedies or duties in Victorian problems.
-  
-  Rule.
-  Trespass to land is actionable per se: (1) direct interference with land in the plaintiff''s possession; (2) voluntary act (no intent to trespass required, but act must be willing); (3) absence of lawful justification (consent, licence, statutory authority).
-  
-  Application scaffold.
-  1) Confirm the plaintiff had possession (actual or constructive). 2) Identify a direct physical intrusion or remaining after consent revocation (Kuru). 3) Test voluntariness; reject mistake as a defence (Plenty).
-  
-  Authorities map.
-  Elements: Kuru 236 CLR 1, 19 [43]; Plenty 171 CLR 635, 647; Halliday 155 CLR 1, 7-8. Necessity/defences: Southwark LBC v Williams [1971] Ch 734 (UK nuance on necessity limits).
-  
-  Statutory hook.
-  Wrongs Act 1958 (Vic) Pt IIA (ss 14A-14B); Competition and Consumer Act 2010 (Cth) sch 2 (ACL) ss 18, 20-22.
-  
-  Tripwires.
-  Conflating trespass with nuisance (indirect interference). Forgetting it is actionable per se. Treating implied licence as irrevocable. Assuming mistake negates liability. Ignoring injunctions/mesne profits for continuing trespass.
-  
-  Conclusion.
-  Once possession, direct interference, voluntariness, and lack of justification are proven, trespass is made out; address defences and tailor remedies, flagging statutory overlays where relevant.
-  
-why_it_matters: |
-  Trespass is an MLS staple because it is actionable per se. Examiners
-    expect you to separate possession, direct interference, voluntariness and justification
-    quickly, then move to defences and remedies. Referencing Kuru, Plenty and Halliday,
-    plus Wrongs Act Pt IIA overlays, demonstrates doctrinal precision and statutory
-    literacy.
-  
-    
-mnemonic: "D-I-W-R (Direct, Intention, Without justification, Remedies)"
-diagram: |
-  ```mermaid\nmindmap\n  root((Trespass to land — Vic))\n    Possession (who\
-    \ can sue)\n    Direct interference & voluntariness\n    Lawful justification /\
-    \ defences\n    Remedies & mesne profits\n    Statutory overlays (Pt IIA / ACL)\n\
-    ```\n
+front: What are the elements of trespass to land at common law?
+back: 'Issue.
+
+  Identify the elements of trespass to land and the limited statutory overlays that
+  may modify remedies or duties in Victorian problems.
+
+  __HD__0__
+
+  Trespass to land is actionable per se: (1) direct interference with land in the
+  plaintiff''''s possession.
+
+  (2) voluntary act (no intent to trespass required, but act must be willing).
+
+  (3) absence of lawful justification (consent, licence, statutory authority).
+
+  __HD__1__
+
+  1) Confirm the plaintiff had possession (actual or constructive).
+
+  2) Identify a direct physical intrusion or remaining after consent revocation (Kuru).
+
+  3) Test voluntariness.
+
+  reject mistake as a defence (Plenty).
+
+  __HD__2__
+
+  Elements: Kuru 236 Commonwealth Law Reports (Commonwealth Law Reports (CLR)) 1,
+  19 [43].
+
+  Plenty 171 CLR 635, 647.
+
+  Halliday 155 CLR 1, 7-8.
+
+  Necessity/defences: Southwark LBC v Williams [1971] Ch 734 (United Kingdom (UK)
+  nuance on necessity limits).
+
+  __HD__3__
+
+  Wrongs Act 1958 (Vic) Pt Part Part IIA (IIA) (ss 14A-14B).
+
+  Competition and Consumer Act 2010 (Cth) sch 2 (Australian Consumer Law (Australian
+  Consumer Law (ACL))) ss 18, 20-22.
+
+  __HD__4__
+
+  Conflating trespass with nuisance (indirect interference).
+
+  Forgetting it is actionable per se.
+
+  Treating implied licence as irrevocable.
+
+  Assuming mistake negates liability.
+
+  Ignoring injunctions/mesne profits for continuing trespass.
+
+  __HD__5__
+
+  Once possession, direct interference, voluntariness, and lack of justification are
+  proven, trespass is made out.
+
+  address defences and tailor remedies, flagging statutory overlays where relevant.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Kuru v State of NSW [2008] HCA 26; (2008) 236 CLR 1, 19 [43].
+
+  __HD__3__
+
+  Primary: Wrongs Act 1958 (Vic) s 48.
+
+  '
+why_it_matters: "Trespass is an MLS staple because it is actionable per se. Examiners\n\
+  \  expect you to separate possession, direct interference, voluntariness and justification\n\
+  \  quickly, then move to defences and remedies. Referencing Kuru, Plenty and Halliday,\n\
+  \  plus Wrongs Act Pt IIA overlays, demonstrates doctrinal precision and statutory\n\
+  \  literacy.\n\n  \n"
+mnemonic: D-I-W-R (Direct, Intention, Without justification, Remedies)
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Conflating trespass with nuisance (indirect interference)."
-  - "Forgetting trespass is actionable per se (no damage proof needed)."
-  - "Treating implied licence as irrevocable or general."
-  - "Assuming mistake or good faith is a defence."
+- Conflating trespass with nuisance (indirect interference).
+- Forgetting trespass is actionable per se (no damage proof needed).
+- Treating implied licence as irrevocable or general.
+- Assuming mistake or good faith is a defence.
 anchors:
   cases:
-    - "Kuru v State of NSW [2008] HCA 26; (2008) 236 CLR 1, 19 [43]"
-    - "Plenty v Dillon [1991] HCA 5; (1991) 171 CLR 635, 647"
-    - "Halliday v Nevill [1984] HCA 80; (1984) 155 CLR 1, 7–8"
-    - "Australian Broadcasting Corporation v Lenah Game Meats Pty Ltd [2001] HCA 63; (2001) 208 CLR 199, 224 [40]"
-  statutes: []
+  - Kuru v State of NSW [2008] HCA 26; (2008) 236 CLR 1, 19 [43]
+  - Plenty v Dillon [1991] HCA 5; (1991) 171 CLR 635, 647
+  - Halliday v Nevill [1984] HCA 80; (1984) 155 CLR 1, 7–8
+  - Australian Broadcasting Corporation v Lenah Game Meats Pty Ltd [2001] HCA 63;
+    (2001) 208 CLR 199, 224 [40]
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
+  - Wrongs Act 1958 (Vic) s 26
+  - Wrongs Act 1958 (Vic) s 51
   notes: []
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+keywords:
+- torts
+- victoria
+- duty
+- breach
+- causation
+- damages

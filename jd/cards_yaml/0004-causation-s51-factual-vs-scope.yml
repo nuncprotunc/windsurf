@@ -1,48 +1,108 @@
-front: "Causation (Vic): how do you run factual causation and scope under ss 51–52?"
-back: |
-  Issue.
-  Has D’s negligence factually caused P’s harm and should liability extend to that harm under the Wrongs Act without collapsing factual causation into scope of liability?
-  
+front: 'Causation (Vic): how do you run factual causation and scope under ss 51–52?'
+back: 'Issue.
+
+  Has D’s negligence factually caused P’s harm and should liability extend to that
+  harm under the Wrongs Act without collapsing factual causation into scope of liability?
+
   Rule.
-  Wrongs Act 1958 (Vic) s 51(1)(a) keeps factual causation as a “necessary condition” test and excludes self-serving hypotheticals unless against interest (s 51(3)–(4)).
-  
+
+  Wrongs Act 1958 (Vic) s 51(1)(a) keeps factual causation as a “necessary condition”
+  test and excludes self-serving hypotheticals unless against interest (s 51(3)-(4)).
+
   Application scaffold.
-  1) Factual causation — deploy but-for, build circumstantial inference (Strong v Woolworths (2012) 246 CLR 182, [5]–[9]), reject mere possibilities (Amaca v Booth (2011) 246 CLR 36, [49]).
-  
+
+  1) Factual causation .
+
+  deploy but-for, build circumstantial inference (Strong v Woolworths (2012) 246 Commonwealth
+  Law Reports (Commonwealth Law Reports (CLR)) 182, [5]-[9]), reject mere possibilities
+  (Amaca v Booth (2011) 246 CLR 36, [49]).
+
   Authorities map.
-  But-for and inference: Strong 246 CLR 182, [5]–[9]; Amaca 246 CLR 36, [49]; March 171 CLR 506. Exceptional restraint: Adeels 239 CLR 420, [52]–[57].
-  
+
+  But-for and inference: Strong 246 CLR 182, [5]-[9].
+
+  Amaca 246 CLR 36, [49].
+
+  March 171 CLR 506.
+
+  Exceptional restraint: Adeels 239 CLR 420, [52]-[57].
+
   Statutory hook.
-  
+
   Tripwires.
-  Treating s 51(2) as a generic “material increase in risk” escape hatch. Collapsing factual causation and scope. Assuming third-party crime stays within scope without proving but-for.
-  
+
+  Treating s 51(2) as a generic “material increase in risk” escape hatch.
+
+  Collapsing factual causation and scope.
+
+  Assuming third-party crime stays within scope without proving but-for.
+
   Conclusion.
-  Prove factual causation under s 51(1)(a) (resisting s 51(2) shortcuts), then decide scope under s 52 with authority-driven analysis before turning to apportionment or defences.
-  
-why_it_matters: |
-  Examiners penalise conflation. Sequencing s 51(1)(a) but-for → s
-    51(2) exceptional → s 52 scope lets you deploy the right authority at each node.
-    Strong/Amaca show how to build or resist inference; Adeels limits shortcuts; Wallace
-    frames the normative limb; Mahony and Haber keep you honest on medical negligence
-    and suicide.
-  
-    
-mnemonic: |
-  B-E-S-I: But-for (s 51(1)(a)) → Exceptional? (s 51(2)) → Scope (s 52) →
-    Interveners & policy
-diagram: |
-  ```mermaid\nmindmap\n  root((Causation — ss 51–52))\n    But-for engine\
-    \ (s 51(1)(a))\n    Exceptional cases check (s 51(2))\n    Scope questions (s 52\
-    \ & Wallace)\n    Interveners playbook (Mahony/Haber/Yates)\n    Evidence & proof\
-    \ (s 140, apportionment later)\n```\n
+
+  Prove factual causation under s 51(1)(a) (resisting s 51(2) shortcuts), then decide
+  scope under s 52 with authority-driven analysis before turning to apportionment
+  or defences.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem [2009]
+  HCA 48; (2009) 239 CLR 420, [52]–[57].
+
+  __HD__3__
+
+  Primary: Wrongs Act 1958 (Vic) s 48.
+
+  __HD__4__
+
+  - Don’t exceed statutory thresholds/caps
+
+  - Don’t conflate consequential with pure economic loss
+
+  - Apply coherence checks before extending duties.
+
+  __HD__5__
+
+  Tie the analysis back to the pleadings and the available remedies/defences.
+
+  '
+why_it_matters: "Examiners penalise conflation. Sequencing s 51(1)(a) but-for → s\n\
+  \  51(2) exceptional → s 52 scope lets you deploy the right authority at each node.\n\
+  \  Strong/Amaca show how to build or resist inference; Adeels limits shortcuts;\
+  \ Wallace\n  frames the normative limb; Mahony and Haber keep you honest on medical\
+  \ negligence\n  and suicide.\n\n  \n"
+mnemonic: "B-E-S-I: But-for (s 51(1)(a)) → Exceptional? (s 51(2)) → Scope (s 52) →\n\
+  \  Interveners & policy\n"
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Treating s 51(2) as a generic “material increase in risk” escape hatch."
-  - "Collapsing factual causation and scope."
-  - "Assuming third-party crime stays within scope without proving but-for."
-  - "Treating routine medical negligence as breaking the chain contrary to Mahony."
+- Treating s 51(2) as a generic “material increase in risk” escape hatch.
+- Collapsing factual causation and scope.
+- Assuming third-party crime stays within scope without proving but-for.
+- Treating routine medical negligence as breaking the chain contrary to Mahony.
 anchors:
   cases:
-    - "Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem [2009] HCA 48; (2009) 239 CLR 420, [52]–[57]"
-  statutes: []
+  - Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem [2009] HCA
+    48; (2009) 239 CLR 420, [52]–[57]
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
+  - Wrongs Act 1958 (Vic) s 26
+  - Wrongs Act 1958 (Vic) s 51
   notes: []
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+keywords:
+- torts
+- victoria
+- duty
+- breach
+- causation
+- damages

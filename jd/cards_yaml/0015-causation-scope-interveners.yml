@@ -1,56 +1,118 @@
-front: |
-  Causation (Vic): how do ss 51–52 handle factual causation, exceptional cases,
-    and scope when interveners appear?
-back: |
-  Issue.
-  Has D’s negligence factually caused P’s harm and should liability extend to that harm under Wrongs Act ss 51–52 when intervening acts arise?
-  
-  Rule.
-  Wrongs Act 1958 (Vic) s 51(1)(a) demands a “necessary condition” (but-for) link. Section 51(2) permits departure only in exceptional cases grounded in established principles. Section 52 requires the court—on P’s onus—to decide whether responsibility should extend, weighing justice and policy.
-  
-  Application scaffold.
-  1) Run but-for: deploy circumstantial inference where needed (Strong v Woolworths (2012) 246 CLR 182 at [5]–[9]); exclude bare possibility (Amaca v Booth (2011) 246 CLR 36 at [49]); remember loss-of-chance limits (Tabet v Gett (2010) 240 CLR 537 at [111]–[112]).
-  
-  Authorities map.
-  Factual causation: Strong (2012) 246 CLR 182; Amaca (2011) 246 CLR 36; Tabet (2010) 240 CLR 537. Exceptional case caution: Adeels Palace (2009) 239 CLR 420.
-  
-  Statutory hook.
-  Wrongs Act 1958 (Vic) ss 51–52, s 56; Evidence Act 1995 (Cth) s 140; Evidence Act 2008 (Vic) s 140.
-  
-  Tripwires.
-  Treating s 51(2) as a material-risk escape hatch. Collapsing factual causation with scope contrary to Wallace. Assuming third-party crime satisfies causation without proof of but-for.
-  
-  Conclusion.
-  Causation succeeds only where but-for links (or narrow exceptional principles) are proved and scope analysis—including interveners and policy—supports extending liability; absent that, confine or reject recovery.
-  
-why_it_matters: |
-  Exams punish conflating causation limbs. Sequencing ss 51–52 lets
-    you cite the right authorities, rebut “material risk” shortcuts, and analyse interveners
-    with Wallace’s normative lens—hallmarks of H1 reasoning.
-  
-    
-mnemonic: "B-E-S-I → But-for → Exceptional? → Scope → Interveners"
-diagram: |
-  ```mermaid\nmindmap\n  root((Wrongs Act ss 51–52))\n    Factual causation\
-    \ (s 51(1)(a))\n      Necessary condition\n      Circumstantial inference (Strong)\n\
-    \      Evidence Act s 140\n    Exceptional case (s 51(2))\n      Established principles\
-    \ only\n      Adeels bars risk shortcuts\n    Scope (s 52)\n      Normative appropriateness\
-    \ (Wallace)\n      Plaintiff onus\n    Interveners\n      Third-party crime\n  \
-    \    Medical treatment (Mahony)\n      Suicide / impaired volition (Haber)\n   \
-    \   Plaintiff misconduct (Yates)\n    After causation\n      Apportionment (s 56)\n\
-    ```\n
+front: "Causation (Vic): how do ss 51–52 handle factual causation, exceptional cases,\n\
+  \  and scope when interveners appear?\n"
+back: 'Issue.
+
+  Has D’s negligence factually caused P’s harm and should liability extend to that
+  harm under Wrongs Act ss 51-52 when intervening acts arise?
+
+  __HD__0__
+
+  Wrongs Act 1958 (Vic) s 51(1)(a) demands a “necessary condition” (but-for) link.
+
+  Section 51(2) permits departure only in exceptional cases grounded in established
+  principles.
+
+  Section 52 requires the court.
+
+  on P’s onus.
+
+  to decide whether responsibility should extend, weighing justice and policy.
+
+  __HD__1__
+
+  1) Run but-for: deploy circumstantial inference where needed (Strong v Woolworths
+  (2012) 246 Commonwealth Law Reports (Commonwealth Law Reports (CLR)) 182 at [5]-[9]).
+
+  exclude bare possibility (Amaca v Booth (2011) 246 CLR 36 at [49]).
+
+  remember loss-of-chance limits (Tabet v Gett (2010) 240 CLR 537 at [111]-[112]).
+
+  __HD__2__
+
+  Factual causation: Strong (2012) 246 CLR 182.
+
+  Amaca (2011) 246 CLR 36.
+
+  Tabet (2010) 240 CLR 537.
+
+  Exceptional case caution: Adeels Palace (2009) 239 CLR 420.
+
+  __HD__3__
+
+  Wrongs Act 1958 (Vic) ss 51-52, s 56.
+
+  Evidence Act 1995 (Cth) s 140.
+
+  Evidence Act 2008 (Vic) s 140.
+
+  __HD__4__
+
+  Treating s 51(2) as a material-risk escape hatch.
+
+  Collapsing factual causation with scope contrary to Wallace.
+
+  Assuming third-party crime satisfies causation without proof of but-for.
+
+  __HD__5__
+
+  Causation succeeds only where but-for links (or narrow exceptional principles) are
+  proved and scope analysis.
+
+  including interveners and policy.
+
+  supports extending liability.
+
+  absent that, confine or reject recovery.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182 at [5]–[9].
+
+  __HD__3__
+
+  Primary: Wrongs Act 1958 (Vic) s 48.
+
+  '
+why_it_matters: "Exams punish conflating causation limbs. Sequencing ss 51–52 lets\n\
+  \  you cite the right authorities, rebut “material risk” shortcuts, and analyse\
+  \ interveners\n  with Wallace’s normative lens—hallmarks of H1 reasoning.\n\n  \n"
+mnemonic: B-E-S-I → But-for → Exceptional? → Scope → Interveners
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Treating s 51(2) as a material-risk shortcut."
-  - "Collapsing factual causation with scope contrary to Wallace."
-  - "Assuming third-party crime satisfies causation absent but-for proof."
-  - "Letting routine medical negligence break the chain contra Mahony."
-  - "Declaring suicide wholly voluntary despite impaired volition."
-  - "Ignoring P’s onus and Evidence Act s 140 calibration."
+- Treating s 51(2) as a material-risk shortcut.
+- Collapsing factual causation with scope contrary to Wallace.
+- Assuming third-party crime satisfies causation absent but-for proof.
+- Letting routine medical negligence break the chain contra Mahony.
+- Declaring suicide wholly voluntary despite impaired volition.
+- Ignoring P’s onus and Evidence Act s 140 calibration.
 anchors:
   cases:
-    - "Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182 at [5]–[9]"
-    - "Amaca Pty Ltd v Booth [2011] HCA 53; (2011) 246 CLR 36 at [49]"
-    - "Tabet v Gett [2010] HCA 12; (2010) 240 CLR 537 at [111]–[112]"
-    - "Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem [2009] HCA 48; (2009) 239 CLR 420 at [52]–[57]"
-  statutes: []
+  - Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182 at [5]–[9]
+  - Amaca Pty Ltd v Booth [2011] HCA 53; (2011) 246 CLR 36 at [49]
+  - Tabet v Gett [2010] HCA 12; (2010) 240 CLR 537 at [111]–[112]
+  - Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem [2009] HCA
+    48; (2009) 239 CLR 420 at [52]–[57]
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
+  - Wrongs Act 1958 (Vic) s 26
+  - Wrongs Act 1958 (Vic) s 51
   notes: []
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+keywords:
+- torts
+- victoria
+- duty
+- breach
+- causation
+- damages

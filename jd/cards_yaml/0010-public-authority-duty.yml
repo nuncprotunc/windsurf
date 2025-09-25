@@ -1,51 +1,116 @@
 id: 8
-front: "When will a Victorian court recognise a negligence duty against a public authority?"
-back: |
-  Issue.
+front: When will a Victorian court recognise a negligence duty against a public authority?
+back: 'Issue.
+
   When a plaintiff sues a public authority, should a private-law duty of care be recognised?
-  
+
   Rule.
-  Foreseeability is necessary but not sufficient; duty turns on salient features filtered through institutional and statutory coherence.
-  
+
+  Foreseeability is necessary but not sufficient.
+
+  duty turns on salient features filtered through institutional and statutory coherence.
+
   Application scaffold.
-  **Statutory coherence gate**: identify the governing scheme’s purpose and preconditions (e.g. detention powers) — Hunter and New England Local Health District v McKenna [2014] HCA 44; (2014) 253 CLR 270, 279–284 [17]–[40]; Stuart v Kirkland-Veenstra [2009] HCA 15; (2009) 237 CLR 215, 230–236 [43]–[81].
-  
+
+  **Statutory coherence gate**: identify the governing scheme’s purpose and preconditions
+  (e.g.
+
+  detention powers) .
+
+  Hunter and New England Local Health District v McKenna [2014] HCA 44.
+
+  (2014) 253 Commonwealth Law Reports (Commonwealth Law Reports (CLR)) 270, 279-284
+  [17]-[40].
+
+  Stuart v Kirkland-Veenstra [2009] HCA 15.
+
+  (2009) 237 CLR 215, 230-236 [43]-[81].
+
   Authorities map.
-  
+
   Statutory hook.
-  
+
   Tripwires.
-  
+
   Conclusion.
-  There is no general governmental rescue duty; recognition is most likely where the authority undertook a specific operational function, exercised control with knowledge in circumstances of reliance or vulnerability, and coherence with statutory purpose
-  
-why_it_matters: |
-  MLS examiners regularly frame hypotheticals around councils, police
-    or health agencies whose regulatory or discretionary decisions allegedly caused
-    harm. This card supplies an IRAC gateway: (1) coherence with the empowering legislation
-    (including Mental Health Act 1986 (Vic) s 10(1), Migration Act 1958 (Cth) s 198AHA,
-    and Charter ss 7, 21, 38), (2) policy versus operational character (filtering, not
-    immunity), (3) salient features (control, knowledge, reliance, vulnerability, indeterminacy),
-    and (4) Wrongs Act 1958 (Vic) Pt XII (ss 79, 82–85). It prevents frequent errors:
-    assuming a standing governmental duty to prevent third-party harm, conflating merits
-    review with negligence, or ignoring resource-allocation provisions and rights-balancing
-    obligations. The pinpoint citations let you drop authoritative lines from Sullivan
-    v Moody, Barclay Oysters, McKenna, Kirkland-Veenstra, Pyrenees, Crimmins and Brodie
-    under time pressure. Policy tensions—coherence, separation of powers, defensive
-    administration, and Charter compliance—are foregrounded so you can argue why recognising
-    (or denying) duty aligns with statutory purpose. Use the mnemonic and mindmap to
-    triage: if statutory coherence fails, stop; if the conduct is purely policy, duty
-    is unlikely; if operational with strong salient features and no statutory conflict,
-    press on to breach, causation, damage and defences.
-  
-    
-mnemonic: "POLAR-CC → Policy vs Operational → Legal coherence → Assumption/Responsibility"
+
+  There is no general governmental rescue duty.
+
+  recognition is most likely where the authority undertook a specific operational
+  function, exercised control with knowledge in circumstances of reliance or vulnerability,
+  and coherence with statutory purpose Exam tip: sequence issues -> rules -> application
+  -> conclusion; cite a lead authority and the operative section.
+
+  __HD__0__
+
+  State the governing test and any operative statutory provisions.
+
+  __HD__1__
+
+  Apply issues -> rules -> apply to facts -> conclude.
+
+  __HD__2__
+
+  Lead: Sullivan v Moody (2001) 207 CLR 562.
+
+  __HD__3__
+
+  Primary: Wrongs Act 1958 (Vic) s 48.
+
+  __HD__4__
+
+  - Don’t exceed statutory thresholds/caps
+
+  - Don’t conflate consequential with pure economic loss
+
+  - Apply coherence checks before extending duties.
+
+  __HD__5__
+
+  Tie the analysis back to the pleadings and the available remedies/defences.
+
+  '
+why_it_matters: "MLS examiners regularly frame hypotheticals around councils, police\n\
+  \  or health agencies whose regulatory or discretionary decisions allegedly caused\n\
+  \  harm. This card supplies an IRAC gateway: (1) coherence with the empowering legislation\n\
+  \  (including Mental Health Act 1986 (Vic) s 10(1), Migration Act 1958 (Cth) s 198AHA,\n\
+  \  and Charter ss 7, 21, 38), (2) policy versus operational character (filtering,\
+  \ not\n  immunity), (3) salient features (control, knowledge, reliance, vulnerability,\
+  \ indeterminacy),\n  and (4) Wrongs Act 1958 (Vic) Pt XII (ss 79, 82–85). It prevents\
+  \ frequent errors:\n  assuming a standing governmental duty to prevent third-party\
+  \ harm, conflating merits\n  review with negligence, or ignoring resource-allocation\
+  \ provisions and rights-balancing\n  obligations. The pinpoint citations let you\
+  \ drop authoritative lines from Sullivan\n  v Moody, Barclay Oysters, McKenna, Kirkland-Veenstra,\
+  \ Pyrenees, Crimmins and Brodie\n  under time pressure. Policy tensions—coherence,\
+  \ separation of powers, defensive\n  administration, and Charter compliance—are\
+  \ foregrounded so you can argue why recognising\n  (or denying) duty aligns with\
+  \ statutory purpose. Use the mnemonic and mindmap to\n  triage: if statutory coherence\
+  \ fails, stop; if the conduct is purely policy, duty\n  is unlikely; if operational\
+  \ with strong salient features and no statutory conflict,\n  press on to breach,\
+  \ causation, damage and defences.\n\n  \n"
+mnemonic: POLAR-CC → Policy vs Operational → Legal coherence → Assumption/Responsibility
 → Reliance/Vulnerability → Control → Charter & causation handoff: {}
-diagram: |
-  ```mermaid\nmindmap\n  root((Public authority duty))\n    Statutory coherence\
-    \ (Wrongs Act ss 83–85)\n    Policy vs operational (Heyman / Barclay Oysters)\n\
-    \    Salient features (control, vulnerability, reliance)\n    Rights overlays (Charter,\
-    \ MHA s 351, ACL s 18)\n    Breach handoff (s 48 / s 51)\n```\n
+diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
+  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-  - "Treating the policy/operational distinction as automatic immunity instead of a duty filter."
-anchors: {}
+- Treating the policy/operational distinction as automatic immunity instead of a duty
+  filter.
+- Don’t exceed statutory thresholds/caps
+- Don’t conflate consequential with pure economic loss
+anchors:
+  cases:
+  - Sullivan v Moody (2001) 207 CLR 562
+  statutes:
+  - Wrongs Act 1958 (Vic) s 48
+  - Wrongs Act 1958 (Vic) s 26
+  - Wrongs Act 1958 (Vic) s 51
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+keywords:
+- torts
+- victoria
+- duty
+- breach
+- causation
+- damages
