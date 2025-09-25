@@ -1,119 +1,55 @@
-id: 0018
-front: In a Victorian personal injury problem, how do you (i) clear the Part VBA 'significant
-  injury' gateway for general damages and (ii) distinguish aggravated from exemplary
-  damages while respecting statutory caps?
-source: MLS Torts Reading Guide, Seminars 21-22
-created: '2025-09-25T03:59:10+10:00'
-updated: '2025-09-25T03:59:10+10:00'
-template: tort_damages
-back: 'Issue. Has the plaintiff established eligibility for non-economic loss and
-  ancillary heads of damage under the Wrongs Act 1958 (Vic), and how should aggravated
-  and exemplary damages be characterised and limited?
-
-
-  Rule. Part VBA requires a "significant injury" certificate unless an exception applies.
-  Sections 28LB–28LK prescribe the process; s 28LF defines thresholds (generally >5%
-  WPI for physical injury, extra criteria for psychiatric impairment via s 28LJ).
-  Section 28LC(2)(a) exempts intentional torts done with intent to cause injury, or
-  sexual assault/misconduct, from the gateway. Once through the threshold, Pt VB caps
-  apply: s 28F(2) limits loss of earnings to three times average weekly earnings;
-  s 28G sets the indexed ceiling for non-economic loss with indexation machinery in
-  s 28H and associated Ministerial notices; ss 28IA–28IE govern gratuitous and attendant
-  care. Aggravated damages remain compensatory, enhancing general damages for humiliation
-  or wounded feelings (Uren v John Fairfax (1966) 117 CLR 118, 149–150 (Taylor J);
-  Lamb v Cotogno (1987) 164 CLR 1, 13). Exemplary damages punish contumelious conduct
-  but may be curtailed where the defendant has already been criminally punished (Gray
-  v Motor Accident Commission (1998) 196 CLR 1, 14). The High Court has upheld combined
-  aggravated and exemplary awards against the State for police trespass/assault (State
-  of NSW v Ibbett [2006] HCA 57; (2006) 231 ALR 485, [20]–[21]). Provocation cannot
-  reduce compensatory sums, though it may be relevant to aggravated or exemplary heads
-  (Fontin v Katapodis (1962) 108 CLR 177, 182 (Owen J)). No direct Commonwealth statute
-  regulates the Pt VBA threshold.
-
-
-  Application. Step 1: Identify whether s 28LC(2)(a) applies; if not, verify significant
-  injury via s 28LF (including psychiatric nuances under s 28LJ). Step 2: Compute
-  permissible heads of damage, applying statutory caps. Step 3: Characterize additional
-  damages—aggravated (compensatory) versus exemplary (punitive). Step 4: Consider
-  policy implications and any constraints from case law.
-
-
-  Conclusion. Damages depend first on breaching the Pt VBA gateway, then on meticulous
-  application of statutory caps and proper distinction between compensatory (aggravated)
-  and punitive (exemplary) remedies, mindful of Gray''s restraint.
-
-
+id: 18
+front: "In a Victorian personal injury problem, how do you (i) clear the Part VBA 'significant"
+injury' gateway for general damages and (ii) distinguish aggravated from exemplary: {}
+damages while respecting statutory caps?: {}
+source: "MLS Torts Reading Guide, Seminars 21-22"
+created: "2025-09-25T03:59:10+10:00"
+updated: "2025-09-25T03:59:10+10:00"
+template: "tort_damages"
+back: |
+  Issue.
+  Has the plaintiff established eligibility for non-economic loss and ancillary heads of damage under the Wrongs Act 1958 (Vic), and how should aggravated and exemplary damages be characterised and limited?
+  
+  Rule.
+  Part VBA requires a "significant injury" certificate unless an exception applies. Sections 28LB–28LK prescribe the process; s 28LF defines thresholds (generally >5% WPI for physical injury, extra criteria for psychiatric impairment via s 28LJ).
+  
   Application scaffold.
-
-  TODO: application scaffold. content.
-
-
+  
   Authorities map.
-
-  TODO: authorities map. content.
-
-
+  
   Statutory hook.
-
-  TODO: statutory hook. content.
-
-
+  
   Tripwires.
-
-  TODO: tripwires. content.'
-diagram: "```mermaid\nmindmap\n  root((Damages — Victoria))\n    Pt VBA Threshold\n\
-  \      s 28LC(2)(a) intentional/sexual exception\n      s 28LF significant injury\
-  \ tests\n      s 28LJ psychiatric pathway\n    Caps & Quantification\n      s 28F(2)\
-  \ earnings cap (3× AWE)\n      s 28G non-economic max (indexed)\n      s 28H indexation\
-  \ notices\n      ss 28IA–28IE care services\n    Character & Limits\n      Aggravated\
-  \ = compensatory (Uren; Lamb)\n      Exemplary = punitive (Gray restraint)\n   \
-  \   Ibbett police misconduct example\n      Fontin provocation relevance\n     \
-  \ Insurance affordability rationale\n      Deterrence and punishment aims\n    \
-  \  No Commonwealth overlay noted\n```\n"
-why_it_matters: 'MLS damages questions reward disciplined sequencing. Begin with the
-  Pt VBA gate: cite s 28LC(2)(a) to see if intentional or sexual misconduct bypasses
-  the certificate, otherwise run the s 28LF/LJ metrics. Only after eligibility do
-  you price the claim—loss of earnings cap (s 28F(2)) and the indexed non-economic
-  ceiling (s 28G/s 28H). Answers that recite stale dollar figures lose marks; flag
-  that caps are indexed annually. Distinguish aggravated (compensatory) from exemplary
-  (punitive) using Uren, Lamb and Gray, and note Ibbett to show punitive awards still
-  bite against the State. Mention Fontin to avoid conflating provocation with mitigation
-  of compensatory damages. This scaffold helps you survive time pressure and signals
-  policy awareness around insurance affordability versus claimant vindication.
-
-  '
-mnemonic: 'THRESH→CAP→CHAR→POLICY: Threshold (s 28LC/28LF) → Caps (s 28F; s 28G/H)
-  → Characterise (Aggravated vs Exemplary; Gray) → Policy (insurance vs deterrance).'
+  
+  Conclusion.
+  Damages depend first on breaching the Pt VBA gateway, then on meticulous application of statutory caps and proper distinction between compensatory (aggravated) and punitive (exemplary) remedies, mindful of Gray''s restraint.
+  
+diagram: |
+  ```mermaid\nmindmap\n  root((Damages — Victoria))\n    Pt VBA Threshold\n\
+    \      s 28LC(2)(a) intentional/sexual exception\n      s 28LF significant injury\
+    \ tests\n      s 28LJ psychiatric pathway\n    Caps & Quantification\n      s 28F(2)\
+    \ earnings cap (3× AWE)\n      s 28G non-economic max (indexed)\n      s 28H indexation\
+    \ notices\n      ss 28IA–28IE care services\n    Character & Limits\n      Aggravated\
+    \ = compensatory (Uren; Lamb)\n      Exemplary = punitive (Gray restraint)\n   \
+    \   Ibbett police misconduct example\n      Fontin provocation relevance\n     \
+    \ Insurance affordability rationale\n      Deterrence and punishment aims\n    \
+    \  No Commonwealth overlay noted\n```\n
+why_it_matters: |
+  MLS damages questions reward disciplined sequencing. Begin with the
+    Pt VBA gate: cite s 28LC(2)(a) to see if intentional or sexual misconduct bypasses
+    the certificate, otherwise run the s 28LF/LJ metrics. Only after eligibility do
+    you price the claim—loss of earnings cap (s 28F(2)) and the indexed non-economic
+    ceiling (s 28G/s 28H). Answers that recite stale dollar figures lose marks; flag
+    that caps are indexed annually. Distinguish aggravated (compensatory) from exemplary
+    (punitive) using Uren, Lamb and Gray, and note Ibbett to show punitive awards still
+    bite against the State. Mention Fontin to avoid conflating provocation with mitigation
+    of compensatory damages. This scaffold helps you survive time pressure and signals
+    policy awareness around insurance affordability versus claimant vindication.
+  
+    
+mnemonic: |
+  THRESH→CAP→CHAR→POLICY: Threshold (s 28LC/28LF) → Caps (s 28F; s 28G/H)
+    → Characterise (Aggravated vs Exemplary; Gray) → Policy (insurance vs deterrance).
 tripwires:
-- '**Gateway swap**: Confusing TAC ''serious injury'' with Wrongs Act ''significant
-  injury''.'
-- '**Indexation lapse**: Stating a fixed non-economic cap without noting annual indexation
-  under s 28G/s 28H.'
-- '**Mislabel**: Treating aggravated damages as punitive or double-counting with exemplary.'
-- '**Gray blind spot**: Claiming exemplary damages despite prior criminal punishment
-  of the defendant.'
-- '**Threshold miss**: Forgetting s 28LC(2)(a) removes the significant injury requirement
-  for intentional or sexual misconduct.'
-- '**Provocation slip**: Suggesting provocation reduces compensatory damages contrary
-  to Fontin v Katapodis.'
-anchors:
-  cases:
-  - TODO anchor case 1
-  statutes: []
-  notes: []
-keywords:
-- significant injury
-- Part VBA
-- s 28LC exception
-- s 28F earnings cap
-- s 28G indexation
-- aggravated damages
-- exemplary damages
-- Gray constraint
-- Ibbett police liability
-- Fontin provocation
-reading_level: JD-ready
-tags:
-- LAWS50025 - Torts
-- Exam_Fundamentals
-- MLS_H1
+  - "**Gateway swap**: Confusing TAC ''serious injury'' with Wrongs Act ''significant injury''."
+anchors: {}

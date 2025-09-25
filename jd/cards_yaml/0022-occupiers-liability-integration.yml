@@ -1,120 +1,47 @@
-front: 'Premises injury (Vic): occupiers’ liability (Pt IIA), negligence or trespass?'
-back: 'Issue. What frame governs premises injury in Victoria: occupiers’ liability
-  (Pt IIA), ordinary negligence, or trespass? Note: Original front overflow preserved
-  — “Victorian premises injury: when do you frame the claim as occupiers’ liability
-  under Pt IIA of the Wrongs Act vs ordinary negligence or trespass, and how do you
-  run the integrated duty–breach–causation analysis (including trespassers)?” Rule.
-  Part IIA abolishes entrant categories and imposes a statutory duty: take reasonable
-  care so entrants are not injured by the state of the premises or things done/omitted
-  in relation to that state (Wrongs Act 1958 (Vic) s 14B(3)); otherwise common law
-  continues (s 14B(2)). The HCA confirms ordinary negligence principles govern (Australian
-  Safeway Stores Pty Ltd v Zaluzna (1987) 162 CLR 479, 488; [1987] HCA 7). Duties
-  extend to delivery contractors and activity hazards (Thompson v Woolworths (Q’land)
-  Pty Ltd (2005) 221 CLR 234, [23]–[27]; [2005] HCA 19). Trespassers may still be
-  owed a duty where harm is reasonably foreseeable (Hackshaw v Shaw (1984) 155 CLR
-  614, 654 (Deane J); [1984] HCA 84). Application scaffold. 1) Classify hazard: “state/things
-  done” → apply s 14B(3). 2) Breach: run s 48 (foreseeable, not insignificant, reasonable
-  precautions), with obvious/inherent risk and volenti overlays (ss 53–56). 3) Causation:
-  apply s 51 (factual/scope); in slip cases infer but‑for where inspection systems
-  were absent (Strong v Woolworths (2012) 246 CLR 182, [32]–[34]; [2012] HCA 5). 4)
-  Intentional force by staff → trespass to the person and vicarious liability, not
-  premises condition; trespass to land may supplement remedies. Authorities map. Duty
-  source: Zaluzna 162 CLR 479, 488; s 14B(2)–(3). Contractors/activity hazards: Thompson
-  221 CLR 234, [23]–[27]. Trespassers: Hackshaw 155 CLR 614, 654 (Deane J). Causation
-  inference: Strong 246 CLR 182, [32]–[34]. Statutory hook. Wrongs Act 1958 (Vic)
-  s 14B(2)–(3); s 48; s 51; ss 53–56. Tripwires. Reviving invitee/licensee categories
-  post‑Zaluzna. Treating activity hazards as outside s 14B(3). Ignoring obvious‑risk
-  provisions in breach. Assuming causation without inspection evidence (Strong). Denying
-  any duty to trespassers (Hackshaw). Misframing intentional assaults as premises
-  defects instead of trespass/vicarious liability.
-
-
+front: "Premises injury (Vic): occupiers’ liability (Pt IIA), negligence or trespass?"
+back: |
+  Issue.
+  What frame governs premises injury in Victoria: occupiers’ liability (Pt IIA), ordinary negligence, or trespass?
+  
   Rule.
-
-  TODO: rule. content.
-
-
+  Part IIA abolishes entrant categories and imposes a statutory duty: take reasonable care so entrants are not injured by the state of the premises or things done/omitted in relation to that state (Wrongs Act 1958 (Vic) s 14B(3)); otherwise common law continues (s 14B(2)).
+  
   Application scaffold.
-
-  TODO: application scaffold. content.
-
-
+  1) Classify hazard: “state/things done” → apply s 14B(3). 2) Breach: run s 48 (foreseeable, not insignificant, reasonable precautions), with obvious/inherent risk and volenti overlays (ss 53–56).
+  
   Authorities map.
-
-  TODO: authorities map. content.
-
-
+  Duty source: Zaluzna 162 CLR 479, 488; s 14B(2)–(3). Contractors/activity hazards: Thompson 221 CLR 234, [23]–[27]. Trespassers: Hackshaw 155 CLR 614, 654 (Deane J).
+  
   Statutory hook.
-
-  TODO: statutory hook. content.
-
-
+  Wrongs Act 1958 (Vic) s 14B(2)–(3); s 48; s 51; ss 53–56.
+  
   Tripwires.
-
-  TODO: tripwires. content.
-
-
+  Reviving invitee/licensee categories post‑Zaluzna. Treating activity hazards as outside s 14B(3). Ignoring obvious‑risk provisions in breach. Assuming causation without inspection evidence (Strong). Denying any duty to trespassers (Hackshaw).
+  
   Conclusion.
-
-  TODO: conclusion. content.'
-why_it_matters: 'MLS problems mix premises hazards, activity risks and trespassers.
-  High‑band answers: (i) source the duty in Pt IIA, (ii) use Pt X for breach/causation,
-  (iii) avoid pre‑Zaluzna categories, (iv) use Thompson for activity hazards, (v)
-  use Strong to prove causation, and (vi) pivot to trespass when force, not premises,
-  causes the injury. This sequencing respects statutory integration and saves marks.
-
-  '
-mnemonic: SITE → State (s 14B) → Integrate (ss 48/51/53–56) → Trespassers (Hackshaw)
-  → Evidence (Strong)
-diagram: "```mermaid\nmindmap\n  root((Occupiers – Vic))\n    Issue\n    Rule\n  \
-  \  Application\n    Tripwires\n    Overlaps\n```\n"
+  
+why_it_matters: |
+  MLS problems mix premises hazards, activity risks and trespassers.
+    High‑band answers: (i) source the duty in Pt IIA, (ii) use Pt X for breach/causation,
+    (iii) avoid pre‑Zaluzna categories, (iv) use Thompson for activity hazards, (v)
+    use Strong to prove causation, and (vi) pivot to trespass when force, not premises,
+    causes the injury. This sequencing respects statutory integration and saves marks.
+  
+    
+mnemonic: "SITE → State (s 14B) → Integrate (ss 48/51/53–56) → Trespassers (Hackshaw)"
+→ Evidence (Strong): {}
+diagram: |
+  ```mermaid\nmindmap\n  root((Occupiers – Vic))\n    Issue\n    Rule\n  \
+    \  Application\n    Tripwires\n    Overlaps\n```\n
 tripwires:
-- Reviving invitee/licensee classifications after Zaluzna.
-- Treating activity-related hazards as outside s 14B(3).
-- Ignoring obvious-risk provisions when assessing breach.
-- Assuming causation without addressing inspection evidence (Strong inference).
-- Denying any duty to trespassers contrary to Hackshaw.
-- Framing intentional assaults as premises defects instead of trespass/vicarious liability.
+  - "Reviving invitee/licensee classifications after Zaluzna."
+  - "Treating activity-related hazards as outside s 14B(3)."
+  - "Ignoring obvious-risk provisions when assessing breach."
+  - "Assuming causation without addressing inspection evidence (Strong inference)."
+  - "Denying any duty to trespassers contrary to Hackshaw."
+  - "Framing intentional assaults as premises defects instead of trespass/vicarious liability."
 anchors:
   cases:
-  - Australian Safeway Stores Pty Ltd v Zaluzna [1987] HCA 7; (1987) 162 CLR 479,
-    488
-  - Thompson v Woolworths (Q'land) Pty Ltd [2005] HCA 19; (2005) 221 CLR 234, [23]–[27]
-  - Hackshaw v Shaw [1984] HCA 84; (1984) 155 CLR 614, 654 (Deane J)
-  - Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182, [32]–[34]
-  statutes:
-  - Wrongs Act 1958 (Vic) s 14B(2)–(3)
-  - Wrongs Act 1958 (Vic) s 48
-  - Wrongs Act 1958 (Vic) s 51
-  - Wrongs Act 1958 (Vic) ss 53–56
-  notes:
-  - Original diagram previously listed additional nodes (Zaluzna, Strong, Hackshaw
-    specifics); content is preserved in Authorities map and Statutory hook.
-keywords:
-- occupiers-liability
-- wrongs-act-s-14b
-- negligence-breach
-- causation-s-51
-- obvious-risk
-- zaluzna
-- hackshaw
-- thompson
-- strong
-- trespass
-reading_level: Plain English (JD)
-tags:
-- laws50025 - torts
-- exam_fundamentals
-- mls_h1
-- MLS_H1
-_lint_notes:
-- front_over_30w_fixed_and_overflow_moved_to_issue
-- canonical_headers_added
-- authorities_map_added_with_pinpoints
-- statutory_hook_added
-- diagram_compacted_to_<=12_nodes
-- keywords_hyphenated_<=12
-sources: []
-created: '2025-09-25T06:52:28.510262Z'
-updated: '2025-09-25T07:14:44.253181Z'
-template: concept
+    - "Australian Safeway Stores Pty Ltd v Zaluzna [1987] HCA 7; (1987) 162 CLR 479, 488"
+  statutes: []
+  notes: []

@@ -1,110 +1,86 @@
-front: 'Relational pure economic loss (Vic): when does a duty arise for business shutdowns
-  or third-party property damage?'
-back: 'Issue. Has D assumed a duty to protect P from pure economic loss suffered relationally
-  (e.g., business losses when a utility shuts down or third-party property is damaged)?
-
-
-  Rule. Relational pure economic loss duties are exceptional. Apply the salient-features
-  methodology (Perre v Apand (1999) 198 CLR 180 at 192 [4]–[5], 253 [198]; Caltex
-  Refineries v Stavar [2009] NSWCA 258 at [102]–[103]) as a framework, not a checklist.
-  Key features: (i) reasonable foreseeability; (ii) determinate and known plaintiff/class;
-  (iii) D''s knowledge/control of risk; (iv) P''s vulnerability (capacity to contract/insure/diversify);
-  (v) reliance/assumption of responsibility; (vi) coherence with contract/statute;
-  (vii) avoidance of indeterminate liability. Targeted relational loss is recoverable
-  where D knew of an identifiable plaintiff (Caltex Oil v Dredge "Willemstad" (1976)
-  136 CLR 529 at 556–557). In commercial contexts, vulnerability is decisive: no duty
-  if P could bargain for protection (Woolcock Street Investments v CDG [2004] HCA
-  16; Brookfield Multiplex v Owners SP 61288 [2014] HCA 36). Coherence constraints
-  (Sullivan v Moody [2001] HCA 59 at 580–582 [50]–[52]) and statutory overlays (Wrongs
-  Act 1958 (Vic) Pt IVAA; ACL (Cth) ss 18, 236) must be considered.
-
-
-  Application scaffold. 1) Classify the harm: pure (no physical injury) or consequential.
-  2) Apply salient features test contextually, avoiding a tick-box approach. 3) For
-  pure harm, assess: (a) determinacy of plaintiff/class; (b) D''s knowledge/control;
-  (c) P''s vulnerability (contract/insure/diversify options); (d) coherence with contractual/statutory
-  schemes. 4) Consider statutory overlays (e.g., Pt IVAA apportionment if ACL s 18
-  pleaded). 5) Weigh policy: floodgates v compensating unavoidable loss.
-
-
-  Authorities map. Core framework: Perre v Apand 198 CLR 180; Caltex Refineries v
-  Stavar [2009] NSWCA 258. Commercial vulnerability: Woolcock [2004] HCA 16; Brookfield
-  [2014] HCA 36. Statutory coherence: Sullivan v Moody [2001] HCA 59. Procedural:
-  Wrongs Act 1958 (Vic) Pt IVAA; ACL (Cth) ss 18, 236.
-
-
-  Statutory hook. Wrongs Act 1958 (Vic) Pt IVAA (proportionate liability); ACL (Cth)
-  ss 18, 236 (misleading conduct, damages).
-
-
-  Tripwires. Treating foreseeability as sufficient without analysing salient features.
-  Assuming all utility customers form a determinate class. Ignoring vulnerability
-  analysis in commercial contexts. Overlooking Pt IVAA apportionment with ACL claims.
-  Pleading ACL s 18 without establishing trade/commerce and causation. Ignoring coherence
-  constraints from Sullivan v Moody.
-
-
-  Conclusion. Duty arises only where D knew/ought to have known of a vulnerable, determinate
-  plaintiff/class who could not self-protect, and recognition is coherent with contractual/statutory
-  allocations. Otherwise, courts resist duty to avoid floodgates and incoherence.
-
-  '
-why_it_matters: 'MLS exams test your ability to move beyond foreseeability and apply
-  the salient-features framework rigorously. Strong answers distinguish targeted plaintiffs
-  from diffuse classes, integrate vulnerability analysis, and address statutory overlays
-  (Pt IVAA, ACL). Examiners look for precise application to fact patterns (e.g., utility
-  shutdowns, building defects) and explicit policy reasoning.
-
-  '
-mnemonic: KNOWN-VIC → Known class; Vulnerability; Indeterminacy; Control & knowledge;
-  Coherence (contract/statute); ACL overlay
-diagram: "```mermaid\nmindmap\n  root((Relational PEL Duty))\n    Salient Features\n\
-  \      Determinacy of plaintiff/class\n      D's knowledge/control\n      P's vulnerability\n\
-  \      Coherence with contract/statute\n    Contexts\n      Utility shutdowns\n\
-  \      Building defects\n      Supply chain disruption\n    Statutory Overlays\n\
-  \      Wrongs Act Pt IVAA\n      ACL ss 18, 236\n```\n"
+front: |
+  Relational pure economic loss (Vic): when does a duty arise for business shutdowns
+    or third-party property damage?
+back: |
+  Issue.
+  Has D assumed a duty to protect P from pure economic loss suffered relationally (e.g., business losses when a utility shuts down or third-party property is damaged)?
+  
+  Rule.
+  Relational pure economic loss duties are exceptional. Apply the salient-features methodology (Perre v Apand (1999) 198 CLR 180 at 192 [4]–[5], 253 [198]; Caltex Refineries v Stavar [2009] NSWCA 258 at [102]–[103]) as a framework, not a checklist.
+  
+  Application scaffold.
+  1) Classify the harm: pure (no physical injury) or consequential. 2) Apply salient features test contextually, avoiding a tick-box approach.
+  
+  Authorities map.
+  Core framework: Perre v Apand 198 CLR 180; Caltex Refineries v Stavar [2009] NSWCA 258. Commercial vulnerability: Woolcock [2004] HCA 16; Brookfield [2014] HCA 36. Statutory coherence: Sullivan v Moody [2001] HCA 59.
+  
+  Statutory hook.
+  Wrongs Act 1958 (Vic) Pt IVAA (proportionate liability); ACL (Cth) ss 18, 236 (misleading conduct, damages).
+  
+  Tripwires.
+  Treating foreseeability as sufficient without analysing salient features. Assuming all utility customers form a determinate class. Ignoring vulnerability analysis in commercial contexts. Overlooking Pt IVAA apportionment with ACL claims.
+  
+  Conclusion.
+  Duty arises only where D knew/ought to have known of a vulnerable, determinate plaintiff/class who could not self-protect, and recognition is coherent with contractual/statutory allocations.
+  
+why_it_matters: |
+  MLS exams test your ability to move beyond foreseeability and apply
+    the salient-features framework rigorously. Strong answers distinguish targeted plaintiffs
+    from diffuse classes, integrate vulnerability analysis, and address statutory overlays
+    (Pt IVAA, ACL). Examiners look for precise application to fact patterns (e.g., utility
+    shutdowns, building defects) and explicit policy reasoning.
+  
+    
+mnemonic: "KNOWN-VIC → Known class; Vulnerability; Indeterminacy; Control & knowledge;"
+Coherence (contract/statute); ACL overlay: {}
+diagram: |
+  ```mermaid\nmindmap\n  root((Relational PEL Duty))\n    Salient Features\n\
+    \      Determinacy of plaintiff/class\n      D's knowledge/control\n      P's vulnerability\n\
+    \      Coherence with contract/statute\n    Contexts\n      Utility shutdowns\n\
+    \      Building defects\n      Supply chain disruption\n    Statutory Overlays\n\
+    \      Wrongs Act Pt IVAA\n      ACL ss 18, 236\n```\n
 tripwires:
-- Treating foreseeability as sufficient without salient features analysis.
-- Assuming all utility customers form a determinate class.
-- Ignoring vulnerability analysis in commercial contexts.
-- Overlooking Pt IVAA apportionment with ACL claims.
-- Pleading ACL s 18 without trade/commerce and causation.
-- Ignoring coherence constraints from Sullivan v Moody.
+  - "Treating foreseeability as sufficient without salient features analysis."
+  - "Assuming all utility customers form a determinate class."
+  - "Ignoring vulnerability analysis in commercial contexts."
+  - "Overlooking Pt IVAA apportionment with ACL claims."
+  - "Pleading ACL s 18 without trade/commerce and causation."
+  - "Ignoring coherence constraints from Sullivan v Moody."
 anchors:
   cases:
-  - Perre v Apand Pty Ltd (1999) 198 CLR 180, 192 [4]–[5], 253 [198]
-  - Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [102]–[103]
-  - Caltex Oil (Australia) Pty Ltd v The Dredge 'Willemstad' (1976) 136 CLR 529, 556–557
-  - Woolcock Street Investments Pty Ltd v CDG Pty Ltd [2004] HCA 16
-  - Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36
-  - Sullivan v Moody [2001] HCA 59, 580–582 [50]–[52]
+    - "Perre v Apand Pty Ltd (1999) 198 CLR 180, 192 [4]–[5], 253 [198]"
+    - "Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [102]–[103]"
+    - "Caltex Oil (Australia) Pty Ltd v The Dredge 'Willemstad' (1976) 136 CLR 529, 556–557"
+    - "Woolcock Street Investments Pty Ltd v CDG Pty Ltd [2004] HCA 16"
+    - "Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36"
+    - "Sullivan v Moody [2001] HCA 59, 580–582 [50]–[52]"
   statutes:
-  - Wrongs Act 1958 (Vic) Pt IVAA
-  - Australian Consumer Law (Cth) ss 18, 236
+    - "Wrongs Act 1958 (Vic) Pt IVAA"
+    - "Australian Consumer Law (Cth) ss 18, 236"
   notes: []
 keywords:
-- relational-economic-loss
-- salient-features
-- vulnerability-analysis
-- known-class
-- coherence-constraint
-- proportionate-liability
-- acl-s18
-- wrongs-act-pt-ivaa
-- commercial-context
-- policy-balancing
-reading_level: Plain English (JD)
+  - "relational-economic-loss"
+  - "salient-features"
+  - "vulnerability-analysis"
+  - "known-class"
+  - "coherence-constraint"
+  - "proportionate-liability"
+  - "acl-s18"
+  - "wrongs-act-pt-ivaa"
+  - "commercial-context"
+  - "policy-balancing"
+reading_level: "Plain English (JD)"
 tags:
-- LAWS50025 - Torts
-- Torts
-- Pure_Economic_Loss
-- Relational_Loss
-- Duty
-- Exam_Fundamentals
-- MLS_H1
+  - "LAWS50025 - Torts"
+  - "Torts"
+  - "Pure_Economic_Loss"
+  - "Relational_Loss"
+  - "Duty"
+  - "Exam_Fundamentals"
+  - "MLS_H1"
 _lint_notes:
-- front_questionified_<=30w
-- diagram_conceptual_branches
-- statutory_hook_listed
-- anchors_normalised
-- keywords_trimmed_<=10
+  - "front_questionified_<=30w"
+  - "diagram_conceptual_branches"
+  - "statutory_hook_listed"
+  - "anchors_normalised"
+  - "keywords_trimmed_<=10"

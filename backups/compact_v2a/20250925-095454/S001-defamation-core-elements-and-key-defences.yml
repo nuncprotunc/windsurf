@@ -1,0 +1,142 @@
+front: What are the full core elements, defences and remedies under the Uniform Defamation
+  Acts (Vic) including recent additions and statutory constraints?
+back: 'Defamation law in Victoria under the Defamation Act 2005 (Vic) includes extended
+  elements, defences, remedies and statutory constraints. Apply in sequence and with
+  updated statutory references. **Core Elements & Statutory Constraints** 1. **Defamatory
+  Matter (common law)**: Lowers reputation in eyes of reasonable people (*Sim v Stretch*
+  [1936] 2 All ER 1237 at 1240; *Radio 2UE Sydney Pty Ltd v Chesterton* (2009) 238
+  CLR 460 at 473 [24]). 2. **Identification**: Plaintiff must be reasonably identifiable
+  (*Trkulja v Google LLC* (2018) 263 CLR 149 at 165 [32]). 3. **Publication**: Must
+  be communicated to at least one third party; includes online/search environments
+  (see *Google LLC v Defteros* (2022) 96 ALJR 608 at 621 [55]). 4. **Serious Harm
+  (s 10A)**: Plaintiff must show serious reputational harm or likely serious harm;
+  for corporations, serious financial loss. 5. **Statutory constraints**: s 8 single
+  cause of action for multiple imputations; s 9 limits corporate plaintiffs; s 10
+  (deceased persons) limits actions; s 10AA single publication rule; s 35 caps non‑economic
+  loss; s 37 bars exemplary damages; digital intermediary framework ss 10C–10D. **Defences**
+  - Justification (s 25): substantially true. - Contextual Truth (s 26): extra imputations
+  not causing further harm. - Honest Opinion (s 31): based on proper material, indicated
+  basis. - Qualified Privilege (s 30) and constitutional qualified privilege (Lange).
+  - Innocent Dissemination (s 32) (note: distinct from ss 10C–10D frameworks). - Public
+  Interest (s 29A): publication concerning an issue of public interest with reasonable
+  belief. **Remedies & Procedure** - Damages: non‑economic loss capped (s 35); aggravated
+  damages permitted; exemplary damages barred (s 37). - Injunctions: discretionary
+  including pre‑publication in rare cases (*ABC v O''Neill* (2006) 227 CLR 57 at 76–77
+  [45]). - Concerns Notice and Preconditions: s 12A (concerns notice); s 12B (cannot
+  commence proceedings without concerns notice, subject to exceptions). - Offers to
+  Make Amends: Part 3 timing (s 14) and effect.
+
+
+  Issue.
+
+  TODO: issue. content.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
+why_it_matters: 'This topic is exam‑central: many hypotheticals test updated constraints
+  (serious harm s 10A; single publication s 10AA; concerns notice ss 12A–12B; public
+  interest defence s 29A; digital intermediaries ss 10C–10D). To score H1, apply all
+  relevant provisions systematically and integrate recent High Court authority (Defteros
+  on publication; Trkulja on identification). Policy tensions include Charter s 15
+  (expression) vs reputation; filtering trivial claims via s 10A vs chilling speech.
+  Avoid obsolete references (e.g., triviality s 33 — repealed).
+
+  '
+mnemonic: DIPS-JCHQIP (Defamatory, Identification, Publication, Serious harm + Justification,
+  Contextual truth, Honest opinion, Qualified/Constitutional Privilege, Innocent dissemination,
+  Public interest)
+diagram: "mindmap\nroot((defamation_full_structure))\n  Elements\n    Defamatory Matter\
+  \ (common law)\n    Identification\n    Publication\n    Serious Harm (s 10A)\n\
+  \    Statutory Constraints (s 8, s 9, s 35, s 10AA)\n  Defences\n    Justification\n\
+  \    Contextual Truth\n    Honest Opinion\n    Qualified Privilege\n    Constitutional\
+  \ Privilege\n    Innocent Dissemination\n    Public Interest (s 29A)\n  Remedies\
+  \ & Procedure\n    Damages (cap non‑economic; no exemplary)\n    Injunctions\n \
+  \   Concerns Notice (s 12A) & Preconditions (s 12B)\n    Offers to Make Amends (s\
+  \ 14)\n  Overlaps_Borderlines\n    ACL s 18 (parallel relief)\n    Charter s 15\
+  \ Vic (expression balancing)\n    Digital Intermediaries (ss 10C–10D)\n"
+tripwires:
+- Assuming every hyperlink/excerpt = publication — must check post-Defteros and "editorial
+  control" for search engines.
+- Forgetting corporate plaintiff restriction (s 9).
+- Do not cite s 10 as the source for "defamatory matter" — s 10 concerns deceased
+  persons.
+- Triviality s 33 repealed — do not plead as a defence; serious harm s 10A is the
+  threshold.
+- Do not conflate innocent dissemination (s 32) with digital intermediary frameworks
+  (ss 10C–10D).
+- Misstating that exemplary damages are available.
+- Apply concerns notice/pre‑conditions (ss 12A–12B) before commencing.
+- Mixing up innocent dissemination with qualified privilege.
+anchors:
+  cases:
+  - Google LLC v Defteros (2022) 403 ALR 434; [2022] HCA 27
+  - Harbour Radio Pty Ltd v Trad (2012) 247 CLR 31 at 47 [28] (French CJ, Gummow and
+    Hayne JJ)
+  - Trkulja v Google LLC (2018) 263 CLR 149 at 165 [32] (Kiefel CJ, Bell, Keane, Nettle
+    and Gordon JJ)
+  - ABC v O'Neill (2006) 227 CLR 57 at 76-7 [45] (Gleeson CJ, Gummow, Kirby and Hayne
+    JJ)
+  statutes:
+  - Defamation Act 2005 (Vic) ss 8, 9, 10, 10A, 10AA, 12A, 12B, 25–32, 29A, 35, 37,
+    10C, 10D
+  - Australian Consumer Law, Competition and Consumer Act 2010 (Cth) sch 2 s 18
+  - Charter of Human Rights and Responsibilities Act 2006 (Vic) s 15
+  notes: []
+keywords:
+- defamatory matter
+- identification
+- publication
+- serious harm (s 10A)
+- single publication (s 10AA)
+- concerns notice (s 12A)
+- precondition to suit (s 12B)
+- justification
+- contextual truth
+- honest opinion
+- qualified privilege
+- innocent dissemination
+- public interest defence
+- remedies cap
+- offers to make amends
+- injunctions
+- ACL s 18
+- Charter free expression
+- digital intermediaries (ss 10C–10D)
+reading_level: JD-ready
+tags:
+- torts
+- defamation
+- exam_fundamentals
+- mls_h1
+- MLS_H1
+sources: []
+created: '2025-09-25T06:52:28.521178Z'
+updated: '2025-09-25T07:14:44.263374Z'
+template: concept
