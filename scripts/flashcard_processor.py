@@ -134,30 +134,55 @@ class FlashcardProcessor:
         self.card_dirs = [d for d in CARD_DIRS if d.exists()]
         self._policy_path = (
             Path(__file__).resolve().parent.parent
-            / 'jd'
-            / 'policy'
-            / 'flashcard_policy_consolidated.yml'
+            / "jd"
+            / "policy"
+            / "flashcard_policy_consolidated.yml"
         )
         self._schema_validator = None
         self._schema_validator_error = ""
+        self._schema_validator_loaded = False
         self._compiled_authority_patterns = {
             key: [re.compile(pattern, re.IGNORECASE) for pattern in patterns]
             for key, patterns in self.AUTHORITY_PATTERNS.items()
         }
 
-        if SchemaValidator is not None and self._policy_path.exists():
-            try:
-                self._schema_validator = SchemaValidator(str(self._policy_path))
-            except Exception as exc:  # pragma: no cover - defensive guard
-                self._schema_validator_error = (
-                    f"Warning: Failed to load schema validator: {exc}"
-                )
-        elif SchemaValidator is not None:
+    def _get_schema_validator(self):
+        """Return a cached schema validator instance, loading it lazily."""
+        if self._schema_validator_loaded:
+            return self._schema_validator
+
+        self._schema_validator_loaded = True
+
+        if SchemaValidator is None:
+            self._schema_validator_error = _SCHEMA_VALIDATOR_INIT_ERROR
+            return None
+
+        if not self._policy_path.exists():
             self._schema_validator_error = (
                 "Warning: Flashcard policy file not found; validation disabled."
             )
-        elif _SCHEMA_VALIDATOR_INIT_ERROR:
-            self._schema_validator_error = _SCHEMA_VALIDATOR_INIT_ERROR
+            return None
+
+        try:
+            self._schema_validator = SchemaValidator(str(self._policy_path))
+        except Exception as exc:  # pragma: no cover - defensive guard
+            self._schema_validator_error = (
+                f"Warning: Failed to load schema validator: {exc}"
+            )
+
+        return self._schema_validator
+
+    def _add_validator_warning(self, card: "Flashcard") -> None:
+        """Surface any cached validator initialization warning on the card."""
+        if self._schema_validator_error and (
+            self._schema_validator_error not in card._warnings
+        ):
+            card._warnings.append(self._schema_validator_error)
+
+    def _card_series(self, card: "Flashcard") -> str:
+        """Return the four digit series identifier extracted from the filename."""
+        match = re.match(r"(\d{4})-", card.path.stem)
+        return match.group(1) if match else ""
         
     def load_card(self, path: Path) -> Flashcard:
         """Load a flashcard from a YAML file."""
@@ -201,19 +226,39 @@ class FlashcardProcessor:
         content = f"{card.front} {card.back}"
 
         # Check for topic-specific authorities
-        if self.is_contract_card(card):
+        series = self._card_series(card)
+        if series and series in self._compiled_authority_patterns:
+            patterns = self._compiled_authority_patterns[series]
+        elif self.is_contract_card(card):
+            patterns = self._compiled_authority_patterns.get("0008", [])
+        else:
+            patterns = []
+
+        for pattern in patterns:
+            if not pattern.search(content):
+                missing.append(f"Missing authority reference: {pattern.pattern}")
+
+        if not patterns and self.is_contract_card(card):
             for pattern in self._compiled_authority_patterns.get("0008", []):
                 if not pattern.search(content):
                     missing.append(
-                        f"Missing contract authority: {pattern.pattern}"
+                        f"Missing authority reference: {pattern.pattern}"
                     )
+
+        if missing:
+            for topic, hint_patterns in self.AUTHORITY_HINTS.items():
+                if any(re.search(hint, content, re.IGNORECASE) for hint in hint_patterns):
+                    missing.append(
+                        f"Consider referencing key {topic.lower()} authorities."
+                    )
+                    break
 
 
         return missing
 
     def normalize_card(self, card: 'Flashcard') -> None:
         """Normalize card content and format."""
-        validator = self._schema_validator
+        validator = self._get_schema_validator()
 
         # Convert card to dict for validation
         card_data = {
@@ -232,10 +277,8 @@ class FlashcardProcessor:
             # Update card with validation results
             card._errors.extend(result.errors)
             card._warnings.extend(result.warnings)
-        elif self._schema_validator_error and (
-            self._schema_validator_error not in card._warnings
-        ):
-            card._warnings.append(self._schema_validator_error)
+        else:
+            self._add_validator_warning(card)
 
         if not card.front:
             card._errors.append("Front text is required")
@@ -245,7 +288,8 @@ class FlashcardProcessor:
         card.back = ' '.join(card.back.split())
 
         # Ensure tags are lowercase and unique
-        card.tags = list({tag.lower().strip() for tag in card.tags if tag.strip()})
+        normalized_tags = [tag.lower().strip() for tag in card.tags if tag.strip()]
+        card.tags = list(dict.fromkeys(normalized_tags))
 
         # Ensure template is set
         if 'template' not in card._raw:
