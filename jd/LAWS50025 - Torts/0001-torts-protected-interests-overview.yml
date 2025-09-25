@@ -1,18 +1,18 @@
 front: "Protected interests in tort: identify and apply injury, property, and pure economic loss?"
 back: |
-  Issue. Classify the claimant’s protected interest (injury, property, pure economic loss) so you can deploy the correct Victorian framework and statutory overlays.
+  Issue. Classify the claimant’s protected interest so correct Victorian framework and statutes anchor the answer before breach or remedy.
 
-  Rule. Three scaffolds: (1) Personal injury — duty/breach owed to bodily integrity, refined by Rogers v Whitaker (1992) 175 CLR 479, 490–493 (material-risk warnings) and Chapman v Hearse (1961) 106 CLR 112 (foreseeability not far‑fetched). (2) Property — exclusive possession underpins trespass/conversion; interference requires directness (Entick v Carrington (1765) 19 St Tr 1029) and remoteness (Overseas Tankship (Wagon Mound No 1) [1961] AC 388). (3) Pure economic loss — salient features guard against indeterminate liability (Perre v Apand (1999) 198 CLR 180; Woolcock Street v CDG (2004) 216 CLR 515; Brookfield Multiplex (2014) 254 CLR 185); relational loss remains exceptional (Caltex Oil (Australia) v The Dredge ‘Willemstad’ (1976) 136 CLR 529). Statutory overlays: Wrongs Act 1958 (Vic) ss 48, 51, Pt VBA (caps/thresholds).
+  Rule. Personal injury uses negligence/intentional scaffolds with material-risk warnings (Rogers v Whitaker) and a foreseeability floor (Chapman v Hearse). Property turns on exclusive possession and direct interference (Entick) with remoteness kept to reasonable foreseeability (Wagon Mound (No 1) — persuasive). Pure economic loss is exceptional: salient features of vulnerability, control, reliance, and indeterminacy confine duty (Perre; Woolcock; Brookfield) and relational loss stays narrow (Caltex Oil). Coherence checks from Sullivan v Moody and Modbury Triangle prevent conflicting obligations. Statutory overlays include Wrongs Act 1958 (Vic) s 48, s 51, Pt VBA caps, plus allied defences.
 
-  Application scaffold. 1) Identify possession or economic relationships to confirm the interest; deal with overlaps (injury + economic). 2) Apply interest-specific test: injury — negligence/intentional torts plus mental-harm filters; property — check possession, direct interference, nuisance reasonableness; economic — articulate salient features (control, vulnerability, reliance, indeterminacy). 3) Consider statutory overlays (Part VBA caps, s 48 breach, s 51 causation) and defences (contributory negligence (CN), statutory authority). 4) Evaluate policy coherence: Sullivan v Moody (2001) 207 CLR 562 (no conflicting duties), Modbury Triangle Shopping Centre v Anzil (2000) 205 CLR 254 (third-party criminal acts). 5) Conclude with remedies (injunctions/nominal damages for property; economic loss limited to defined relationships).
+  Application scaffold. 1) Name the factual interest and flag any overlap or consequential loss. 2) Apply the tailored test: injury — duty/breach plus mental-harm gates; property — possession, directness, nuisance reasonableness, remedies; economic — salient features and coherence. 3) Layer Wrongs Act requirements (ss 26, 48, 51, Pt VBA) with defences such as volenti (s 54) or statutory authority. 4) Close with the matching remedy.
 
-  Authorities map. Injury: Rogers 175 CLR 479, 490–493; Chapman 106 CLR 112. Property: Entick 19 St Tr 1029; Wagon Mound (No 1) [1961] AC 388 (UK nuance on remoteness). Economic: Perre 198 CLR 180; Woolcock 216 CLR 515; Brookfield 254 CLR 185; Caltex Oil 136 CLR 529. Coherence/limits: Sullivan v Moody 207 CLR 562; Modbury 205 CLR 254.
+  Authorities map. Injury: Rogers; Chapman. Property: Entick; Wagon Mound (No 1). Economic: Perre; Woolcock; Brookfield; Caltex Oil. Coherence: Sullivan v Moody; Modbury.
 
-  Statutory hook. Wrongs Act 1958 (Vic) ss 48, 51; Pt VBA (including s 28G significant injury threshold).
+  Statutory hook. Wrongs Act 1958 (Vic) ss 26, 48, 51, 54; Pt VBA (incl s 28G threshold).
 
-  Tripwires. Watch for category drift (eg, consequential vs pure economic loss), treating salient features as rigid elements, skipping Pt VBA caps, or eliding mental-harm gates when reframing injury; see `tripwires:` for the applied checklist.
+  Tripwires. Avoid collapsing consequential into pure economic loss, skipping Pt VBA thresholds, turning salient features into rigid elements, or ignoring mental-harm filters when reframing injury.
 
-  Conclusion. Interest classification drives the duty/breach test, defences, and damages; state the scaffold explicitly before analysing facts.
+  Conclusion. Lead with the interest classification, then integrate doctrine, statutes, and coherence so the remedy flows logically.
 why_it_matters: |
   Under exam pressure, triage by interest controls the entire answer. Injury uses negligence/intentional‑tort scaffolds and Pt VBA caps; property turns on possession, directness, and remoteness; economic loss demands salient features and coherence. Sequencing avoids conflation and earns method marks. Pinpointing Wrongs Act s 48/s 51 and leading authorities signals accuracy and statutory literacy.
 mnemonic: "3Ps → People, Property, Pure economic"
@@ -37,19 +37,17 @@ anchors:
   cases:
     - "Rogers v Whitaker (1992) 175 CLR 479, 490–493"
     - "Chapman v Hearse (1961) 106 CLR 112"
-    - "Sullivan v Moody (2001) 207 CLR 562"
-    - "Modbury Triangle Shopping Centre Pty Ltd v Anzil (2000) 205 CLR 254"
     - "Entick v Carrington (1765) 19 St Tr 1029"
-    - "Overseas Tankship (UK) Ltd v Morts Dock & Engineering Co Ltd (Wagon Mound No 1) [1961] AC 388 (PC) — UK nuance: remoteness via foreseeability"
+    - "Overseas Tankship (UK) Ltd v Morts Dock & Engineering Co Ltd (Wagon Mound No 1) [1961] AC 388 (PC) — persuasive remoteness nuance"
     - "Perre v Apand Pty Ltd (1999) 198 CLR 180"
     - "Woolcock Street Investments Pty Ltd v CDG Pty Ltd (2004) 216 CLR 515"
     - "Brookfield Multiplex Ltd v Owners Corp SP 61288 (2014) 254 CLR 185"
     - "Caltex Oil (Australia) Pty Ltd v The Dredge ‘Willemstad’ (1976) 136 CLR 529"
   statutes:
-    - "Wrongs Act 1958 (Vic) ss 48, 51, Pt VBA (incl s 28G)"
+    - "Wrongs Act 1958 (Vic) ss 26, 48, 51, 54, Pt VBA (incl s 28G)"
   notes:
-    - "Pure economic loss anchors flag salient features (control, reliance, vulnerability, indeterminacy)."
-    - "UK Wagon Mound noted solely for remoteness nuance pending Australian adoption."
+    - "Pure economic loss: Perre, Woolcock, and Brookfield confine salient features to prevent indeterminate liability."
+    - "Coherence backstops from Sullivan v Moody (2001) 207 CLR 562 and Modbury Triangle (2000) 205 CLR 254 when duties clash."
 keywords:
   - protected-interests
   - personal-injury
@@ -58,11 +56,11 @@ keywords:
   - salient-features
   - exclusive-possession
   - relational-loss
-  - damages-caps
   - statutory-overlays
+  - coherence
 reading_level: "Plain English (JD)"
 tags:
-  - LAWS50025 - Torts
+  - LAWS50025_Torts
   - Protected_Interests
   - Exam_Fundamentals
   - MLS_H1
@@ -70,11 +68,10 @@ tags:
 _lint_notes:
   - "issue_contextualised"
   - "diagram_conceptual_branches"
-  - "statutory_hook_trimmed"
-  - "tripwires_summary_only_in_back"
-  - "anchors_flag_uk_nuance"
-  - "front_truncated_questionified"
-  - "canonical_headers_added"
-  - "anchors_normalised"
+  - "statutory_hook_expanded"
+  - "tripwires_high_level"
+  - "anchors_max_8"
+  - "front_questionified"
+  - "canonical_headers_present"
   - "diagram_compacted_<=12_nodes"
-  - "keywords_trimmed_<=12"
+  - "keywords_within_range"
