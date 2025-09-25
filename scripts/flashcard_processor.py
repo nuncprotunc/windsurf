@@ -27,6 +27,15 @@ import shutil
 from datetime import datetime
 
 try:
+    from schema_validator import SchemaValidator
+except ImportError as exc:  # pragma: no cover - defensive guard
+    SchemaValidator = None  # type: ignore[assignment]
+    print(
+        f"Warning: Could not import SchemaValidator ({exc}); validation disabled.",
+        file=sys.stderr,
+    )
+
+try:
     import yaml
 except ImportError:
     print("Error: PyYAML is required. Please install it with: pip install pyyaml")
@@ -122,6 +131,31 @@ class FlashcardProcessor:
     
     def __init__(self):
         self.card_dirs = [d for d in CARD_DIRS if d.exists()]
+        self._policy_path = (
+            Path(__file__).resolve().parent.parent
+            / 'jd'
+            / 'policy'
+            / 'flashcard_policy_consolidated.yml'
+        )
+        self._schema_validator = None
+        self._compiled_authority_patterns = {
+            key: [re.compile(pattern, re.IGNORECASE) for pattern in patterns]
+            for key, patterns in self.AUTHORITY_PATTERNS.items()
+        }
+
+        if SchemaValidator is not None and self._policy_path.exists():
+            try:
+                self._schema_validator = SchemaValidator(str(self._policy_path))
+            except Exception as exc:  # pragma: no cover - defensive guard
+                print(
+                    f"Warning: Failed to load schema validator: {exc}",
+                    file=sys.stderr,
+                )
+        elif SchemaValidator is not None:
+            print(
+                "Warning: Flashcard policy file not found; validation disabled.",
+                file=sys.stderr,
+            )
         
     def load_card(self, path: Path) -> Flashcard:
         """Load a flashcard from a YAML file."""
@@ -162,25 +196,23 @@ class FlashcardProcessor:
     def check_authorities(self, card: Flashcard) -> List[str]:
         """Check for required legal authorities based on card content."""
         missing = []
-        content = f"{card.front} {card.back}".lower()
-        
+        content = f"{card.front} {card.back}"
+
         # Check for topic-specific authorities
         if self.is_contract_card(card):
-            for pattern in self.AUTHORITY_PATTERNS.get("0008", []):
-                if not re.search(pattern, content, re.IGNORECASE):
-                    missing.append(f"Missing contract authority: {pattern}")
-        
-        
+            for pattern in self._compiled_authority_patterns.get("0008", []):
+                if not pattern.search(content):
+                    missing.append(
+                        f"Missing contract authority: {pattern.pattern}"
+                    )
+
+
         return missing
 
     def normalize_card(self, card: 'Flashcard') -> None:
         """Normalize card content and format."""
-        from schema_validator import SchemaValidator
-        
-        # Initialize schema validator with consolidated policy
-        policy_path = Path(__file__).parent.parent / 'jd' / 'policy' / 'flashcard_policy_consolidated.yml'
-        validator = SchemaValidator(str(policy_path))
-        
+        validator = self._schema_validator
+
         # Convert card to dict for validation
         card_data = {
             'front': card.front,
@@ -190,33 +222,47 @@ class FlashcardProcessor:
             'updated': card.updated,
             'template': card._raw.get('template', 'concept')
         }
-        
+
         # Validate card data
-        result = validator.validate_card(card_data)
-        
-        # Update card with validation results
-        card._errors.extend(result.errors)
-        card._warnings.extend(result.warnings)
-        
+        if validator is not None:
+            result = validator.validate_card(card_data)
+
+            # Update card with validation results
+            card._errors.extend(result.errors)
+            card._warnings.extend(result.warnings)
+
         if not card.front:
             card._errors.append("Front text is required")
-        
+
         # Normalize whitespace and formatting
         card.front = ' '.join(card.front.split())
         card.back = ' '.join(card.back.split())
-        
+
         # Ensure tags are lowercase and unique
         card.tags = list({tag.lower().strip() for tag in card.tags if tag.strip()})
-        
+
         # Ensure template is set
         if 'template' not in card._raw:
             card._raw['template'] = 'concept'
-        
+
         # Add timestamps if missing
         now = datetime.utcnow().isoformat() + 'Z'
         if not card.created:
             card.created = now
         card.updated = now
+
+        # Keep raw representation aligned with normalized fields before saving
+        card._raw.update(
+            {
+                'front': card.front,
+                'back': card.back,
+                'tags': card.tags,
+                'sources': card.sources,
+                'created': card.created,
+                'updated': card.updated,
+                'mnemonic': card.mnemonic,
+            }
+        )
     
     def repair_yaml(self, card: Flashcard) -> bool:
         """Fix YAML formatting and structure issues."""
@@ -344,8 +390,8 @@ class FlashcardProcessor:
             )
         
         # Check for case law references
-        if not any(re.search(pattern, content, re.IGNORECASE) 
-                  for pattern in self.AUTHORITY_PATTERNS.get("0008", [])):
+        if not any(pattern.search(content)
+                   for pattern in self._compiled_authority_patterns.get("0008", [])):
             card._warnings.append(
                 "Contract card should reference key cases (Carlill, Masters v Cameron, etc.)"
             )
