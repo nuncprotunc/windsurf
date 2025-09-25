@@ -12,6 +12,7 @@ __pycache__/
 
 # Generated artifacts
 reports/
+reports/backups/
 LAW_out_prep/
 artifacts/
 tmp/*.csv
@@ -21,3 +22,4 @@ tmp/*.diff
 
 # Backups
 backups/
+*.bak-*
