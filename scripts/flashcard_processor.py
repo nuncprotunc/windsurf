@@ -21,7 +21,7 @@ import sys
 import re
 import argparse
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
 from dataclasses import dataclass, field
 import shutil
 from datetime import datetime
@@ -129,6 +129,13 @@ class FlashcardProcessor:
         "Defamation": [r"Defamation Act 2005 \(Vic\)"],
         "Apportionment": [r"Pt\s*IVAA"],
     }
+
+    CONTRACT_REQUIRED_ELEMENTS = (
+        "offer",
+        "acceptance",
+        "consideration",
+        "intention to create legal relations",
+    )
     
     def __init__(self):
         self.card_dirs = [d for d in CARD_DIRS if d.exists()]
@@ -144,6 +151,10 @@ class FlashcardProcessor:
         self._compiled_authority_patterns = {
             key: [re.compile(pattern, re.IGNORECASE) for pattern in patterns]
             for key, patterns in self.AUTHORITY_PATTERNS.items()
+        }
+        self._compiled_authority_hints = {
+            topic: [re.compile(pattern, re.IGNORECASE) for pattern in patterns]
+            for topic, patterns in self.AUTHORITY_HINTS.items()
         }
 
     def _get_schema_validator(self):
@@ -207,29 +218,33 @@ class FlashcardProcessor:
             card._errors.append(f"Failed to load card: {str(e)}")
             return card
     
-    def is_contract_card(self, card: Flashcard) -> bool:
+    def is_contract_card(
+        self, card: Flashcard, content_lower: Optional[str] = None
+    ) -> bool:
         """Check if a card is related to contract law."""
-        tags = set((card.tags or []))
-        front = (card.front or "").lower()
-        
+
         if card.path.stem.startswith("0008-"):
             return True
-        if any(t.lower() == "contract" for t in tags):
-            return True
-        if "contract" in front:
-            return True
-        return False
 
-    def check_authorities(self, card: Flashcard) -> List[str]:
+        if any(tag.lower() == "contract" for tag in (card.tags or [])):
+            return True
+
+        if content_lower is None:
+            content_lower = f"{card.front} {card.back}".lower()
+
+        return "contract" in content_lower
+
+    def check_authorities(
+        self, card: Flashcard, content: str, is_contract: bool
+    ) -> List[str]:
         """Check for required legal authorities based on card content."""
         missing = []
-        content = f"{card.front} {card.back}"
 
         # Check for topic-specific authorities
         series = self._card_series(card)
         if series and series in self._compiled_authority_patterns:
             patterns = self._compiled_authority_patterns[series]
-        elif self.is_contract_card(card):
+        elif is_contract:
             patterns = self._compiled_authority_patterns.get("0008", [])
         else:
             patterns = []
@@ -238,7 +253,7 @@ class FlashcardProcessor:
             if not pattern.search(content):
                 missing.append(f"Missing authority reference: {pattern.pattern}")
 
-        if not patterns and self.is_contract_card(card):
+        if not patterns and is_contract:
             for pattern in self._compiled_authority_patterns.get("0008", []):
                 if not pattern.search(content):
                     missing.append(
@@ -246,8 +261,8 @@ class FlashcardProcessor:
                     )
 
         if missing:
-            for topic, hint_patterns in self.AUTHORITY_HINTS.items():
-                if any(re.search(hint, content, re.IGNORECASE) for hint in hint_patterns):
+            for topic, hint_patterns in self._compiled_authority_hints.items():
+                if any(pattern.search(content) for pattern in hint_patterns):
                     missing.append(
                         f"Consider referencing key {topic.lower()} authorities."
                     )
@@ -392,12 +407,16 @@ class FlashcardProcessor:
         self.normalize_card(card)
         
         # Check for missing authorities
-        missing_auths = self.check_authorities(card)
+        combined_content = f"{card.front} {card.back}".strip()
+        content_lower = combined_content.lower()
+        is_contract = self.is_contract_card(card, content_lower)
+
+        missing_auths = self.check_authorities(card, combined_content, is_contract)
         card._warnings.extend(missing_auths)
-        
+
         # Check for contract-specific requirements
-        if self.is_contract_card(card):
-            self._check_contract_requirements(card)
+        if is_contract:
+            self._check_contract_requirements(card, content_lower)
         
         # Prepare result
         result = {
@@ -423,24 +442,22 @@ class FlashcardProcessor:
         
         return result
     
-    def _check_contract_requirements(self, card: Flashcard) -> None:
+    def _check_contract_requirements(self, card: Flashcard, content_lower: str) -> None:
         """Check contract-specific requirements."""
         # Ensure required contract elements are present
-        required_elements = [
-            'offer', 'acceptance', 'consideration', 
-            'intention to create legal relations'
+        missing = [
+            element
+            for element in self.CONTRACT_REQUIRED_ELEMENTS
+            if element not in content_lower
         ]
-        
-        content = f"{card.front} {card.back}".lower()
-        missing = [el for el in required_elements if el.lower() not in content]
-        
+
         if missing:
             card._warnings.append(
                 f"Contract card missing key elements: {', '.join(missing)}"
             )
-        
+
         # Check for case law references
-        if not any(pattern.search(content)
+        if not any(pattern.search(content_lower)
                    for pattern in self._compiled_authority_patterns.get("0008", [])):
             card._warnings.append(
                 "Contract card should reference key cases (Carlill, Masters v Cameron, etc.)"
