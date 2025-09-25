@@ -30,10 +30,11 @@ try:
     from schema_validator import SchemaValidator
 except ImportError as exc:  # pragma: no cover - defensive guard
     SchemaValidator = None  # type: ignore[assignment]
-    print(
-        f"Warning: Could not import SchemaValidator ({exc}); validation disabled.",
-        file=sys.stderr,
+    _SCHEMA_VALIDATOR_INIT_ERROR = (
+        f"Warning: Could not import SchemaValidator ({exc}); validation disabled."
     )
+else:
+    _SCHEMA_VALIDATOR_INIT_ERROR = ""
 
 try:
     import yaml
@@ -138,6 +139,7 @@ class FlashcardProcessor:
             / 'flashcard_policy_consolidated.yml'
         )
         self._schema_validator = None
+        self._schema_validator_error = ""
         self._compiled_authority_patterns = {
             key: [re.compile(pattern, re.IGNORECASE) for pattern in patterns]
             for key, patterns in self.AUTHORITY_PATTERNS.items()
@@ -147,15 +149,15 @@ class FlashcardProcessor:
             try:
                 self._schema_validator = SchemaValidator(str(self._policy_path))
             except Exception as exc:  # pragma: no cover - defensive guard
-                print(
-                    f"Warning: Failed to load schema validator: {exc}",
-                    file=sys.stderr,
+                self._schema_validator_error = (
+                    f"Warning: Failed to load schema validator: {exc}"
                 )
         elif SchemaValidator is not None:
-            print(
-                "Warning: Flashcard policy file not found; validation disabled.",
-                file=sys.stderr,
+            self._schema_validator_error = (
+                "Warning: Flashcard policy file not found; validation disabled."
             )
+        elif _SCHEMA_VALIDATOR_INIT_ERROR:
+            self._schema_validator_error = _SCHEMA_VALIDATOR_INIT_ERROR
         
     def load_card(self, path: Path) -> Flashcard:
         """Load a flashcard from a YAML file."""
@@ -230,6 +232,10 @@ class FlashcardProcessor:
             # Update card with validation results
             card._errors.extend(result.errors)
             card._warnings.extend(result.warnings)
+        elif self._schema_validator_error and (
+            self._schema_validator_error not in card._warnings
+        ):
+            card._warnings.append(self._schema_validator_error)
 
         if not card.front:
             card._errors.append("Front text is required")
