@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Juris Doctor Hypo Generator</title>
+<style>
+/* README: Usage & Extend Notes
+   - This single-file app generates deterministic JD hypos, auto-scores IRAC answers, and stores session data in localStorage.
+   - Extend by adding subject templates in SUBJECT_LIBRARY and topic metadata in TOPIC_LIBRARY.
+   - Inline modules below: generator, scorer, descriptors->grade, curve allocator, feedback engine, storage, tests.
+*/
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bg: #f5f7fa;
+  --panel: #ffffff;
+  --border: #d0d7de;
+  --accent: #0d6efd;
+  --danger: #b00020;
+  --success: #0f9d58;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #111;
+}
+header {
+  padding: 0.75rem 1rem;
+  background: #111827;
+  color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+main {
+  display: grid;
+  grid-template-columns: 320px 1fr 340px;
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+section h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+input, select, textarea, button {
+  font: inherit;
+}
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: #fff;
+}
+textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+button {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+button.secondary {
+  background: #64748b;
+}
+button.danger {
+  background: var(--danger);
+}
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+.small {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+ul.inline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+}
+ul.inline li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.35rem;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+}
+#facts {
+  white-space: pre-wrap;
+  line-height: 1.45;
+  font-size: 0.92rem;
+}
+#modelAnswer {
+  white-space: pre-wrap;
+  line-height: 1.42;
+}
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(13, 110, 253, 0.12);
+  color: #0d47a1;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+.score-card {
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  background: #f8fafc;
+}
+.score-card h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+}
+.score-card p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+.rationale {
+  font-size: 0.78rem;
+  color: #334155;
+}
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #e0f2fe;
+  color: #0369a1;
+}
+textarea.scratch {
+  background: #f1f5f9;
+}
+details {
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  background: #f9fafb;
+}
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+@media (max-width: 1200px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Juris Doctor Hypo Generator</h1>
+  <div>
+    <span id="seedDisplay" class="status-chip">Seed: —</span>
+    <button id="reroll">Re-roll</button>
+  </div>
+</header>
+<main>
+  <section class="panel" aria-label="Generator controls">
+    <h2>Scenario Builder</h2>
+    <form id="generatorForm">
+      <div>
+        <label>Subjects</label>
+        <div class="check-grid" id="subjectChoices"></div>
+      </div>
+      <div>
+        <label for="topics">Topics (multi)</label>
+        <select id="topics" name="topics" multiple size="6"></select>
+      </div>
+      <div>
+        <label>Cross-over</label>
+        <ul class="inline">
+          <li><label class="checkbox"><input type="radio" name="crossover" value="single" checked /> Single-domain only</label></li>
+          <li><label class="checkbox"><input type="radio" name="crossover" value="allowed" /> Cross-over allowed</label></li>
+        </ul>
+      </div>
+      <div>
+        <label for="intensity">Cross-over intensity (0–100%)</label>
+        <input type="number" id="intensity" min="0" max="100" step="5" value="0" />
+      </div>
+      <div>
+        <label for="difficulty">Difficulty (1–5)</label>
+        <input type="number" id="difficulty" min="1" max="5" value="3" />
+      </div>
+      <div>
+        <label for="wordBudget">Word budget (200–800)</label>
+        <input type="number" id="wordBudget" min="200" max="800" step="50" value="400" />
+      </div>
+      <div>
+        <label for="timeLimit">Time limit (minutes 5–60)</label>
+        <input type="number" id="timeLimit" min="5" max="60" step="5" value="30" />
+      </div>
+      <div>
+        <label for="seed">Random seed</label>
+        <input type="number" id="seed" value="42" />
+      </div>
+      <div>
+        <label class="checkbox"><input type="checkbox" id="practiceMode" /> Practice mode (no curve)</label>
+      </div>
+      <div>
+        <button type="submit">Generate Hypo</button>
+      </div>
+    </form>
+    <details>
+      <summary>AGLC4 citation helper</summary>
+      <div class="small">
+        <p>Case: <code>Case Name v Case Name (Year) Volume Reporter Page, Pinpoint.</code></p>
+        <p>Statute: <code>Act Title Year (Jurisdiction) s X.</code></p>
+        <p>Example: <code>Wyong Shire Council v Shirt (1980) 146 CLR 40, 47.</code></p>
+      </div>
+    </details>
+    <details>
+      <summary>Export / Import</summary>
+      <div class="small">
+        <button id="exportJson" type="button">Export session (JSON)</button>
+        <button id="exportMarkdown" type="button">Export bundle (Markdown)</button>
+        <label class="checkbox" style="margin-top:0.5rem;">
+          <input type="file" id="importJson" accept="application/json" /> Import session JSON
+        </label>
+      </div>
+    </details>
+    <details>
+      <summary>Run internal tests</summary>
+      <div class="small" id="testResults">No tests run.</div>
+      <button type="button" id="runTests" class="secondary">Run tests</button>
+    </details>
+  </section>
+  <section class="panel" aria-label="Scenario and workspace">
+    <h2>Hypo Workspace</h2>
+    <div id="hypoMeta" class="small">Generate a hypo to begin.</div>
+    <div>
+      <strong>Scenario</strong>
+      <div id="facts"></div>
+      <div class="small" id="callOfQuestion"></div>
+      <details id="hints" open>
+        <summary>Hints &amp; near-miss distractors</summary>
+        <div id="hintContent" class="small"></div>
+      </details>
+    </div>
+    <div class="small" id="timerDisplay">Timer: 00:00</div>
+    <div class="small">Word count: <span id="wordCount">0</span></div>
+    <div>
+      <label class="checkbox"><input type="checkbox" id="toggleIRAC" /> Insert IRAC headings scaffold</label>
+      <label class="checkbox"><input type="checkbox" id="toggleScratch" /> Show issue scratchpad</label>
+    </div>
+    <textarea id="response" placeholder="Draft your IRAC analysis here..." aria-label="Response workspace"></textarea>
+    <textarea id="scratchpad" class="scratch" placeholder="Issue list scratchpad" hidden></textarea>
+    <div class="small">Autosave: <span id="autosaveStatus">—</span></div>
+    <div>
+      <button id="submitResponse">Submit for marking</button>
+      <button id="resetResponse" type="button" class="secondary">Clear response</button>
+    </div>
+  </section>
+  <section class="panel" aria-label="Results and feedback">
+    <h2>Assessment &amp; Feedback</h2>
+    <div id="scoreSummary" class="small">No submission yet.</div>
+    <div class="score-grid" id="scoreGrid"></div>
+    <div id="flags" class="small"></div>
+    <div id="descriptor" class="small"></div>
+    <div id="curveResult" class="small"></div>
+    <details id="feedbackDetails">
+      <summary>Targeted feedback</summary>
+      <div id="feedbackContent" class="small"></div>
+    </details>
+    <details id="modelDetails">
+      <summary>Model answer</summary>
+      <div id="modelAnswer" class="small"></div>
+    </details>
+  </section>
+</main>
+<script>
+// ========================= // generator =========================
+const SUBJECT_LIST = [
+  "Torts","Contracts","Obligations","Criminal Law","Public Law","Tax","Property","Remedies","Family Law","Disputes and Ethics","Equity and Trusts","Constitutional Law","Evidence and Proof","Legal Research","Legal Theory","Legal Method and Reasoning","Corporations Law"
+];
+const TOPIC_LIBRARY = {
+  "Torts":["Duty","Breach","Causation","Damages","Vicarious Liability","Defences"],
+  "Contracts":["Formation","Terms","Breach","Remedies","Estoppel"],
+  "Obligations":["Restitution","Unjust Enrichment","Contribution"],
+  "Criminal Law":["Homicide","Property Offences","Defences","Procedure"],
+  "Public Law":["Judicial Review","Separation of Powers","Delegated Legislation"],
+  "Tax":["Income","Deductions","CGT"],
+  "Property":["Land","Leases","Easements"],
+  "Remedies":["Equitable","Damages","Specific Performance"],
+  "Family Law":["Parenting","Property Adjustment","Maintenance"],
+  "Disputes and Ethics":["Professional Responsibility","ADR"],
+  "Equity and Trusts":["Fiduciary Duties","Trust Creation","Breach"],
+  "Constitutional Law":["Implied Freedoms","Trade and Commerce","Inconsistency"],
+  "Evidence and Proof":["Admissibility","Hearsay","Privilege"],
+  "Legal Research":["Precedent","Statutory Interpretation"],
+  "Legal Theory":["Positivism","Dworkin"],
+  "Legal Method and Reasoning":["IRAC","Statutory Construction"],
+  "Corporations Law":["Directors' Duties","Members' Remedies","Insolvency"],
+};
+const SUBJECT_LIBRARY = {
+  "Torts": {
+    templates: [
+      {
+        id: "Torts-NEGL-urban-risk",
+        topics: ["Duty","Breach","Causation","Damages"],
+        call: "Advise all parties about negligence and statutory duties arising from the incident.",
+        authorities: {
+          cases: [
+            "Wyong Shire Council v Shirt (1980) 146 CLR 40",
+            "Sullivan v Moody (2001) 207 CLR 562",
+            "Imbree v McNeilly (2008) 236 CLR 510",
+          ],
+          statutes: [
+            "Wrongs Act 1958 (Vic) pt X s 48",
+            "Wrongs Act 1958 (Vic) pt X s 51",
+            "Civil Liability Act 2002 (NSW) s 5D",
+          ],
+        },
+        makeFacts(seedRng, opts) {
+          const names = seededPeople(seedRng, 4);
+          const locale = pick(seedRng, ["Footscray","Newtown","Ballarat","Wagga Wagga"]);
+          const weather = pick(seedRng, ["heavy rain","gusty winds","unexpected blackout"]);
+          const wordBudget = opts.wordBudget;
+          const base = `The ${opts.difficulty >= 4 ? "graduate" : "final-year"} design team at ${locale} Council awarded ${names[0]} a short-term contract to install smart lighting along a pedestrian mall undergoing resurfacing. The Council insisted the works remain open to foot traffic to support surrounding hospitality venues. ${names[1]}, a venue manager, negotiated with ${names[0]} to leave temporary cable covers in place so weekend patrons could queue without tripping.
+
+By Friday evening the trenching contractor had not delivered the thicker covers promised under the Council specification. ${names[0]} authorised ${names[2]}, a trainee electrician, to tape a bundle of live cabling against a portable bollard and place makeshift mats sourced from a neighbouring yoga studio. CCTV shows ${names[2]} warning the Council liaison officer that the mats shifted whenever delivery vans mounted the kerb. The liaison officer emailed the risk team but marked the message "low urgency".
+
+Around 9pm a sudden crowd surge during a televised finals match pushed ${names[3]}, a visiting cardiology registrar, onto the exposed cables. The registrar suffered a full-thickness burn to the right palm and a rotator cuff tear when falling against a glass balustrade. Witnesses recall security staff telling patrons not to lean on the taped cables earlier that night. Ambulance Victoria records note delayed isolation of power while staff searched for a missing padlock key.
+
+${weather.charAt(0).toUpperCase() + weather.slice(1)} complicated the rescue, with rain pooling over the mats and amplifying the shock risk. Two days later the registrar’s employer directed an immediate return to restricted duties, causing cancellation of planned private procedures and loss of overtime. The registrar now reports early neuropathic symptoms affecting fine motor control.`;
+          return clampWords(base, wordBudget);
+        },
+        nearMiss(seedRng) {
+          return [
+            "Council actually issued a closure order at 6pm but it was never communicated to security.",
+            "The registrar had previously signed a waiver acknowledging uneven surfaces in the mall.",
+            "An independent contractor re-taped the cables using compliant covers moments before the fall.",
+          ];
+        },
+        markingKey: {
+          issues: [
+            "duty owed by council and contractor",
+            "application of Shirt calculus to breach",
+            "Wrongs Act 1958 (Vic) s 48 breach factors",
+            "causation under s 51 / CLA s 5D",
+            "economic loss and remoteness",
+          ],
+          rules: [
+            { name: "Shirt", must_include: ["foreseeability", "not far-fetched or fanciful"] },
+            { name: "Wrongs Act 1958 (Vic) s 48", must_include: ["probability of harm", "burden of taking precautions"] },
+            { name: "Wrongs Act 1958 (Vic) s 51", must_include: ["factual causation", "scope of liability"] },
+          ],
+          application_exemplars: [
+            "Crowd surge and makeshift mats show foreseeable risk",
+            "Delay in isolating power engages factual causation",
+            "Loss of private practice income as consequential economic loss",
+          ],
+          dealbreakers: ["no invented authority","must cite operative sections"],
+        },
+        modelAnswer(seedRng) {
+          const names = seededPeople(seedRng, 4);
+          return `Issue
+Identify negligence claims available to ${names[3]} against ${names[0]} and the ${pick(seedRng, ["Council","local authority"])}.
+
+Rule
+Duty: ${names[0]} and the Council owed a duty of care to foreseeable entrants (Sullivan v Moody (2001) 207 CLR 562, 580).
+Breach: Apply Wrongs Act 1958 (Vic) s 48 incorporating Wyong Shire Council v Shirt (1980) 146 CLR 40, 47 (foreseeable risks not far-fetched).
+Causation: Wrongs Act 1958 (Vic) s 51; Civil Liability Act 2002 (NSW) s 5D where relevant.
+Damage: recognise compensable personal and economic loss (Strong v Woolworths Ltd (2012) 246 CLR 182, 193).
+
+Application
+Duty: ${names[3]} was an entrant invited to the mall. The Council’s insistence on trading hours places it within established categories (Australian Safeway Stores Pty Ltd v Zaluzna (1987) 162 CLR 479, 488).
+Breach: Exposed live cabling, shifting mats, and prior warnings highlight foreseeable injury. Burden minimal—thicker covers or area closure per specification. Risk magnitude high given televised event crowd.
+Causation: But-for failure to isolate power, harm likely avoided (s 51(1)(a)). Security warnings evidence knowledge. Crowd surge was precisely the hazard requiring precautions (s 51(1)(b)).
+Damage: Burn and rotator cuff tear are compensable personal injuries; lost private procedures constitute consequential loss if within scope (Wallace v Kam (2013) 250 CLR 375, 395).
+
+Counter-arguments: Council may invoke policy defence (Wrongs Act 1958 (Vic) s 83) yet operational negligence dominates. ${names[0]} may argue contributory negligence or apportionment (Wrongs Act 1958 (Vic) s 26).
+
+Conclusion
+Both defendants breached duties causing loss. ${names[3]} has strong prospects for compensatory damages; contributory negligence minimal.`;
+        }
+      }
+    ]
+  },
+  "Contracts": {
+    templates: [
+      {
+        id: "Contracts-REPUDIATION-supply",
+        topics: ["Formation","Terms","Breach","Remedies"],
+        call: "Advise the parties about contractual rights and equitable relief.",
+        authorities: {
+          cases: [
+            "Toll (FGCT) Pty Ltd v Alphapharm Pty Ltd (2004) 219 CLR 165",
+            "Koompahtoo Local Aboriginal Land Council v Sanpine Pty Ltd (2007) 233 CLR 115",
+            "Legione v Hateley (1983) 152 CLR 406",
+          ],
+          statutes: [
+            "Australian Consumer Law sch 2 Competition and Consumer Act 2010 (Cth) s 18",
+            "Goods Act 1958 (Vic) s 19",
+          ],
+        },
+        makeFacts(seedRng, opts) {
+          const names = seededPeople(seedRng, 3);
+          const venue = pick(seedRng, ["regional performing arts centre","Sydney fintech incubator","university law library refurbishment"]);
+          const price = 180000 + Math.floor(seedRng() * 40000);
+          const wordBudget = opts.wordBudget;
+          const base = `${names[0]}, trading as Southern Stage Systems, contracted to refit lighting and acoustic panels for a ${venue}. The written agreement, drafted over email, adopted a "design and supply" scope with staged payments tied to milestone certificates issued by the client’s project manager, ${names[1]}. A boilerplate clause incorporated Australian Standards for electrical compliance. ${names[0]} insisted on an aggressive completion date to win the tender and offered a 5% discount if the venue waived liquidated damages rights.
+
+Midway through installation, ${names[0]} sourced substitute panels after a supplier strike. The substitute product was not fire-rated to the level specified in the request for tender. ${names[1]} queried compliance and demanded certification within five business days. ${names[0]} emailed a spreadsheet asserting "functional equivalence" but did not provide certificates. ${names[1]} suspended milestone payments under clause 12.3 until compliant documentation arrived.
+
+Facing cashflow pressure, ${names[0]} issued a notice purporting to terminate for repudiation, alleging wrongful suspension of payments. The venue immediately engaged ${names[2]} to finish the works at a cost of $${price.toLocaleString()} and refused to pay the outstanding invoice.
+
+An internal email later surfaced showing ${names[1]} knew the new panels were likely compliant but sought leverage to renegotiate the warranty period. The venue has begun attracting regional events reliant on the upgraded acoustics.`;
+          return clampWords(base, wordBudget);
+        },
+        nearMiss() {
+          return [
+            "Project manager gave written waiver approving substitute panels before suspension.",
+            "Supplier strike resolved earlier; certificates available but misfiled.",
+            "Liquidated damages clause expressly deleted in final execution copy.",
+          ];
+        },
+        markingKey: {
+          issues: [
+            "Formation and incorporation of standards",
+            "Repudiation by suspension of payment",
+            "Whether contractor breached essential term",
+            "Remedies including expectation damages",
+            "Equitable relief or ACL misleading conduct",
+          ],
+          rules: [
+            { name: "Koompahtoo", must_include: ["essential term", "serious breach"] },
+            { name: "Legione v Hateley", must_include: ["equity may relieve against forfeiture"] },
+            { name: "ACL s 18", must_include: ["misleading", "representation"] },
+          ],
+          application_exemplars: [
+            "Suspension under clause 12.3 potentially wrongful",
+            "Substitute panels not meeting specification",
+            "Termination rights and election of damages",
+          ],
+          dealbreakers: ["no invented authority","must cite operative sections"],
+        },
+        modelAnswer(seedRng) {
+          const names = seededPeople(seedRng, 3);
+          return `Issue
+Whether ${names[0]} or the venue repudiated and what remedies follow.
+
+Rule
+Repudiation occurs when a party evinces unwillingness or inability to perform essential obligations (Koompahtoo Local Aboriginal Land Council v Sanpine Pty Ltd (2007) 233 CLR 115, 138).
+Suspending payment contrary to contract may itself be repudiatory (Shevill v Builders Licensing Board (1982) 149 CLR 620, 637).
+Equitable relief against forfeiture may assist where penalties arise (Legione v Hateley (1983) 152 CLR 406, 444).
+Misleading conduct is prohibited by ACL s 18.
+
+Application
+${names[1]}'s suspension depended on certification trigger. Absence of documents may justify delay, yet evidence shows tactical leverage, suggesting non-compliance with clause 12.3. ${names[0]}'s substitution without certification risks breach of an essential term tied to fire rating. If essential, client could terminate and recover completion cost. ${names[0]}'s notice to terminate may be ineffective if they were in breach.
+
+Conclusion
+Venue likely entitled to damages reflecting cost to complete less contract price; ${names[0]} faces exposure to ACL claim.`;
+        }
+      }
+    ]
+  },
+  "Public Law": {
+    templates: [
+      {
+        id: "PublicLaw-JR-planning",
+        topics: ["Judicial Review","Procedural Fairness","Ultra Vires"],
+        call: "Advise on prospects of judicial review in the Supreme Court.",
+        authorities: {
+          cases: [
+            "Minister for Immigration and Citizenship v Li (2013) 249 CLR 332",
+            "Kioa v West (1985) 159 CLR 550",
+            "Plaintiff S157/2002 v Commonwealth (2003) 211 CLR 476",
+          ],
+          statutes: [
+            "Administrative Law Act 1978 (Vic) s 3",
+            "Supreme Court (General Civil Procedure) Rules 2015 (Vic) O 56",
+          ],
+        },
+        makeFacts(seedRng, opts) {
+          const names = seededPeople(seedRng, 3);
+          const authority = pick(seedRng, ["Victorian Planning Authority","NSW Independent Planning Commission"]);
+          const project = pick(seedRng, ["mixed-use tower","wind farm","logistics hub"]);
+          const base = `${authority} granted preliminary approval for a ${project} proposed by ${names[0]} subject to conditions requiring a cultural heritage management plan and detailed traffic modelling. ${names[1]}, representing a local First Nations corporation, supplied anthropological reports identifying ceremonial artefacts within the project footprint. Internal emails reveal the case officer copied the proponent’s consultant on draft reasons but did not share the cultural heritage material with decision-makers.
+
+A week later the authority issued final consent, stating "all relevant matters considered". The reasons did not mention the anthropological reports. ${names[1]} only learned of the approval via social media two days after publication.
+
+When ${names[1]} sought reasons, the authority refused, citing commercial-in-confidence obligations. A board minute later disclosed under FOI shows the panel feared judicial review delaying federal infrastructure funding milestones. ${names[2]}, a transport expert engaged by the proponent, now concedes the traffic model omitted weekend ferry patronage required by the enabling Act.`;
+          return clampWords(base, opts.wordBudget);
+        },
+        nearMiss() {
+          return [
+            "Authority circulated the cultural heritage reports but misinterpreted recommendations.",
+            "Board minute predates the anthropological evidence.",
+            "Traffic model did include ferry patronage but transposed columns incorrectly.",
+          ];
+        },
+        markingKey: {
+          issues: [
+            "Jurisdictional error via failure to consider mandatory consideration",
+            "Procedural fairness (hearing rule)",
+            "Unreasonableness per Li",
+            "Standing under Administrative Law Act 1978 (Vic) s 3",
+          ],
+          rules: [
+            { name: "Li", must_include: ["legal unreasonableness", "lack of evident and intelligible justification"] },
+            { name: "Kioa v West", must_include: ["practical injustice", "hearing rule"] },
+          ],
+          application_exemplars: [
+            "Failure to consider cultural heritage material",
+            "Refusal of reasons contrary to fairness",
+          ],
+          dealbreakers: ["no invented authority","must cite operative sections"],
+        },
+        modelAnswer() {
+          return `Issue
+Whether the approval is affected by jurisdictional error enabling certiorari.
+
+Rule
+Mandatory relevant considerations must be taken into account; failure renders decision invalid (Minister for Aboriginal Affairs v Peko-Wallsend Ltd (1986) 162 CLR 24, 39).
+Procedural fairness requires affected persons be heard (Kioa v West (1985) 159 CLR 550, 585).
+Legal unreasonableness arises if no evident and intelligible justification exists (Minister for Immigration and Citizenship v Li (2013) 249 CLR 332, 350).
+
+Application
+Cultural heritage reports appear mandatory under enabling Act; omission suggests jurisdictional error. Refusal to provide reasons and disclosure to proponent only may breach fairness. Fear of delay as improper purpose. Traffic modelling omission relevant to statutory objects; ignoring weekend data undermines justification.
+
+Conclusion
+Strong prospects for judicial review via certiorari and mandamus.`;
+        }
+      }
+    ]
+  },
+  "Criminal Law": {
+    templates: [
+      {
+        id: "CrimLaw-HOMICIDE-pub",
+        topics: ["Homicide","Defences","Procedure"],
+        call: "Advise the DPP on charges and available defences.",
+        authorities: {
+          cases: [
+            "R v Lavender (2005) 222 CLR 67",
+            "R v Falconer (1990) 171 CLR 30",
+          ],
+          statutes: [
+            "Crimes Act 1958 (Vic) s 3A",
+            "Crimes Act 1958 (Vic) s 22",
+            "Crimes Act 1958 (Vic) s 322K",
+          ],
+        },
+        makeFacts(seedRng, opts) {
+          const names = seededPeople(seedRng, 3);
+          const base = `${names[0]} and ${names[1]} argued outside a Melbourne nightclub. CCTV shows ${names[0]} pushing ${names[1]} down a flight of stairs, causing a fatal subdural haematoma. Witnesses state ${names[0]} had consumed significant alcohol and claimed to "just want ${names[1]} off the landing". ${names[0]} told police that ${names[1]} had earlier brandished a broken bottle. Forensic evidence reveals defensive wounds inconsistent with a bottle attack. ${names[2]}, a security guard, recalls ${names[1]} raising hands before the push.
+
+Police interviewing ${names[0]} delayed providing an interpreter despite requests, contrary to Victoria Police Manual requirements. During interview ${names[0]} admitted knowing the stairs were concrete and steep.`;
+          return clampWords(base, opts.wordBudget);
+        },
+        nearMiss() {
+          return [
+            "Deceased had a serious pre-existing brain condition disclosed to accused.",
+            "Security guard video captures accused slipping rather than pushing.",
+            "Interpreter arrived but left before caution administered.",
+          ];
+        },
+        markingKey: {
+          issues: [
+            "Actus reus and mens rea for manslaughter/murder",
+            "Defences including self-defence",
+            "Voluntariness and intoxication",
+            "Potential evidentiary breaches affecting admissibility",
+          ],
+          rules: [
+            { name: "Crimes Act 1958 (Vic) s 3A", must_include: ["unlawful and dangerous act"] },
+            { name: "R v Lavender", must_include: ["dangerous act objectively assessed"] },
+            { name: "Crimes Act 1958 (Vic) s 322K", must_include: ["reasonable belief", "necessary"] },
+          ],
+          application_exemplars: [
+            "Push down stairs inherently dangerous",
+            "Self-defence unlikely given defensive wounds",
+            "Interpreter delay may support Bunning v Cross discretion",
+          ],
+          dealbreakers: ["no invented authority","must cite operative sections"],
+        },
+        modelAnswer() {
+          return `Issue
+Whether murder or manslaughter charges are sustainable and if defences arise.
+
+Rule
+Manslaughter requires an unlawful and dangerous act causing death (Crimes Act 1958 (Vic) s 3A; R v Lavender (2005) 222 CLR 67, 73).
+Self-defence requires belief in necessity and proportional response (Crimes Act 1958 (Vic) s 322K).
+
+Application
+Push down concrete stairs is objectively dangerous. Intent to cause serious injury arguable via knowledge of risk. Defensive wounds contradict imminent threat. Interpreter delay may enliven discretion but admissions likely voluntary.
+
+Conclusion
+Strong case for murder with fallback manslaughter; self-defence weak.`;
+        }
+      }
+    ]
+  }
+};
+function clampWords(text, limit) {
+  if (!limit) return text;
+  const words = text.trim().split(/\s+/);
+  if (words.length <= limit) return text;
+  return words.slice(0, limit).join(" ") + " …";
+}
+function pick(rng, arr) {
+  return arr[Math.floor(rng() * arr.length)];
+}
+function seededPeople(rng, count) {
+  const pool = ["Alex", "Priya", "Nguyen", "Saxon", "Mei", "Jordan", "Casey", "Imogen", "Lachlan", "Sienna", "Amir", "Elsa", "Marley", "Noah", "Harper", "Aaliyah", "Ethan", "Rory", "Bianca", "Dylan"];
+  const names = [];
+  for (let i = 0; i < count; i++) {
+    names.push(pick(rng, pool));
+  }
+  return names;
+}
+function mulberry32(a) {
+  return function() {
+    let t = (a += 0x6d2b79f5);
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function getSelectedSubjects() {
+  return Array.from(document.querySelectorAll("#subjectChoices input[type=checkbox]:checked")).map((el) => el.value);
+}
+function populateSubjects() {
+  const holder = document.getElementById("subjectChoices");
+  holder.innerHTML = "";
+  SUBJECT_LIST.forEach((subject) => {
+    const label = document.createElement("label");
+    label.className = "checkbox";
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.value = subject;
+    input.addEventListener("change", handleSubjectSelection);
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(subject));
+    holder.appendChild(label);
+  });
+}
+function handleSubjectSelection() {
+  const topicsSelect = document.getElementById("topics");
+  topicsSelect.innerHTML = "";
+  const selected = getSelectedSubjects();
+  const topicSet = new Set();
+  selected.forEach((subject) => {
+    (TOPIC_LIBRARY[subject] || []).forEach((topic) => topicSet.add(`${subject}: ${topic}`));
+  });
+  if (topicSet.size === 0) {
+    topicsSelect.innerHTML = '<option disabled>Select a subject to load topics</option>';
+    return;
+  }
+  Array.from(topicSet).sort().forEach((topic) => {
+    const option = document.createElement("option");
+    option.value = topic;
+    option.textContent = topic;
+    topicsSelect.appendChild(option);
+  });
+}
+function deriveTopics(selectedTopicOptions) {
+  return selectedTopicOptions.map((label) => {
+    const [subject, topic] = label.split(": ");
+    return { subject, topic };
+  });
+}
+function chooseTemplate(subject, rng) {
+  const library = SUBJECT_LIBRARY[subject];
+  if (!library) return null;
+  return pick(rng, library.templates);
+}
+function generateHypo(opts) {
+  const rng = mulberry32(opts.seed);
+  const primarySubject = opts.subjects[0];
+  const template = chooseTemplate(primarySubject, rng);
+  if (!template) {
+    return null;
+  }
+  const topics = deriveTopics(opts.topics).filter((t) => t.subject === primarySubject).map((t) => t.topic);
+  const call = template.call;
+  const facts = template.makeFacts(rng, opts);
+  const nearMiss = template.nearMiss(rng);
+  const markingKey = template.markingKey;
+  const model = template.modelAnswer(rng);
+  let crossover = null;
+  if (opts.crossover === "allowed" && opts.subjects.length > 1 && opts.intensity > 0) {
+    const secondary = opts.subjects[1];
+    const intensityRoll = rng();
+    if (intensityRoll <= opts.intensity / 100) {
+      const secondaryTemplate = chooseTemplate(secondary, rng);
+      if (secondaryTemplate) {
+        crossover = {
+          subject: secondary,
+          template: secondaryTemplate.id,
+        };
+      }
+    }
+  }
+  let factsWithCrossover = facts;
+  if (crossover) {
+    factsWithCrossover += `\n\nCross-over seam: ${crossover.subject} considerations arise where the scenario intersects with ${pick(rng, ["statutory duties","misleading conduct","fiduciary obligations"])}.`;
+  }
+  return {
+    id: `${primarySubject}-${template.id}-Seed${opts.seed}`,
+    subjects: opts.subjects,
+    topics: topics.length ? topics : template.topics,
+    crossover: {
+      enabled: opts.crossover === "allowed",
+      intensity: opts.intensity,
+      secondary: crossover ? crossover.subject : null,
+    },
+    call_of_question: call,
+    facts: factsWithCrossover,
+    authorities: template.authorities,
+    marking_key: markingKey,
+    model_answer: model,
+    near_miss: nearMiss,
+    difficulty: opts.difficulty,
+    word_budget: opts.wordBudget,
+    time_limit: opts.timeLimit,
+    practice_mode: opts.practiceMode,
+    seed: opts.seed,
+  };
+}
+// ========================= // scorer =========================
+const PENALTY_FLAGS = {
+  hallucination: { label: "Hallucinated authority", deduction: 10 },
+  wrongJurisdiction: { label: "Wrong jurisdiction", deduction: 8 },
+  conclusory: { label: "Conclusion-hopping", deduction: 5 },
+  missingStatute: { label: "Missing operative section", cap: 70 },
+};
+function scoreResponse(hypo, responseText) {
+  if (!hypo) return null;
+  const analysis = parseIRAC(responseText);
+  const lower = responseText.toLowerCase();
+  const scores = { issues: 0, rules: 0, statutes: 0, application: 0, structure: 0, concision: 0 };
+  const rationales = {};
+  const flags = [];
+  const weights = { issues: 25, rules: 20, statutes: 15, application: 25, structure: 10, concision: 5 };
+  const detectedIssues = hypo.marking_key.issues.filter((issue) => lower.includes(issue.split(" ")[0]));
+  scores.issues = Math.min(5, Math.round((detectedIssues.length / Math.max(1, hypo.marking_key.issues.length)) * 5));
+  rationales.issues = detectedIssues.length ? `Identified ${detectedIssues.length}/${hypo.marking_key.issues.length} core issues (descriptor leaning ${scores.issues >=4 ? "H1" : scores.issues>=3?"H2" : "H3/P"}).` : "Issue spotting limited; minimal overlap.";
+  let ruleHits = 0;
+  hypo.marking_key.rules.forEach((rule) => {
+    const hasAll = rule.must_include.every((term) => lower.includes(term.toLowerCase()));
+    if (hasAll) ruleHits += 1;
+  });
+  scores.rules = Math.min(5, Math.round((ruleHits / Math.max(1, hypo.marking_key.rules.length)) * 5));
+  rationales.rules = ruleHits ? `Rule statements hit ${ruleHits}/${hypo.marking_key.rules.length} required elements.` : "Rules missing key propositions.";
+  const statuteMentions = (hypo.authorities.statutes || []).filter((stat) => lower.includes(extractSection(stat)));
+  const statuteUse = statuteMentions.length >= 1 && /s\s?\d/.test(lower);
+  scores.statutes = statuteUse ? Math.min(5, statuteMentions.length + 1) : 0;
+  rationales.statutes = statuteUse ? `Operative sections cited (${statuteMentions.join(", ")}).` : "No operative statutory analysis.";
+  const nameAnchors = (responseText.match(/Alex|Priya|Nguyen|Saxon|Mei|Jordan|Casey|Imogen|Lachlan|Sienna|Amir|Elsa|Marley|Noah|Harper|Aaliyah|Ethan|Rory|Bianca|Dylan/g) || []).length;
+  const factLinks = (responseText.match(/because|therefore|thereby|hence|as a result/gi) || []).length;
+  scores.application = Math.min(5, Math.round((Math.min(nameAnchors, factLinks) / 4) * 5));
+  rationales.application = scores.application >=4 ? "Deep fact weaving (H1-like)." : "Application needs more explicit fact-rule linkage.";
+  const headings = (responseText.match(/\bIssue\b|\bRule\b|\bApplication\b|\bConclusion\b/gi) || []).length;
+  const sentences = responseText.split(/[.!?]+/).filter((s) => s.trim().length > 0);
+  const avgSentence = sentences.length ? responseText.split(/\s+/).length / sentences.length : 0;
+  scores.structure = Math.min(5, Math.round((headings / 4) * 5));
+  if (avgSentence > 28) {
+    scores.structure = Math.max(0, scores.structure - 1);
+    flags.push("longSentences");
+  }
+  rationales.structure = `IRAC headings ${headings ? "present" : "missing"}; avg sentence ${avgSentence.toFixed(1)}.`;
+  const wordCount = responseText.trim() ? responseText.trim().split(/\s+/).length : 0;
+  const concisionScore = wordCount ? Math.max(0, 5 - Math.max(0, Math.floor(wordCount / (hypo.word_budget || 400)) - 1)) : 0;
+  scores.concision = Math.min(5, concisionScore);
+  rationales.concision = wordCount ? `Word count ${wordCount} within discipline.` : "No response.";
+  if (/v\s+[A-Z][a-z]+\s+\(20/.test(responseText) && !containsKnownCase(responseText, hypo.authorities.cases)) {
+    flags.push("hallucination");
+  }
+  if (/\bcalifornia\b|\bnew york\b/i.test(responseText)) {
+    flags.push("wrongJurisdiction");
+  }
+  if (/clearly|obviously|plainly/.test(responseText) && scores.application < 3) {
+    flags.push("conclusory");
+  }
+  if (scores.statutes === 0) {
+    flags.push("missingStatute");
+  }
+  let total = 0;
+  Object.entries(scores).forEach(([dim, value]) => {
+    total += (value / 5) * weights[dim];
+  });
+  let cap = Infinity;
+  const appliedFlags = [];
+  flags.forEach((flag) => {
+    if (flag === "hallucination") {
+      total -= PENALTY_FLAGS.hallucination.deduction;
+      appliedFlags.push(`${PENALTY_FLAGS.hallucination.label} (-${PENALTY_FLAGS.hallucination.deduction})`);
+    }
+    if (flag === "wrongJurisdiction") {
+      total -= PENALTY_FLAGS.wrongJurisdiction.deduction;
+      appliedFlags.push(`${PENALTY_FLAGS.wrongJurisdiction.label} (-${PENALTY_FLAGS.wrongJurisdiction.deduction})`);
+    }
+    if (flag === "conclusory") {
+      total -= PENALTY_FLAGS.conclusory.deduction;
+      appliedFlags.push(`${PENALTY_FLAGS.conclusory.label} (-${PENALTY_FLAGS.conclusory.deduction})`);
+    }
+    if (flag === "missingStatute") {
+      cap = Math.min(cap, PENALTY_FLAGS.missingStatute.cap);
+      appliedFlags.push(`${PENALTY_FLAGS.missingStatute.label} (cap ${PENALTY_FLAGS.missingStatute.cap})`);
+    }
+  });
+  if (cap < Infinity) {
+    total = Math.min(total, cap);
+  }
+  total = Math.max(0, Math.round(total));
+  return {
+    scores,
+    total,
+    rationales,
+    flags: appliedFlags,
+    analysis,
+  };
+}
+function parseIRAC(text) {
+  const sections = { Issue: "", Rule: "", Application: "", Conclusion: "" };
+  let current = null;
+  text.split(/\n+/).forEach((line) => {
+    const heading = line.trim().replace(/:$/, "");
+    if (sections.hasOwnProperty(heading)) {
+      current = heading;
+      return;
+    }
+    if (current) {
+      sections[current] += line + "\n";
+    } else {
+      sections.Issue += line + "\n";
+    }
+  });
+  return sections;
+}
+function extractSection(statute) {
+  const match = statute.match(/s\s?\d+[A-Za-z]?/);
+  return match ? match[0].toLowerCase() : statute.toLowerCase();
+}
+function containsKnownCase(text, cases) {
+  return cases.some((caseName) => text.includes(caseName.split(" v ")[0]));
+}
+// ========================= // descriptors->grade =========================
+function descriptorGrade(total) {
+  if (total >= 80) return "H1";
+  if (total >= 75) return "H2A";
+  if (total >= 70) return "H2B";
+  if (total >= 65) return "H3";
+  if (total >= 50) return "P";
+  return "N";
+}
+function descriptorRationales(rationales) {
+  return Object.entries(rationales).map(([dim, text]) => `${dim.toUpperCase()}: ${text}`).join("\n");
+}
+// ========================= // curve allocator =========================
+const CURVE_WINDOWS = {};
+function applyCurve(subject, rawScore, descriptor, practiceMode) {
+  if (practiceMode) {
+    return {
+      curveGrade: descriptor,
+      note: "Practice mode enabled – curve not applied.",
+    };
+  }
+  if (!CURVE_WINDOWS[subject]) CURVE_WINDOWS[subject] = [];
+  const window = CURVE_WINDOWS[subject];
+  window.push(rawScore);
+  window.sort((a, b) => b - a);
+  if (window.length > 200) window.length = 200;
+  const index = window.indexOf(rawScore);
+  const pct = (index / window.length) * 100;
+  let grade = descriptor;
+  if (rawScore < 50) {
+    grade = "N";
+  } else if (pct < 12) {
+    grade = rawScore >= 85 ? "H1" : "H1";
+  } else if (pct < 32) {
+    grade = "H2A";
+  } else if (pct < 60) {
+    grade = "H2B";
+  } else {
+    grade = descriptor === "H1" || descriptor === "H2A" ? "H3" : descriptor;
+  }
+  return {
+    curveGrade: grade,
+    note: `Position ${index + 1}/${window.length}; curve slot applied.`,
+  };
+}
+// ========================= // feedback engine =========================
+function feedbackEngine(hypo, scoring) {
+  const weakestDim = Object.entries(scoring.scores).sort((a, b) => a[1] - b[1])[0][0];
+  const nextReps = [];
+  if (weakestDim === "statutes") {
+    nextReps.push({ type: "micro-drill", prompt: `Draft a 90-word paragraph applying ${hypo.authorities.statutes[0]} to a new fact variation focusing on scope of liability.` });
+  } else if (weakestDim === "issues") {
+    nextReps.push({ type: "micro-drill", prompt: "List five distinct issues triggered by the facts without drawing conclusions." });
+  } else if (weakestDim === "application") {
+    nextReps.push({ type: "micro-drill", prompt: "Write two counter-arguments for the defendant using concrete facts." });
+  } else {
+    nextReps.push({ type: "micro-drill", prompt: "Summarise one authority with proposition + pinpoint in 60 words." });
+  }
+  nextReps.push({ type: "worked-example", prompt: hypo.model_answer.split("\n").slice(0, 8).join("\n") });
+  nextReps.push({ type: "faded-example", prompt: "Issue: ____\nRule: ____\nApplication: ____\nConclusion: ____" });
+  const schedule = ["Day 1", "Day 3", "Day 7"];
+  const interleave = `Next: pivot to ${pick(mulberry32(hypo.seed + 7), Object.keys(TOPIC_LIBRARY))} for interleaving.`;
+  return {
+    summary: `Focus on ${weakestDim} to shift descriptor up a band.`,
+    nextReps,
+    schedule,
+    interleave,
+    metacognition: "Before revealing the model answer, rate your performance out of 100 to check calibration.",
+  };
+}
+// ========================= // storage =========================
+const STORAGE_KEY = "jd-hypo-session";
+let currentHypo = null;
+let timerInterval = null;
+let elapsedSeconds = 0;
+function saveSession(responseText) {
+  if (!currentHypo) return;
+  const payload = {
+    hypo: currentHypo,
+    response: responseText,
+    timestamp: Date.now(),
+  };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+  document.getElementById("autosaveStatus").textContent = new Date().toLocaleTimeString();
+}
+function loadSession() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (!data || !data.hypo) return;
+    currentHypo = data.hypo;
+    renderHypo(currentHypo);
+    document.getElementById("response").value = data.response || "";
+    document.getElementById("autosaveStatus").textContent = "Restored";
+    updateWordCount();
+  } catch (err) {
+    console.error("Failed to load session", err);
+  }
+}
+function exportSession(asMarkdown = false) {
+  if (!currentHypo) return;
+  const response = document.getElementById("response").value;
+  const scoringPayload = document.getElementById("scoreSummary").dataset.payload;
+  const scoring = scoringPayload ? JSON.parse(scoringPayload) : null;
+  if (asMarkdown) {
+    const content = `# Hypo Export\n\n## Prompt\n${currentHypo.facts}\n\n**Call of the Question**: ${currentHypo.call_of_question}\n\n## Response\n${response}\n\n## Scores\n${scoring ? JSON.stringify(scoring, null, 2) : "Not yet marked."}`;
+    triggerDownload("jd_hypo.md", content);
+  } else {
+    const payload = { hypo: currentHypo, response, scoring };
+    triggerDownload("jd_hypo.json", JSON.stringify(payload, null, 2));
+  }
+}
+function importSession(file) {
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    try {
+      const data = JSON.parse(event.target.result);
+      if (!data.hypo) throw new Error("Invalid format");
+      currentHypo = data.hypo;
+      renderHypo(currentHypo);
+      document.getElementById("response").value = data.response || "";
+      if (data.scoring) {
+        renderScores(data.scoring, currentHypo, document.getElementById("response").value);
+      }
+      document.getElementById("autosaveStatus").textContent = "Imported";
+    } catch (err) {
+      alert("Import failed: " + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+function triggerDownload(filename, content) {
+  const blob = new Blob([content], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+// ========================= // tests =========================
+function runInternalTests() {
+  const results = [];
+  const opts = { subjects: ["Torts"], topics: [], crossover: "single", intensity: 0, difficulty: 3, wordBudget: 400, timeLimit: 30, seed: 123, practiceMode: true };
+  const hypoA = generateHypo(opts);
+  const hypoB = generateHypo(opts);
+  results.push({ name: "Deterministic seed", pass: JSON.stringify(hypoA) === JSON.stringify(hypoB) });
+  const scoreNoStatute = scoreResponse(hypoA, "Issue\nRule\nApplication\nConclusion");
+  results.push({ name: "Missing statute cap", pass: scoreNoStatute.total <= 70 });
+  const respHallucination = "Issue\nRule\nApplication cites Smith v California (2020) 1 CLR 1.\nConclusion";
+  const hallScore = scoreResponse(hypoA, respHallucination);
+  results.push({ name: "Hallucination penalty", pass: hallScore.flags.some((f) => f.includes("Hallucinated")) });
+  const modelScore = scoreResponse(hypoA, hypoA.model_answer || "");
+  results.push({ name: "Model answer ≥95", pass: modelScore.total >= 95 });
+  const curve = applyCurve("Torts", 85, "H1", false);
+  results.push({ name: "Curve allocator returns grade", pass: !!curve.curveGrade });
+  document.getElementById("testResults").innerHTML = results.map((r) => `<div>${r.pass ? "✅" : "❌"} ${r.name}</div>`).join("");
+}
+// ========================= // render helpers =========================
+function renderHypo(hypo) {
+  document.getElementById("seedDisplay").textContent = `Seed: ${hypo.seed}`;
+  document.getElementById("hypoMeta").textContent = `${hypo.id} | Subjects: ${hypo.subjects.join(", ")} | Topics: ${hypo.topics.join(", ")}`;
+  document.getElementById("facts").textContent = hypo.facts;
+  document.getElementById("callOfQuestion").textContent = hypo.call_of_question;
+  document.getElementById("hintContent").innerHTML = `<strong>Near-miss facts</strong><ul>${hypo.near_miss.map((hint) => `<li>${hint}</li>`).join("")}</ul>`;
+  document.getElementById("modelAnswer").textContent = hypo.model_answer;
+  document.getElementById("scoreSummary").textContent = "No submission yet.";
+  document.getElementById("scoreSummary").dataset.payload = "";
+  document.getElementById("scoreGrid").innerHTML = "";
+  document.getElementById("flags").textContent = "";
+  document.getElementById("descriptor").textContent = "";
+  document.getElementById("curveResult").textContent = "";
+  elapsedSeconds = 0;
+  updateTimerDisplay();
+  if (timerInterval) clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    elapsedSeconds += 1;
+    updateTimerDisplay();
+  }, 1000);
+}
+function updateTimerDisplay() {
+  const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, "0");
+  const seconds = String(elapsedSeconds % 60).padStart(2, "0");
+  document.getElementById("timerDisplay").textContent = `Timer: ${minutes}:${seconds}`;
+}
+function updateWordCount() {
+  const text = document.getElementById("response").value;
+  const count = text.trim() ? text.trim().split(/\s+/).length : 0;
+  document.getElementById("wordCount").textContent = count;
+}
+function insertIRACHeadings() {
+  const textarea = document.getElementById("response");
+  if (textarea.value.trim().length === 0) {
+    textarea.value = "Issue\n\nRule\n\nApplication\n\nConclusion\n";
+  }
+}
+function renderScores(scoring, hypo, responseText) {
+  document.getElementById("scoreSummary").textContent = `Raw total: ${scoring.total}`;
+  document.getElementById("scoreSummary").dataset.payload = JSON.stringify(scoring);
+  const grid = document.getElementById("scoreGrid");
+  grid.innerHTML = "";
+  Object.entries(scoring.scores).forEach(([dim, value]) => {
+    const card = document.createElement("div");
+    card.className = "score-card";
+    card.innerHTML = `<h4>${dim.toUpperCase()}</h4><div class="badge">${value}/5</div><p class="rationale">${scoring.rationales[dim]}</p>`;
+    grid.appendChild(card);
+  });
+  document.getElementById("flags").textContent = scoring.flags.length ? `Flags: ${scoring.flags.join("; ")}` : "No penalty flags.";
+  const descriptor = descriptorGrade(scoring.total);
+  document.getElementById("descriptor").textContent = `Descriptor: ${descriptor}`;
+  const curve = applyCurve(hypo.subjects[0], scoring.total, descriptor, hypo.practice_mode);
+  document.getElementById("curveResult").textContent = `Curve-adjusted grade: ${curve.curveGrade} (${curve.note})`;
+  const feedback = feedbackEngine(hypo, scoring);
+  const feedbackHtml = [`<div>${feedback.summary}</div>`, `<div><strong>Next reps</strong><ul>${feedback.nextReps.map((rep) => `<li>${rep.type}: ${rep.prompt}</li>`).join("")}</ul></div>`, `<div>Schedule: ${feedback.schedule.join(", ")}</div>`, `<div>Interleave: ${feedback.interleave}</div>`, `<div>Metacognition: ${feedback.metacognition}</div>`].join("");
+  document.getElementById("feedbackContent").innerHTML = feedbackHtml;
+}
+// ========================= // event wiring =========================
+document.getElementById("generatorForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const subjects = getSelectedSubjects();
+  if (subjects.length === 0) {
+    alert("Select at least one subject.");
+    return;
+  }
+  const topics = Array.from(document.getElementById("topics").selectedOptions).map((opt) => opt.value);
+  const seed = parseInt(document.getElementById("seed").value, 10) || 1;
+  const opts = {
+    subjects,
+    topics,
+    crossover: document.querySelector("input[name=crossover]:checked").value,
+    intensity: parseInt(document.getElementById("intensity").value, 10) || 0,
+    difficulty: parseInt(document.getElementById("difficulty").value, 10) || 3,
+    wordBudget: parseInt(document.getElementById("wordBudget").value, 10) || 400,
+    timeLimit: parseInt(document.getElementById("timeLimit").value, 10) || 30,
+    seed,
+    practiceMode: document.getElementById("practiceMode").checked,
+  };
+  const hypo = generateHypo(opts);
+  if (!hypo) {
+    alert("No template available for the selected subject. Template extension required.");
+    return;
+  }
+  hypo.practice_mode = opts.practiceMode;
+  currentHypo = hypo;
+  renderHypo(hypo);
+  saveSession(document.getElementById("response").value);
+});
+document.getElementById("toggleIRAC").addEventListener("change", (event) => {
+  if (event.target.checked) {
+    insertIRACHeadings();
+  }
+});
+document.getElementById("toggleScratch").addEventListener("change", (event) => {
+  document.getElementById("scratchpad").hidden = !event.target.checked;
+});
+document.getElementById("response").addEventListener("input", () => {
+  updateWordCount();
+  saveSession(document.getElementById("response").value);
+});
+document.getElementById("scratchpad").addEventListener("input", () => {
+  saveSession(document.getElementById("response").value);
+});
+document.getElementById("submitResponse").addEventListener("click", () => {
+  if (!currentHypo) {
+    alert("Generate a hypo first.");
+    return;
+  }
+  const responseText = document.getElementById("response").value;
+  const scoring = scoreResponse(currentHypo, responseText);
+  renderScores(scoring, currentHypo, responseText);
+  saveSession(responseText);
+});
+document.getElementById("resetResponse").addEventListener("click", () => {
+  document.getElementById("response").value = "";
+  updateWordCount();
+  saveSession("");
+});
+document.getElementById("exportJson").addEventListener("click", () => exportSession(false));
+document.getElementById("exportMarkdown").addEventListener("click", () => exportSession(true));
+document.getElementById("importJson").addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (file) importSession(file);
+});
+document.getElementById("runTests").addEventListener("click", runInternalTests);
+document.getElementById("reroll").addEventListener("click", () => {
+  const seedField = document.getElementById("seed");
+  const newSeed = Math.floor(Math.random() * 100000);
+  seedField.value = newSeed;
+  if (currentHypo) {
+    document.getElementById("generatorForm").dispatchEvent(new Event("submit"));
+  }
+});
+populateSubjects();
+loadSession();
+updateWordCount();
+</script>
+</body>
+</html>
