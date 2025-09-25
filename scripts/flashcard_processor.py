@@ -18,18 +18,19 @@ from typing import Dict, Iterable, List, Optional
 import shutil
 
 # ---------------------------------------------------------------------------
+# Repo layout
+# ---------------------------------------------------------------------------
+ROOT = Path(__file__).resolve().parents[1]  # repo root (…/Windsurf)
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+# ---------------------------------------------------------------------------
 # Third-party deps
 # ---------------------------------------------------------------------------
 try:
     import yaml  # type: ignore
-except ImportError:  # deterministic failure path
-    print("Error: PyYAML is required. Install with: pip install pyyaml", file=sys.stderr)
-    sys.exit(1)
-
-# ---------------------------------------------------------------------------
-# Repo layout
-# ---------------------------------------------------------------------------
-ROOT = Path(__file__).resolve().parents[1]  # repo root (…/Windsurf)
+except ImportError:  # pragma: no cover - fallback when PyYAML is unavailable
+    from tools import yaml_fallback as yaml  # type: ignore
 
 CARD_DIRS = [
     ROOT / "jd" / "cards_yaml",
@@ -134,13 +135,17 @@ class FlashcardProcessor:
         "intention to create legal relations",
     )
 
-    def __init__(self) -> None:
+    def __init__(self, policy_path: Optional[str] = None) -> None:
         self.card_dirs = [d for d in CARD_DIRS if d.exists()]
-        self._policy_path = ROOT / "jd" / "policy" / "cards_policy.yml"
+        default_policy = ROOT / "jd" / "policy" / "cards_policy.yml"
+        self._policy_path = Path(policy_path).expanduser().resolve() if policy_path else default_policy
 
         self._schema_validator = None
         self._schema_validator_error = ""
         self._schema_validator_loaded = False
+        self.backup_root = ROOT / "backups"
+        self._current_backup_run: Optional[str] = None
+        self._dry_run = False
 
         self._compiled_topic_patterns = {
             topic: [re.compile(pat, re.IGNORECASE) for pat in patterns]
@@ -157,7 +162,7 @@ class FlashcardProcessor:
             return self._schema_validator
         self._schema_validator_loaded = True
         try:
-            from schema_validator import SchemaValidator
+            from tools.schema_validator import SchemaValidator
         except ImportError as exc:
             self._schema_validator_error = (
                 f"Warning: Could not import SchemaValidator ({exc}); validation disabled."
@@ -198,15 +203,33 @@ class FlashcardProcessor:
             card._errors.append(f"Failed to load card: {exc}")
             return card
 
+    def configure_run(self, backup_run: Optional[str], dry_run: bool = False) -> None:
+        self._current_backup_run = backup_run
+        self._dry_run = dry_run
+
+    def prune_backups(self, retain: int = 10) -> None:
+        if not self.backup_root.exists():
+            return
+        runs = sorted([p for p in self.backup_root.iterdir() if p.is_dir()])
+        if retain <= 0:
+            for run in runs:
+                shutil.rmtree(run, ignore_errors=True)
+            return
+        for run in runs[:-retain]:
+            shutil.rmtree(run, ignore_errors=True)
+
     def save_card(self, card: Flashcard, backup: bool = True) -> bool:
+        if self._dry_run:
+            return False
         if not card.path.parent.exists():
             card.path.parent.mkdir(parents=True, exist_ok=True)
 
         if backup and card.path.exists():
-            backup_dir = REPORTS_DIR / "backups"
+            run_folder = self._current_backup_run or datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+            backup_dir = self.backup_root / run_folder
             backup_dir.mkdir(parents=True, exist_ok=True)
-            timestamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
-            backup_path = backup_dir / f"{card.path.stem}.bak-{timestamp}"
+            timestamp = datetime.utcnow().strftime("%H%M%S")
+            backup_path = backup_dir / f"{card.path.stem}-{timestamp}{card.path.suffix or '.yml'}"
             shutil.copy2(card.path, backup_path)
 
         try:
@@ -412,10 +435,12 @@ class FlashcardProcessor:
         return result
 
     def find_cards(self, pattern: str = "*.yml") -> List[Path]:
-        # Always search within known card dirs; pattern is relative glob
         matches: List[Path] = []
-        for base in self.card_dirs:
-            matches.extend(sorted(base.glob(pattern)))
+        if any(sep in pattern for sep in ("/", "\\")):
+            matches.extend(sorted((ROOT).glob(pattern)))
+        else:
+            for base in self.card_dirs:
+                matches.extend(sorted(base.glob(pattern)))
         return matches
 
 # ---------------------------------------------------------------------------
