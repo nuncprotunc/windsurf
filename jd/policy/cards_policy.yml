@@ -27,8 +27,8 @@ global_rules:
     discourage_multi_question_fronts: true
 
 back:
-  min_words: 120
-  max_words: 360
+  min_words: 160
+  max_words: 280
   max_sentence_words: 28
   required_headings_regex:
     - "^Issue\\."
@@ -42,7 +42,7 @@ back:
   issue_guidance: "Add context/threshold not already in the front; no verbatim repetition."
   authority_per_step:
     lead_required: true
-    fallback_allowed: true        # second authority allowed only for nuance (e.g., UK/PC or competing Aus view) with an explicit rationale
+    fallback_allowed: true # second authority allowed only for nuance (e.g., UK/PC or competing Aus view) with an explicit rationale
     max_per_step: 2
   statutes_listed_must_be_used_in_text: true
   abbreviations:
@@ -51,12 +51,12 @@ back:
   tripwire_mentions_in_back: discourage # keep detailed pitfalls solely in tripwires section
 
 anchors:
-  structure: {cases: [], statutes: [], notes: []}
+  structure: { cases: [], statutes: [], notes: [] }
   min_items: 1
   max_items: 8
   each_item_max_words: 120
   require_case_or_statute_ref_per_item: true
-  uk_or_persuasive_requires_note: true   # note the nuance/approval if using UK/PC
+  uk_or_persuasive_requires_note: true # note the nuance/approval if using UK/PC
 
 statutes:
   include_only_operational_sections: true
@@ -65,7 +65,7 @@ statutes:
 
 authorities:
   priority_order: ["HCA", "State CA", "Other Aus", "UK/PC (nuance)"]
-  uk_nuance_note_required: true          # specify the nuance supplied by UK/PC authority
+  uk_nuance_note_required: true # specify the nuance supplied by UK/PC authority
   flag_overruled_or_distinguished: true
   require_year_and_neutral_or_report_cite: true
   min_unique_authorities_in_back: 2
