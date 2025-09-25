@@ -1,0 +1,64 @@
+front: How do courts distinguish the existence of a duty of care from its scope, and
+  how should you apply that distinction in a Victorian negligence problem?
+back: |
+  Issue. How do courts distinguish duty existence from its scope, and how should you apply that sequencing in Victorian negligence so you do not collapse into breach or causation?
+
+  Rule. Existence asks whether any duty is owed; scope asks what the duty required in the circumstances. Existence turns on foreseeability tempered by salient features and coherence (Sullivan v Moody [2001] HCA 59; (2001) 207 CLR 562, 576 [50]). Salient features include vulnerability, control, assumption/reliance, and indeterminacy (Perre v Apand [1999] HCA 36; (1999) 198 CLR 180, 225 [118]; Woolcock Street Investments [2004] HCA 16; (2004) 216 CLR 515, 529 [23]); public authority discretion and statutory coherence loom large (Graham Barclay Oysters [2002] HCA 54, 211 CLR 540, 579 [79]). Omissions generally attract no duty absent special relationships (Crimmins [1999] HCA 59; Stuart v Kirkland-Veenstra [2009] HCA 15). Psychiatric harm is recognised but constrained (Tame/Annetts [2002] HCA 35). Scope narrows duty once existence is found, confining it to the risk that materialised and to context (Modbury Triangle v Anzil [2000] HCA 61; (2000) 205 CLR 254, 269 [35]).
+
+  Application scaffold. 1) Existence: address foreseeability, salient features, and coherence (policy/statute). 2) If yes, scope: confine to the precise risk that eventuated considering vulnerability/control and third-party interventions. 3) Only then breach: apply Wrongs Act 1958 (Vic) s 48. 4) Causation/scope of liability: Wrongs Act s 51. 5) Defences/damages: contributory negligence (CN) s 26, volenti s 54, Pt VBA caps (e.g. s 28ID, s 28LE) and Pt IVAA proportionate liability if engaged; ACL s 18 may overlay.
+
+  Authorities map. Existence: Sullivan 207 CLR 562, 576 [50]; Perre 198 CLR 180, 225 [118]; Woolcock 216 CLR 515, 529 [23]; Crimmins 200 CLR 1. Public authority coherence: Graham Barclay Oysters 211 CLR 540, 579 [79]. Omissions: Stuart v Kirkland-Veenstra 237 CLR 215. Psychiatric harm: Tame/Annetts 211 CLR 317. Scope: Modbury 205 CLR 254, 269 [35].
+
+  Statutory hook. Wrongs Act 1958 (Vic) ss 48, 51, 26, 54; Pt VBA (incl s 28ID, s 28LE); Pt IVAA.
+
+  Tripwires. Conflating existence with scope. Importing the Shirt calculus into duty analysis. Ignoring omissions/psychiatric harm limits. Skipping statutory coherence for public authorities. Failing to separate breach (s 48) from causation (s 51).
+
+  Conclusion. Sequence existence → scope → breach → causation; state each gate explicitly to show doctrinal discipline and statutory literacy.
+why_it_matters: |
+  Examiners reward sequenced answers: existence before scope, then breach (s 48), then causation (s 51). This avoids conflation and shows statutory literacy (Pt VBA caps; CN; volenti). Referencing Sullivan, Perre/Woolcock, Modbury and public-authority coherence earns marks for policy discipline and accuracy.
+
+mnemonic: 'E.S.C.O.P.E.: Existence → Salient features → Coherence → Omissions/Psychiatric
+  harm → Pinpoints (Wrongs Act/ACL) → Exam wrap (defences/damages)'
+diagram: |
+  ```mermaid
+  mindmap
+    root((Duty — existence vs scope))
+      Existence filters (foreseeability & salient features)
+      Omissions / psychiatric harm gates
+      Public authority coherence
+      Scope boundary (risk that materialised)
+      Post-duty steps (s 48 / s 51 / Pt VBA)
+  ```
+tripwires:
+  - Conflating existence with scope instead of treating sequentially.
+  - Importing the Shirt breach calculus into the duty inquiry.
+  - Ignoring omissions or psychiatric-harm limits when framing existence.
+  - Failing to anchor statutory defences (s 54) or damages caps (Pt VBA) once duty is found.
+  - Overlooking statutory purpose/coherence for public authorities.
+anchors:
+  cases:
+    - "Sullivan v Moody [2001] HCA 59; (2001) 207 CLR 562, 576 [50]"
+    - "Perre v Apand Pty Ltd [1999] HCA 36; (1999) 198 CLR 180, 225 [118]"
+    - "Woolcock Street Investments Pty Ltd v CDG Pty Ltd [2004] HCA 16; (2004) 216 CLR 515, 529 [23]"
+    - "Graham Barclay Oysters Pty Ltd v Ryan [2002] HCA 54; (2002) 211 CLR 540, 579 [79]"
+    - "Crimmins v Stevedoring Industry Finance Committee [1999] HCA 59; (1999) 200 CLR 1"
+    - "Stuart v Kirkland-Veenstra [2009] HCA 15; (2009) 237 CLR 215"
+    - "Tame v New South Wales; Annetts v Australian Stations Pty Ltd [2002] HCA 35; (2002) 211 CLR 317"
+    - "Modbury Triangle Shopping Centre Pty Ltd v Anzil [2000] HCA 61; (2000) 205 CLR 254, 269 [35]"
+  statutes:
+    - "Wrongs Act 1958 (Vic) ss 48, 51, 26, 54, Pt VBA (incl s 28ID, s 28LE), Pt IVAA"
+keywords:
+  - duty-of-care
+  - duty-existence
+  - duty-scope
+  - salient-features
+  - omissions
+  - psychiatric-harm
+  - public-authority
+  - statutory-coherence
+reading_level: "Plain English (JD)"
+tags:
+- LAWS50025 - Torts
+- Duty
+- Exam_Fundamentals
+- MLS_H1

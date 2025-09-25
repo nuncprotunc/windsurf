@@ -1,0 +1,109 @@
+# Gates v3 - Template-aware validation thresholds
+version: v3
+
+# Global thresholds (apply to all cards)
+global:
+  front:
+    max_words: 30
+    min_words: 5
+    end_with_question: true
+    
+  back:
+    min_words: 50
+    max_words: 500
+    max_sentence_words: 32
+    
+  metadata:
+    min_tags: 1
+    max_tags: 8
+    require_created_timestamp: true
+    require_updated_timestamp: true
+
+# Template-specific gates
+template_gates:
+  concept:
+    back:
+      min_words: 50
+      max_words: 300
+    required_fields:
+      - definition
+      - key_authorities
+    recommended_fields:
+      - diagram
+      - application
+
+  case:
+    back:
+      min_words: 100
+      max_words: 400
+    required_fields:
+      - citation
+      - key_principles
+    recommended_fields:
+      - facts
+      - ratio
+      - significance
+
+  statute:
+    back:
+      min_words: 50
+      max_words: 300
+    required_fields:
+      - act_name
+      - section_number
+      - text
+    recommended_fields:
+      - interpretation_notes
+      - case_authorities
+
+# Authority validation
+authorities:
+  cases:
+    min_per_card: 1
+    max_per_card: 8
+    require_aglc4: true
+    require_pinpoints: true
+    
+  statutes:
+    min_per_card: 0
+    max_per_card: 8
+    require_jurisdiction: true
+    require_section_numbers: true
+
+# Content quality checks
+quality:
+  avoid:
+    - passive_voice_overuse
+    - legal_jargon_without_explanation
+    - undefined_terms
+    - circular_definitions
+    
+  encourage:
+    - clear_headings
+    - bullet_points
+    - practical_examples
+    - cross_references
+
+# Validation strictness levels
+strictness:
+  level: moderate  # Options: lenient, moderate, strict
+  
+  # What happens when gates aren't met
+  on_failure:
+    required_fields: error
+    recommended_fields: warning
+    word_limits: warning
+    authority_format: error
+
+# Migration settings
+migration:
+  from_v2a:
+    auto_convert: true
+    warn_on_missing_fields: true
+    preserve_old_fields: false
+
+# Metadata
+_meta:
+  schema_version: v3
+  last_updated: 2025-09-25
+  compatible_with: Flashcard Processor v1.0+

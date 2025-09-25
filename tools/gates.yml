@@ -1,9 +1,0 @@
-# Tunable QA thresholds (first pass is pragmatic)
-min_back_chars: 180
-min_why_chars: 120
-min_keywords: 10
-min_diagram_leaves: 8
-min_tripwires: 4
-min_cases: 2
-min_statutes: 1
-autofill_enabled: true

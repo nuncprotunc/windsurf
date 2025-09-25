@@ -1,0 +1,131 @@
+# Global QA policy for flashcards — v2a (exam discipline + conceptual diagrams)
+# Compatible with scripts/normalize_and_qa_cards.py
+
+schema:
+  required_fields:
+    - front
+    - back
+    - why_it_matters
+    - mnemonic
+    - diagram
+    - tripwires
+    - anchors
+    - keywords
+    - reading_level
+    - tags
+
+global_rules:
+  language: Australian English
+  citation: AGLC4
+  enforce_pinpoints: true
+  prefer_quotes: double
+  zero_invented_authorities: true
+
+  front:
+    max_words: 30
+    must_end_with_question_mark: true
+    discourage_multi_question_fronts: true
+
+back:
+  min_words: 180
+  max_words: 260
+  max_sentence_words: 32
+  required_headings_regex:
+    - "^Issue\\."
+    - "^Rule\\."
+    - "^Application scaffold\\."
+    - "^Authorities map\\."
+    - "^Statutory hook\\."
+    - "^Tripwires\\."
+    - "^Conclusion\\."
+  allow_missing_blocks_if_not_applicable: true
+  issue_guidance: "Add context/threshold not already in the front; no verbatim repetition."
+  authority_per_step:
+    lead_required: true
+    fallback_allowed: true        # second authority allowed only for nuance (e.g., UK/PC or competing Aus view) with an explicit rationale
+    max_per_step: 2
+  statutes_listed_must_be_used_in_text: true
+  abbreviations:
+    expand_on_first_use: true
+    use_after_definition: true
+  tripwire_mentions_in_back: discourage # keep detailed pitfalls solely in tripwires section
+
+anchors:
+  structure: {cases: [], statutes: [], notes: []}
+  min_items: 1
+  max_items: 8
+  each_item_max_words: 120
+  require_case_or_statute_ref_per_item: true
+  uk_or_persuasive_requires_note: true   # note the nuance/approval if using UK/PC
+
+statutes:
+  include_only_operational_sections: true
+  prefer_victoria_first: true
+  require_commonwealth_if_engaged: true
+
+authorities:
+  priority_order: ["HCA", "State CA", "Other Aus", "UK/PC (nuance)"]
+  uk_nuance_note_required: true          # specify the nuance supplied by UK/PC authority
+  flag_overruled_or_distinguished: true
+  require_year_and_neutral_or_report_cite: true
+  min_unique_authorities_in_back: 2
+  max_unique_authorities_in_back: 8
+
+keywords:
+  min: 6
+  max: 10
+  recommended_include_if_relevant:
+    - salient features
+    - exclusive possession
+    - relational loss
+    - proportionate liability
+    - obvious risk
+    - scope of liability
+    - voluntary assumption of risk
+    - vicarious liability
+
+diagram:
+  type: mindmap
+  must_be_valid_mermaid: true
+  max_total_nodes: 12
+  top_level_branches_min: 4
+  top_level_branches_max: 5
+  discourage_heading_mirroring: true
+
+tripwires:
+  min: 3
+  max: 6
+  examples_to_encourage:
+    - conflating duty existence vs scope
+    - citing multiple authorities for the same bare proposition
+    - importing policy that cuts against coherence (Sullivan v Moody)
+    - misusing Wrongs Act calculus (s 48) vs general negligence
+    - skipping statutory thresholds (Pt VBA)
+
+why_it_matters:
+  max_words: 120
+  must_link_to_exam_pressure: true
+
+mnemonic:
+  max_tokens: 7
+  must_be_exam_usable: true
+  optional: true
+  allow_empty: true
+
+reading_level:
+  target: "Plain English (JD)"
+
+tags:
+  required:
+    - MLS_H1
+  recommended_subject_tags:
+    - LAWS50025_Torts
+    - Exam_Fundamentals
+
+lint:
+  forbid_repeated_sentences_similarity_threshold: 0.8
+  forbid_duplicate_section_headers: true
+  forbid_placeholder_text_regex:
+    - "TBD"
+    - "lorem ipsum"
+  allow_explicit_uncertainty_token: "\\[NO VERIFIED AUTHORITY FOUND\\]"

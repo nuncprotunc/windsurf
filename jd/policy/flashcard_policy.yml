@@ -1,0 +1,63 @@
+# Flashcard Validation Policy
+# This file defines validation rules and auto-fix behaviors for flashcards
+
+# Rule configurations
+rules:
+  # Front matter validations
+  F001:
+    enabled: true
+    severity: error
+    description: Required fields must be present
+    
+  F002:
+    enabled: true
+    severity: error
+    description: Front should end with a question mark
+    
+  F003:
+    enabled: true
+    severity: warning
+    description: Front should be concise
+    max_words: 30
+    
+  # Back matter validations
+  B001:
+    enabled: true
+    severity: warning
+    description: Back should contain sufficient content
+    min_length: 20
+    
+  B002:
+    enabled: true
+    severity: warning
+    description: Legal references should be properly cited
+    
+  # Schema validations
+  S001:
+    enabled: true
+    severity: error
+    description: Card must match schema
+    
+  # Diagram validations
+  D001:
+    enabled: true
+    severity: error
+    description: Mermaid diagrams must be valid
+    
+  # Anchor validations
+  A001:
+    enabled: true
+    severity: warning
+    description: Internal links should use proper anchor format
+
+# Auto-fix configurations
+autofix:
+  F002: true  # Add missing question marks
+  F003: true  # Truncate long fronts
+  B001: true  # Add placeholder content
+  D001: true  # Fix diagram syntax
+
+# Global settings
+front_must_end_with_question_mark: true
+front_max_words: 30
+back_min_length: 20

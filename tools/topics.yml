@@ -1,16 +1,24 @@
 - front: "Torts: Protected interests overview?"
   topic: torts_overview
+
 - front: "Duty of care: Existence vs scope?"
-  topic: duty_of_care
+  topic: duty_existence_vs_scope
+
 - front: "Breach: What is the Shirt calculus?"
-  topic: breach
+  topic: breach_wrongs_act_s48
+
 - front: "Causation: s 51 factual causation vs scope of liability?"
-  topic: causation
+  topic: causation_wrongs_act_s51
+
 - front: "Trespass to land: Elements?"
-  topic: trespass
+  topic: trespass_to_land
+
 - front: "Private nuisance: Unreasonableness factors?"
-  topic: nuisance
-- front: "Defamation: Core elements and key defences?"
-  topic: defamation
-- front: "Contract: Formation checklist?"
-  topic: contract
+  topic: private_nuisance
+
+# Non-Torts (move to separate decks)
+# - front: "Defamation: Core elements and key defences?"
+#   topic: defamation_core_elements
+#
+# - front: "Contract: Formation checklist?"
+#   topic: contract_formation_checklist

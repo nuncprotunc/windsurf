@@ -1,0 +1,65 @@
+front: "Interference with goods: classify trespass, conversion, detinue, and state the remedy?"
+back: |
+  Issue. Which interference-with-goods tort applies and what remedy follows? Note: Overflow from front — “valuation dates, return orders, detention damages”.
+
+  Rule. Trespass to goods protects possession against direct interference and is actionable per se (Hutchins v Maughan [1947] VLR 131, 132–133), so nominal damages are available even without proof of loss. Conversion requires an intentional dealing with the goods that is inconsistent with the plaintiff’s immediate right to possession, whether by unauthorised dominion or refusal after a proper demand (Penfolds Wines Pty Ltd v Elliott [1946] HCA 46; (1946) 74 CLR 204, 228–230; Bunnings Group Ltd v CHEP Australia Ltd [2011] NSWCA 342; (2011) 82 NSWLR 420, [124]). Detinue is a continuing cause of action: after the plaintiff (with an immediate right) demands return, the defendant’s refusal gives rise to relief by judgment for return or, in the alternative, value at the date of judgment plus damages for detention (Heavener v Loomes [1924] HCA 10; (1924) 34 CLR 306). Damages in conversion are ordinarily the full value at the time of conversion (Butler v Egg & Egg Pulp Marketing Board [1966] HCA 74; (1966) 114 CLR 185, 191–192).
+
+  Application scaffold. 1) Title to sue: establish actual possession or an immediate right (consider bailors/bailees—jus tertii rarely assists defendants). 2) Characterise the interference: direct trespass (actionable per se), dominion supporting conversion, or demand‑refusal activating detinue. 3) Remedy: trespass yields nominal/compensatory damages; conversion gives substitutionary value as at conversion; detinue allows specific return or, failing that, value at judgment plus detention damages.
+
+  Conclusion. Correct classification governs remedy: trespass protects possession per se; conversion substitutes value at conversion; detinue delivers return or judgment-value with detention damages because the wrong continues until compliance.
+ 
+  Authorities map. Trespass actionable per se and nominal damages: Hutchins v Maughan [1947] VLR 131, 132–133. Conversion — inconsistent dominion/refusal: Penfolds 74 CLR 204, 228–230; Bunnings [2011] NSWCA 342, [124]. Detinue — demand/refusal; valuation at judgment; detention damages: Heavener [1924] HCA 10; (1924) 34 CLR 306. Conversion damages at conversion: Butler (1966) 114 CLR 185, 191–192.
+
+  Statutory hook. None specific — common law torts; consider bailment context if relevant.
+
+why_it_matters: |
+  MLS exams reward precise sequencing: stand up your possessory title first, then choose between trespass (direct interference), conversion (dominion inconsistent with immediate right), and detinue (demand/refusal). Each tort drives a different remedy—especially the valuation dates and detention damages. Mislabel the tort and you misstate the relief, losing marks. Bunnings ensures you remember demand/refusal can evidence conversion, while Heavener explains why detinue’s valuation waits until judgment. Keep the jus tertii rule and bailment standing in view to secure high-band answers.
+mnemonic: "TCD-J → Title → Characterise → Date (conversion vs judgment) → Jus tertii rarely helps defendants."
+diagram: |
+  ```mermaid
+  mindmap
+    root((Interference with Goods))
+      Issue
+      Rule
+      Application
+      Tripwires
+      Overlaps
+  ```
+tripwires:
+  - Pleading conversion where the interference was merely negligent loss or misdelivery.
+  - Omitting a clear demand/refusal before alleging detinue.
+  - Using the wrong valuation date (detinue ≠ conversion).
+  - Assuming legal ownership is required when possessory title suffices.
+  - Arguing jus tertii to defeat a plaintiff with the better possessory right.
+anchors:
+  cases:
+    - "Penfolds Wines Pty Ltd v Elliott [1946] HCA 46; (1946) 74 CLR 204, 228–230"
+    - "Butler v Egg & Egg Pulp Marketing Board [1966] HCA 74; (1966) 114 CLR 185, 191–192"
+    - "Heavener v Loomes [1924] HCA 10; (1924) 34 CLR 306"
+    - "Bunnings Group Ltd v CHEP Australia Ltd [2011] NSWCA 342; (2011) 82 NSWLR 420, [124]"
+    - "Hutchins v Maughan [1947] VLR 131, 132–133"
+  statutes: []
+  notes:
+    - "Original diagram expanded nodes (title-to-sue; tort splits; valuation dates) are preserved via Application scaffold and Authorities map."
+keywords:
+  - trespass-to-goods
+  - conversion
+  - detinue
+  - possession
+  - immediate-right-to-possession
+  - demand-and-refusal
+  - valuation-date
+  - detention-damages
+  - bailment
+  - jus-tertii
+reading_level: "Plain English (JD)"
+tags:
+  - LAWS50025 - Torts
+  - Exam_Fundamentals
+  - MLS_H1
+_lint_notes:
+  - "front_truncated_overflow_moved_to_issue"
+  - "canonical_headers_added"
+  - "anchors_normalised_cases_statutes_notes"
+  - "diagram_compacted_<=12_nodes"
+  - "keywords_hyphenated"

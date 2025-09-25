@@ -1,0 +1,23 @@
+# OS/editor
+.DS_Store
+*.swp
+.vscode/*
+!.vscode/settings.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.mypy_cache/
+
+# Generated artifacts
+reports/
+LAW_out_prep/
+artifacts/
+tmp/*.csv
+tmp/*.json
+tmp/*.diff
+*.log
+
+# Backups
+backups/
