@@ -1,119 +1,58 @@
 front: What are the key elements required to form a valid contract at common law?
-back: '**Contract Formation — Essential Elements and Statutory Overlays**
-
-  A valid contract at common law requires four cumulative elements:
-
-
-  **1. Agreement (Offer and Acceptance)**
-
-  - Offer: Must be clear, certain, and communicated (*Carlill v Carbolic Smoke Ball
-  Co* [1893] 1 QB 256 at 262 (CA), persuasive only).
-
-  - Acceptance: Must be unconditional and communicated (*Entores v Miles Far East
-  Corp* [1955] 2 QB 327 at 333 (CA), persuasive only). Instantaneous vs postal rules
-  require care.
-
-
-  **2. Consideration**
-
-  - Sufficient but need not be adequate (*Chappell & Co Ltd v Nestle Co Ltd* [1960]
-  AC 87 at 114 (HL), persuasive only).
-
-  - Past consideration invalid (*Roscorla v Thomas* (1842) 3 QB 234, persuasive only).
-
-  - For deeds, consideration not required (*Norman v Federal Commissioner of Taxation*
-  (1963) 109 CLR 9 at 26–7 (HCA), Kitto J).
-
-
-  **3. Intention to Create Legal Relations**
-
-  - Presumed in commercial agreements (*Ermogenous v Greek Orthodox Community of SA
-  Inc* (2002) 209 CLR 95 at 105 [25] (Gaudron, McHugh, Hayne and Callinan JJ)).
-
-  - Rebuttable in social/domestic agreements (*Balfour v Balfour* [1919] 2 KB 571,
-  persuasive only).
-
-
-  **4. Certainty and Completeness**
-
-  - Terms must be sufficiently certain (*Council of the Upper Hunter County District
-  v Australian Chilling & Freezing Co Ltd* (1968) 118 CLR 429 at 436 (Barwick CJ,
-  HCA)).
-
-  - Agreements to agree are void, unless machinery exists (*Masters v Cameron* (1954)
-  91 CLR 353 at 360 (Dixon CJ, McTiernan and Kitto JJ, HCA)).
-
-  - Conditional agreements tested: *Meehan v Jones* (1982) 149 CLR 571 at 589 (Mason
-  J, HCA).
-
-
-  **Remedies and Statutory Overlays**
-
-  - If formation fails, equitable estoppel may enforce reliance (*Waltons Stores (Interstate)
-  Ltd v Maher* (1988) 164 CLR 387 at 404–5 (Mason CJ and Wilson J, HCA)).
-
-  - Australian Consumer Law (*Competition and Consumer Act 2010 (Cth)* sch 2) s 18
-  prohibits misleading or deceptive conduct; ss 23–24 void unfair terms.
-
-  - *Contracts Review Act 1980 (NSW)* ss 7–9 (persuasive) allows review of unjust
-  contracts.
-
-  - *Charter of Human Rights and Responsibilities Act 2006 (Vic)* s 13(a) provides
-  a policy backdrop around privacy and fairness.
-
-  - **Remedies**: Breach gives rise to expectation damages as the primary measure
-  (*Robinson v Harman* (1848) 1 Exch 850 at 855, persuasive only), with reliance damages
-  available where expectation is uncertain (*McRae v Commonwealth Disposals Commission*
-  (1951) 84 CLR 377 at 411–12 (Dixon and Fullagar JJ, HCA)). Equitable relief (specific
-  performance or injunction) may be granted where damages are inadequate, subject
-  to discretionary bars (delay, hardship). Restitution for total failure of consideration
-  is also available.
+back: 'Issue. Decide whether parties have formed a binding contract or are still negotiating.
+  Rule. Formation turns on offer, acceptance, consideration, intention, and certainty.
+  Carlill v Carbolic Smoke Ball Co [1893] 1 QB 256 shows unilateral offers accepted
+  by performance. R v Clarke (1927) 40 CLR 227 reminds that acceptance requires knowledge
+  of the offer. Consideration must be sufficient (Chappell v Nestle [1960] AC 87)
+  and not past (Roscorla v Thomas (1842) 3 QB 234). Masters v Cameron (1954) 91 CLR
+  353 categorises agreements to agree. Ermogenous v Greek Orthodox Community (2002)
+  209 CLR 95 confirms intention is inferred from context, with presumptions reversed
+  for commercial vs domestic deals. Application scaffold. 1) Identify the communication
+  and classify it as offer or invitation. 2) Confirm acceptance mirrors the offer,
+  was communicated (allow for postal vs instantaneous rules), and was made with knowledge
+  of the offer (R v Clarke). 3) Test consideration: fresh value, no past acts, deed
+  where consideration is missing. 4) Ask whether parties meant legal force, drawing
+  on Ermogenous factors. 5) Test certainty using Masters v Cameron machinery and supply
+  of terms; salvage vagueness only if objective standards exist. 6) If formation fails,
+  consider estoppel (Waltons Stores v Maher (1988) 164 CLR 387) or restitution. Statutory
+  overlay. Australian Consumer Law (Competition and Consumer Act 2010 (Cth) sch 2)
+  s 18 polices misleading conduct and ss 23–24 void unfair terms. Contracts Review
+  Act 1980 (NSW) ss 7–9 offers persuasive relief for unjust bargains. Charter of Human
+  Rights and Responsibilities Act 2006 (Vic) s 13(a) feeds fairness arguments. Remedies.
+  Once formation is proven, primary relief is expectation damages (Robinson v Harman
+  (1848) 1 Exch 850) with reliance (McRae v Commonwealth Disposals Commission (1951)
+  84 CLR 377) or equitable orders where damages are inadequate. Conclusion. Sequence
+  each element, reference Carlill, Masters v Cameron, R v Clarke, and Ermogenous in
+  the body, then integrate statutory levers and remedies to close the loop.'
+why_it_matters: 'Exam problems often hide formation traps: invitations to treat dressed
+  as offers, past consideration, domestic promises, or conditional deals. Run the
+  element checklist, cite Carlill, Masters v Cameron, R v Clarke, and Ermogenous,
+  then pivot to ACL unfair-terms or Contracts Review Act relief if the bargain bites.
+  Wrap by flagging estoppel or reliance damages if formation collapses.
 
   '
-why_it_matters: 'This topic is foundational and almost guaranteed in exams. Examiners
-  expect candidates to identify whether a "deal" is binding or still in pre-contractual
-  negotiation. The triage is: (1) spot whether there is a genuine offer vs mere invitation
-  to treat; (2) check if acceptance is valid (postal vs instantaneous methods); (3)
-  ensure consideration exists (watch for past consideration traps); (4) apply presumptions
-  about intention (commercial vs social); and (5) test certainty using Masters v Cameron
-  categories. MLS problems often insert letters of comfort, vague price mechanisms,
-  or domestic promises. Statutory overlays sharpen the analysis: ACL s 18 (misleading
-  conduct) or unfair terms (ss 23–24) can control overreaching bargains; Contracts
-  Review Act 1980 (NSW) offers persuasive support for unconscionability; the Charter
-  of Human Rights and Responsibilities Act 2006 (Vic) s 13(a) frames fairness policy.
-  Courts balance certainty of contract against fairness; they are reluctant to "rewrite
-  bargains" or enforce incomplete agreements (*Meehan v Jones* (1982) 149 CLR 571
-  at 589 (Mason J, HCA)), mindful of floodgates concerns. Always conclude with potential
-  remedies: damages, specific performance, or reliance estoppel if formation fails.
-  High distinction answers weave doctrine with policy and statute, and avoid assuming
-  every promise is enforceable.
-
-  '
-mnemonic: ACICR+R (Agreement, Consideration, Intention, Certainty, Remedies + Remedies)
-diagram: "mindmap\nroot((contract_formation))\nAgreement\n  Offer\n  Acceptance\n\
-  Consideration\nIntention\nCertainty\nRemedies\n  Common law\n  Equitable\n  Statutory\n\
-  Overlaps_Borderlines\n  Estoppel\n  Misleading conduct (ACL)\n  Incomplete agreements\n\
-  \  Conditional agreements\n"
+mnemonic: O-A-C-I-C (Offer, Acceptance, Consideration, Intention, Certainty)
+diagram: "```mermaid\nmindmap\n  root((Contract formation))\n    Offer & acceptance\n\
+  \    Consideration\n    Intention\n    Certainty\n    Remedies & overlays\n```\n"
 tripwires:
-- Confusing invitation to treat with offer (eg, advertisements).
-- Assuming consideration must be adequate.
-- Forgetting domestic presumption against intention.
-- Overlooking machinery for agreement in Masters v Cameron.
-- Ignoring estoppel fallback where formation fails.
-- Neglecting statutory overlays (ACL, Contracts Review Act).
-- Treating conditional agreements as void without analysing Meehan v Jones.
+- Confusing invitation to treat with an offer.
+- Treating past consideration as valid.
+- Ignoring domestic presumption against intention.
+- Assuming vague terms are enforceable without Masters v Cameron machinery.
+- Forgetting estoppel or restitution when formation fails.
+- Skipping ACL or Contracts Review Act scrutiny.
 anchors:
   cases:
-  - Carlill v Carbolic Smoke Ball Co [1893] 1 QB 256 at 262 (CA, persuasive only)
-  - Ermogenous v Greek Orthodox Community of SA Inc (2002) 209 CLR 95 at 105 [25]
-    (Gaudron, McHugh, Hayne and Callinan JJ, HCA)
-  - Masters v Cameron (1954) 91 CLR 353 at 360 (Dixon CJ, McTiernan and Kitto JJ,
-    HCA)
-  - Council of the Upper Hunter County District v Australian Chilling & Freezing Co
-    Ltd (1968) 118 CLR 429 at 436 (Barwick CJ, HCA)
+  - Carlill v Carbolic Smoke Ball Co [1893] 1 QB 256
+  - R v Clarke (1927) 40 CLR 227
+  - Masters v Cameron (1954) 91 CLR 353
+  - Ermogenous v Greek Orthodox Community of SA Inc (2002) 209 CLR 95
+  - Waltons Stores (Interstate) Ltd v Maher (1988) 164 CLR 387
+  - Robinson v Harman (1848) 1 Exch 850
+  - McRae v Commonwealth Disposals Commission (1951) 84 CLR 377
   statutes:
-  - Competition and Consumer Act 2010 (Cth) sch 2 ss 18, 23–24 (ACL)
-  - Contracts Review Act 1980 (NSW) ss 7–9 (persuasive)
+  - Competition and Consumer Act 2010 (Cth) sch 2 ss 18, 23–24
+  - Contracts Review Act 1980 (NSW) ss 7–9
   - Charter of Human Rights and Responsibilities Act 2006 (Vic) s 13(a)
 keywords:
 - offer
@@ -121,19 +60,15 @@ keywords:
 - consideration
 - intention
 - certainty
-- estoppel
 - remedies
-- damages
-- specific performance
-- restitution
+- estoppel
 - statutory overlay
-- misleading conduct
-- unfair terms
-- conditional agreements
-- ACL
-- Contracts Review Act
-reading_level: JD-ready
+reading_level: Plain English (JD)
 tags:
-- Contracts
-- Exam_Fundamentals
-- MLS_H1
+- contracts
+- exam_fundamentals
+- mls_h1
+sources: []
+created: '2025-09-25T06:52:28.725550Z'
+updated: '2025-09-25T07:14:44.273982Z'
+template: concept

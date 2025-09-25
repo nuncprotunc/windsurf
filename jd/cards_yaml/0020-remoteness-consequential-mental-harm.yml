@@ -1,0 +1,68 @@
+front: "Consequential mental harm (Vic): is psychiatric injury too remote?"
+back: |
+  Issue. Whether the plaintiff’s psychiatric injury is within the scope of liability or too remote when it follows another injury. Note: Original front overflow — “Remoteness & consequential mental harm: In a negligence problem, how do you assess whether psychiatric injury is too remote where the plaintiff’s mental harm follows another injury (Wrongs Act 1958 (Vic) s 74)?”
+
+  Rule. Remoteness confines liability to reasonably foreseeable kinds of harm; the exact mechanism or magnitude need not be foreseen (Overseas Tankship (The Wagon Mound No 1) [1961] AC 388 (PC); Hughes v Lord Advocate [1963] AC 837; Chapman v Hearse [1961] HCA 46; (1961) 106 CLR 112). Part XI overlays statutory requirements. Section 67 defines “mental harm” and “recognised psychiatric illness”. Section 74(1)(a)–(b), with s 74(2), permits recovery for consequential mental harm only where a person of normal fortitude might, in the circumstances (including the initial injury), suffer an RPI, or the defendant knew of the plaintiff’s susceptibility. The High Court rejects rigid “sudden shock” or direct perception limits (Tame v NSW; Annetts v Australian Stations [2002] HCA 35; (2002) 211 CLR 317) and accepts aftermath liability where the injury forms part of the circumstances (Jaensch v Coffey [1984] HCA 52; (1984) 155 CLR 549). Once the kind of harm is foreseeable, defendants take plaintiffs as found (Mount Isa Mines Ltd v Pusey [1970] HCA 60; (1970) 125 CLR 383).
+
+  Application scaffold. 1) Characterise the harm as an RPI under s 67. 2) Confirm it is consequential on another injury (s 67). 3) Apply s 74(1)(a)–(b) normal‑fortitude filter (plus known susceptibility) with s 74(2)’s circumstances. 4) Test remoteness: was psychiatric illness as a kind foreseeable? Distinguish thin skull (extent) from unforeseeable kind. 5) If foreseeability is satisfied, integrate loss‑allocation/policy arguments.
+
+  Conclusion. Consequential psychiatric injury is recoverable when an RPI of that kind was reasonably foreseeable within s 74’s framework; mere distress without RPI fails.
+ 
+  Authorities map. Classification of harm: s 67; RPI requirement: ss 67, 74. Statutory filter: s 74(1)–(2). Remoteness kind vs extent: Chapman v Hearse (1961) 106 CLR 112; Overseas Tankship (No 1) [1961] AC 388; Hughes [1963] AC 837. Aftermath and anti‑shock: Jaensch v Coffey (1984) 155 CLR 549; Tame/Annetts [2002] HCA 35; (2002) 211 CLR 317. Thin skull once kind foreseeable: Pusey (1970) 125 CLR 383.
+
+  Statutory hook. Wrongs Act 1958 (Vic) ss 67, 74 (context: ss 72–73 for pure mental harm).
+
+  Tripwires. Treating grief/worry as RPI. Ignoring s 74(2)’s inclusion of the initial injury as part of the circumstances. Importing s 72–73 pure mental harm controls into consequential claims. Demanding precise mechanism foreseeability (not required). Misusing thin skull to avoid the kind‑of‑harm inquiry.
+why_it_matters: |
+  MLS scope questions turn on whether you run remoteness or the statutory mental-harm screen first. Start by classifying the claim: consequential (s 74) versus pure (ss 72–73). Cite s 67 to confirm the harm is a recognised psychiatric illness. Then apply the normal-fortitude filter and the “circumstances” extension in s 74(2) before finishing with remoteness (kind, not extent). Tame/Annetts and Jaensch help dislodge old UK “shock” control mechanisms, while Pusey supports thin-skull reasoning once the kind is foreseeable. Answers that collapse distress with RPI or demand precise mechanism predictions lose marks; sequencing statutory elements with foreseeable-kind analysis earns H1 credit.
+mnemonic: "KIND–RPI–FORTITUDE: Kind foreseeable? → Recognised psychiatric illness (s 67) → Normal fortitude / known susceptibility (s 74) → Remoteness respects thin skull."
+diagram: |
+  ```mermaid
+  mindmap
+    root((Consequential Mental Harm — Vic))
+      Issue
+      Rule
+      Application
+      Tripwires
+      Overlaps
+  ```
+tripwires:
+  - Treating grief or worry as sufficient without a recognised psychiatric illness.
+  - Forgetting s 74(2) folds the initial injury into the foreseeability circumstances.
+  - Applying pure mental harm controls (ss 72–73) to consequential claims.
+  - Demanding foreseeability of precise mechanism rather than the kind of harm.
+  - Misusing thin skull to dodge the kind-of-harm inquiry.
+anchors:
+  cases:
+    - "Tame v New South Wales; Annetts v Australian Stations Pty Ltd [2002] HCA 35; (2002) 211 CLR 317"
+    - "Jaensch v Coffey [1984] HCA 52; (1984) 155 CLR 549"
+    - "Mount Isa Mines Ltd v Pusey [1970] HCA 60; (1970) 125 CLR 383"
+    - "Chapman v Hearse [1961] HCA 46; (1961) 106 CLR 112"
+    - "Overseas Tankship (The Wagon Mound No 1) [1961] AC 388; Hughes v Lord Advocate [1963] AC 837"
+  statutes:
+    - "Wrongs Act 1958 (Vic) ss 67, 72–75"
+keywords:
+  - remoteness
+  - kind-of-harm
+  - consequential-mental-harm
+  - recognised-psychiatric-illness
+  - normal-fortitude
+  - thin-skull-rule
+  - wrongs-act-s-74
+  - tame-annett
+  - jaensch-v-coffey
+  - pusey
+  - chapman-v-hearse
+  - wagon-mound
+reading_level: "Plain English (JD)"
+tags:
+  - LAWS50025 - Torts
+  - Exam_Fundamentals
+  - MLS_H1
+_lint_notes:
+  - "front_truncated_overflow_moved_to_issue"
+  - "canonical_headers_added_in_back"
+  - "authorities_map_and_statutory_hook_added"
+  - "diagram_compacted_<=12_nodes"
+  - "anchors_normalised_cases_statutes"
+  - "keywords_hyphenated"

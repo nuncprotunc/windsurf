@@ -27,9 +27,9 @@ global_rules:
     discourage_multi_question_fronts: true
 
 back:
-  min_words: 180
-  max_words: 260
-  max_sentence_words: 32
+  min_words: 120
+  max_words: 360
+  max_sentence_words: 28
   required_headings_regex:
     - "^Issue\\."
     - "^Rule\\."

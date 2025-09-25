@@ -66,10 +66,14 @@ class SchemaValidator:
     
     def _check_word_counts(self, card_data: Dict, result: ValidationResult) -> None:
         """Check that word counts are within limits."""
-        # Get word limits from policy
-        front_max = self.policy.get('front', {}).get('max_words', 30)
-        back_min = self.policy.get('back', {}).get('min_words', 50)
-        back_max = self.policy.get('back', {}).get('max_words', 260)
+        # Get word limits from policy. Support both top-level and global_rules nesting
+        global_rules = self.policy.get('global_rules', {})
+        front_cfg = self.policy.get('front', {}) or global_rules.get('front', {})
+        back_cfg = self.policy.get('back', {}) or global_rules.get('back', {})
+
+        front_max = int(front_cfg.get('max_words', 30))
+        back_min = int(back_cfg.get('min_words', 50))
+        back_max = int(back_cfg.get('max_words', 260))
         
         # Front text check
         if 'front' in card_data:
