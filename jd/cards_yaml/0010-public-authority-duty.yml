@@ -1,70 +1,136 @@
----
-id: 0010
-front: "When will a Victorian court recognise a negligence duty against a public authority?"
-back: |
-  Issue. When a plaintiff sues a public authority, should a private-law duty of care be recognised?
+id: 8
+front: When will a Victorian court recognise a negligence duty against a public authority?
+back: 'Issue. When a plaintiff sues a public authority, should a private-law duty
+  of care be recognised?
 
-  Rule. Foreseeability is necessary but not sufficient; duty turns on salient features filtered through institutional and statutory coherence. High-level policy choices (budget, prioritisation) are generally non-justiciable, whereas operational acts may attract a duty where the authority controlled the risk, knew of the danger, induced reliance, or created vulnerability, and recognition remains coherent with statute: Council of the Shire of Sutherland v Heyman [1985] HCA 41; (1985) 157 CLR 424, 469–471 (Mason J); Sullivan v Moody [2001] HCA 59; (2001) 207 CLR 562, 580–581 [42].
 
-  Application scaffold. **Statutory coherence gate**: identify the governing scheme’s purpose and preconditions (e.g. detention powers) — Hunter and New England Local Health District v McKenna [2014] HCA 44; (2014) 253 CLR 270, 279–284 [17]–[40]; Stuart v Kirkland-Veenstra [2009] HCA 15; (2009) 237 CLR 215, 230–236 [43]–[81]. **Policy vs operational filter**: classify the impugned act (filter, not immunity) — Heyman 469–471; Graham Barclay Oysters Pty Ltd v Ryan [2002] HCA 54; (2002) 211 CLR 540, 550–553 [6], [12]–[16], 597–600 [140]–[145], 626–627 [219]–[221]. **Salient features**: assess control/knowledge, assumption/reliance, vulnerability, and indeterminacy — Crimmins v Stevedoring Industry Finance Committee [1999] HCA 59; (1999) 200 CLR 1, 78–88 [79]–[93]; Pyrenees Shire Council v Day [1998] HCA 3; (1998) 192 CLR 330, 342–345 [25]–[29], 404–407 [121]–[123]; Brodie v Singleton Shire Council [2001] HCA 29; (2001) 206 CLR 512, 528–533 [31]–[38] (Gleeson CJ, Gaudron, McHugh, Gummow, Kirby JJ). **Victorian overlay**: Wrongs Act 1958 (Vic) Pt XII — s 79 (definitions), s 82 (effect on common law), s 83 (resources), s 84 (wrongful exercise/failure), s 85 (no duty merely from a power); Wrongs Act s 51 governs causation once duty is found. **Other statutory context**: Mental Health Act 1986 (Vic) s 10(1) and Migration Act 1958 (Cth) s 198AHA set preconditions that inform coherence; Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 7, 21, 38 require compatible interpretation when public authorities limit liberty, noting s 38 does not impose incompatible obligations where the authority is compelled by other legislation.
+  Rule. Foreseeability is necessary but not sufficient; duty turns on salient features
+  filtered through institutional and statutory coherence. High-level policy choices
+  (budget, prioritisation) are generally non-justiciable, whereas operational acts
+  may attract a duty where the authority controlled the risk, knew of the danger,
+  induced reliance, or created vulnerability, and recognition remains coherent with
+  statute: Council of the Shire of Sutherland v Heyman [1985] HCA 41; (1985) 157 CLR
+  424, 469–471 (Mason J); Sullivan v Moody [2001] HCA 59; (2001) 207 CLR 562, 580–581
+  [42].
 
-  Conclusion. There is no general governmental rescue duty; recognition is most likely where the authority undertook a specific operational function, exercised control with knowledge in circumstances of reliance or vulnerability, and coherence with statutory purpose and rights is preserved. If a duty is recognised, proceed to breach (reasonableness under Wrongs Act s 48), causation (s 51), damage, and defences.
-why_it_matters: |
-  MLS examiners regularly frame hypotheticals around councils, police or health agencies whose regulatory or discretionary decisions allegedly caused harm. This card supplies an IRAC gateway: (1) coherence with the empowering legislation (including Mental Health Act 1986 (Vic) s 10(1), Migration Act 1958 (Cth) s 198AHA, and Charter ss 7, 21, 38), (2) policy versus operational character (filtering, not immunity), (3) salient features (control, knowledge, reliance, vulnerability, indeterminacy), and (4) Wrongs Act 1958 (Vic) Pt XII (ss 79, 82–85). It prevents frequent errors: assuming a standing governmental duty to prevent third-party harm, conflating merits review with negligence, or ignoring resource-allocation provisions and rights-balancing obligations. The pinpoint citations let you drop authoritative lines from Sullivan v Moody, Barclay Oysters, McKenna, Kirkland-Veenstra, Pyrenees, Crimmins and Brodie under time pressure. Policy tensions—coherence, separation of powers, defensive administration, and Charter compliance—are foregrounded so you can argue why recognising (or denying) duty aligns with statutory purpose. Use the mnemonic and mindmap to triage: if statutory coherence fails, stop; if the conduct is purely policy, duty is unlikely; if operational with strong salient features and no statutory conflict, press on to breach, causation, damage and defences.
-mnemonic: "POLAR-CC → Policy vs Operational → Legal coherence → Assumption/Responsibility → Reliance/Vulnerability → Control → Charter & causation handoff"
-diagram: |
-  ```mermaid
-  mindmap
-    root((Public authority duty))
-      Statutory coherence (Wrongs Act ss 83–85)
-      Policy vs operational (Heyman / Barclay Oysters)
-      Salient features (control, vulnerability, reliance)
-      Rights overlays (Charter, MHA s 351, ACL s 18)
-      Breach handoff (s 48 / s 51)
-  ```
+
+  Application scaffold. **Statutory coherence gate**: identify the governing scheme’s
+  purpose and preconditions (e.g. detention powers) — Hunter and New England Local
+  Health District v McKenna [2014] HCA 44; (2014) 253 CLR 270, 279–284 [17]–[40];
+  Stuart v Kirkland-Veenstra [2009] HCA 15; (2009) 237 CLR 215, 230–236 [43]–[81].
+  **Policy vs operational filter**: classify the impugned act (filter, not immunity)
+  — Heyman 469–471; Graham Barclay Oysters Pty Ltd v Ryan [2002] HCA 54; (2002) 211
+  CLR 540, 550–553 [6], [12]–[16], 597–600 [140]–[145], 626–627 [219]–[221]. **Salient
+  features**: assess control/knowledge, assumption/reliance, vulnerability, and indeterminacy
+  — Crimmins v Stevedoring Industry Finance Committee [1999] HCA 59; (1999) 200 CLR
+  1, 78–88 [79]–[93]; Pyrenees Shire Council v Day [1998] HCA 3; (1998) 192 CLR 330,
+  342–345 [25]–[29], 404–407 [121]–[123]; Brodie v Singleton Shire Council [2001]
+  HCA 29; (2001) 206 CLR 512, 528–533 [31]–[38] (Gleeson CJ, Gaudron, McHugh, Gummow,
+  Kirby JJ). **Victorian overlay**: Wrongs Act 1958 (Vic) Pt XII — s 79 (definitions),
+  s 82 (effect on common law), s 83 (resources), s 84 (wrongful exercise/failure),
+  s 85 (no duty merely from a power); Wrongs Act s 51 governs causation once duty
+  is found. **Other statutory context**: Mental Health Act 1986 (Vic) s 10(1) and
+  Migration Act 1958 (Cth) s 198AHA set preconditions that inform coherence; Charter
+  of Human Rights and Responsibilities Act 2006 (Vic) ss 7, 21, 38 require compatible
+  interpretation when public authorities limit liberty, noting s 38 does not impose
+  incompatible obligations where the authority is compelled by other legislation.
+
+
+  Conclusion. There is no general governmental rescue duty; recognition is most likely
+  where the authority undertook a specific operational function, exercised control
+  with knowledge in circumstances of reliance or vulnerability, and coherence with
+  statutory purpose and rights is preserved. If a duty is recognised, proceed to breach
+  (reasonableness under Wrongs Act s 48), causation (s 51), damage, and defences.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.'
+why_it_matters: 'MLS examiners regularly frame hypotheticals around councils, police
+  or health agencies whose regulatory or discretionary decisions allegedly caused
+  harm. This card supplies an IRAC gateway: (1) coherence with the empowering legislation
+  (including Mental Health Act 1986 (Vic) s 10(1), Migration Act 1958 (Cth) s 198AHA,
+  and Charter ss 7, 21, 38), (2) policy versus operational character (filtering, not
+  immunity), (3) salient features (control, knowledge, reliance, vulnerability, indeterminacy),
+  and (4) Wrongs Act 1958 (Vic) Pt XII (ss 79, 82–85). It prevents frequent errors:
+  assuming a standing governmental duty to prevent third-party harm, conflating merits
+  review with negligence, or ignoring resource-allocation provisions and rights-balancing
+  obligations. The pinpoint citations let you drop authoritative lines from Sullivan
+  v Moody, Barclay Oysters, McKenna, Kirkland-Veenstra, Pyrenees, Crimmins and Brodie
+  under time pressure. Policy tensions—coherence, separation of powers, defensive
+  administration, and Charter compliance—are foregrounded so you can argue why recognising
+  (or denying) duty aligns with statutory purpose. Use the mnemonic and mindmap to
+  triage: if statutory coherence fails, stop; if the conduct is purely policy, duty
+  is unlikely; if operational with strong salient features and no statutory conflict,
+  press on to breach, causation, damage and defences.
+
+  '
+mnemonic: POLAR-CC → Policy vs Operational → Legal coherence → Assumption/Responsibility
+  → Reliance/Vulnerability → Control → Charter & causation handoff
+diagram: "```mermaid\nmindmap\n  root((Public authority duty))\n    Statutory coherence\
+  \ (Wrongs Act ss 83–85)\n    Policy vs operational (Heyman / Barclay Oysters)\n\
+  \    Salient features (control, vulnerability, reliance)\n    Rights overlays (Charter,\
+  \ MHA s 351, ACL s 18)\n    Breach handoff (s 48 / s 51)\n```\n"
 tripwires:
-  - Treating the policy/operational distinction as automatic immunity instead of a duty filter.
-  - Assuming a general rescue duty without finding control, assumption or created risk.
-  - Ignoring statutory preconditions (e.g., Mental Health Act s 10(1), Migration Act s 198AHA) when testing coherence.
-  - Skipping Wrongs Act 1958 (Vic) Pt XII ss 79, 82–85 in Victorian fact patterns.
-  - Arguing breach before resolving the duty gate.
-  - Forgetting Charter ss 7, 21, 38 when liberty or rights are limited by public authorities.
+- Treating the policy/operational distinction as automatic immunity instead of a duty
+  filter.
+- Assuming a general rescue duty without finding control, assumption or created risk.
+- Ignoring statutory preconditions (e.g., Mental Health Act s 10(1), Migration Act
+  s 198AHA) when testing coherence.
+- Skipping Wrongs Act 1958 (Vic) Pt XII ss 79, 82–85 in Victorian fact patterns.
+- Arguing breach before resolving the duty gate.
+- Forgetting Charter ss 7, 21, 38 when liberty or rights are limited by public authorities.
 anchors:
   cases:
-    - "Council of the Shire of Sutherland v Heyman [1985] HCA 41; (1985) 157 CLR 424, 469–471 (Mason J)"
-    - "Sullivan v Moody [2001] HCA 59; (2001) 207 CLR 562, 580–581 [42]"
-    - "Graham Barclay Oysters Pty Ltd v Ryan [2002] HCA 54; (2002) 211 CLR 540, 550–553 [6], [12]–[16], 597–600 [140]–[145], 626–627 [219]–[221]"
-    - "Crimmins v Stevedoring Industry Finance Committee [1999] HCA 59; (1999) 200 CLR 1, 78–88 [79]–[93]"
-    - "Pyrenees Shire Council v Day [1998] HCA 3; (1998) 192 CLR 330, 342–345 [25]–[29], 404–407 [121]–[123]"
-    - "Stuart v Kirkland-Veenstra [2009] HCA 15; (2009) 237 CLR 215, 230–236 [43]–[81]"
-    - "Hunter and New England Local Health District v McKenna [2014] HCA 44; (2014) 253 CLR 270, 279–284 [17]–[40]"
-    - "Brodie v Singleton Shire Council [2001] HCA 29; (2001) 206 CLR 512, 528–533 [31]–[38]"
+  - Council of the Shire of Sutherland v Heyman [1985] HCA 41; (1985) 157 CLR 424,
+    469–471 (Mason J)
+  - Sullivan v Moody [2001] HCA 59; (2001) 207 CLR 562, 580–581 [42]
+  - Graham Barclay Oysters Pty Ltd v Ryan [2002] HCA 54; (2002) 211 CLR 540, 550–553
+    [6], [12]–[16], 597–600 [140]–[145], 626–627 [219]–[221]
+  - Crimmins v Stevedoring Industry Finance Committee [1999] HCA 59; (1999) 200 CLR
+    1, 78–88 [79]–[93]
+  - Pyrenees Shire Council v Day [1998] HCA 3; (1998) 192 CLR 330, 342–345 [25]–[29],
+    404–407 [121]–[123]
+  - Stuart v Kirkland-Veenstra [2009] HCA 15; (2009) 237 CLR 215, 230–236 [43]–[81]
+  - Hunter and New England Local Health District v McKenna [2014] HCA 44; (2014) 253
+    CLR 270, 279–284 [17]–[40]
+  - Brodie v Singleton Shire Council [2001] HCA 29; (2001) 206 CLR 512, 528–533 [31]–[38]
   statutes:
-    - "Wrongs Act 1958 (Vic) Pt XII (ss 79, 82–85)"
-    - "Wrongs Act 1958 (Vic) s 48"
-    - "Mental Health Act 1986 (Vic) s 10(1)"
-    - "Migration Act 1958 (Cth) s 198AHA"
-    - "Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 7, 21, 38"
+  - Wrongs Act 1958 (Vic) Pt XII (ss 79, 82–85)
+  - Wrongs Act 1958 (Vic) s 48
+  - Mental Health Act 1986 (Vic) s 10(1)
+  - Migration Act 1958 (Cth) s 198AHA
+  - Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 7, 21, 38
+  notes: []
 keywords:
-  - public-authority-duty
-  - policy-vs-operational
-  - statutory-coherence
-  - salient-features
-  - control-and-reliance
-  - resource-allocation
-  - charter-compliance
-  - wrongs-act-pt-xii
-  - autonomy-indeterminacy
-  - operational-negligence
+- public-authority-duty
+- policy-vs-operational
+- statutory-coherence
+- salient-features
+- control-and-reliance
+- resource-allocation
+- charter-compliance
+- wrongs-act-pt-xii
+- autonomy-indeterminacy
+- operational-negligence
 reading_level: JD-ready
 tags:
-  - LAWS50025 - Torts
-  - Negligence
-  - Public Authorities
-  - Exam_Fundamentals
-  - MLS_H1
-
+- LAWS50025 - Torts
+- Negligence
+- Public Authorities
+- Exam_Fundamentals
+- MLS_H1
 _lint_notes:
-  - "front_questionified_<=30w"
-  - "diagram_conceptual_branches"
-  - "keywords_trimmed_<=10"
+- front_questionified_<=30w
+- diagram_conceptual_branches
+- keywords_trimmed_<=10

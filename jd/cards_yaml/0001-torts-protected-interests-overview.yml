@@ -22,7 +22,37 @@ back: 'Issue. Classify the claimant’s protected interest so correct Victorian 
   loss, skipping Pt VBA thresholds, turning salient features into rigid elements,
   or ignoring mental-harm filters when reframing injury. Conclusion. Lead with the
   interest classification, then integrate doctrine, statutes, and coherence so the
-  remedy flows logically.'
+  remedy flows logically.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
 why_it_matters: 'Under exam pressure, triage by interest controls the entire answer.
   Injury uses negligence/intentional‑tort scaffolds and Pt VBA caps; property turns
   on possession, directness, and remoteness; economic loss demands salient features
@@ -76,6 +106,7 @@ tags:
 - protected_interests
 - exam_fundamentals
 - mls_h1
+- MLS_H1
 _lint_notes:
 - issue_contextualised
 - diagram_conceptual_branches

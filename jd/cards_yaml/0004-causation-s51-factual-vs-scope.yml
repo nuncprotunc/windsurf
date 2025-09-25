@@ -25,7 +25,37 @@ back: 'Issue. Has D’s negligence factually caused P’s harm and should liabil
   crime stays within scope without proving but-for. Treating routine medical negligence
   as breaking the chain contrary to Mahony. Conclusion. Prove factual causation under
   s 51(1)(a) (resisting s 51(2) shortcuts), then decide scope under s 52 with authority-driven
-  analysis before turning to apportionment or defences.'
+  analysis before turning to apportionment or defences.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
 why_it_matters: 'Examiners penalise conflation. Sequencing s 51(1)(a) but-for → s
   51(2) exceptional → s 52 scope lets you deploy the right authority at each node.
   Strong/Amaca show how to build or resist inference; Adeels limits shortcuts; Wallace
@@ -60,6 +90,7 @@ anchors:
   - Wrongs Act 1958 (Vic) ss 51–52
   - Evidence Act 1995 (Cth) s 140
   - Evidence Act 2008 (Vic) s 140
+  notes: []
 keywords:
 - causation
 - but-for
@@ -77,6 +108,7 @@ tags:
 - exam_fundamentals
 - mls_h1
 - intervening_acts
+- MLS_H1
 _lint_notes:
 - canonical_headers_added
 - diagram_conceptual_branches

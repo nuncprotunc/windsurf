@@ -24,7 +24,42 @@ back: 'Defamation law in Victoria under the Defamation Act 2005 (Vic) includes e
   including pre‑publication in rare cases (*ABC v O''Neill* (2006) 227 CLR 57 at 76–77
   [45]). - Concerns Notice and Preconditions: s 12A (concerns notice); s 12B (cannot
   commence proceedings without concerns notice, subject to exceptions). - Offers to
-  Make Amends: Part 3 timing (s 14) and effect.'
+  Make Amends: Part 3 timing (s 14) and effect.
+
+
+  Issue.
+
+  TODO: issue. content.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
 why_it_matters: 'This topic is exam‑central: many hypotheticals test updated constraints
   (serious harm s 10A; single publication s 10AA; concerns notice ss 12A–12B; public
   interest defence s 29A; digital intermediaries ss 10C–10D). To score H1, apply all
@@ -73,6 +108,7 @@ anchors:
     10C, 10D
   - Australian Consumer Law, Competition and Consumer Act 2010 (Cth) sch 2 s 18
   - Charter of Human Rights and Responsibilities Act 2006 (Vic) s 15
+  notes: []
 keywords:
 - defamatory matter
 - identification
@@ -99,6 +135,7 @@ tags:
 - defamation
 - exam_fundamentals
 - mls_h1
+- MLS_H1
 sources: []
 created: '2025-09-25T06:52:28.521178Z'
 updated: '2025-09-25T07:14:44.263374Z'

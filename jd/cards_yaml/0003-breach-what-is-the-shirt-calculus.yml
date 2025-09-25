@@ -24,7 +24,37 @@ back: 'Issue. Identify when a defendant falls below the reasonable-response stan
   causation: Strong v Woolworths Ltd (2012) 246 CLR 182, 189 [23]. CN interplay: Podrebersek
   59 ALJR 492, 494. Statutory hook. Wrongs Act 1958 (Vic) ss 48–49, 51. Conclusion.
   Breach is established only if the s 48 balance shows a reasonable person would have
-  taken additional precautions; keep causation and CN in their own steps.'
+  taken additional precautions; keep causation and CN in their own steps.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
 why_it_matters: 'This is the core exam scaffold for breach. Starting at s 48(1) forces
   precise risk identification and the “not insignificant” screen; s 48(2) then structures
   a proportional response to probability, seriousness, burden, and social utility,
@@ -81,6 +111,7 @@ tags:
 - mls_h1
 - policy_tensions
 - statutory_interpretation
+- MLS_H1
 _lint_notes:
 - issue_contextualised_not_front_dup
 - diagram_conceptual_branches

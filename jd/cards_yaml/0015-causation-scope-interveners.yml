@@ -1,87 +1,115 @@
-front: "Causation (Vic): how do ss 51–52 handle factual causation, exceptional cases, and scope when interveners appear?"
-back: |
-  Issue. Has D’s negligence factually caused P’s harm and should liability extend to that harm under Wrongs Act ss 51–52 when intervening acts arise?
+front: 'Causation (Vic): how do ss 51–52 handle factual causation, exceptional cases,
+  and scope when interveners appear?'
+back: 'Issue. Has D’s negligence factually caused P’s harm and should liability extend
+  to that harm under Wrongs Act ss 51–52 when intervening acts arise?
 
-  Rule. Wrongs Act 1958 (Vic) s 51(1)(a) demands a “necessary condition” (but-for) link. Section 51(2) permits departure only in exceptional cases grounded in established principles. Section 52 requires the court—on P’s onus—to decide whether responsibility should extend, weighing justice and policy. Statements about what P would have done are restricted (ss 51(3)–(4)). Proof runs on the civil standard (Evidence Act 1995 (Cth) s 140; Evidence Act 2008 (Vic) s 140). Adeels Palace [2009] HCA 48 at [52]–[57] emphasises that s 51(2) is not a material-risk shortcut.
 
-  Application scaffold. 1) Run but-for: deploy circumstantial inference where needed (Strong v Woolworths (2012) 246 CLR 182 at [5]–[9]); exclude bare possibility (Amaca v Booth (2011) 246 CLR 36 at [49]); remember loss-of-chance limits (Tabet v Gett (2010) 240 CLR 537 at [111]–[112]). 2) Test exceptional case under s 51(2): identify an orthodox doctrine (e.g., material contribution in cumulative causes) and confirm Adeels bars expanding it to third-party crime. 3) Scope (s 52): separate the normative inquiry (Wallace v Kam (2013) 250 CLR 375 at [9]–[12]) and evaluate interveners—criminal assaults post-security failure (Adeels), negligent medical treatment (Mahony v Kruschich (1985) 156 CLR 522 at 529–530), suicide after impaired volition (Haber v Walker [1963] VR 339 at 348–350), plaintiff criminal response (Yates v Jones (1990) 24 NSWLR 317). 4) Keep defendants separate; apportion only after causation is proven (Wrongs Act s 56).
+  Rule. Wrongs Act 1958 (Vic) s 51(1)(a) demands a “necessary condition” (but-for)
+  link. Section 51(2) permits departure only in exceptional cases grounded in established
+  principles. Section 52 requires the court—on P’s onus—to decide whether responsibility
+  should extend, weighing justice and policy. Statements about what P would have done
+  are restricted (ss 51(3)–(4)). Proof runs on the civil standard (Evidence Act 1995
+  (Cth) s 140; Evidence Act 2008 (Vic) s 140). Adeels Palace [2009] HCA 48 at [52]–[57]
+  emphasises that s 51(2) is not a material-risk shortcut.
 
-  Authorities map. Factual causation: Strong (2012) 246 CLR 182; Amaca (2011) 246 CLR 36; Tabet (2010) 240 CLR 537. Exceptional case caution: Adeels Palace (2009) 239 CLR 420. Scope: Wallace v Kam (2013) 250 CLR 375; Mahony (1985) 156 CLR 522; Haber [1963] VR 339; Yates v Jones (1990) 24 NSWLR 317. Statutory context: Wrongs Act ss 51–52, s 56; Evidence Act s 140.
 
-  Statutory hook. Wrongs Act 1958 (Vic) ss 51–52, s 56; Evidence Act 1995 (Cth) s 140; Evidence Act 2008 (Vic) s 140.
+  Application scaffold. 1) Run but-for: deploy circumstantial inference where needed
+  (Strong v Woolworths (2012) 246 CLR 182 at [5]–[9]); exclude bare possibility (Amaca
+  v Booth (2011) 246 CLR 36 at [49]); remember loss-of-chance limits (Tabet v Gett
+  (2010) 240 CLR 537 at [111]–[112]). 2) Test exceptional case under s 51(2): identify
+  an orthodox doctrine (e.g., material contribution in cumulative causes) and confirm
+  Adeels bars expanding it to third-party crime. 3) Scope (s 52): separate the normative
+  inquiry (Wallace v Kam (2013) 250 CLR 375 at [9]–[12]) and evaluate interveners—criminal
+  assaults post-security failure (Adeels), negligent medical treatment (Mahony v Kruschich
+  (1985) 156 CLR 522 at 529–530), suicide after impaired volition (Haber v Walker
+  [1963] VR 339 at 348–350), plaintiff criminal response (Yates v Jones (1990) 24
+  NSWLR 317). 4) Keep defendants separate; apportion only after causation is proven
+  (Wrongs Act s 56).
 
-  Tripwires. Treating s 51(2) as a material-risk escape hatch. Collapsing factual causation with scope contrary to Wallace. Assuming third-party crime satisfies causation without proof of but-for. Letting routine medical negligence break the chain (contra Mahony). Declaring suicide wholly voluntary despite impaired volition (Haber). Forgetting P’s onus under s 52 and the Evidence Act standard.
 
-  Conclusion. Causation succeeds only where but-for links (or narrow exceptional principles) are proved and scope analysis—including interveners and policy—supports extending liability; absent that, confine or reject recovery.
-why_it_matters: |
-  Exams punish conflating causation limbs. Sequencing ss 51–52 lets you cite the right authorities, rebut “material risk” shortcuts, and analyse interveners with Wallace’s normative lens—hallmarks of H1 reasoning.
-mnemonic: "B-E-S-I → But-for → Exceptional? → Scope → Interveners"
-diagram: |
-  ```mermaid
-  mindmap
-    root((Wrongs Act ss 51–52))
-      Factual causation (s 51(1)(a))
-        Necessary condition
-        Circumstantial inference (Strong)
-        Evidence Act s 140
-      Exceptional case (s 51(2))
-        Established principles only
-        Adeels bars risk shortcuts
-      Scope (s 52)
-        Normative appropriateness (Wallace)
-        Plaintiff onus
-      Interveners
-        Third-party crime
-        Medical treatment (Mahony)
-        Suicide / impaired volition (Haber)
-        Plaintiff misconduct (Yates)
-      After causation
-        Apportionment (s 56)
-  ```
+  Authorities map. Factual causation: Strong (2012) 246 CLR 182; Amaca (2011) 246
+  CLR 36; Tabet (2010) 240 CLR 537. Exceptional case caution: Adeels Palace (2009)
+  239 CLR 420. Scope: Wallace v Kam (2013) 250 CLR 375; Mahony (1985) 156 CLR 522;
+  Haber [1963] VR 339; Yates v Jones (1990) 24 NSWLR 317. Statutory context: Wrongs
+  Act ss 51–52, s 56; Evidence Act s 140.
+
+
+  Statutory hook. Wrongs Act 1958 (Vic) ss 51–52, s 56; Evidence Act 1995 (Cth) s
+  140; Evidence Act 2008 (Vic) s 140.
+
+
+  Tripwires. Treating s 51(2) as a material-risk escape hatch. Collapsing factual
+  causation with scope contrary to Wallace. Assuming third-party crime satisfies causation
+  without proof of but-for. Letting routine medical negligence break the chain (contra
+  Mahony). Declaring suicide wholly voluntary despite impaired volition (Haber). Forgetting
+  P’s onus under s 52 and the Evidence Act standard.
+
+
+  Conclusion. Causation succeeds only where but-for links (or narrow exceptional principles)
+  are proved and scope analysis—including interveners and policy—supports extending
+  liability; absent that, confine or reject recovery.
+
+  '
+why_it_matters: 'Exams punish conflating causation limbs. Sequencing ss 51–52 lets
+  you cite the right authorities, rebut “material risk” shortcuts, and analyse interveners
+  with Wallace’s normative lens—hallmarks of H1 reasoning.
+
+  '
+mnemonic: B-E-S-I → But-for → Exceptional? → Scope → Interveners
+diagram: "```mermaid\nmindmap\n  root((Wrongs Act ss 51–52))\n    Factual causation\
+  \ (s 51(1)(a))\n      Necessary condition\n      Circumstantial inference (Strong)\n\
+  \      Evidence Act s 140\n    Exceptional case (s 51(2))\n      Established principles\
+  \ only\n      Adeels bars risk shortcuts\n    Scope (s 52)\n      Normative appropriateness\
+  \ (Wallace)\n      Plaintiff onus\n    Interveners\n      Third-party crime\n  \
+  \    Medical treatment (Mahony)\n      Suicide / impaired volition (Haber)\n   \
+  \   Plaintiff misconduct (Yates)\n    After causation\n      Apportionment (s 56)\n\
+  ```\n"
 tripwires:
-  - Treating s 51(2) as a material-risk shortcut.
-  - Collapsing factual causation with scope contrary to Wallace.
-  - Assuming third-party crime satisfies causation absent but-for proof.
-  - Letting routine medical negligence break the chain contra Mahony.
-  - Declaring suicide wholly voluntary despite impaired volition.
-  - Ignoring P’s onus and Evidence Act s 140 calibration.
+- Treating s 51(2) as a material-risk shortcut.
+- Collapsing factual causation with scope contrary to Wallace.
+- Assuming third-party crime satisfies causation absent but-for proof.
+- Letting routine medical negligence break the chain contra Mahony.
+- Declaring suicide wholly voluntary despite impaired volition.
+- Ignoring P’s onus and Evidence Act s 140 calibration.
 anchors:
   cases:
-    - "Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182 at [5]–[9]"
-    - "Amaca Pty Ltd v Booth [2011] HCA 53; (2011) 246 CLR 36 at [49]"
-    - "Tabet v Gett [2010] HCA 12; (2010) 240 CLR 537 at [111]–[112]"
-    - "Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem [2009] HCA 48; (2009) 239 CLR 420 at [52]–[57]"
-    - "Wallace v Kam [2013] HCA 19; (2013) 250 CLR 375 at [9]–[12]"
-    - "Mahony v J Kruschich (Demolitions) Pty Ltd [1985] HCA 37; (1985) 156 CLR 522 at 529–530"
-    - "Haber v Walker [1963] VR 339 at 348–350"
-    - "Yates v Jones (1990) 24 NSWLR 317; [1990] NSWCA 75"
+  - Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182 at [5]–[9]
+  - Amaca Pty Ltd v Booth [2011] HCA 53; (2011) 246 CLR 36 at [49]
+  - Tabet v Gett [2010] HCA 12; (2010) 240 CLR 537 at [111]–[112]
+  - Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem [2009] HCA
+    48; (2009) 239 CLR 420 at [52]–[57]
+  - Wallace v Kam [2013] HCA 19; (2013) 250 CLR 375 at [9]–[12]
+  - Mahony v J Kruschich (Demolitions) Pty Ltd [1985] HCA 37; (1985) 156 CLR 522 at
+    529–530
+  - Haber v Walker [1963] VR 339 at 348–350
+  - Yates v Jones (1990) 24 NSWLR 317; [1990] NSWCA 75
   statutes:
-    - "Wrongs Act 1958 (Vic) ss 51–52, s 56"
-    - "Evidence Act 1995 (Cth) s 140"
-    - "Evidence Act 2008 (Vic) s 140"
+  - Wrongs Act 1958 (Vic) ss 51–52, s 56
+  - Evidence Act 1995 (Cth) s 140
+  - Evidence Act 2008 (Vic) s 140
+  notes: []
 keywords:
-  - but-for-causation
-  - exceptional-case
-  - scope-of-liability
-  - intervening-acts
-  - third-party-crime
-  - negligent-medical-care
-  - suicide-volition
-  - circumstantial-inference
-  - plaintiff-onus
-  - evidence-s140
-reading_level: "Plain English (JD)"
+- but-for-causation
+- exceptional-case
+- scope-of-liability
+- intervening-acts
+- third-party-crime
+- negligent-medical-care
+- suicide-volition
+- circumstantial-inference
+- plaintiff-onus
+- evidence-s140
+reading_level: Plain English (JD)
 tags:
-  - LAWS50025 - Torts
-  - Torts
-  - Causation
-  - Wrongs_Act_Vic
-  - Exam_Fundamentals
-  - MLS_H1
-
+- LAWS50025 - Torts
+- Torts
+- Causation
+- Wrongs_Act_Vic
+- Exam_Fundamentals
+- MLS_H1
 _lint_notes:
-  - "front_questionified_<=30w"
-  - "diagram_conceptual_branches"
-  - "statutory_hook_listed"
-  - "anchors_normalised"
-  - "keywords_trimmed_<=10"
+- front_questionified_<=30w
+- diagram_conceptual_branches
+- statutory_hook_listed
+- anchors_normalised
+- keywords_trimmed_<=10

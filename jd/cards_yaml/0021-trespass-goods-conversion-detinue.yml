@@ -28,7 +28,37 @@ back: 'Issue. Which interference-with-goods tort applies and what remedy follows
   74 CLR 204, 228–230; Bunnings [2011] NSWCA 342, [124]. Detinue — demand/refusal;
   valuation at judgment; detention damages: Heavener [1924] HCA 10; (1924) 34 CLR
   306. Conversion damages at conversion: Butler (1966) 114 CLR 185, 191–192. Statutory
-  hook. None specific — common law torts; consider bailment context if relevant.'
+  hook. None specific — common law torts; consider bailment context if relevant.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
 why_it_matters: 'MLS exams reward precise sequencing: stand up your possessory title
   first, then choose between trespass (direct interference), conversion (dominion
   inconsistent with immediate right), and detinue (demand/refusal). Each tort drives
@@ -77,6 +107,7 @@ tags:
 - laws50025 - torts
 - exam_fundamentals
 - mls_h1
+- MLS_H1
 _lint_notes:
 - front_truncated_overflow_moved_to_issue
 - canonical_headers_added

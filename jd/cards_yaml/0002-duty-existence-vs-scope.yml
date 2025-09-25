@@ -20,7 +20,37 @@ back: 'Issue. Separate duty existence from scope so Victorian negligence stays s
   Tripwires. Avoid importing the Shirt calculus into existence, collapsing scope into
   s 51, or skipping coherence checks; keep psychiatric-harm and omission gates tight.
   Conclusion. Sequence existence → scope → breach → causation → remedy to show doctrinal
-  discipline and statutory literacy.'
+  discipline and statutory literacy.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
 why_it_matters: 'Examiners reward sequenced answers: existence before scope, then
   breach (s 48), then causation (s 51). This avoids conflation and shows statutory
   literacy (Pt VBA caps; CN; volenti). Referencing Sullivan, Perre/Woolcock, Modbury
@@ -55,6 +85,7 @@ anchors:
     254, 269 [35]
   statutes:
   - Wrongs Act 1958 (Vic) ss 48, 51, 26, 54, Pt VBA (incl s 28ID, s 28LE), Pt IVAA
+  notes: []
 keywords:
 - duty-of-care
 - duty-existence
@@ -70,6 +101,7 @@ tags:
 - duty
 - exam_fundamentals
 - mls_h1
+- MLS_H1
 sources: []
 created: '2025-09-25T06:52:28.386345Z'
 updated: '2025-09-25T07:14:44.116251Z'

@@ -25,7 +25,37 @@ back: 'Issue. Identify the elements of trespass to land and the limited statutor
   implied licence as irrevocable. Assuming mistake negates liability. Ignoring injunctions/mesne
   profits for continuing trespass. Conclusion. Once possession, direct interference,
   voluntariness, and lack of justification are proven, trespass is made out; address
-  defences and tailor remedies, flagging statutory overlays where relevant.'
+  defences and tailor remedies, flagging statutory overlays where relevant.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
 why_it_matters: 'Trespass is an MLS staple because it is actionable per se. Examiners
   expect you to separate possession, direct interference, voluntariness and justification
   quickly, then move to defences and remedies. Referencing Kuru, Plenty and Halliday,
@@ -73,6 +103,7 @@ tags:
 - trespass
 - exam_fundamentals
 - mls_h1
+- MLS_H1
 _lint_notes:
 - issue_contextualised
 - diagram_conceptual_branches

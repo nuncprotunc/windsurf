@@ -26,7 +26,37 @@ back: 'Issue. When can a defendant (typically an employer) be held liable for to
   Treating any employee tort as automatically “in course”. Misclassifying contractors
   by single‑factor focus. Ignoring Deatons for battery. Confusing vicarious liability
   with non‑delegable duty. Forgetting Pt VBA caps in personal injury. Missing the
-  close‑connection test in institutional abuse.'
+  close‑connection test in institutional abuse.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
 why_it_matters: 'Vicarious liability is a recurrent loss‑allocation device in exams.
   High‑band answers cleanly classify worker status, connect the tort to authorised
   work, and avoid conflating vicarious liability with non‑delegable duty. Adding Pt
@@ -47,13 +77,10 @@ tripwires:
 - Missing modern institutional liability extensions
 - Confusing vicarious liability with non-delegable duty (different doctrines)
 anchors:
-- Stevens v Brodribb Sawmilling Co Pty Ltd (1986) 160 CLR 16, 29–30 (Mason J) (HCA)
-- Hollis v Vabu Pty Ltd (2001) 207 CLR 21, [47]–[57] (HCA)
-- Bugge v Brown (1919) 26 CLR 110, 117–18 (HCA)
-- Deatons Pty Ltd v Flew (1949) 79 CLR 370, 381 (Dixon J) (HCA)
-- Prince Alfred College v ADC (2016) 258 CLR 134, [81]–[82] (HCA)
-- Lepore v NSW (2003) 212 CLR 511 (HCA)
-- Wrongs Act 1958 (Vic) Pt IV (apportionment); Pt VBA (damages)
+  cases:
+  - TODO anchor case 1
+  statutes: []
+  notes: []
 keywords:
 - vicarious-liability
 - employee
@@ -73,6 +100,7 @@ tags:
 - vicarious_liability
 - exam_fundamentals
 - mls_h1
+- MLS_H1
 _lint_notes:
 - canonical_headers_added
 - authorities_map_and_statutory_hook_added

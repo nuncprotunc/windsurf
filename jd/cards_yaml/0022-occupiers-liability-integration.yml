@@ -26,7 +26,37 @@ back: 'Issue. What frame governs premises injury in Victoria: occupiers’ liabi
   post‑Zaluzna. Treating activity hazards as outside s 14B(3). Ignoring obvious‑risk
   provisions in breach. Assuming causation without inspection evidence (Strong). Denying
   any duty to trespassers (Hackshaw). Misframing intentional assaults as premises
-  defects instead of trespass/vicarious liability.'
+  defects instead of trespass/vicarious liability.
+
+
+  Rule.
+
+  TODO: rule. content.
+
+
+  Application scaffold.
+
+  TODO: application scaffold. content.
+
+
+  Authorities map.
+
+  TODO: authorities map. content.
+
+
+  Statutory hook.
+
+  TODO: statutory hook. content.
+
+
+  Tripwires.
+
+  TODO: tripwires. content.
+
+
+  Conclusion.
+
+  TODO: conclusion. content.'
 why_it_matters: 'MLS problems mix premises hazards, activity risks and trespassers.
   High‑band answers: (i) source the duty in Pt IIA, (ii) use Pt X for breach/causation,
   (iii) avoid pre‑Zaluzna categories, (iv) use Thompson for activity hazards, (v)
@@ -76,6 +106,7 @@ tags:
 - laws50025 - torts
 - exam_fundamentals
 - mls_h1
+- MLS_H1
 _lint_notes:
 - front_over_30w_fixed_and_overflow_moved_to_issue
 - canonical_headers_added
