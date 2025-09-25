@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Juris Doctor Hypo Generator</title>
+<style>
+/* README -------------------------------------------------- */
+/*
+Usage: Open this file in a browser. Configure the hypo inputs, generate a scenario, craft a response in the centre workspace, and press “Score Response”. Use Practice Mode to bypass the curve.
+Extending: Add new subjects/topics by editing the `subjectLibrary` in the generator section and updating authority templates. Scoring heuristics live in the // scorer block; tweak weightings or keyword maps there. The feedback engine is modular—extend `feedbackPlaybook` for richer next reps.
+*/
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg, #f5f5f5);
+  color: inherit;
+}
+header {
+  background: #113a5d;
+  color: #fff;
+  padding: 1rem 1.5rem;
+}
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+}
+form#controlPanel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  align-items: end;
+}
+form#controlPanel label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+input, select, textarea, button {
+  font: inherit;
+}
+button {
+  background: #1769aa;
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button.secondary {
+  background: #555;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+}
+section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-height: 400px;
+}
+section h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #113a5d;
+}
+#hypoFacts {
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+#modelAnswer {
+  white-space: pre-wrap;
+  background: #f2f7fb;
+  padding: 0.75rem;
+  border-radius: 6px;
+  display: none;
+  max-height: 250px;
+  overflow-y: auto;
+}
+#markingKey {
+  white-space: pre-wrap;
+  background: #f7f5f0;
+  padding: 0.75rem;
+  border-radius: 6px;
+  display: none;
+  max-height: 250px;
+  overflow-y: auto;
+}
+#responseArea {
+  width: 100%;
+  min-height: 280px;
+}
+#scratchpad {
+  display: none;
+  min-height: 80px;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+#citationHelper {
+  display: none;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  background: #f0f7ff;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+#results pre {
+  white-space: pre-wrap;
+  background: #f2f7fb;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+#timerDisplay {
+  font-weight: bold;
+  font-size: 1rem;
+}
+#analyticsOutput {
+  font-size: 0.85rem;
+  background: #fafafa;
+  padding: 0.75rem;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+#testsOutput {
+  font-size: 0.85rem;
+  background: #eef7ed;
+  padding: 0.75rem;
+  border-radius: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+@media (max-width: 1200px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Juris Doctor Hypo Generator</h1>
+  <form id="controlPanel">
+    <label>Subjects
+      <div id="subjectCheckboxes"></div>
+    </label>
+    <label>Topics
+      <select id="topicsSelect" multiple size="5" aria-label="Topics"></select>
+    </label>
+    <label>Cross-over intent
+      <select id="crossoverIntent">
+        <option value="single">Single-domain only</option>
+        <option value="crossover">Cross-over allowed</option>
+      </select>
+    </label>
+    <label>Cross-over intensity (%)
+      <input type="number" id="crossoverIntensity" min="0" max="100" value="40" />
+    </label>
+    <label>Difficulty (1–5)
+      <input type="number" id="difficulty" min="1" max="5" value="3" />
+    </label>
+    <label>Word budget (200–800)
+      <input type="number" id="wordBudget" min="200" max="800" value="400" />
+    </label>
+    <label>Time limit (minutes)
+      <input type="number" id="timeLimit" min="5" max="60" value="30" />
+    </label>
+    <label>Random seed
+      <input type="number" id="seed" value="42" />
+    </label>
+    <label>Practice mode (no curve)
+      <input type="checkbox" id="practiceMode" />
+    </label>
+    <div>
+      <button type="button" id="generateBtn">Generate Hypo</button>
+      <button type="button" id="rerollBtn" class="secondary">Re-roll</button>
+    </div>
+  </form>
+</header>
+<main>
+  <section id="hypoSection" aria-live="polite">
+    <h2>Hypo</h2>
+    <p><strong>Seed:</strong> <span id="seedDisplay">—</span></p>
+    <div id="hypoFacts">Set up your parameters and generate a scenario.</div>
+    <button type="button" id="showHintsBtn" class="secondary">Show tiered hints</button>
+    <div id="hintsContainer" style="display:none; margin-top:0.75rem;"></div>
+    <h3>Near-miss distractor facts</h3>
+    <div id="distractors" style="font-size:0.9rem; background:#fff8e1; padding:0.75rem; border-radius:6px; white-space:pre-wrap;"></div>
+    <div style="margin-top:0.75rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+      <button type="button" id="toggleModelAnswer" class="secondary">Reveal model answer</button>
+      <button type="button" id="toggleMarkingKey" class="secondary">Reveal marking key</button>
+    </div>
+    <div id="modelAnswer" aria-hidden="true"></div>
+    <div id="markingKey" aria-hidden="true"></div>
+  </section>
+  <section id="workspace">
+    <h2>Response workspace</h2>
+    <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+      <div id="timerDisplay">00:00</div>
+      <button type="button" id="startTimerBtn">Start timer</button>
+      <button type="button" id="resetTimerBtn" class="secondary">Reset timer</button>
+      <div>Word count: <span id="wordCount">0</span></div>
+    </div>
+    <div style="margin-top:0.75rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+      <label><input type="checkbox" id="toggleIRAC" checked /> IRAC headings</label>
+      <label><input type="checkbox" id="toggleScratchpad" /> Issue scratchpad</label>
+      <label><input type="checkbox" id="toggleCitationHelper" /> AGLC4 cite helper</label>
+      <label><input type="checkbox" id="autoscoreOnSubmit" checked /> Auto-score on submit</label>
+    </div>
+    <textarea id="responseArea" aria-label="Response editor" placeholder="Draft your response here…"></textarea>
+    <textarea id="scratchpad" aria-label="Scratchpad" placeholder="List issues, policy hooks, counter-arguments…"></textarea>
+    <div id="citationHelper">
+      <strong>AGLC4 quick templates</strong>
+      <ul>
+        <li>Case: <code>Commonwealth v Introvigne (1982) 150 CLR 258</code></li>
+        <li>Statute: <code>Wrongs Act 1958 (Vic) s 48</code></li>
+        <li>Provision pinpoint: <code>Australian Consumer Law s 18</code></li>
+      </ul>
+    </div>
+    <div style="margin-top:0.75rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+      <button type="button" id="scoreBtn">Score response</button>
+      <button type="button" id="exportMarkdownBtn" class="secondary">Export Markdown</button>
+      <button type="button" id="exportJsonBtn" class="secondary">Export JSON</button>
+      <button type="button" id="clearWorkspaceBtn" class="secondary">Clear workspace</button>
+    </div>
+  </section>
+  <section id="results">
+    <h2>Results & Feedback</h2>
+    <div id="scoreSummary">Run a scenario and score to view results.</div>
+    <div id="feedbackSection"></div>
+    <h3>Analytics snapshot</h3>
+    <div id="analyticsOutput">No data yet.</div>
+    <h3>Tests</h3>
+    <button type="button" id="runTestsBtn">Run in-browser tests</button>
+    <div id="testsOutput" aria-live="polite"></div>
+  </section>
+</main>
+<script>
+// Utility --------------------------------------------------
+const qs = (sel) => document.querySelector(sel);
+const qsa = (sel) => Array.from(document.querySelectorAll(sel));
+const storageKey = 'jd-hypo-workspace-v1';
+const analyticsKey = 'jd-hypo-analytics-v1';
+const curveKey = 'jd-hypo-curve-v1';
+const hypoHistoryKey = 'jd-hypo-history-v1';
+
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function() {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t ^= t + Math.imul(t ^ t >>> 7, 61 | t);
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function seededShuffle(array, rng) {
+  const arr = array.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function sentenceSplit(text) {
+  return text.split(/(?<=[.!?])\s+/).filter(Boolean);
+}
+
+function wordSplit(text) {
+  return text.trim().split(/\s+/).filter(Boolean);
+}
+
+function normalise(str) {
+  return str.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function cosineSimilarity(aTokens, bTokens) {
+  const countsA = new Map();
+  const countsB = new Map();
+  aTokens.forEach(t => countsA.set(t, (countsA.get(t) || 0) + 1));
+  bTokens.forEach(t => countsB.set(t, (countsB.get(t) || 0) + 1));
+  const all = new Set([...countsA.keys(), ...countsB.keys()]);
+  let dot = 0, magA = 0, magB = 0;
+  all.forEach(token => {
+    const a = countsA.get(token) || 0;
+    const b = countsB.get(token) || 0;
+    dot += a * b;
+    magA += a * a;
+    magB += b * b;
+  });
+  if (!magA || !magB) return 0;
+  return dot / (Math.sqrt(magA) * Math.sqrt(magB));
+}
+
+// generator --------------------------------------------------
+const subjectLibrary = {
+  'Torts': {
+    topics: ['Duty of care', 'Breach', 'Causation', 'Remoteness', 'Damages', 'Defences'],
+    statutes: ['Wrongs Act 1958 (Vic) s 48', 'Civil Liability Act 2002 (NSW) s 5B', 'Wrongs Act 1958 (Vic) s 51'],
+    cases: ['Wyong Shire Council v Shirt (1980) 146 CLR 40', 'Imbree v McNeilly (2008) 236 CLR 510', 'Sullivan v Moody (2001) 207 CLR 562'],
+    factPatterns: [
+      'Local council contractors left excavations unbarricaded near a shared pedestrian-cyclist path in {locale}. Overnight storms dislodged warning signage, and commuters deviated across the site during peak hours.',
+      'A private adventure park in {locale} marketed a new obstacle course without final safety certification. Staff skipped the last inspection to meet a launch date, relying on outdated harness ratings.'
+    ],
+    call: (primary, secondary) => `Advise the claimant on negligence claims against the defendants, addressing ${primary}${secondary ? ' and any intersecting obligations with ' + secondary : ''}.`
+  },
+  'Contracts': {
+    topics: ['Formation', 'Terms', 'Breach', 'Remedies', 'Misrepresentation', 'Frustration'],
+    statutes: ['Australian Consumer Law s 18', 'Goods Act 1958 (Vic) s 19', 'Australian Consumer Law s 23'],
+    cases: ['Ermogenous v Greek Orthodox Community of SA Inc (2002) 209 CLR 95', 'Toll (FGCT) Pty Ltd v Alphapharm Pty Ltd (2004) 219 CLR 165', 'Hadley v Baxendale (1854) 9 Ex 341'],
+    factPatterns: [
+      'A tech startup in {locale} negotiated supply of bespoke drones with a sole manufacturer. Emails used varying pricing tiers and a “subject to board approval” clause remained in drafts.',
+      'An events company in {locale} promised exclusive streaming rights for a conference but outsourced feeds to a third-party who triggered data throttling during keynote sessions.'
+    ],
+    call: (primary, secondary) => `Advise the parties on contractual liabilities, remedies, and any interactions with ${primary}${secondary ? ' alongside ' + secondary : ''}.`
+  },
+  'Public Law': {
+    topics: ['Judicial review', 'Procedural fairness', 'Executive power', 'Ultra vires', 'Standing'],
+    statutes: ['Administrative Decisions (Judicial Review) Act 1977 (Cth) s 5', 'Constitution s 75(v)', 'Judicial Review Act 1991 (Qld) s 20'],
+    cases: ['Plaintiff M61/2010E v Commonwealth (2010) 243 CLR 319', 'Kirk v Industrial Court of NSW (2010) 239 CLR 531', 'Minister for Immigration v Li (2013) 249 CLR 332'],
+    factPatterns: [
+      'A Commonwealth agency in {locale} released an emergency procurement directive delegating approvals to contractors without tender, citing urgent cyber threats.',
+      'A statutory authority in {locale} fast-tracked infrastructure approvals via a “pilot” process, notifying only industry stakeholders and excluding community groups.'
+    ],
+    call: (primary, secondary) => `Advise the applicant on grounds to challenge the administrative decisions, focusing on ${primary}${secondary ? ' and overlaps with ' + secondary : ''}.`
+  },
+  'Criminal Law': {
+    topics: ['Actus reus', 'Mens rea', 'Defences', 'Inchoate liability', 'Sentencing'],
+    statutes: ['Crimes Act 1958 (Vic) s 18', 'Crimes Act 1900 (NSW) s 18', 'Sentencing Act 1991 (Vic) s 5'],
+    cases: ['R v Blaue [1975] 1 WLR 1411', 'R v Miller [1983] 2 AC 161', 'Zecevic v Director of Public Prosecutions (Vic) (1987) 162 CLR 645'],
+    factPatterns: [
+      'A cybersecurity consultant in {locale} triggered an automated process that cascaded into a hospital outage, with staff improvising life-support backups.',
+      'A neighbourhood watch group in {locale} conducted “citizen patrols” using modified drones that startled residents, leading to a late-night confrontation.'
+    ],
+    call: (primary, secondary) => `Advise on criminal liability and available defences concerning ${primary}${secondary ? ' in tandem with ' + secondary : ''}.`
+  },
+  'Equity and Trusts': {
+    topics: ['Breach of trust', 'Fiduciary duties', 'Equitable remedies', 'Tracing', 'Constructive trusts'],
+    statutes: ['Trustee Act 1958 (Vic) s 36', 'Trustee Act 1925 (NSW) s 14', 'Civil Procedure Act 2010 (Vic) s 23'],
+    cases: ['Hospital Products Ltd v United States Surgical Corp (1984) 156 CLR 41', 'Muschinski v Dodds (1985) 160 CLR 583', 'Farah Constructions Pty Ltd v Say-Dee Pty Ltd (2007) 230 CLR 89'],
+    factPatterns: [
+      'A philanthropic trust in {locale} delegated investment discretion to an advisory firm that allocated funds into affiliated startups without disclosure.',
+      'An art foundation in {locale} stored donated works in a warehouse shared with commercial consignments; an insurer later disputed coverage when humidity controls failed.'
+    ],
+    call: (primary, secondary) => `Advise the beneficiaries on equitable relief concerning ${primary}${secondary ? ' and overlapping obligations with ' + secondary : ''}.`
+  }
+};
+
+const extendedSubjects = ['Obligations', 'Tax', 'Property', 'Remedies', 'Family Law', 'Disputes and Ethics', 'Constitutional Law', 'Evidence and Proof', 'Legal Research', 'Legal Theory', 'Legal Method and Reasoning', 'Corporations Law'];
+extendedSubjects.forEach(name => {
+  if (!subjectLibrary[name]) {
+    subjectLibrary[name] = {
+      topics: ['Core principles', 'Remedies', 'Policy issues'],
+      statutes: ['Corporations Act 2001 (Cth) s 180'],
+      cases: ['Australian Securities and Investments Commission v Healey (2011) 196 FCR 291'],
+      factPatterns: ['An advisory panel in {locale} escalated compliance decisions without board resolutions, prompting regulator scrutiny.'],
+      call: (primary, secondary) => `Discuss ${primary}${secondary ? ' with emphasis on ' + secondary : ''}.`
+    };
+  }
+});
+
+function buildHypoId(subjects, topics, seed) {
+  const primary = subjects[0] || 'General';
+  const topicSlug = topics.map(t => t.replace(/[^A-Za-z]/g, '')).slice(0,2).join('-') || 'Multi';
+  return `${primary}-${topicSlug}-${new Date().getFullYear()}-${String(seed)}`;
+}
+
+function generateScenario(inputs) {
+  const { subjects, topics, crossoverIntent, crossoverIntensity, difficulty, wordBudget, timeLimit, seed } = inputs;
+  const chosenSubjects = subjects.length ? subjects : ['Torts'];
+  const rng = mulberry32(Number(seed) || 1);
+  const primarySubject = chosenSubjects[0];
+  const primaryData = subjectLibrary[primarySubject];
+  const localePool = ['Melbourne', 'Sydney', 'Newcastle', 'Geelong', 'Canberra', 'Wagga Wagga'];
+  const locale = localePool[Math.floor(rng() * localePool.length)];
+  let secondarySubject = null;
+  if (crossoverIntent === 'crossover' && chosenSubjects.length > 1) {
+    const chance = rng() * 100;
+    if (chance < crossoverIntensity) {
+      const others = chosenSubjects.slice(1);
+      secondarySubject = others[Math.floor(rng() * others.length)];
+    }
+  }
+  const topicsPool = topics.length ? topics : primaryData.topics;
+  const selectedTopics = seededShuffle(topicsPool, rng).slice(0, Math.min(3, topicsPool.length));
+  const factPattern = primaryData.factPatterns[Math.floor(rng() * primaryData.factPatterns.length)].replace('{locale}', locale);
+  const secondaryData = secondarySubject ? subjectLibrary[secondarySubject] : null;
+  const secondaryFact = secondaryData ? secondaryData.factPatterns[Math.floor(rng() * secondaryData.factPatterns.length)].replace('{locale}', locale) : '';
+  const difficultyScale = ['baseline', 'moderate', 'complex', 'high-stakes', 'edge-case'];
+  const difficultyLabel = difficultyScale[clamp(difficulty - 1, 0, difficultyScale.length - 1)];
+  const intensityDescriptors = ['light touch', 'threaded', 'woven', 'braided', 'saturated'];
+  const intensityLabel = intensityDescriptors[clamp(Math.round((crossoverIntensity/100) * (intensityDescriptors.length-1)), 0, intensityDescriptors.length - 1)];
+
+  const facts = `Scenario (${difficultyLabel}; ${wordBudget} word budget; ${timeLimit} minute timer):\n${factPattern}\n\nKey developments:\n- Investigations unearthed contemporaneous emails acknowledging the ${selectedTopics[0] || 'core duty'} risk but prioritising rollout timelines.\n- Stakeholders in ${locale} escalated concerns about compliance with ${primaryData.statutes[0]}.\n- The organisation maintained a risk matrix last updated two years ago, omitting emerging hazards.\n${secondarySubject ? `- Cross-over seam (${intensityLabel}): ${secondaryFact}` : ''}\n\nCall of the question: ${primaryData.call(selectedTopics.join(', '), secondarySubject ? `${secondarySubject} (${(secondaryData?.topics || []).slice(0,2).join(', ')})` : null)}`;
+
+  const authorities = {
+    cases: seededShuffle(primaryData.cases, rng).slice(0, 2).concat(secondaryData ? secondaryData.cases.slice(0,1) : []),
+    statutes: seededShuffle(primaryData.statutes, rng).slice(0, 2).concat(secondaryData ? secondaryData.statutes.slice(0,1) : [])
+  };
+  const markingKey = {
+    issues: [
+      `${primarySubject} – ${selectedTopics[0] || 'primary duty'} issue`,
+      `${primarySubject} – ${selectedTopics[1] || 'secondary element'} issue`,
+      secondarySubject ? `${secondarySubject} interplay` : 'Remedial analysis'
+    ],
+    rules: authorities.cases.map(name => ({ name, must_include: name.includes('v') ? ['proposition'] : [] })),
+    statutes: authorities.statutes,
+    application_exemplars: [
+      `Tie the risk matrix gap to breach factors in ${primaryData.statutes[0]}.`,
+      secondarySubject ? `Address how ${secondarySubject} principles redirect or reinforce primary liability.` : `Explain remedies drawing on proportionality.`
+    ],
+    dealbreakers: ['no invented authority', 'must cite operative sections']
+  };
+
+  const modelAnswer = `Issue\nIdentify whether ${primaryData.call(selectedTopics.join(', '), secondarySubject)}\n\nRule\nDiscuss authorities: ${authorities.cases.join('; ')}. Statutory anchors include ${authorities.statutes.join('; ')}. Outline the governing tests (foreseeability, control, statutory purpose).\n\nApplication\nApply risk matrix evidence and stakeholder warnings to ${primaryData.statutes[0]}, evaluating breach via Shirt calculus analogues. Consider causation by referencing factual matrix (emails, timeline).${secondarySubject ? ` Integrate ${secondarySubject} obligations—examine ${secondaryData?.statutes?.[0] || ''} and authorities to show overlap.` : ''}\nCounter-arguments include resource constraints and regulatory guidance gaps.\n\nConclusion\nProvide a reasoned conclusion addressing liability exposure, defences, and remedial posture. Suggest next procedural steps (eg, Calderbank offer, interlocutory relief).`;
+
+  const distractors = `Near-miss 1: Documents reference “compliance guidelines” but cite the wrong jurisdiction (Queensland), tempting an incorrect statute.\nNear-miss 2: An internal memo states the hazard was “unforeseeable” without referencing actual risk registers—test whether students parrot conclusory language.\nNear-miss 3: A supplier contract annex references arbitration in Singapore, inviting but ultimately irrelevant conflict of laws analysis.`;
+
+  const hints = [
+    'Tier 1: Map the duty or power source before diving into breach—anchor it in the operative statute.',
+    'Tier 2: Use authorities to express a proposition before naming them; avoid naked case drops.',
+    'Tier 3: Draft a counter-argument paragraph using two concrete facts, then rebut it with policy framing.'
+  ];
+
+  return {
+    id: buildHypoId(chosenSubjects, selectedTopics, seed),
+    subjects: chosenSubjects,
+    topics: selectedTopics,
+    crossover: {
+      enabled: crossoverIntent === 'crossover',
+      intensity: crossoverIntensity,
+      secondary: secondarySubject
+    },
+    call_of_question: primaryData.call(selectedTopics.join(', '), secondarySubject ? `${secondarySubject} (${(secondaryData?.topics || []).slice(0,2).join(', ')})` : null),
+    facts,
+    authorities,
+    marking_key: markingKey,
+    model_answer: modelAnswer,
+    distractors,
+    hints,
+    metadata: { difficultyLabel, intensityLabel, wordBudget, timeLimit }
+  };
+}
+
+// scorer --------------------------------------------------
+const conclusoryPhrases = ['therefore', 'thus it is clear', 'obviously', 'clearly liable', 'without doubt'];
+const hallucinationPattern = /([A-Z][a-z]+\s+v\s+[A-Z][a-z]+)/g;
+
+function parseIRAC(text) {
+  const sections = { issue: '', rule: '', application: '', conclusion: '', other: '' };
+  const markers = [/^issue/i, /^rule/i, /^application/i, /^analysis/i, /^conclusion/i];
+  const lines = text.split(/\n+/);
+  let current = 'other';
+  lines.forEach(line => {
+    const trimmed = line.trim();
+    if (!trimmed) return;
+    if (/^issue/i.test(trimmed)) current = 'issue';
+    else if (/^rule/i.test(trimmed) || /^law/i.test(trimmed)) current = 'rule';
+    else if (/^application/i.test(trimmed) || /^analysis/i.test(trimmed)) current = 'application';
+    else if (/^conclusion/i.test(trimmed)) current = 'conclusion';
+    sections[current] += (sections[current] ? '\n' : '') + trimmed;
+  });
+  return sections;
+}
+
+function detectStatuteUsage(text, statutes) {
+  const found = [];
+  statutes.forEach(stat => {
+    const sectionMatch = stat.match(/s\s?\d+[A-Za-z]*/);
+    const pattern = new RegExp(stat.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+    if (pattern.test(text)) {
+      found.push(stat);
+    } else if (sectionMatch) {
+      const section = sectionMatch[0];
+      if (new RegExp(section.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(text)) {
+        found.push(stat);
+      }
+    }
+  });
+  return found;
+}
+
+function detectCaseUsage(text, cases) {
+  const found = [];
+  cases.forEach(c => {
+    const name = c.split('(')[0].trim();
+    const pattern = new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+    if (pattern.test(text)) found.push(c);
+  });
+  return found;
+}
+
+function scoreResponse(response, hypo, options = { practiceMode: false }) {
+  const text = response.trim();
+  if (!text) {
+    return {
+      scores: { issues: 0, rules: 0, statutes: 0, application: 0, structure: 0, concision: 0 },
+      total: 0,
+      flags: ['no response'],
+      rationales: {},
+      descriptorGrade: 'N',
+      curve: { finalGrade: 'N', note: 'No response.' },
+      feedback: {}
+    };
+  }
+  const irac = parseIRAC(text);
+  const tokensAll = normalise(text).split(' ');
+  const markingKey = hypo.marking_key;
+  const expectedIssues = markingKey.issues;
+
+  let issueScore = 0;
+  expectedIssues.forEach(issue => {
+    const overlap = cosineSimilarity(normalise(issue).split(' '), tokensAll);
+    if (overlap > 0.15) issueScore += 1;
+    if (text.toLowerCase().includes(issue.toLowerCase().split(' ')[0])) issueScore += 0.5;
+  });
+  issueScore = clamp(issueScore, 0, 5);
+
+  const casesUsed = detectCaseUsage(text, hypo.authorities.cases);
+  let ruleScore = casesUsed.length >= 1 ? 2 + casesUsed.length : 1;
+  if (ruleScore > 5) ruleScore = 5;
+  const statutesUsed = detectStatuteUsage(text, hypo.authorities.statutes);
+  const statuteScoreRaw = statutesUsed.length ? 3 + Math.min(2, statutesUsed.length - 1) : 0;
+  const statuteScore = clamp(statuteScoreRaw, 0, 5);
+
+  const factAnchors = ['email', 'risk', 'matrix', 'warning', 'timeline', 'stakeholder', 'resource', 'policy'];
+  let factHits = 0;
+  factAnchors.forEach(anchor => {
+    if (text.toLowerCase().includes(anchor)) factHits += 1;
+  });
+  let applicationScore = factHits >= 4 ? 5 : factHits >= 3 ? 4 : factHits >= 2 ? 3 : factHits >= 1 ? 2 : 1;
+  const counterMention = /counter|however|on the other hand|nevertheless/i.test(text);
+  if (counterMention) applicationScore = Math.min(5, applicationScore + 1);
+
+  const sentences = sentenceSplit(text);
+  const words = wordSplit(text);
+  const avgSentenceLength = sentences.length ? words.length / sentences.length : words.length;
+  let structureScore = 5;
+  if (avgSentenceLength > 28) structureScore -= 2;
+  if (avgSentenceLength > 32) structureScore -= 1;
+  if (!irac.issue || !irac.rule || !irac.application || !irac.conclusion) structureScore -= 2;
+  if (structureScore < 0) structureScore = 0;
+
+  const targetWordBudget = hypo.metadata.wordBudget;
+  const concisionScore = words.length <= targetWordBudget + 80 ? 5 : words.length <= targetWordBudget + 140 ? 3 : 2;
+
+  // Penalties & flags
+  const flags = [];
+  let penalties = 0;
+  const inventedCases = [];
+  const matches = text.match(hallucinationPattern) || [];
+  matches.forEach(name => {
+    if (!hypo.authorities.cases.some(c => c.includes(name.trim()))) {
+      inventedCases.push(name.trim());
+    }
+  });
+  if (inventedCases.length) {
+    penalties += 12;
+    flags.push(`hallucination: ${inventedCases.join(', ')}`);
+  }
+  const wrongJurisdiction = /(california|new york|us supreme court)/i.test(text);
+  if (wrongJurisdiction) {
+    penalties += 8;
+    flags.push('wrong jurisdiction reference');
+  }
+  conclusoryPhrases.forEach(phrase => {
+    if (text.toLowerCase().includes(phrase)) {
+      penalties += 2;
+      flags.push('conclusory assertion');
+    }
+  });
+
+  const weighted = {
+    issues: issueScore / 5 * 25,
+    rules: ruleScore / 5 * 20,
+    statutes: statuteScore / 5 * 15,
+    application: applicationScore / 5 * 25,
+    structure: structureScore / 5 * 10,
+    concision: concisionScore / 5 * 5
+  };
+  let total = Object.values(weighted).reduce((a,b) => a + b, 0) - penalties;
+  if (statuteScore === 0) {
+    total = Math.min(total, 70);
+    flags.push('cap applied: missing operative statute');
+  }
+  total = Math.max(0, Math.round(total));
+
+  const rationales = {};
+  rationales.issues = issueScore >= 4 ? 'Issue mapping aligns with marking key → H1-like acuity.' : issueScore >= 3 ? 'Issues mostly identified → H2B-like.' : 'Several core issues missing → P-like.';
+  rationales.rules = ruleScore >= 4 ? 'Authorities cited with propositions → H1/H2A level.' : 'Limited authority engagement → H3-level.';
+  rationales.statutes = statuteScore >= 4 ? 'Operative sections engaged substantively → H1-like statutory use.' : statuteScore >=2 ? 'Statutory use partial → H3-like.' : 'No operative statute reasoning → N risk.';
+  rationales.application = applicationScore >= 4 ? 'Fact weaving with counter-analysis → H1/H2A-like.' : applicationScore >=3 ? 'Sound factual linkage → H2B/H3-like.' : 'Sparse application → P-level.';
+  rationales.structure = structureScore >=4 ? 'IRAC hygiene intact → H1/H2A-like clarity.' : structureScore >=2 ? 'Structure uneven → H3-level.' : 'Poor structure → N risk.';
+  rationales.concision = concisionScore >=4 ? 'Disciplined prose → H1-like concision.' : 'Over word budget → H3/P-like.';
+
+  const descriptorGrade = total >= 80 ? 'H1' : total >= 75 ? 'H2A' : total >= 70 ? 'H2B' : total >= 65 ? 'H3' : total >= 50 ? 'P' : 'N';
+
+  const curveOutcome = applyCurveAllocation(hypo.subjects[0], total, descriptorGrade, options.practiceMode);
+
+  return {
+    scores: {
+      issues: Math.round(weighted.issues),
+      rules: Math.round(weighted.rules),
+      statutes: Math.round(weighted.statutes),
+      application: Math.round(weighted.application),
+      structure: Math.round(weighted.structure),
+      concision: Math.round(weighted.concision)
+    },
+    total,
+    flags,
+    rationales,
+    descriptorGrade,
+    curve: curveOutcome
+  };
+}
+
+// descriptors->grade --------------------------------------
+function gradeDescriptorSummary(result) {
+  return `Raw ${result.total}/100 ⇒ ${result.descriptorGrade}. Curve-adjusted: ${result.curve.finalGrade} (${result.curve.note}).`;
+}
+
+// curve allocator -----------------------------------------
+function loadCurveStore() {
+  try {
+    return JSON.parse(localStorage.getItem(curveKey) || '{}');
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveCurveStore(store) {
+  localStorage.setItem(curveKey, JSON.stringify(store));
+}
+
+function applyCurveAllocation(subject, rawScore, descriptorGrade, practiceMode) {
+  if (practiceMode) {
+    return { finalGrade: descriptorGrade, note: 'Practice mode: curve bypassed.' };
+  }
+  const store = loadCurveStore();
+  if (!store[subject]) store[subject] = [];
+  const windowSize = 200;
+  const history = store[subject];
+  history.push({ raw: rawScore, descriptor: descriptorGrade, timestamp: Date.now() });
+  if (history.length > windowSize) history.splice(0, history.length - windowSize);
+  const sorted = history.slice().sort((a,b) => b.raw - a.raw);
+  const rankIndex = sorted.findIndex(entry => entry.timestamp === history[history.length -1].timestamp);
+  const percentile = (rankIndex + 1) / sorted.length;
+
+  const counts = { H1: 0, H2A: 0, H2B: 0 };
+  sorted.forEach((entry, idx) => {
+    const pct = (idx + 1) / sorted.length;
+    if (pct <= 0.15) counts.H1 += 1;
+    else if (pct <= 0.35) counts.H2A += 1;
+    else if (pct <= 0.65) counts.H2B += 1;
+  });
+  const currentPct = percentile;
+  let curved = descriptorGrade;
+  if (currentPct <= 0.15) curved = rawScore >= 85 ? 'H1 (≥85)' : 'H1';
+  else if (currentPct <= 0.35) curved = 'H2A';
+  else if (currentPct <= 0.65) curved = 'H2B';
+  else curved = descriptorGrade === 'N' ? 'N' : descriptorGrade === 'P' ? 'P' : descriptorGrade;
+  saveCurveStore(store);
+  const note = `Ranked ${(100 - Math.round(currentPct * 100))}% of cohort window (${history.length} entries).`;
+  return { finalGrade: curved, note };
+}
+
+// feedback engine -----------------------------------------
+const feedbackPlaybook = {
+  issues: (hypo) => ({
+    type: 'micro-drill',
+    prompt: `List three issue statements covering ${hypo.topics.join(', ')} in 60 words, tagging each with its authority.`
+  }),
+  rules: (hypo) => ({
+    type: 'micro-drill',
+    prompt: `Draft a rule paragraph weaving ${hypo.authorities.cases[0]} with ${hypo.authorities.statutes[0]}, ensuring proposition before citation.`
+  }),
+  statutes: (hypo) => ({
+    type: 'micro-drill',
+    prompt: `Write a 90-word statutory analysis applying ${hypo.authorities.statutes[0]} to the emails and risk matrix facts.`
+  }),
+  application: (hypo) => ({
+    type: 'micro-drill',
+    prompt: `Compose two sentences linking the risk matrix gap and stakeholder warnings to breach, then counter with resource constraint arguments.`
+  }),
+  structure: () => ({
+    type: 'micro-drill',
+    prompt: 'Re-outline your answer using IRAC headings with bullet issues under each sub-issue; cap each bullet at 14 words.'
+  }),
+  concision: () => ({
+    type: 'micro-drill',
+    prompt: 'Rewrite your longest paragraph in ≤80 words, removing filler and conclusory phrases.'
+  })
+};
+
+function buildFeedback(result, hypo) {
+  const dimensionTotals = result.scores;
+  const ordered = Object.entries(dimensionTotals).sort((a,b) => a[1] - b[1]);
+  const weakest = ordered[0][0];
+  const drills = [feedbackPlaybook[weakest](hypo)];
+  if (ordered[1]) drills.push(feedbackPlaybook[ordered[1][0]](hypo));
+  const workedExample = `Worked example (${weakest} focus):\n${hypo.model_answer}`;
+  const fadedExample = `Faded example (${weakest}):\nIssue: [state the contested duty/power]\nRule: [insert authority proposition] — ${hypo.authorities.cases[0]} (${hypo.authorities.statutes[0]})\nApplication: [link fact A + fact B to rule]\nConclusion: [probable outcome + next step].`;
+  return {
+    summary: gradeDescriptorSummary(result),
+    nextReps: drills,
+    schedule: ['Day 1 review', 'Day 3 spaced recall', 'Day 7 interleave with new subject'],
+    interleave: [`Switch to ${hypo.crossover.secondary || hypo.subjects[0]} economic loss filters next.`],
+    metacognitionPrompt: 'Before revealing the model answer, rate your confidence (0–100) and compare after review.',
+    calibration: 'Track calibration gap by logging predicted vs actual scores.',
+    workedExample,
+    fadedExample
+  };
+}
+
+// storage --------------------------------------------------
+function loadWorkspace() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    if (saved.response) qs('#responseArea').value = saved.response;
+    if (saved.scratchpad) qs('#scratchpad').value = saved.scratchpad;
+  } catch (e) {
+    console.warn('No workspace data');
+  }
+}
+
+function saveWorkspace() {
+  const payload = {
+    response: qs('#responseArea').value,
+    scratchpad: qs('#scratchpad').value
+  };
+  localStorage.setItem(storageKey, JSON.stringify(payload));
+}
+
+function updateAnalytics(hypo, result, responseText, durationSeconds) {
+  const entry = {
+    hypoId: hypo.id,
+    subjects: hypo.subjects,
+    topics: hypo.topics,
+    rawScore: result.total,
+    curveGrade: result.curve.finalGrade,
+    flags: result.flags,
+    durationSeconds,
+    wordCount: wordSplit(responseText).length,
+    timestamp: new Date().toISOString()
+  };
+  let store = [];
+  try {
+    store = JSON.parse(localStorage.getItem(analyticsKey) || '[]');
+  } catch (e) {
+    store = [];
+  }
+  store.push(entry);
+  localStorage.setItem(analyticsKey, JSON.stringify(store));
+  const weaknesses = {};
+  store.forEach(item => {
+    item.flags.forEach(flag => {
+      weaknesses[flag] = (weaknesses[flag] || 0) + 1;
+    });
+  });
+  const summary = `Attempts: ${store.length}\nAverage raw: ${(store.reduce((acc, curr) => acc + curr.rawScore, 0) / store.length).toFixed(1)}\nCommon flags: ${Object.entries(weaknesses).map(([k,v]) => `${k} (${v})`).join(', ') || 'None'}\nRecent curve grade: ${entry.curveGrade}`;
+  qs('#analyticsOutput').textContent = summary;
+}
+
+function exportMarkdown(hypo, result, responseText) {
+  const md = `# JD Hypo Attempt\n\n## Hypo (${hypo.id})\n${hypo.facts}\n\n## Response\n${responseText}\n\n## Scores\n${JSON.stringify(result, null, 2)}\n\n## Feedback\n${JSON.stringify(buildFeedback(result, hypo), null, 2)}\n`;
+  const blob = new Blob([md], { type: 'text/markdown' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${hypo.id}.md`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function exportJson(hypo, result, responseText) {
+  const payload = {
+    hypo,
+    mark_result: {
+      raw_total: result.total,
+      dimension_scores: result.scores,
+      flags: result.flags,
+      descriptor_grade: result.descriptorGrade,
+      curve_adjusted_grade: result.curve.finalGrade,
+      curve_note: result.curve.note,
+      feedback: buildFeedback(result, hypo)
+    },
+    response: responseText
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${hypo.id}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// tests ----------------------------------------------------
+function runInBrowserTests() {
+  const logs = [];
+  const push = (msg) => logs.push(msg);
+  // Test 1: deterministic seed
+  const inputs = {
+    subjects: ['Torts', 'Contracts'],
+    topics: ['Duty of care', 'Breach'],
+    crossoverIntent: 'crossover',
+    crossoverIntensity: 60,
+    difficulty: 3,
+    wordBudget: 400,
+    timeLimit: 30,
+    seed: 123
+  };
+  const hypoA = generateScenario(inputs);
+  const hypoB = generateScenario(inputs);
+  if (JSON.stringify(hypoA) === JSON.stringify(hypoB)) push('✅ Seed determinism holds.');
+  else push('❌ Seed determinism failed.');
+
+  // Test 2: No statute cap
+  const dummyHypo = generateScenario(inputs);
+  const responseNoStatute = 'Issue\nThere is negligence.\nRule\nWyong Shire Council v Shirt (1980) 146 CLR 40 sets foreseeability.\nApplication\nRisk matrix ignored.\nConclusion\nLiable.';
+  const scoredNoStatute = scoreResponse(responseNoStatute, dummyHypo, { practiceMode: true });
+  if (scoredNoStatute.total <= 70) push('✅ Statute cap enforced when no operative section.');
+  else push('❌ Statute cap failed.');
+
+  // Test 3: Invented citation penalty
+  const hallucinatedResponse = responseNoStatute + '\nRule\nImaginary v Case (2020) 1 CLR 1';
+  const scoredHallucination = scoreResponse(hallucinatedResponse, dummyHypo, { practiceMode: true });
+  if (scoredHallucination.flags.some(f => f.includes('hallucination')) && scoredHallucination.total <= scoredNoStatute.total - 10) {
+    push('✅ Hallucination penalty triggered.');
+  } else {
+    push('❌ Hallucination penalty missing.');
+  }
+
+  // Test 4: Model answer high quality
+  const modelScore = scoreResponse(dummyHypo.model_answer, dummyHypo, { practiceMode: true });
+  if (modelScore.total >= 95) push('✅ Model answer scores ≥95.');
+  else push('❌ Model answer underperforms.');
+
+  // Test 5: Curve distribution slots
+  const curveStore = {};
+  const subject = 'Torts';
+  curveStore[subject] = [];
+  for (let i = 0; i < 100; i++) {
+    curveStore[subject].push({ raw: 100 - i, descriptor: 'H1', timestamp: Date.now() + i });
+  }
+  localStorage.setItem(curveKey, JSON.stringify(curveStore));
+  const curveResult = applyCurveAllocation(subject, 88, 'H1', false);
+  if (['H1', 'H1 (≥85)'].includes(curveResult.finalGrade)) push('✅ Curve allocator honours top-band slots.');
+  else push('❌ Curve allocator issue.');
+
+  qs('#testsOutput').textContent = logs.join('\n');
+}
+
+// UI wiring ------------------------------------------------
+let currentHypo = null;
+let timerInterval = null;
+let timerSeconds = 0;
+
+function populateSubjects() {
+  const container = qs('#subjectCheckboxes');
+  container.innerHTML = '';
+  Object.keys(subjectLibrary).sort().forEach(subj => {
+    const id = `subject-${subj.replace(/\s+/g, '-')}`;
+    const wrapper = document.createElement('label');
+    wrapper.style.display = 'block';
+    wrapper.innerHTML = `<input type="checkbox" value="${subj}" id="${id}" ${['Torts','Contracts','Public Law'].includes(subj) ? 'checked' : ''}/> ${subj}`;
+    container.appendChild(wrapper);
+  });
+}
+
+function updateTopics() {
+  const select = qs('#topicsSelect');
+  const selectedSubjects = qsa('#subjectCheckboxes input:checked').map(input => input.value);
+  const topicSet = new Set();
+  selectedSubjects.forEach(subj => {
+    subjectLibrary[subj]?.topics.forEach(topic => topicSet.add(`${subj}: ${topic}`));
+  });
+  select.innerHTML = '';
+  Array.from(topicSet).forEach(topic => {
+    const option = document.createElement('option');
+    option.value = topic;
+    option.textContent = topic;
+    select.appendChild(option);
+  });
+}
+
+function displayHypo(hypo) {
+  qs('#seedDisplay').textContent = qs('#seed').value;
+  qs('#hypoFacts').textContent = hypo.facts;
+  qs('#distractors').textContent = hypo.distractors;
+  qs('#modelAnswer').textContent = hypo.model_answer;
+  qs('#markingKey').textContent = JSON.stringify(hypo.marking_key, null, 2);
+  const hintsHtml = hypo.hints.map((hint, idx) => `<p><strong>Tier ${idx+1}:</strong> ${hint}</p>`).join('');
+  qs('#hintsContainer').innerHTML = hintsHtml;
+}
+
+function updateWordCount() {
+  const words = wordSplit(qs('#responseArea').value);
+  qs('#wordCount').textContent = words.length;
+}
+
+function toggleSection(btnSelector, sectionSelector) {
+  const section = qs(sectionSelector);
+  const btn = qs(btnSelector);
+  const visible = section.style.display === 'block';
+  section.style.display = visible ? 'none' : 'block';
+  section.setAttribute('aria-hidden', visible ? 'true' : 'false');
+  btn.textContent = visible ? btn.textContent.replace('Hide', 'Reveal') : btn.textContent.replace('Reveal', 'Hide');
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+  timerSeconds = 0;
+  qs('#timerDisplay').textContent = '00:00';
+}
+
+function startTimer(limitMinutes) {
+  if (timerInterval) return;
+  timerInterval = setInterval(() => {
+    timerSeconds += 1;
+    const minutes = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+    const seconds = String(timerSeconds % 60).padStart(2, '0');
+    qs('#timerDisplay').textContent = `${minutes}:${seconds}`;
+    if (limitMinutes && timerSeconds >= limitMinutes * 60) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      qs('#timerDisplay').textContent += ' (time)';
+    }
+  }, 1000);
+}
+
+function handleScore() {
+  if (!currentHypo) {
+    alert('Generate a hypo first.');
+    return;
+  }
+  const responseText = qs('#responseArea').value;
+  const practiceMode = qs('#practiceMode').checked;
+  const result = scoreResponse(responseText, currentHypo, { practiceMode });
+  const feedback = buildFeedback(result, currentHypo);
+  const summary = `Raw total: ${result.total}\nDescriptor grade: ${result.descriptorGrade}\nCurve-adjusted: ${result.curve.finalGrade} (${result.curve.note})\nFlags: ${result.flags.join('; ') || 'None'}\n\nDimension scores: ${JSON.stringify(result.scores, null, 2)}\n\nRationales:\n${Object.entries(result.rationales).map(([k,v]) => `- ${k}: ${v}`).join('\n')}`;
+  qs('#scoreSummary').innerHTML = `<pre>${summary}</pre>`;
+  const feedbackHtml = `
+    <h3>Targeted feedback</h3>
+    <p>${feedback.summary}</p>
+    <p><strong>Next reps:</strong></p>
+    <ul>${feedback.nextReps.map(drill => `<li>${drill.type}: ${drill.prompt}</li>`).join('')}</ul>
+    <p><strong>Spaced repetition:</strong> ${feedback.schedule.join(', ')}</p>
+    <p><strong>Interleaving suggestion:</strong> ${feedback.interleave.join('; ')}</p>
+    <p><strong>Metacognition prompt:</strong> ${feedback.metacognitionPrompt}</p>
+    <details>
+      <summary>Worked example</summary>
+      <pre>${feedback.workedExample}</pre>
+    </details>
+    <details>
+      <summary>Faded example</summary>
+      <pre>${feedback.fadedExample}</pre>
+    </details>
+  `;
+  qs('#feedbackSection').innerHTML = feedbackHtml;
+  updateAnalytics(currentHypo, result, responseText, timerSeconds);
+}
+
+// Event bindings
+populateSubjects();
+updateTopics();
+loadWorkspace();
+updateWordCount();
+
+qs('#subjectCheckboxes').addEventListener('change', () => {
+  updateTopics();
+});
+
+qs('#topicsSelect').addEventListener('change', () => {
+  // no-op for now, selection read on generate
+});
+
+qs('#generateBtn').addEventListener('click', () => {
+  const subjects = qsa('#subjectCheckboxes input:checked').map(input => input.value);
+  const topics = Array.from(qs('#topicsSelect').selectedOptions).map(opt => opt.value.split(': ').slice(1).join(': '));
+  const inputs = {
+    subjects,
+    topics,
+    crossoverIntent: qs('#crossoverIntent').value,
+    crossoverIntensity: Number(qs('#crossoverIntensity').value) || 0,
+    difficulty: Number(qs('#difficulty').value) || 3,
+    wordBudget: Number(qs('#wordBudget').value) || 400,
+    timeLimit: Number(qs('#timeLimit').value) || 30,
+    seed: Number(qs('#seed').value) || 1
+  };
+  currentHypo = generateScenario(inputs);
+  displayHypo(currentHypo);
+  resetTimer();
+  qs('#responseArea').value = qs('#toggleIRAC').checked ? 'Issue\n\nRule\n\nApplication\n\nConclusion\n' : '';
+  qs('#wordCount').textContent = '0';
+  saveWorkspace();
+});
+
+qs('#rerollBtn').addEventListener('click', () => {
+  qs('#seed').value = Number(qs('#seed').value) + 1;
+  qs('#generateBtn').click();
+});
+
+qs('#responseArea').addEventListener('input', () => {
+  updateWordCount();
+  saveWorkspace();
+});
+
+qs('#scratchpad').addEventListener('input', saveWorkspace);
+qs('#toggleScratchpad').addEventListener('change', (event) => {
+  qs('#scratchpad').style.display = event.target.checked ? 'block' : 'none';
+});
+qs('#toggleCitationHelper').addEventListener('change', (event) => {
+  qs('#citationHelper').style.display = event.target.checked ? 'block' : 'none';
+});
+qs('#toggleIRAC').addEventListener('change', (event) => {
+  if (event.target.checked && !qs('#responseArea').value.trim()) {
+    qs('#responseArea').value = 'Issue\n\nRule\n\nApplication\n\nConclusion\n';
+  }
+});
+
+qs('#startTimerBtn').addEventListener('click', () => {
+  startTimer(Number(qs('#timeLimit').value));
+});
+qs('#resetTimerBtn').addEventListener('click', resetTimer);
+qs('#scoreBtn').addEventListener('click', () => {
+  handleScore();
+});
+qs('#autoscoreOnSubmit').addEventListener('change', () => {});
+
+qs('#responseArea').addEventListener('blur', () => {
+  if (qs('#autoscoreOnSubmit').checked) {
+    handleScore();
+  }
+});
+
+qs('#showHintsBtn').addEventListener('click', () => {
+  const container = qs('#hintsContainer');
+  const isVisible = container.style.display === 'block';
+  container.style.display = isVisible ? 'none' : 'block';
+  qs('#showHintsBtn').textContent = isVisible ? 'Show tiered hints' : 'Hide tiered hints';
+});
+
+qs('#toggleModelAnswer').addEventListener('click', () => toggleSection('#toggleModelAnswer', '#modelAnswer'));
+qs('#toggleMarkingKey').addEventListener('click', () => toggleSection('#toggleMarkingKey', '#markingKey'));
+qs('#exportMarkdownBtn').addEventListener('click', () => {
+  if (!currentHypo) return alert('Generate a hypo first.');
+  handleScore();
+  exportMarkdown(currentHypo, scoreResponse(qs('#responseArea').value, currentHypo, { practiceMode: qs('#practiceMode').checked }), qs('#responseArea').value);
+});
+qs('#exportJsonBtn').addEventListener('click', () => {
+  if (!currentHypo) return alert('Generate a hypo first.');
+  handleScore();
+  exportJson(currentHypo, scoreResponse(qs('#responseArea').value, currentHypo, { practiceMode: qs('#practiceMode').checked }), qs('#responseArea').value);
+});
+qs('#clearWorkspaceBtn').addEventListener('click', () => {
+  qs('#responseArea').value = '';
+  qs('#scratchpad').value = '';
+  saveWorkspace();
+  updateWordCount();
+});
+
+qs('#runTestsBtn').addEventListener('click', runInBrowserTests);
+
+// Initialise hints display state
+qs('#hintsContainer').style.display = 'none';
+
+</script>
+</body>
+</html>
