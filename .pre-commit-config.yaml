@@ -12,3 +12,12 @@ repos:
   hooks:
     - id: yamllint
       args: ["-d", "{extends: default, rules: {line-length: disable}}"]
+- repo: local
+  hooks:
+    - id: flashcard-processor
+      name: flashcard_processor process
+      entry: python scripts/flashcard_processor.py process
+      language: system
+      files: ^jd/.*/cards_yaml/.*\.yml$
+      pass_filenames: false
+      args: ["*.yml"]

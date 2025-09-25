@@ -1,0 +1,304 @@
+{
+  "summary": {
+    "processed": 24,
+    "pass": 10,
+    "fail": 14
+  },
+  "cards": [
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0001-torts-protected-interests-overview.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0002-duty-existence-vs-scope.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0003-breach-what-is-the-shirt-calculus.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0004-causation-s51-factual-vs-scope.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [
+        "Missing authority reference: \\bs\\s*51\\(2\\)\\b",
+        "Consider referencing key causation authorities."
+      ],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0005-trespass-to-land-elements.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0006-private-nuisance-unreasonableness-factors.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [
+        "Missing authority reference: gravity of harm"
+      ],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0007-proportionate-liability-economic-loss-property-damage.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [
+        "Missing authority reference: Defamation Act 2005 \\(Vic\\)",
+        "Missing authority reference: publication",
+        "Missing authority reference: identification",
+        "Missing authority reference: defamatory meaning",
+        "Missing authority reference: serious harm",
+        "Consider referencing key duty authorities."
+      ],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0008-trespass-person-detention-analysis.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [
+        "Missing authority reference: Carlill",
+        "Missing authority reference: Masters v Cameron|Masters v\\.? Cameron",
+        "Missing authority reference: R v Clarke",
+        "Missing authority reference: Ermogenous",
+        "Consider referencing key property authorities.",
+        "Contract card missing key elements: offer, acceptance, consideration, intention to create legal relations",
+        "Contract card should reference key cases (Carlill, Masters v Cameron, etc.)"
+      ],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0009-novel-affirmative-duty-salient-features.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [
+        "Missing authority reference: Pt\\s*IVAA",
+        "Missing authority reference: economic loss|property damage",
+        "Missing authority reference: concurrent wrongdoers?|apportionment",
+        "Missing authority reference: contribution",
+        "Consider referencing key duty authorities."
+      ],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0010-public-authority-duty.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0011-mental-harm-duty-framework.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0012-pure-economic-loss-relational.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [
+        "Missing authority reference: Carlill",
+        "Missing authority reference: Masters v Cameron|Masters v\\.? Cameron",
+        "Missing authority reference: R v Clarke",
+        "Missing authority reference: Ermogenous",
+        "Consider referencing key duty authorities.",
+        "Contract card missing key elements: offer, acceptance, consideration, intention to create legal relations",
+        "Contract card should reference key cases (Carlill, Masters v Cameron, etc.)"
+      ],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0013-breach-wrongs-act-s48.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0014-breach-wrongs-act-s48-checklist.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0015-causation-scope-interveners.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0016-defences-loss-allocation-volenti-obvious-risk-cn.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0017-vicarious-liability-master.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [
+        "Missing authority reference: Carlill",
+        "Missing authority reference: Masters v Cameron|Masters v\\.? Cameron",
+        "Missing authority reference: R v Clarke",
+        "Missing authority reference: Ermogenous",
+        "Contract card missing key elements: offer, acceptance, consideration, intention to create legal relations",
+        "Contract card should reference key cases (Carlill, Masters v Cameron, etc.)"
+      ],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0018-damages-master.yml",
+      "status": "invalid",
+      "errors": [
+        "Front exceeds 30 words"
+      ],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0019-professional-negligence-peer-opinion.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0020-remoteness-consequential-mental-harm.yml",
+      "status": "invalid",
+      "errors": [
+        "Back exceeds 360 words"
+      ],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": false
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0021-trespass-goods-conversion-detinue.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\0022-occupiers-liability-integration.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [
+        "Missing authority reference: Carlill",
+        "Missing authority reference: Masters v Cameron|Masters v\\.? Cameron",
+        "Missing authority reference: R v Clarke",
+        "Missing authority reference: Ermogenous",
+        "Consider referencing key causation authorities.",
+        "Contract card missing key elements: offer, acceptance, consideration, intention to create legal relations",
+        "Contract card should reference key cases (Carlill, Masters v Cameron, etc.)"
+      ],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50025 - Torts\\S001-defamation-core-elements-and-key-defences.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    },
+    {
+      "path": "D:\\Dropbox\\Windsurf\\jd\\LAWS50029 - Contracts\\cards_yaml\\0001-contract-formation-checklist.yml",
+      "status": "valid",
+      "errors": [],
+      "warnings": [
+        "Contract card missing key elements: intention to create legal relations"
+      ],
+      "repairs": true,
+      "edits": false,
+      "valid": true
+    }
+  ]
+}
