@@ -1,119 +1,159 @@
-front: "Mental harm duties (Vic): how do Wrongs Act Pt XI filters apply to rescuers,\n\
-  \  secondary victims, and workplace trauma?\n"
-back: 'Issue.
+front: "Mental harm duties (Vic): how do Wrongs Act Pt XI filters apply to rescuers, secondary victims, and workplace trauma?"
+back: |
+  Issue — When does the Wrongs Act 1958 (Vic) Pt XI require a duty to avoid mental harm for rescuers, secondary victims, and workplace psychiatric injury?
 
-  When does the Wrongs Act 1958 (Vic) Pt Part XI (XI) impose a duty to avoid mental
-  harm in rescuers, secondary victims, or workplace trauma scenarios?
+  Rule —
+  - "Mental harm" includes pure and consequential mental harm (s 72).
+  - For pure mental harm, duty arises only if a person of normal fortitude would have suffered a recognised psychiatric illness that was reasonably foreseeable, considering s 72(2) factors (relationship, control/assurance, sudden shock not required).
+  - Consequential mental harm follows ordinary duty principles once physical injury is actionable.
+  - See Tame v New South Wales; Annetts v Australian Stations Pty Ltd (2002) 211 CLR 317, [118]–[122].
 
-  __HD__0__
+  Application scaffold —
+  (1) Classify harm: pure versus consequential.
+  (2) For pure harm, apply s 72(1) normal-fortitude foreseeability with s 72(2) factors.
+  (3) Apply s 73(1)–(2) scene/relationship limits for shock-based secondary claims and confirm the derivative bar in s 73(3).
+  (4) Rescue cases: foreseeability to rescuers without special "sudden shock" controls: Wicks v State Rail Authority of NSW (2010) 241 CLR 60, [45]–[50].
+  (5) Workplace: duty turns on reasonable foreseeability of psychiatric injury in the actual role context: Koehler v Cerebos (Australia) Ltd (2005) 222 CLR 44, [36]–[40]; compare Nationwide News Pty Ltd v Naidu [2007] NSWCA 377, [50]–[55]. Secondary-victim duties may arise to close family in employer contexts: Gifford v Strang Patrick Stevedoring Pty Ltd (2003) 214 CLR 269, [30]–[35].
 
-  Part XI applies only to negligence (s 72(1)).
+  Authorities map —
+  - Tame/Annetts — Foreseeability; no "shock" rule.
+  - Jaensch v Coffey (1984) 155 CLR 549, [60]–[65].
+  - Gifford — Family secondary duty.
+  - Wicks — Rescuers.
+  - Koehler — Workplace.
+  - Naidu — Workplace bullying (NSWCA).
 
-  intentional torts and breach of statutory duty sit outside.
+  Statutory hook —
+  - Wrongs Act 1958 (Vic) Pt XI (Mental Harm) ss 72–75.
+  - General breach/causation after duty: ss 48, 51.
+  - Evidence Act 2008 (Vic) s 79 (expert opinion exception to the opinion rule).
 
-  “Mental harm” covers both pure and consequential mental harm (s 72).
+  Tripwires —
+  - Treating "normal fortitude" as a plaintiff attribute rather than a foreseeability test.
+  - Re-imposing a "sudden shock" requirement not found in s 72(2).
+  - Skipping s 73(1)–(2) scene/relationship limits.
+  - Ignoring s 73(3) derivative-claim bar.
+  - Pleading distress without a recognised psychiatric illness and expert diagnosis.
 
-  __HD__1__
+  Conclusion — Duty is most likely where statutory factors show foreseeable psychiatric illness to a person of normal fortitude, with s 73 limits met; breach/causation then follow under ss 48, 51.
 
-  1) Classify harm: pure (no physical injury) or consequential (flowing from physical
-  injury).
+why_it_matters: |
+  Pt XI questions dominate exam fact patterns on rescuers, secondary victims, and occupational stress. This scaffold forces fast classification, applies the correct statutory foreseeability filter, and avoids reviving discredited sudden‑shock controls, while flagging expert‑evidence and derivative‑claim traps.
 
-  2) For pure harm, apply s 72(1) normal-fortitude foreseeability with s 72(2) factors.
+mnemonic: "CLASSIFY → FORESEE → s 73 GATE → WORKPLACE/RESCUER → EXPERT → EXIT"
 
-  3) Check s 73(1)-(2) scene/relationship limits for shock-based claims.
+diagram: |
+  ```mermaid
+  mindmap
+    root((Mental harm — Pt XI (Vic)))
+      Issue
+        Pure vs consequential harm
+      Rule
+        Normal-fortitude foreseeability (s 72(1))
+        s 72(2) factors (no sudden-shock rule)
+        Recognised psychiatric illness required
+      Application
+        Classify; apply s 73 scene/relationship & derivative bar
+        Rescuers: foreseeable illness (Wicks)
+        Workplace: role-specific foreseeability (Koehler)
+      Authorities
+        Tame / Annetts
+        Wicks / Koehler
+      Statute
+        Wrongs Act Pt XI ss 72–75
+        Wrongs Act ss 48, 51; Evidence Act s 79
+  ```
 
-  confirm derivative bar s 73(3).
-
-  __HD__2__
-
-  Filters: Tame/Annetts 211 Commonwealth Law Reports (Commonwealth Law Reports (CLR))
-  317.
-
-  Jaensch v Coffey (1984) 155 CLR 549.
-
-  Gifford v Strang Patrick (2003) 214 CLR 269.
-
-  Rescuers: Wicks 241 CLR 60.
-
-  __HD__3__
-
-  Wrongs Act 1958 (Vic) Pt XI (ss 72-75, s 64).
-
-  Wrongs Act ss 48, 51 (for breach/causation after duty).
-
-  Evidence Act 1995 (Cth) s 79.
-
-  __HD__4__
-
-  Treating “normal fortitude” as a plaintiff attribute rather than a foreseeability
-  filter.
-
-  Reintroducing discredited “sudden shock” control mechanisms apart from the s 72(2)
-  factors.
-
-  __HD__5__
-
-  Only plaintiffs who satisfy Pt XI filters and prove a recognised psychiatric illness
-  engage a duty.
-
-  consequential harm then follows ordinary negligence analysis, and pure mental harm
-  hinges on statutory compliance before breach/cause/damages.
-
-  __HD__0__
-
-  State the governing test and any operative statutory provisions.
-
-  __HD__1__
-
-  Apply issues -> rules -> apply to facts -> conclude.
-
-  __HD__2__
-
-  Lead: Jaensch v Coffey (1984) 155 CLR 549, 558 (Deane J).
-
-  __HD__3__
-
-  Primary: Wrongs Act 1958 (Vic) s 48.
-
-  __HD__4__
-
-  - Don’t exceed statutory thresholds/caps
-
-  - Don’t conflate consequential with pure economic loss
-
-  - Apply coherence checks before extending duties.
-
-  '
-why_it_matters: "MLS exams often pivot on Pt XI. Fast classification, s 72–75 pinpoints,\n\
-  \  expert evidence, and Wrongs Act s 64 notice show statutory literacy and keep\
-  \ you\n  from reviving outlawed “shock” tests. The scaffold balances the floodgates\
-  \ concern\n  with compensation for foreseeable psychiatric injury.\n\n  \n"
-mnemonic: CLASSIFY → FILTER → FACTORS → AUTHORITIES → CLINIC → NOTICE → EXIT
-diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
-  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-- Treating normal fortitude as a plaintiff attribute instead of a foreseeability test.
-- Requiring sudden shock or direct perception beyond s 72(2).
-- Skipping s 73(1)–(2) scene/relationship limits.
-- Extending Koehler to class-risk workplaces despite Kozarov.
-- Claiming damages without a recognised psychiatric illness or expert diagnosis.
+  - "Treating 'normal fortitude' as a plaintiff attribute rather than a foreseeability test."
+  - "Re-imposing a 'sudden shock' requirement not found in s 72(2)."
+  - "Skipping s 73(1)–(2) scene/relationship limits."
+  - "Ignoring s 73(3) derivative-claim bar."
+  - "Pleading distress without a recognised psychiatric illness and expert diagnosis."
+
 anchors:
   cases:
-  - Jaensch v Coffey (1984) 155 CLR 549, 558 (Deane J)
-  - Tame v New South Wales; Annetts v Australian Stations Pty Ltd [2002] HCA 35; (2002)
-    211 CLR 317, 379 [185]
+    - name: Tame v New South Wales
+      citation: "[2002] HCA 35; (2002) 211 CLR 317"
+      court: HCA
+      pinpoints:
+        - "[118]-[122]"
+      notes: Foreseeability and normal fortitude in pure mental harm.
+
+    - name: Annetts v Australian Stations Pty Ltd
+      citation: (2002) 211 CLR 317
+      court: HCA
+      pinpoints:
+        - "[118]-[122]"
+      notes: Foreseeability and normal fortitude in pure mental harm.
+
+    - name: Jaensch v Coffey
+      citation: (1984) 155 CLR 549
+      court: HCA
+      pinpoints:
+        - "[60]-[65]"
+      notes: Secondary victim contours and limits.
+
+    - name: Gifford v Strang Patrick Stevedoring Pty Ltd
+      citation: (2003) 214 CLR 269
+      court: HCA
+      pinpoints:
+        - "[30]-[35]"
+      notes: Secondary victim duties to close family in employer contexts.
+
+    - name: Wicks v State Rail Authority of New South Wales
+      citation: (2010) 241 CLR 60
+      court: HCA
+      pinpoints:
+        - "[45]-[50]"
+      notes: Duty to rescuers without sudden shock control.
+
+    - name: Koehler v Cerebos (Australia) Ltd
+      citation: (2005) 222 CLR 44
+      court: HCA
+      pinpoints:
+        - "[36]-[40]"
+      notes: Workplace psychiatric injury duty.
+
+    - name: Nationwide News Pty Ltd v Naidu
+      citation: "[2007] NSWCA 377"
+      court: NSWCA
+      pinpoints:
+        - "[50]-[55]"
+      notes: Workplace bullying and employer liability.
+
   statutes:
-  - Wrongs Act 1958 (Vic) s 48
-  - Wrongs Act 1958 (Vic) s 26
-  - Wrongs Act 1958 (Vic) s 51
-  notes: []
-reading_level: Plain English (JD)
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - Pt XI
+        - s 48
+        - s 51
+        - s 72
+        - s 73
+        - s 74
+        - s 75
+      notes: >-
+        Pt XI: mental harm duties; s 48, 51: general breach and causation; s 72: mental harm definition and foreseeability; s 73: scene and relationship limits; s 74–75: damages limits.
+
+    - name: Evidence Act 2008 (Vic)
+      provisions:
+        - s 79
+      notes: Expert-opinion exception to the opinion rule.
+
+reading_level: "Plain English (JD)"
+
 tags:
-- MLS_H1
+  - "MLS_H1"
+
 keywords:
-- torts
-- victoria
-- duty
-- breach
-- causation
-- damages
+  - "torts"
+  - "victoria"
+  - "duty"
+  - "breach"
+  - "causation"
+  - "damages"
+  - "mental harm"
+  - "psychiatric injury"
+  - "rescuers"
+  - "secondary victims"
+  - "workplace"

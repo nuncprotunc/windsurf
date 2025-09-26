@@ -1,128 +1,159 @@
-front: "Shopkeeper/police detention: classify battery, assault, false imprisonment,\n\
-  \  authority and remedies?\n"
-back: 'Issue.
+front: "Shopkeeper/police detention: classify battery, assault, false imprisonment, authority and remedies?"
+back: |
+  Issue — In shopkeeper/police detention, which trespass torts arise (battery, assault, false imprisonment) and is restraint justified by statute or consent?
 
-  In detention fact patterns, which trespass torts arise (battery, assault, false
-  imprisonment) and is the restraint justified by statutory authority or consent?
+  Rule —
+  - Battery is direct, voluntary physical contact without lawful justification: Williams v Milotin (1957) 97 CLR 465, 474.
+  - False imprisonment is total restraint; once proved, the onus shifts to the defendant to justify it: Murray v Ministry of Defence [1988] 1 WLR 692; Myer Stores Ltd v Soo [1991] 2 VR 597, 611.
+  - Assault is conduct causing reasonable apprehension of imminent unlawful contact.
+  - Entry onto land usually rests on an implied licence; exceeding it vitiates authority: Halliday v Nevill (1984) 155 CLR 1, 10–11.
+  - Aggravated and exemplary damages may be awarded for high-handed trespasses: Fontin v Katapodis (1962) 108 CLR 177, 183–184; New South Wales v Ibbett (2006) 229 CLR 638, 647 [28].
+  - Consent and necessity remain complete defences if established.
 
-  __HD__0__
+  Application scaffold —
+  (1) Classify the torts: contact (battery), apprehension (assault), total restraint (false imprisonment).
+  (2) Identify the actor (shopkeeper, security, police) and their purpose.
+  (3) Demand proof of statutory preconditions and proportional force.
+  (4) Test entry authority and implied-licence limits.
+  (5) Remedies: compensatory damages; consider aggravated and exemplary awards.
 
-  Battery is direct, voluntary contact without lawful justification (Williams v Milotin
-  (1957) 97 Commonwealth Law Reports (Commonwealth Law Reports (CLR)) 465, 474).
+  Authorities map —
+  - Williams v Milotin — Battery definition.
+  - Murray v Ministry of Defence; Myer Stores v Soo — False imprisonment onus/knowledge.
+  - Halliday v Nevill — Entry and implied licence.
+  - Fontin v Katapodis; New South Wales v Ibbett — Aggravated/exemplary damages.
 
-  Assault requires conduct causing reasonable apprehension of imminent unlawful contact
-  (Zanker v Vartzokas (1988) 34 A Crim R 11, 18).
+  Statutory hook —
+  - Crimes Act 1958 (Vic) ss 458–459 (arrest without warrant), s 462A (force).
+  - Crimes Act 1914 (Cth) ss 3W, 3ZC.
+  - Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 10, 12, 13(a).
 
-  __HD__1__
+  Tripwires —
+  - Treating partial obstruction as false imprisonment.
+  - Requiring "hostility" for battery.
+  - Ignoring the onus shift after restraint is shown.
+  - Equating suspicion with reasonable grounds.
+  - Overlooking implied-licence limits on entry.
 
-  1) Identify the trespass type: total restraint (FI), contact (battery), or apprehension
-  (assault).
+  Conclusion — Classify the trespasses, require statutory justification, scrutinise force and entry, and if limits are exceeded award compensatory plus aggravated and exemplary damages.
 
-  2) Test statutory power preconditions (reasonable suspicion/grounds, arrestable
-  offence, necessity, proportional force).
+why_it_matters: |
+  Shopkeeper/police detention problems are MLS staples. Examiners expect you to classify each trespass, interrogate statutory authority, note the onus shifting for false imprisonment, and structure remedies (including aggravated/exemplary damages) with precise pinpoints.
 
-  3) Check entry authority and implied licence limits.
+mnemonic: "B-A-FI-AR: Battery → Assault → False imprisonment → Authority/Remedies"
 
-  unlawful entry taints subsequent restraint.
+diagram: |
+  ```mermaid
+  mindmap
+    root((Detention torts))
+      Issue
+        Classify battery / assault / FI
+      Rule
+        Battery = direct, voluntary contact
+        FI = total restraint; onus shifts to justify
+        Assault = reasonable apprehension of imminent contact
+      Application
+        Classify → actor → force/entry → remedies
+        Prove restraint; demand statutory preconditions & proportional force
+        Check implied-licence limits on entry
+      Authorities
+        Myer Stores v Soo
+        Halliday v Nevill
+      Statute
+        Vic Crimes Act ss 458–459 (arrest) / s 462A (force)
+        Cth Crimes Act ss 3W, 3ZC
+  ```
 
-  __HD__2__
-
-  FI/burden: Murray [1988] 1 Weekly Law Reports (WLR) 692.
-
-  Ruddock 222 CLR 612, [140].
-
-  Soo [1991] 2 Victorian Reports (Victorian Reports (VR)) 597, 611.
-
-  Entry/licence: Halliday 155 CLR 1, 10-11.
-
-  Battery: Williams v Milotin 97 CLR 465, 474.
-
-  __HD__3__
-
-  Crimes Act 1958 (Vic) ss 458, 459, 459A, 461, 462A.
-
-  Crimes Act 1914 (Cth) ss 3W, 3ZC.
-
-  Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 10, 12, 13(a) Tripwires.
-
-  Treating partial obstruction as FI.
-
-  Requiring hostility for battery.
-
-  Ignoring the onus shift once restraint is shown.
-
-  Treating mere suspicion as reasonable grounds.
-
-  Overlooking implied-licence limits on entry.
-
-  __HD__4__
-
-  Classify the trespass, demand statutory justification, scrutinise force and entry,
-  then articulate remedies and potential aggravated/exemplary damages when authority
-  is exceeded.
-
-  __HD__0__
-
-  State the governing test and any operative statutory provisions.
-
-  __HD__1__
-
-  Apply issues -> rules -> apply to facts -> conclude.
-
-  __HD__2__
-
-  Lead: Williams v Milotin (1957) 97 CLR 465, 474.
-
-  __HD__3__
-
-  Primary: Wrongs Act 1958 (Vic) s 26.
-
-  '
-why_it_matters: "Shopkeeper/police detention problems are MLS staples. Examiners expect\n\
-  \  you to classify each trespass, interrogate statutory authority, note onus shifting,\n\
-  \  and structure remedies (including aggravated/exemplary damages) with precise\
-  \ pinpoints.\n\n  \n"
-mnemonic: 'B-A-FI-AR: Battery → Assault → False imprisonment → Authority/Remedies'
-diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
-  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-- Treating partial obstruction as false imprisonment.
-- Requiring hostility to prove battery.
-- Ignoring the onus shift to the defendant after restraint is proven.
-- Equating mere suspicion with reasonable grounds under arrest powers.
-- Overlooking implied licence limits on entry when assessing authority.
+  - "Treating partial obstruction as false imprisonment."
+  - "Requiring 'hostility' for battery."
+  - "Ignoring the onus shift after restraint is shown."
+  - "Equating suspicion with reasonable grounds."
+  - "Overlooking implied-licence limits on entry."
+
 anchors:
   cases:
-  - Williams v Milotin (1957) 97 CLR 465, 474
-  - Zanker v Vartzokas (1988) 34 A Crim R 11, 18
-  - Murray v Ministry of Defence [1988] 1 WLR 692
-  - Ruddock v Taylor (2005) 222 CLR 612, [140]
-  - Myer Stores Ltd v Soo [1991] 2 VR 597, 611
-  - Halliday v Nevill (1984) 155 CLR 1, 10–11
-  - Fontin v Katapodis (1962) 108 CLR 177, 183–184
-  - New South Wales v Ibbett [2006] HCA 57; (2006) 229 CLR 638, 647 [28]
-  statutes: []
-  notes: []
-keywords:
-- battery
-- assault
-- false-imprisonment
-- lawful-authority
-- reasonable-grounds
-- implied-licence
-- aggravated-damages
-- exemplary-damages
-- nominal-damages
-- police-powers
-reading_level: Plain English (JD)
+    - name: Williams v Milotin
+      citation: (1957) 97 CLR 465
+      court: HCA
+      pinpoints: "474"
+      notes: Defines battery as direct, voluntary contact without lawful justification.
+    
+    - name: Murray v Ministry of Defence
+      citation: "[1988] 1 WLR 692"
+      court: House of Lords (UK)
+      pinpoints: []
+      notes: Onus shifts to defendant once false imprisonment is proved; persuasive in Australia.
+
+    - name: Myer Stores Ltd v Soo
+      citation: "[1991] 2 VR 597"
+      court: Supreme Court of Victoria
+      pinpoints:
+        - 611
+      notes: False imprisonment onus and knowledge.
+
+    - name: Halliday v Nevill
+      citation: (1984) 155 CLR 1
+      court: High Court of Australia
+      pinpoints:
+        - 10
+        - 11
+      notes: Implied licence limits on entry.
+
+    - name: Fontin v Katapodis
+      citation: (1962) 108 CLR 177
+      court: High Court of Australia
+      pinpoints:
+        - 183
+        - 184
+      notes: Aggravated damages for high-handed trespass.
+
+    - name: New South Wales v Ibbett
+      citation: (2006) 229 CLR 638
+      court: High Court of Australia
+      pinpoints:
+        - 647
+        - "[28]"
+      notes: Exemplary damages for aggravated trespass.
+
+  statutes:
+    - name: Crimes Act 1958 (Vic)
+      provisions:
+        - s 458
+        - s 459
+        - s 462A
+      notes: Regulates police powers of arrest and detention in Victoria.
+
+    - name: Crimes Act 1914 (Cth)
+      provisions:
+        - s 3W
+        - s 3ZC
+      notes: Governs federal law enforcement powers and procedures.
+
+    - name: Charter of Human Rights and Responsibilities Act 2006 (Vic)
+      provisions:
+        - s 10
+        - s 12
+        - s 13(a)
+      notes: Protects fundamental rights including liberty and security of person.
+
+reading_level: "Plain English (JD)"
+
 tags:
-- LAWS50025 - Torts
-- Trespass
-- Exam_Fundamentals
-- MLS_H1
-_lint_notes:
-- issue_contextualised
-- diagram_conceptual_branches
-- statutory_hook_listed
-- anchors_normalised
-- keywords_trimmed_<=10
+  - LAWS50025
+  - Torts
+  - Trespass
+  - Exam_Fundamentals
+  - MLS_H1
+
+keywords:
+  - battery
+  - assault
+  - false-imprisonment
+  - lawful-authority
+  - reasonable-grounds
+  - implied-licence
+  - aggravated-damages
+  - exemplary-damages
+  - nominal-damages
+  - police-powers

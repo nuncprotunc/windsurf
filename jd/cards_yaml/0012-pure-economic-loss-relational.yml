@@ -1,131 +1,117 @@
-front: "Relational pure economic loss (Vic): when does a duty arise for business shutdowns\n\
-  \  or third-party property damage?\n"
-back: 'Issue.
+front: >
+  Relational pure economic loss (Vic): when does a duty arise for business shutdowns or third-party property damage?
+back: |
+  Issue — When does a duty arise to protect a plaintiff from relational pure economic loss, such as business loss caused by a utility outage or third-party property damage?
 
-  Has D assumed a duty to protect P from pure economic loss suffered relationally
-  (e.g., business losses when a utility shuts down or third-party property is damaged)?
+  Rule — The duty to avoid relational pure economic loss is exceptional; mere foreseeability is insufficient. The High Court in Perre v Apand (1999) 198 CLR 180 established a salient features test, refined in Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, requiring:
+  - a determinate plaintiff or class known to the defendant;
+  - defendant's knowledge or control over the risk;
+  - plaintiff's vulnerability and inability to self-protect (e.g., no reasonable contractual or insurance protection);
+  - coherence with existing contractual and statutory frameworks.
 
-  __HD__0__
+  Application scaffold —
+  (1) Confirm the loss is pure economic loss (not consequential physical damage).
+  (2) Identify a determinate, known plaintiff or class.
+  (3) Establish defendant's knowledge or assumption of responsibility/control.
+  (4) Demonstrate plaintiff's vulnerability (lack of reasonable self-protection).
+diagram: |
+  ```mermaid
+  mindmap
+    root((Relational Pure Economic Loss))
+      Issue
+        Business shutdowns / third-party damage?
+      Rule
+        Foreseeability is not enough
+        Salient features: known class • control/knowledge • vulnerability
+        Coherence with contracts/statutes
+      Application
+        Confirm pure loss; isolate determinate class
+        Establish control/assumption and knowledge of risk
+        Show vulnerability; check coherence and conclude on duty
+      Authorities
+        Perre v Apand
+        Stavar
+      Statute
+        Wrongs Act Pt IVAA (apportionment context)
+        ACL s 18 / s 236 (overlay)
+  ```
 
-  Relational pure economic loss duties are exceptional.
+why_it_matters: |
+  Melbourne Law School exams reward rigorous application of the salient features test beyond mere foreseeability. Strong answers isolate a determinate plaintiff or class, critically analyse vulnerability and contractual risk allocation, and integrate statutory overlays such as the Wrongs Act Pt IVAA and the Australian Consumer Law with a concise, policy-based conclusion.
 
-  Apply the salient-features methodology (Perre v Apand (1999) 198 Commonwealth Law
-  Reports (Commonwealth Law Reports (CLR)) 180 at 192 [4]-[5], 253 [198].
+mnemonic: >
+  KNOWN-VIC: Known class; Vulnerability; Omission/control; No self-protection; Coherence; ACL overlay
 
-  Caltex Refineries v Stavar [2009] New South Wales Court of Appeal (NSWCA) 258 at
-  [102]-[103]) as a framework, not a checklist.
-
-  __HD__1__
-
-  1) Classify the harm: pure (no physical injury) or consequential.
-
-  2) Apply salient features test contextually, avoiding a tick-box approach.
-
-  __HD__2__
-
-  Core framework: Perre v Apand 198 CLR 180.
-
-  Caltex Refineries v Stavar [2009] NSWCA 258.
-
-  Commercial vulnerability: Woolcock [2004] HCA 16.
-
-  Brookfield [2014] HCA 36.
-
-  Statutory coherence: Sullivan v Moody [2001] HCA 59.
-
-  __HD__3__
-
-  Wrongs Act 1958 (Vic) Pt Proportionate Liability Part (Pt Part IVAA (proportionate
-  liability) (IVAA)) (proportionate liability).
-
-  Australian Consumer Law (Australian Consumer Law (ACL)) (Cth) ss 18, 236 (misleading
-  conduct, damages).
-
-  __HD__4__
-
-  Treating foreseeability as sufficient without analysing salient features.
-
-  Assuming all utility customers form a determinate class.
-
-  Ignoring vulnerability analysis in commercial contexts.
-
-  Overlooking Pt IVAA apportionment with ACL claims.
-
-  __HD__5__
-
-  Duty arises only where D knew/ought to have known of a vulnerable, determinate plaintiff/class
-  who could not self-protect, and recognition is coherent with contractual/statutory
-  allocations.
-
-  __HD__0__
-
-  State the governing test and any operative statutory provisions.
-
-  __HD__1__
-
-  Apply issues -> rules -> apply to facts -> conclude.
-
-  __HD__2__
-
-  Lead: Perre v Apand Pty Ltd (1999) 198 CLR 180, 192 [4]–[5], 253 [198].
-
-  __HD__3__
-
-  Primary: Wrongs Act 1958 (Vic) Pt IVAA.
-
-  '
-why_it_matters: "MLS exams test your ability to move beyond foreseeability and apply\n\
-  \  the salient-features framework rigorously. Strong answers distinguish targeted\
-  \ plaintiffs\n  from diffuse classes, integrate vulnerability analysis, and address\
-  \ statutory overlays\n  (Pt IVAA, ACL). Examiners look for precise application to\
-  \ fact patterns (e.g., utility\n  shutdowns, building defects) and explicit policy\
-  \ reasoning.\n\n  \n"
-mnemonic: KNOWN-VIC → Known class; Vulnerability; Indeterminacy; Control & knowledge;
-Coherence (contract/statute); ACL overlay: {}
-diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
-  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
-tripwires:
-- Treating foreseeability as sufficient without salient features analysis.
-- Assuming all utility customers form a determinate class.
-- Ignoring vulnerability analysis in commercial contexts.
-- Overlooking Pt IVAA apportionment with ACL claims.
-- Pleading ACL s 18 without trade/commerce and causation.
-- Ignoring coherence constraints from Sullivan v Moody.
 anchors:
   cases:
-  - Perre v Apand Pty Ltd (1999) 198 CLR 180, 192 [4]–[5], 253 [198]
-  - Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [102]–[103]
-  - Caltex Oil (Australia) Pty Ltd v The Dredge 'Willemstad' (1976) 136 CLR 529, 556–557
-  - Woolcock Street Investments Pty Ltd v CDG Pty Ltd [2004] HCA 16
-  - Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36
-  - Sullivan v Moody [2001] HCA 59, 580–582 [50]–[52]
+    - name: Perre v Apand Pty Ltd
+      citation: (1999) 198 CLR 180
+      court: HCA
+      pinpoints:
+        - 192
+        - "[4]-[5]"
+        - 253
+        - "[198]"
+      notes: Established the salient features test for relational economic loss.
+
+    - name: Caltex Refineries (Qld) Pty Ltd v Stavar
+      citation: "[2009] NSWCA 258"
+      court: NSWCA
+      pinpoints:
+        - "[102]-[103]"
+      notes: Refined the salient features approach for economic loss.
+
+    - name: Caltex Oil (Australia) Pty Ltd v The Dredge 'Willemstad'
+      citation: (1976) 136 CLR 529
+      court: HCA
+      pinpoints:
+        - "556-557"
+      notes: Early recognition of relational economic loss claims.
+
+    - name: Woolcock Street Investments Pty Ltd v CDG Pty Ltd
+      citation: "[2004] HCA 16"
+      court: HCA
+      pinpoints:
+        - "[55]"
+      notes: Clarified vulnerability as a key factor.
+
+    - name: Brookfield Multiplex Ltd v Owners SP 61288
+      citation: "[2014] HCA 36"
+      court: HCA
+      pinpoints:
+        - "[116]"
+      notes: Applied vulnerability analysis in commercial context.
+
   statutes:
-  - Wrongs Act 1958 (Vic) Pt IVAA
-  - Australian Consumer Law (Cth) ss 18, 236
-  notes: []
-keywords:
-- relational-economic-loss
-- salient-features
-- vulnerability-analysis
-- known-class
-- coherence-constraint
-- proportionate-liability
-- acl-s18
-- wrongs-act-pt-ivaa
-- commercial-context
-- policy-balancing
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - Pt IVAA
+      notes: Governs proportionate liability for economic loss claims.
+
+    - name: Competition and Consumer Act 2010 (Cth)
+      provisions:
+        - s 18
+        - s 236
+      notes: Prohibits misleading or deceptive conduct and provides remedies.
+
 reading_level: Plain English (JD)
 tags:
-- LAWS50025 - Torts
-- Torts
-- Pure_Economic_Loss
-- Relational_Loss
-- Duty
-- Exam_Fundamentals
-- MLS_H1
-_lint_notes:
-- front_questionified_<=30w
-- diagram_conceptual_branches
-- statutory_hook_listed
-- anchors_normalised
-- keywords_trimmed_<=10
+  - LAWS50025
+  - Torts
+  - Pure_Economic_Loss
+  - Relational_Loss
+  - Duty
+  - Exam_Fundamentals
+  - MLS_H1
+
+keywords:
+  - relational-economic-loss
+  - salient-features
+  - vulnerability-analysis
+  - known-class
+  - coherence-constraint
+  - proportionate-liability
+  - acl-s18
+  - wrongs-act-pt-ivaa
+  - commercial-context
+  - policy-balancing

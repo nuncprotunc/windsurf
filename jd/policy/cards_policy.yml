@@ -88,8 +88,19 @@ diagram:
   type: mindmap
   must_be_valid_mermaid: true
   max_total_nodes: 12
-  top_level_branches_min: 4
+  top_level_branches_min: 5
   top_level_branches_max: 5
+  child_node_distribution:
+    - [1,3,3,2,2]
+    - [2,2,2,1,4]
+    - [2,3,3,3,1]
+  enforce_pareto_format: true
+  format_guidance: |
+    Return a fenced Mermaid mindmap with exactly 5 top-level branches;
+    child vector must match one of the allowed distributions;
+    total nodes ≤12.
+    If over cap, prune by merging/deleting longest branches;
+    if still impossible, return "[DIAGRAM TOO LARGE]".
   discourage_heading_mirroring: true
 
 tripwires:

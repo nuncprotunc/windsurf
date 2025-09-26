@@ -1,114 +1,145 @@
-front: "Breach (Vic): how do you run Wrongs Act s 48 against Shirt when testing reasonable\n\
-  \  precautions?\n"
-back: 'Issue.
+front: >
+  Breach (Vic): how to run Wrongs Act s 48 alongside the Shirt calculus when testing reasonable precautions?
+back: |
+  Issue — Whether the defendant breached the Victorian negligence standard by failing to take reasonable precautions against a not-insignificant risk under Wrongs Act 1958 (Vic) s 48, applying the Shirt calculus.
 
-  Did D breach the Victorian negligence standard by failing to take reasonable precautions
-  against a not-insignificant risk under Wrongs Act s 48?
+  Rule — Wrongs Act 1958 (Vic) s 48(1)–(2) sets the statutory framework for breach, requiring:
+  - Foreseeability of a "not insignificant" risk of harm.
+  - Balancing the s 48(2) factors:
+    (a) the probability that harm would occur if care were not taken.
+    (b) the likely seriousness of the harm.
+    (c) the burden, cost, and practicability of taking precautions.
+    (d) the social utility of the activity that creates the risk.
 
-  Rule.
+  The High Court in Wyong Shire Council v Shirt (1980) 146 CLR 40 established that breach depends on what a reasonable person would do in the circumstances, not merely the possibility of harm. The risk assessment must be time-sliced, focusing on the information reasonably available when the defendant's conduct occurred (Tapp v Australian Bushmen's Campdraft & Rodeo Association Ltd [2022] HCA 11). Risk characterisation must be accurate to avoid distorting the calculus (Roads and Traffic Authority of NSW v Dederer (2007) 234 CLR 330; Vairy v Wyong Shire Council (2005) 223 CLR 422). The Victorian Court of Appeal in Dwyer v Calco Timbers Pty Ltd [2008] VSCA 260 applies this statutory breach framework in the Victorian context.
 
-  Wrongs Act 1958 (Vic) s 48(1)-(2) codifies (but does not replace) the Shirt calculus.
+  Application scaffold —
+  (1) Precisely define the risk at the correct level of generality.
+  (2) Establish foreseeability and that the risk was "not insignificant" (excluding fanciful or remote risks).
+  (3) Weigh the s 48(2)(a)–(d) factors: probability, seriousness, burden/cost, and social utility.
+  (4) Link findings to specific precautions a reasonable person would have taken.
+  (5) Exclude hindsight under s 49 and consider statutory qualifiers on obvious or inherent risks (ss 53–55).
+  (6) Conclude whether breach occurred.
 
-  Application scaffold.
+  Authorities map —
+  - Wyong Shire Council v Shirt (1980) 146 CLR 40, 43–45.
+  - Tapp v Australian Bushmen's Campdraft & Rodeo Association Ltd [2022] HCA 11, [10]–[20].
+  - Roads and Traffic Authority of NSW v Dederer (2007) 234 CLR 330, 337–339.
+  - Vairy v Wyong Shire Council (2005) 223 CLR 422, 430–433.
+  - Dwyer v Calco Timbers Pty Ltd [2008] VSCA 260, [15]–[25].
 
-  1) Classify the specific risk at the correct level of generality.
+  Statutory hook —
+  - Wrongs Act 1958 (Vic) ss 48 (breach), 49 (hindsight excluded), 53 (obvious risk), 54–55 (no duty to warn of obvious risk; inherent risk), 56 (professionals).
 
-  2) Test foreseeability and “not insignificant” threshold using information available
-  when action was required.
+  Tripwires —
+  - Treating foreseeability as sufficient without proving a "not insignificant" risk.
+  - Mischaracterising the risk (too broad or too narrow) and skewing the calculus.
+  - Using hindsight contrary to s 49's prospective assessment.
+  - Ignoring the burden/cost of precautions or social utility under s 48(2)(c)–(d).
+  - Treating "obvious risk" as absolute where the defendant created or exacerbated the danger.
 
-  3) Apply s 48(2)(a)-(d): probability (time-slice per Tapp), seriousness of harm,
-  burden/cost of precautions, social utility or competing responsibilities.
+  Conclusion — Breach arises only if, on the information reasonably available at the time, a prudent person would have taken cost-justified precautions after weighing the s 48(2) factors, and no statutory qualifier displaces that conclusion.
 
-  Authorities map.
+why_it_matters: >
+  Melbourne Law School exams reward precise statutory breach reasoning, not rote recitation of the Shirt calculus. Leading with s 48(1)–(2), time-slicing the risk assessment, and integrating s 49 and ss 53–55 demonstrate disciplined, Victoria-specific analysis and maintain clear distinction between breach, duty, and causation.
 
-  Framework: Wyong v Shirt (1980) 146 Commonwealth Law Reports (Commonwealth Law Reports
-  (CLR)) 40.
+mnemonic: >
+  F–NIS → 48(2) CALC → NO HINDSIGHT → QUALIFIERS → CONCLUDE
 
-  Wrongs Act s 48.
+diagram: |
+  ```mermaid
+  mindmap
+    root((Breach: s 48 + Shirt))
+      Issue
+        Precisely define risk (not-insignificant)
+      Rule
+        s 48(1)–(2) governs breach
+        Shirt calculus (reasonable precautions)
+        Time-slice; no hindsight (s 49)
+      Application
+        Weigh (a) probability • (b) seriousness • (c) burden/cost • (d) social utility
+        Specify practicable precautions
+        Apply qualifiers: obvious/inherent risks (ss 53–55)
+      Authorities
+        Wyong v Shirt
+        Tapp v ABCRA
+      Statute
+        Wrongs Act s 48 (breach)
+        Wrongs Act s 49; ss 53–55
+  ```
 
-  Statutory hook.
-
-  Wrongs Act 1958 (Vic) ss 48-56.
-
-  Australian Consumer Law (Australian Consumer Law (ACL)) (Cth) s 60.
-
-  Competition and Consumer Act 2010 (Cth) (Competition and Consumer Act (CCA)) 2010
-  (Cth) s 139A.
-
-  Tripwires.
-
-  Treating foreseeability alone as breach without proving “not insignificant” risk.
-
-  Mischaracterising the risk (too broad/narrow).
-
-  Arguing breach via hindsight contrary to s 49.
-
-  Treating “obvious risk” as absolute where D created/exacerbated danger.
-
-  Conclusion.
-
-  Breach is established only if, on the information reasonably available, a prudent
-  actor would have taken cost-justified precautions under the s 48 calculus.
-
-  hindsight, obvious risk rhetoric or resource pressures do not excuse avoidable.
-
-  __HD__0__
-
-  State the governing test and any operative statutory provisions.
-
-  __HD__1__
-
-  Apply issues -> rules -> apply to facts -> conclude.
-
-  __HD__2__
-
-  Lead: Sullivan v Moody (2001) 207 CLR 562.
-
-  __HD__3__
-
-  Primary: Wrongs Act 1958 (Vic) s 48.
-
-  __HD__4__
-
-  - Don’t exceed statutory thresholds/caps
-
-  - Don’t conflate consequential with pure economic loss
-
-  - Apply coherence checks before extending duties.
-
-  __HD__5__
-
-  Tie the analysis back to the pleadings and the available remedies/defences.
-
-  '
-why_it_matters: "Exams target candidates who recite Shirt without engaging the Victorian\n\
-  \  statute. Leading with s 48(1) forces precise risk definition and the “not insignificant”\n\
-  \  filter. Weighing s 48(2) factors against contextual authorities (public land,\
-  \ recreation,\n  crowd control) shows disciplined statutory reasoning, keeps breach\
-  \ distinct from\n  duty and causation, and demonstrates you can integrate ACL/CCA\
-  \ overlays.\n\n  \n"
-mnemonic: F-NIS → CALC → CONTEXT → STATUTES → CONCLUDE
-diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
-  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-- Treating foreseeability as sufficient without satisfying the “not insignificant”
-  test.
-- Don’t exceed statutory thresholds/caps
-- Don’t conflate consequential with pure economic loss
+  - Treating foreseeability as sufficient without proving a "not insignificant" risk.
+  - Mischaracterising the risk (too broad or too narrow) and skewing the calculus.
+  - Using hindsight contrary to s 49's prospective assessment.
+  - Ignoring the burden/cost of precautions or social utility under s 48(2)(c)–(d).
+  - Treating "obvious risk" as absolute where the defendant created or exacerbated the danger.
+
 anchors:
   cases:
-  - Sullivan v Moody (2001) 207 CLR 562
+    - name: Wyong Shire Council v Shirt
+      citation: (1980) 146 CLR 40
+      court: High Court of Australia
+      pinpoints:
+        - "43–45"
+      notes: Established the Shirt calculus for balancing breach factors.
+
+    - name: Tapp v Australian Bushmen’s Campdraft & Rodeo Association Ltd
+      citation: "[2022] HCA 11"
+      court: High Court of Australia
+      pinpoints:
+        - "[10]–[20]"
+      notes: Reinforces time-slicing and proper risk characterisation under s 48.
+
+    - name: Roads and Traffic Authority of New South Wales v Dederer
+      citation: (2007) 234 CLR 330
+      court: High Court of Australia
+      pinpoints:
+        - "337–339"
+      notes: Highlights accurate risk framing for the breach calculus.
+
+    - name: Vairy v Wyong Shire Council
+      citation: (2005) 223 CLR 422
+      court: High Court of Australia
+      pinpoints:
+        - "430–433"
+      notes: Warns against hindsight in evaluating reasonable precautions.
+
+    - name: Dwyer v Calco Timbers Pty Ltd
+      citation: "[2008] VSCA 260"
+      court: Victorian Court of Appeal
+      pinpoints:
+        - "[15]–[25]"
+      notes: Applies the Victorian statutory breach framework in practice.
+
   statutes:
-  - Wrongs Act 1958 (Vic) s 48
-  - Wrongs Act 1958 (Vic) s 26
-  - Wrongs Act 1958 (Vic) s 51
-reading_level: Plain English (JD)
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - s 48
+        - s 49
+        - s 53
+        - s 54
+        - s 55
+        - s 56
+      notes: Aligns the breach calculus with Shirt, excludes hindsight, and qualifies obvious or inherent risks through ss 53–55.
+
+reading_level: "Plain English (JD)"
+
 tags:
-- MLS_H1
+  - LAWS50025
+  - Breach
+  - Wrongs_Act_Vic
+  - Standard_of_Care
+  - MLS_H1
+
 keywords:
-- torts
-- victoria
-- duty
-- breach
-- causation
-- damages
+  - Shirt-calculus
+  - s48-breach
+  - not-insignificant-risk
+  - risk-characterisation
+  - obvious-risk
+  - hindsight
+  - precautions
+  - social-utility
+  - professional-standard
+  - Victoria

@@ -1,113 +1,90 @@
-id: 18
-front: In a Victorian personal injury problem, how do you (i) clear the Part VBA 'significant
-injury' gateway for general damages and (ii) distinguish aggravated from exemplary: {}
-damages while respecting statutory caps?: {}
-source: MLS Torts Reading Guide, Seminars 21-22
-created: '2025-09-25T03:59:10+10:00'
-updated: '2025-09-25T03:59:10+10:00'
-template: tort_damages
-back: 'Issue.
-
-  Has the plaintiff established eligibility for non-economic loss and ancillary heads
-  of damage under the Wrongs Act 1958 (Vic), and how should aggravated and exemplary
-  damages be characterised.
-
+front: "In a Victorian personal injury problem, how do you (i) clear the Part VBA 'significant"
+back: |
+  Issue.
+  Has the plaintiff established eligibility for non-economic loss and ancillary heads of damage under the Wrongs Act 1958 (Vic), and how should aggravated and exemplary damages be characterised.
   and limited?
-
   Rule.
-
-  Part Victorian statutory damages part (Pt Victorian Bar Association (VBA)) requires
-  a "significant injury" certificate unless an exception applies.
-
+  Part Victorian statutory damages part (Pt Victorian Bar Association (VBA)) requires a "significant injury" certificate unless an exception applies.
   Sections 28LB-28LK prescribe the process.
-
-  s 28LF defines thresholds (generally >5% Whole person impairment (WPI) for physical
-  injury, extra criteria for psychiatric impairment via s 28LJ).
-
+  s 28LF defines thresholds (generally >5% Whole person impairment (WPI) for physical injury, extra criteria for psychiatric impairment via s 28LJ).
   Application scaffold.
-
   Authorities map.
-
   Statutory hook.
-
   Tripwires.
-
   Conclusion.
-
-  Damages depend first on breaching the Pt VBA gateway, then on meticulous application
-  of statutory caps and proper distinction between compensatory (aggravated) and punitive
-  (exemplary) remedies.
-
-  mindful of Gray''''s restraint.
-
-  Exam tip: sequence issues -> rules -> application -> conclusion; cite a lead authority
-  and the operative section.
-
+  Damages depend first on breaching the Pt VBA gateway, then on meticulous application of statutory caps and proper distinction between compensatory (aggravated) and punitive (exemplary) remedies.
+  mindful of Gray''s restraint.
+  Exam tip: sequence issues -> rules -> application -> conclusion; cite a lead authority and the operative section.
   __HD__0__
-
   State the governing test and any operative statutory provisions.
-
   __HD__1__
-
   Apply issues -> rules -> apply to facts -> conclude.
-
   __HD__2__
-
   Lead: Sullivan v Moody (2001) 207 Commonwealth Law Reports (CLR) 562.
-
   Lead: Sullivan v Moody (2001) 207 CLR 562.
-
   __HD__3__
-
   Primary: Wrongs Act 1958 (Vic) s 48.
-
   __HD__4__
-
+  
   - Don’t exceed statutory thresholds/caps
-
+  
   - Don’t conflate consequential with pure economic loss
-
+  
   - Apply coherence checks before extending duties.
-
   __HD__5__
-
   Tie the analysis back to the pleadings and the available remedies/defences.
 
-  '
-diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
-  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
-why_it_matters: "MLS damages questions reward disciplined sequencing. Begin with the\n\
-  \  Pt VBA gate: cite s 28LC(2)(a) to see if intentional or sexual misconduct bypasses\n\
-  \  the certificate, otherwise run the s 28LF/LJ metrics. Only after eligibility\
-  \ do\n  you price the claim—loss of earnings cap (s 28F(2)) and the indexed non-economic\n\
-  \  ceiling (s 28G/s 28H). Answers that recite stale dollar figures lose marks; flag\n\
-  \  that caps are indexed annually. Distinguish aggravated (compensatory) from exemplary\n\
-  \  (punitive) using Uren, Lamb and Gray, and note Ibbett to show punitive awards\
-  \ still\n  bite against the State. Mention Fontin to avoid conflating provocation\
-  \ with mitigation\n  of compensatory damages. This scaffold helps you survive time\
-  \ pressure and signals\n  policy awareness around insurance affordability versus\
-  \ claimant vindication.\n\n  \n"
-mnemonic: "THRESH→CAP→CHAR→POLICY: Threshold (s 28LC/28LF) → Caps (s 28F; s 28G/H)\n\
-  \  → Characterise (Aggravated vs Exemplary; Gray) → Policy (insurance vs deterrance).\n"
+why_it_matters: |
+  MLS damages questions reward disciplined sequencing. Begin with the
+   Pt VBA gate: cite s 28LC(2)(a) to see if intentional or sexual misconduct bypasses
+   the certificate, otherwise run the s 28LF/LJ metrics. Only after eligibility do
+   you price the claim—loss of earnings cap (s 28F(2)) and the indexed non-economic
+   ceiling (s 28G/s 28H). Answers that recite stale dollar figures lose marks; flag
+   that caps are indexed annually. Distinguish aggravated (compensatory) from exemplary
+   (punitive) using Uren, Lamb and Gray, and note Ibbett to show punitive awards still
+   bite against the State. Mention Fontin to avoid conflating provocation with mitigation
+   of compensatory damages. This scaffold helps you survive time pressure and signals
+   policy awareness around insurance affordability versus claimant vindication.
+
+mnemonic: THRESH→CAP→CHAR→POLICY: Threshold (s 28LC/28LF) → Caps (s 28F; s 28G/H)
+ → Characterise (Aggravated vs Exemplary; Gray) → Policy (insurance vs deterrance).
+
+diagram: |
+  ```mermaid
+  mindmap
+   root((Card overview))
+   Issue
+   Rule
+   Application
+   Conclusion
+   - Issue
+   - Rule
+   - Application
+   - Conclusion
+  ```
+
 tripwires:
-- '**Gateway swap**: Confusing TAC ''''serious injury'''' with Wrongs Act ''''significant
-  injury''''.'
-- Don’t exceed statutory thresholds/caps
-- Don’t conflate consequential with pure economic loss
+  - "**Gateway swap**: Confusing TAC ''serious injury'' with Wrongs Act ''significant injury''."
+  - "Don’t exceed statutory thresholds/caps"
+  - "Don’t conflate consequential with pure economic loss"
+
 anchors:
   cases:
-  - Sullivan v Moody (2001) 207 CLR 562
+    - Sullivan v Moody (2001) 207 CLR 562
   statutes:
-  - Wrongs Act 1958 (Vic) s 48
-  - Wrongs Act 1958 (Vic) s 26
-  - Wrongs Act 1958 (Vic) s 51
+    - Wrongs Act 1958 (Vic) s 48
+    - Wrongs Act 1958 (Vic) s 26
+    - Wrongs Act 1958 (Vic) s 51
+
 reading_level: Plain English (JD)
+
 tags:
-- MLS_H1
+  - MLS_H1
+
 keywords:
-- torts
-- victoria
-- duty
-- breach
-- causation
-- damages
+  - torts
+  - victoria
+  - duty
+  - breach
+  - causation
+  - damages

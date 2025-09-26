@@ -1,0 +1,146 @@
+front: "Under Pt IVAA of the Wrongs Act 1958 (Vic), when (and how) is proportionate liability engaged, especially with mixed claims and timing/pleading triggers?"
+back: |
+  Issue — When does Pt IVAA (proportionate liability) apply to apportion economic loss or property damage in Victoria, and how do mixed claims and pleading/timing affect engagement?
+
+  Rule —
+  - Pt IVAA applies only to an "apportionable claim" for economic loss or property damage arising from a failure to take reasonable care: Wrongs Act 1958 (Vic) s 24AF.
+  - The defendant must plead proportionate liability under the court rules; it does not operate automatically.
+  - Mixed claims require isolating the apportionable claim and its divisible loss before apportioning.
+
+  Application scaffold —
+  (1) Identify the pleaded losses.
+  (2) Characterise each cause (negligence versus statutory).
+  (3) Ask whether the same damage is caused by multiple concurrent wrongdoers.
+  (4) If yes, plead proportionate liability and identify putative wrongdoers.
+  (5) Address exclusions and settlement sequencing.
+
+  Authorities map —
+  - Hunt & Hunt Lawyers v Mitchell Morgan Nominees Pty Ltd (2013) 247 CLR 613, 638 [27] — Defines "one damage" and scope of failure to take reasonable care.
+  - ABN Amro Bank NV v Bathurst Regional Council (2014) 224 FCR 1, 58 [114] — Isolates apportionable loss; importance of pleadings.
+  - Selig v Wealthsure Pty Ltd (2015) 255 CLR 661, 673 [34] — Non-apportionable statutory claims are not swept in by joinder.
+  - St George Bank Ltd v Quinerts Pty Ltd [2009] VSCA 245 — Victorian authority on Pt IVAA engagement.
+
+  Statutory hook —
+  - Wrongs Act 1958 (Vic) Pt IVAA ss 24AF–24AP (especially ss 24AG, 24AH, 24AI, 24AJ, 24AK, 24AM).
+  - ACL ss 18, 236 and Corporations Act ss 1041H–1041I may travel alongside but are not automatically apportionable under Pt IVAA.
+
+  Tripwires —
+  - Assuming apportionment applies automatically without pleading.
+  - Treating non-apportionable statutory claims as covered simply because they are joined.
+  - Misstating settlement consequences (remember s 24AK governs subsequent actions).
+  - Ignoring s 24AM intentional/fraud exclusions or ACL/Corporations carve-outs.
+  - Folding contributory negligence into apportionment instead of dealing with it afterward.
+  Conclusion — Engage Pt IVAA only where the pleaded loss is economic/property loss from a failure to take reasonable care, the defence is pleaded, concurrent wrongdoers are identified, and exclusions/settlement consequences are managed.
+
+why_it_matters: |
+  Knowing precisely when Pt IVAA engages—and when it does not—drives pleading strategy, settlement sequencing, and exam outcomes. Marks are often lost by treating ACL/Corporations claims as apportionable merely because they sit beside negligence, or by forgetting to plead proportionate liability at all. Correctly isolating the "same damage," naming concurrent wrongdoers, and mapping s 24AJ–24AK effects avoids empty-chair traps and preserves contribution and subsequent action rights.
+
+mnemonic: "ACE‑T‑X: Apportionable claim; Concurrent wrongdoers; Exclusions (s 24AM); Timing/plead; Carve‑outs eXcluded."
+
+diagram: |
+  ```mermaid
+  mindmap
+    root((Pt IVAA proportionate liability))
+      Issue
+        When engaged?
+      Rule
+        Apportionable claim only
+        Failure to take reasonable care
+        Defence must be pleaded
+      Application
+        Identify loss & same damage
+        Concurrent wrongdoers?
+        Plead proportionate liability
+      Authorities
+        Hunt & Hunt v Mitchell Morgan
+        Selig v Wealthsure
+      Statute
+        Wrongs Act Pt IVAA (ss 24AF–24AP)
+        ACL s 18 / Corps s 1041H carve-outs
+  ```
+  
+tripwires:
+  - "Assuming apportionment applies automatically without pleading."
+  - "Treating non-apportionable statutory claims as covered simply because they are joined."
+  - "Misstating settlement consequences (remember s 24AK governs subsequent actions)."
+  - "Ignoring s 24AM intentional/fraud exclusions or ACL/Corporations carve-outs."
+  - "Folding contributory negligence into apportionment instead of dealing with it afterward."
+
+anchors:
+  cases:
+    - name: Hunt & Hunt Lawyers v Mitchell Morgan Nominees Pty Ltd
+      citation: (2013) 247 CLR 613
+      court: HCA
+      pinpoints:
+        - 638
+        - "[27]"
+      notes: Defines "one damage" and scope of failure to take reasonable care.
+
+    - name: ABN Amro Bank NV v Bathurst Regional Council
+      citation: (2014) 224 FCR 1
+      court: FCA
+      pinpoints:
+        - 58
+        - "[114]"
+      notes: Isolates apportionable loss; role of pleadings.
+
+    - name: Selig v Wealthsure Pty Ltd
+      citation: (2015) 255 CLR 661
+      court: HCA
+      pinpoints:
+        - 673
+        - "[34]"
+      notes: Non-apportionable statutory claims not swept in by joinder.
+
+    - name: St George Bank Ltd v Quinerts Pty Ltd
+      citation: "[2009] VSCA 245"
+      court: VSCA
+      pinpoints: []
+      notes: State CA authority on Pt IVAA application.
+
+  statutes:
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - Pt IVAA
+        - s 24AF
+        - s 24AG
+        - s 24AH
+        - s 24AI
+        - s 24AJ
+        - s 24AK
+        - s 24AM
+        - s 24AP
+      notes: Establishes the framework for proportionate liability in Victoria.
+
+    - name: Competition and Consumer Act 2010 (Cth) sch 2 (ACL)
+      provisions:
+        - s 18
+        - s 236
+      notes: Contains carve-outs for certain statutory claims.
+
+    - name: Corporations Act 2001 (Cth)
+      provisions:
+        - s 1041H
+        - s 1041I
+      notes: Includes financial services provisions with separate liability rules.
+
+reading_level: "Plain English (JD)"
+
+tags:
+  - LAWS50025
+  - Torts
+  - Apportionment
+  - Exam_Fundamentals
+  - MLS_H1
+
+keywords:
+  - proportionate-liability
+  - wrongs-act-pt-ivaa
+  - apportionable-claim
+  - mixed-claims
+  - pleading-strategy
+  - concurrent-wrongdoer
+  - statutory-carve-outs
+  - contribution-bar
+  - settlement-strategy
+  - empty-chair-risk

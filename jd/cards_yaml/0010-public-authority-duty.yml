@@ -1,116 +1,137 @@
-id: 8
-front: When will a Victorian court recognise a negligence duty against a public authority?
-back: 'Issue.
+front: "When will a Victorian court recognise a negligence duty against a public authority?"
+back: |
+  Issue — When should a Victorian court recognise a private-law duty of care owed by a public authority to the plaintiff?
 
-  When a plaintiff sues a public authority, should a private-law duty of care be recognised?
+  Rule —
+  - Foreseeability is necessary but not sufficient. Duty turns on salient features constrained by institutional and statutory coherence; the policy/operational distinction is a filter, not an immunity.
+  - Central indicators: the authority’s control, knowledge, assumption/responsibility, reliance/vulnerability, and risks of indeterminate liability.
+  - Key authorities: Sullivan v Moody (2001) 207 CLR 562, 579–580 [49]–[53]; Pyrenees Shire Council v Day (1998) 192 CLR 330, [347]–[349], [355]–[357] (verify pinpoints).
 
-  Rule.
+  Application scaffold —
+  (1) Statutory coherence gate: identify the empowering scheme, its purpose/limits, and any preconditions.
+  (2) Characterise the impugned act/omission (policy vs operational) and any specific undertaking or control.
+  (3) Evaluate salient features (control; vulnerability/reliance; knowledge; indeterminacy; autonomy).
+  (4) Check consistency with remedial/rights frameworks and resource allocation provisions.
+  - Supporting authorities: Hunter and New England Local Health District v McKenna (2014) 253 CLR 270, 279–284 [17]–[40]; Stuart v Kirkland-Veenstra (2009) 237 CLR 215, 230–236 [43]–[81]; Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [103].
 
-  Foreseeability is necessary but not sufficient.
+  Authorities map —
+  - Sullivan v Moody — Coherence limits on duty recognition.
+  - Pyrenees Shire Council v Day — Fire inspection duties; policy/operational calibration.
+  - Stuart v Kirkland-Veenstra — Control/statutory preconditions.
+  - Hunter v McKenna — Statutory coherence and resource constraints.
+  - Stavar — Salient-features synthesis.
 
-  duty turns on salient features filtered through institutional and statutory coherence.
+  Statutory hook —
+  - Wrongs Act 1958 (Vic) s 48 (general negligence); ss 83–85 (public-authority principles, resource and responsibility filters).
+  - Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 7, 21, 38 — coherence check, not a direct cause of action.
 
-  Application scaffold.
+  Tripwires —
+  - Treating policy/operational as automatic immunity.
+  - Assuming a general governmental rescue duty to prevent third-party harm.
+  - Ignoring statutory purpose or resource-allocation limits when framing duty.
+  - Conflating third-party wrongdoing with control/assumption by the authority.
+  - Skipping Charter coherence before extending duty.
 
-  **Statutory coherence gate**: identify the governing scheme’s purpose and preconditions
-  (e.g.
+  Conclusion — No standing duty exists; recognition is most likely where the authority undertook or controlled a specific operational function, knew of a discrete risk to a vulnerable plaintiff who reasonably relied, and recognition aligns with the statute and rights framework.
 
-  detention powers) .
+why_it_matters: |
+  MLS problems often involve councils, police, or health services. This card supplies an IRAC gateway focused on statutory coherence, policy/operational character, and salient features, avoiding common errors (assuming a rescue duty; merits-review drift; ignoring resource limits and Charter coherence). The cited pinpoints enable fast, authoritative duty analysis under exam pressure.
 
-  Hunter and New England Local Health District v McKenna [2014] HCA 44.
+mnemonic: "POLAR-CC → Policy vs Operational → Legal coherence → Assumption/Responsibility → Reliance/Vulnerability → Control → Charter & causation"
 
-  (2014) 253 Commonwealth Law Reports (Commonwealth Law Reports (CLR)) 270, 279-284
-  [17]-[40].
+diagram: |
+  ```mermaid
+  mindmap
+    root((Public authority duty (recognition)))
+      Issue
+        Recognise negligence duty against authority?
+      Rule
+        Foreseeability necessary, not sufficient
+        Salient features: control/assumption • reliance/vulnerability • indeterminacy
+        Coherence discipline (keep systems/statutes consistent)
+      Application
+        Statutory gate: purpose, preconditions, resources
+        Policy vs operational; specific undertaking/control
+        Conclude on duty; keep breach (s 48) distinct
+      Authorities
+        Sullivan v Moody
+        Pyrenees Shire v Day
+      Statute
+        Wrongs Act ss 83–85 (public-authority principles)
+        Wrongs Act s 48; Charter coherence (ss 7, 21, 38)
+  ```
 
-  Stuart v Kirkland-Veenstra [2009] HCA 15.
-
-  (2009) 237 CLR 215, 230-236 [43]-[81].
-
-  Authorities map.
-
-  Statutory hook.
-
-  Tripwires.
-
-  Conclusion.
-
-  There is no general governmental rescue duty.
-
-  recognition is most likely where the authority undertook a specific operational
-  function, exercised control with knowledge in circumstances of reliance or vulnerability,
-  and coherence with statutory purpose Exam tip: sequence issues -> rules -> application
-  -> conclusion; cite a lead authority and the operative section.
-
-  __HD__0__
-
-  State the governing test and any operative statutory provisions.
-
-  __HD__1__
-
-  Apply issues -> rules -> apply to facts -> conclude.
-
-  __HD__2__
-
-  Lead: Sullivan v Moody (2001) 207 CLR 562.
-
-  __HD__3__
-
-  Primary: Wrongs Act 1958 (Vic) s 48.
-
-  __HD__4__
-
-  - Don’t exceed statutory thresholds/caps
-
-  - Don’t conflate consequential with pure economic loss
-
-  - Apply coherence checks before extending duties.
-
-  __HD__5__
-
-  Tie the analysis back to the pleadings and the available remedies/defences.
-
-  '
-why_it_matters: "MLS examiners regularly frame hypotheticals around councils, police\n\
-  \  or health agencies whose regulatory or discretionary decisions allegedly caused\n\
-  \  harm. This card supplies an IRAC gateway: (1) coherence with the empowering legislation\n\
-  \  (including Mental Health Act 1986 (Vic) s 10(1), Migration Act 1958 (Cth) s 198AHA,\n\
-  \  and Charter ss 7, 21, 38), (2) policy versus operational character (filtering,\
-  \ not\n  immunity), (3) salient features (control, knowledge, reliance, vulnerability,\
-  \ indeterminacy),\n  and (4) Wrongs Act 1958 (Vic) Pt XII (ss 79, 82–85). It prevents\
-  \ frequent errors:\n  assuming a standing governmental duty to prevent third-party\
-  \ harm, conflating merits\n  review with negligence, or ignoring resource-allocation\
-  \ provisions and rights-balancing\n  obligations. The pinpoint citations let you\
-  \ drop authoritative lines from Sullivan\n  v Moody, Barclay Oysters, McKenna, Kirkland-Veenstra,\
-  \ Pyrenees, Crimmins and Brodie\n  under time pressure. Policy tensions—coherence,\
-  \ separation of powers, defensive\n  administration, and Charter compliance—are\
-  \ foregrounded so you can argue why recognising\n  (or denying) duty aligns with\
-  \ statutory purpose. Use the mnemonic and mindmap to\n  triage: if statutory coherence\
-  \ fails, stop; if the conduct is purely policy, duty\n  is unlikely; if operational\
-  \ with strong salient features and no statutory conflict,\n  press on to breach,\
-  \ causation, damage and defences.\n\n  \n"
-mnemonic: POLAR-CC → Policy vs Operational → Legal coherence → Assumption/Responsibility
-→ Reliance/Vulnerability → Control → Charter & causation handoff: {}
-diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
-  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-- Treating the policy/operational distinction as automatic immunity instead of a duty
-  filter.
-- Don’t exceed statutory thresholds/caps
-- Don’t conflate consequential with pure economic loss
+  - "Treating policy/operational as automatic immunity."
+  - "Assuming a general governmental rescue duty to prevent third-party harm."
+  - "Ignoring statutory purpose or resource-allocation limits when framing duty."
+  - "Conflating third-party wrongdoing with control/assumption by the authority."
+  - "Skipping Charter coherence before extending duty."
+
 anchors:
   cases:
-  - Sullivan v Moody (2001) 207 CLR 562
+    - name: Sullivan v Moody
+      citation: (2001) 207 CLR 562
+      court: HCA
+      pinpoints:
+        - "[49]-[53]"
+      notes: Coherence constraints on public authority duty.
+
+    - name: Pyrenees Shire Council v Day
+      citation: (1998) 192 CLR 330
+      court: HCA
+      pinpoints:
+        - "[347]-[349]"
+        - "[355]-[357]"
+      notes: Statutory purpose and operational duties.
+
+    - name: Stuart v Kirkland-Veenstra
+      citation: (2009) 237 CLR 215
+      court: HCA
+      pinpoints:
+        - "[41]-[45]"
+      notes: No duty absent control or statutory preconditions.
+
+    - name: Hunter and New England Local Health District v McKenna
+      citation: (2014) 253 CLR 270
+      court: HCA
+      pinpoints:
+        - "[17]-[40]"
+      notes: Statutory coherence and resource limits.
+
+    - name: Caltex Refineries (Qld) Pty Ltd v Stavar
+      citation: "[2009] NSWCA 258"
+      court: NSWCA
+      pinpoints:
+        - "[103]"
+      notes: Salient features synthesis.
+
   statutes:
-  - Wrongs Act 1958 (Vic) s 48
-  - Wrongs Act 1958 (Vic) s 26
-  - Wrongs Act 1958 (Vic) s 51
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - s 48
+        - s 83
+        - s 84
+        - s 85
+      notes: >-
+        s 48: breach analysis; s 83: resource/responsibility constraints;
+        s 84: wrongful exercise/failure; s 85: exercise alone does not create duty.
+
+    - name: Charter of Human Rights and Responsibilities Act 2006 (Vic)
+      provisions:
+        - s 7
+        - s 21
+      notes: Rights coherence check; not a standalone cause of action.
+
 reading_level: Plain English (JD)
+
 tags:
-- MLS_H1
+  - MLS_H1
+
 keywords:
-- torts
-- victoria
-- duty
-- breach
-- causation
-- damages
+  - torts
+  - victoria
+  - duty
+  - breach
+  - causation
+  - damages

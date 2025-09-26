@@ -1,122 +1,143 @@
-front: In a novel or affirmative-duty scenario (incl public authorities), how do you
-decide if a duty of care should be recognised under Victorian law?: {}
-back: 'Issue.
+front: "Novel or affirmative duty (public authorities): deciding if a duty of care should be recognised in Victoria?"
+back: |
+  Issue — Should a new duty of care be recognised where facts fall outside settled categories (often omissions/public authorities) in Victoria?
 
-  When facts fall outside settled categories (often involving omissions or public
-  authorities), should a new duty of care be recognised consistent with Victorian
-  law?
+  Rule —
+  - Foreseeability is necessary but insufficient. Apply the salient-features approach: Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258; (2009) 75 NSWLR 649, [103], constrained by coherence: Sullivan v Moody (2001) 207 CLR 562, [49]–[55].
+  - Consider vulnerability and indeterminacy: Perre v Apand Pty Ltd (1999) 198 CLR 180, [118]–[122]; control, assumption/reliance and statutory context: Crimmins v Stevedoring Industry Finance Committee (1999) 200 CLR 1, [93].
+  - There is no general rescue duty nor automatic duties from bare statutory powers: Stuart v Kirkland-Veenstra (2009) 237 CLR 215, [41]–[45]. Start by asking whether a recognised category applies; if not, proceed to salient features.
 
-  __HD__0__
+  Application scaffold —
+  (1) Classify: established category versus genuinely novel duty.
+  (2) Identify decisive salient features: vulnerability; control/assumption; reasonable reliance; indeterminacy/floodgates; autonomy and overall coherence.
+  (3) Public authority step: purpose of the empowering statute; policy versus operational character; resource constraints and discretionary limits.
+  (4) Conclude on duty; keep breach (Wrongs Act 1958 (Vic) s 48), causation, and damage distinct.
 
-  Apply the salient-features approach (Caltex Refineries (Qld) Pty Ltd v Stavar [2009]
-  New South Wales Court of Appeal (NSWCA) 258.
+  Authorities map —
+  - Stavar — non-exhaustive salient features ([103]).
+  - Perre — vulnerability/indeterminacy in pure economic loss ([118]–[122]).
+  - Sullivan — coherence discipline ([49]–[55]).
+  - Crimmins — six public-body factors ([93]).
+  - Stuart — no duty absent control/statutory preconditions ([41]–[45]).
 
-  (2009) 75 New South Wales Law Reports (NSWLR) 649, [103]).
+  Statutory hook —
+  - Wrongs Act 1958 (Vic) s 48 and ss 83–85 (public-authority principles).
+  - Mental Health and Wellbeing Act 2022 (Vic) Part 5.2, ss 232–239 for crisis “care and control” powers.
 
-  foreseeability is necessary but insufficient.
+  Tripwires —
+  - Treating foreseeability as sufficient for duty recognition.
+  - Listing all Stavar features without isolating the decisive ones.
+  - Collapsing duty into breach under Wrongs Act s 48.
+  - Imposing affirmative duties on authorities absent control/statutory preconditions.
+  - Ignoring statutory purpose/resource and coherence constraints.
 
-  __HD__1__
+  Conclusion — State yes/no on duty with brief reasons keyed to decisive features; then move to breach, causation, and damage.
 
-  1) Recognised category?
+why_it_matters: |
+  MLS problems often hinge on novel or omissions duty. Markers reward: (1) sequencing (recognised category → salient features → coherence), (2) a public-authority discipline pass (Wrongs Act ss 83–85), and (3) clean separation of duty from breach (s 48), causation, and damages. Use feature signposts as headings and justify which decide these facts.
 
-  If the scenario fits an established duty (eg, teacher-student once authority assumed:
-  Geyer v Downs (1977) 138 Commonwealth Law Reports (Commonwealth Law Reports (CLR))
-  91), apply that framework.
+mnemonic: "FVC-CARC: Foreseeability → Vulnerability → Control → Coherence → Assumption/reliance → Range/indeterminacy → Choice/autonomy"
 
-  __HD__2__
+diagram: |
+  ```mermaid
+  mindmap
+    root((Duty of care recognition))
+      Issue
+        Recognised category or truly novel?
+      Rule
+        Foreseeability necessary, not sufficient
+        Salient features: vulnerability • control/reliance • indeterminacy
+        Coherence constraint (keep systems consistent)
+      Application
+        Classify first; then isolate decisive features
+        Public authority step: statute purpose • policy/operational • resources
+        Conclude on duty; keep breach (s 48) separate
+      Authorities
+        Stavar (salient features)
+        Crimmins (public-body factors)
+      Statute
+        Wrongs Act s 48 (breach kept distinct)
+        Wrongs Act ss 83–85 (public-authority principles)
+  ```
 
-  Salient features: Stavar 75 NSWLR 649, [103].
-
-  Perre 198 CLR 180.
-
-  Coherence constraints: Sullivan v Moody 207 CLR 562, [42].
-
-  __HD__3__
-
-  Wrongs Act 1958 (Vic) ss 48, 83-85.
-
-  Wrongs Act 1958 (Vic) Pt Part XI (XI) (eg, s 72).
-
-  Mental Health Act 2014 (Vic) s 351.
-
-  Competition and Consumer Act 2010 (Cth) sch Tripwires.
-
-  Treating foreseeability as sufficient for duty.
-
-  Checklist-dumping all Stavar factors without identifying the decisive ones.
-
-  Conflating the duty analysis with breach under s 48.
-
-  Imposing affirmative duties on authorities absent control or statutory preconditions.
-
-  __HD__4__
-
-  Deliver a factor-by-factor justification showing why duty should (or should not)
-  be recognised, then address breach, causation and damages sequentially.
-
-  __HD__0__
-
-  State the governing test and any operative statutory provisions.
-
-  __HD__1__
-
-  Apply issues -> rules -> apply to facts -> conclude.
-
-  __HD__2__
-
-  Lead: Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258; (2009) 75 NSWLR
-  649, [103].
-
-  __HD__3__
-
-  Primary: Wrongs Act 1958 (Vic) s 48.
-
-  __HD__4__
-
-  - Don’t exceed statutory thresholds/caps
-
-  - Don’t conflate consequential with pure economic loss
-
-  - Apply coherence checks before extending duties.
-
-  '
-why_it_matters: "MLS problems often hinge on novel or omissions duty. Markers reward:\n\
-  \  (1) sequencing (recognised category → salient features → coherence), (2) a public-authority\n\
-  \  discipline pass (Wrongs Act ss 83–85), and (3) clean separation of duty from\
-  \ breach\n  (s 48), causation and damages. Use factor signposts as paragraph headings\
-  \ and justify\n  why particular features decide these facts (do not checklist Stavar).\
-  \ Policy levers\n  to mention: indeterminacy/floodgates, autonomy (no general rescue\
-  \ duty), statutory\n  purpose and resources (coherence), and over-deterrence if\
-  \ courts impose broad affirmative\n  duties. Tie reliance/assumption questions to\
-  \ ACL s 18 to show awareness of statutory\n  remedies and potential duplication/conflict.\
-  \ If you apply this scaffold in 10–12\n  minutes, you will give a principled yes/no\
-  \ on duty and bank H1-level structure.\n"
-mnemonic: "FVC-CARC: Foreseeability → Vulnerability → Control → Coherence → Assumption/reliance\n\
-  \  → Range/indeterminacy → Choice/autonomy\n"
-diagram: "```mermaid\nmindmap\n  root((Card overview))\n    Issue\n    Rule\n    Application\n\
-  \    Conclusion\n  - Issue\n  - Rule\n  - Application\n  - Conclusion\n```\n"
 tripwires:
-- Treating foreseeability as sufficient for duty recognition.
-- Listing all Stavar factors without explaining which decide the facts.
-- Collapsing duty into breach under Wrongs Act s 48.
-- Imposing affirmative duties on authorities absent control or statutory preconditions.
-- Ignoring statutory purpose/resource constraints when assessing coherence.
+  - "Treating foreseeability as sufficient for duty recognition."
+  - "Listing all Stavar features without identifying the decisive ones."
+  - "Collapsing duty into breach under Wrongs Act s 48."
+  - "Imposing affirmative duties on authorities absent control/statutory preconditions."
+  - "Ignoring statutory purpose/resource and coherence constraints."
+
 anchors:
   cases:
-  - Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258; (2009) 75 NSWLR 649,
-    [103]
+    - name: Caltex Refineries (Qld) Pty Ltd v Stavar
+      citation: "[2009] NSWCA 258; (2009) 75 NSWLR 649"
+      court: NSWCA
+      pinpoints:
+        - "[103]"
+      notes: Non-exhaustive salient features for duty recognition.
+    
+    - name: Perre v Apand Pty Ltd
+      citation: (1999) 198 CLR 180
+      court: HCA
+      pinpoints:
+        - "[118]"
+        - "[122]"
+      notes: Vulnerability and indeterminacy in pure economic loss.
+    
+    - name: Sullivan v Moody
+      citation: (2001) 207 CLR 562
+      court: HCA
+      pinpoints:
+        - "[49]"
+        - "[55]"
+      notes: Coherence constraints on duty recognition.
+    
+    - name: Crimmins v Stevedoring Industry Finance Committee
+      citation: (1999) 200 CLR 1
+      court: HCA
+      pinpoints:
+        - "[93]"
+      notes: Six factors for public-authority duties.
+    
+    - name: Stuart v Kirkland-Veenstra
+      citation: (2009) 237 CLR 215
+      court: HCA
+      pinpoints:
+        - "[41]"
+        - "[45]"
+      notes: No duty absent control or satisfaction of statutory preconditions.
+  
   statutes:
-  - Wrongs Act 1958 (Vic) s 48
-  - Wrongs Act 1958 (Vic) s 26
-  - Wrongs Act 1958 (Vic) s 51
-  notes: []
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - s 48
+        - ss 83–85
+    
+    - name: Mental Health and Wellbeing Act 2022 (Vic)
+      provisions:
+        - Part 5.2
+        - ss 232–239
+      notes: Care and control powers in a mental-health crisis.
+
 reading_level: Plain English (JD)
+
 tags:
-- MLS_H1
+  - torts
+  - duty of care
+  - omissions
+  - public authorities
+
 keywords:
-- torts
-- victoria
-- duty
-- breach
-- causation
-- damages
+  - duty of care
+  - novel duty
+  - omissions
+  - public authorities
+  - salient features
+  - foreseeability
+  - vulnerability
+  - control
+  - coherence
+  - assumption
+  - reliance
+  - indeterminacy
+  - statutory context
