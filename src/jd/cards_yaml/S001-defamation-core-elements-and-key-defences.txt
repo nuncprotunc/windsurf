@@ -1,0 +1,73 @@
+﻿front: "What are the full core elements, defences and remedies under the Uniform Defamation"
+back: |
+  Issue.
+  Defamation law in Victoria under the Defamation Act 2005 (Vic) includes extended elements, defences, remedies and statutory constraints.
+  Apply in sequence and with updated statutory references.
+  **Core Elements & Statutory Constraints** 1.
+  
+  - Justification (s 25): substantially true.
+  
+  - Contextual Truth (s 26): extra imputations not causing further harm.
+  
+  - Honest Opinion (s 31): based on proper material, indicated basis.
+  
+  - Qualified Privilege (s 30) and constitutional qualified privilege (Lange).
+  
+  - Innocent Dissemination (s 32) (note: distinct from ss 10C-10D frameworks).
+  
+  - Public Interest (s 29A): publication concerning an issue of public interest with reasonable Rule.
+  Application scaffold.
+  Authorities map.
+  Statutory hook.
+  Tripwires.
+  Conclusion.
+  Exam tip: sequence issues -> rules -> application -> conclusion; cite a lead authority and the operative section.
+  __HD__0__
+  State the governing test and any operative statutory provisions.
+  __HD__1__
+  Apply issues -> rules -> apply to facts -> conclude.
+  __HD__2__
+  Lead: Sullivan v Moody (2001) 207 Commonwealth Law Reports (CLR) 562.
+  Lead: Sullivan v Moody (2001) 207 CLR 562.
+  __HD__3__
+  Primary: Wrongs Act 1958 (Vic) s 48.
+  __HD__4__
+  
+  - Donâ€™t exceed statutory thresholds/caps
+  
+  - Donâ€™t conflate consequential with pure economic loss
+  
+  - Apply coherence checks before extending duties.
+  __HD__5__
+  Tie the analysis back to the pleadings and the available remedies/defences.
+
+why_it_matters: |
+  This topic is examâ€‘central: many hypotheticals test updated constraints
+   (serious harm s 10A; single publication s 10AA; concerns notice ss 12Aâ€“12B; public
+   interest defence s 29A; digital intermediaries ss 10Câ€“10D). To score H1, apply all
+   relevant provisions systematically and integrate recent High Court authority (Defteros
+   on publication; Trkulja on identification). Policy tensions include Charter s 15
+   (expression) vs reputation; filtering trivial claims via s 10A vs chilling speech.
+   Avoid obsolete references (e.g., triviality s 33 â€” repealed).
+
+mnemonic: DIPS-JCHQIP (Defamatory, Identification, Publication, Serious harm + Justification,
+diagram: |
+  ```mermaid
+  mindmap
+    root((Defamation Elements & Defences))
+    A. Issue
+      - Defamation law under Defamation Act 2005 (Vic)
+    B. Rule
+      - Justification (s 25)
+      - Contextual Truth (s 26)
+      - Honest Opinion (s 31)
+      - Qualified Privilege (s 30)
+      - Public Interest (s 29A)
+    C. Application
+      - Apply elements in sequence
+    D. Limits/Statutes
+      - s 48 Wrongs Act (Vic)
+    E. Authorities
+      - Sullivan v Moody (2001) 207 CLR 562
+  ```
+

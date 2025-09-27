@@ -1,0 +1,56 @@
+front: "Novel or affirmative duty (public authorities): deciding if a duty of care should be recognised in Victoria?"
+back: |
+  Issue.
+  Should a new duty of care be recognised where facts fall outside settled categories (often omissions/public authorities) in Victoria?
+
+  Rule.
+  - Foreseeability is necessary but insufficient. Apply the salient-features approach: Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258; (2009) 75 NSWLR 649, [103], constrained by coherence: Sullivan v Moody (2001) 207 CLR 562, [49]–[55].
+  - Consider vulnerability and indeterminacy: Perre v Apand Pty Ltd (1999) 198 CLR 180, [118]–[122]; control, assumption/reliance and statutory context: Crimmins v Stevedoring Industry Finance Committee (1999) 200 CLR 1, [93].
+  - There is no general rescue duty nor automatic duties from bare statutory powers: Stuart v Kirkland-Veenstra (2009) 237 CLR 215, [41]–[45]. Start by asking whether a recognised category applies; if not, proceed to salient features.
+
+  Application scaffold.
+  (1) Classify: established category versus genuinely novel duty.
+  (2) Identify decisive salient features: vulnerability; control/assumption; reasonable reliance; indeterminacy/floodgates; autonomy and overall coherence.
+  (3) Public authority step: purpose of the empowering statute; policy versus operational character; resource constraints and discretionary limits.
+  (4) Conclude on duty; keep breach (Wrongs Act 1958 (Vic) s 48), causation, and damage distinct.
+
+  Authorities map.
+  - Stavar — non-exhaustive salient features ([103]).
+  - Perre — vulnerability/indeterminacy in pure economic loss ([118]–[122]).
+  - Sullivan — coherence discipline ([49]–[55]).
+  - Crimmins — six public-body factors ([93]).
+  - Stuart — no duty absent control/statutory preconditions ([41]–[45]).
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) s 48 and ss 83–85 (public-authority principles).
+  - Mental Health and Wellbeing Act 2022 (Vic) Part 5.2, ss 232–239 for crisis “care and control” powers.
+
+  Conclusion.
+  State yes/no on duty with brief reasons keyed to decisive features; then move to breach, causation, and damage.
+
+why_it_matters: |
+  MLS problems often hinge on novel or omissions duty. Markers reward: (1) sequencing (recognised category → salient features → coherence), (2) a public-authority discipline pass (Wrongs Act ss 83–85), and (3) clean separation of duty from breach (s 48), causation, and damages. Use feature signposts as headings and justify which decide these facts.
+
+mnemonic: "FVC-CARC: Foreseeability → Vulnerability → Control → Coherence → Assumption/reliance → Range/indeterminacy → Choice/autonomy"
+diagram: |
+  ```mermaid
+  mindmap
+  root((Duty of care recognition))
+    A. Issue
+      Recognised category or novel?
+    B. Rule
+      Foreseeability necessary, not sufficient
+      Salient features: vulnerability • control/reliance • indeterminacy
+      Coherence constraint
+    C. Application
+      Classify duties; isolate decisive features
+      Public authority: statute purpose • policy/operational • resources
+      Conclude on duty; keep breach (s 48) separate
+    D. Authorities
+      Stavar (salient features)
+      Crimmins (public-body factors)
+      Perre (vulnerability/indeterminacy)
+    E. Statute
+      Wrongs Act s 48 (breach distinct)
+      Wrongs Act ss 83–85 (public-authority principles)
+  ```

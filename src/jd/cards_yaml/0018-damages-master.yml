@@ -1,90 +1,117 @@
-front: "In a Victorian personal injury problem, how do you (i) clear the Part VBA 'significant"
+front: "In a Victorian personal injury exam, how do you navigate Pt VBA damages thresholds, caps, and aggravated/exemplary characterisation?"
 back: |
   Issue.
-  Has the plaintiff established eligibility for non-economic loss and ancillary heads of damage under the Wrongs Act 1958 (Vic), and how should aggravated and exemplary damages be characterised.
-  and limited?
+  Determine whether Pt VBA unlocks non-economic, aggravated, and exemplary damages for a Victorian plaintiff, and set out how each head must be characterised once access is secured.
+
   Rule.
-  Part Victorian statutory damages part (Pt Victorian Bar Association (VBA)) requires a "significant injury" certificate unless an exception applies.
-  Sections 28LB-28LK prescribe the process.
-  s 28LF defines thresholds (generally >5% Whole person impairment (WPI) for physical injury, extra criteria for psychiatric impairment via s 28LJ).
+  Pt VBA (Wrongs Act 1958 (Vic) ss 28LB–28LK) demands a court-endorsed significant injury certificate unless s 28LC(2)(a) or s 28LJ triggers an exception.
+  s 28LF sets impairment thresholds and medical panel review mechanics.
+  Certified plaintiffs remain bound by the indexed non-economic caps in ss 28G–28H and the earnings ceiling in s 28F(2).
+  Aggravated damages stay compensatory (Uren v John Fairfax & Sons Pty Ltd (1966) 117 CLR 118 at 149 (HCA)).
+  Exemplary relief punishes only where compensation is inadequate and must be proportionate (Gray v Motor Accident Commission (1998) 196 CLR 1 at 18–19 (HCA); Lamb v Cotogno (1987) 164 CLR 1 at 12 (HCA)).
+  State defendants remain exposed (State of NSW v Ibbett (2006) 229 CLR 638 at 648 (HCA)).
+
   Application scaffold.
+  (1) Identify pleaded heads of damage and confirm Pt VBA applies.
+  (2) Obtain the significant injury certificate or prove the s 28LC(2)(a) or s 28LJ exception, documenting any medical panel process.
+  (3) Calculate impairment under s 28LF with current AMA or psychiatric metrics and diarise the review deadline.
+  (4) Apply indexed caps in ss 28G–28H and the s 28F(2) ceiling, stating the indexation year relied on.
+  (5) Distinguish aggravated compensation from exemplary punishment within Gray limits and reconcile overlaps with statutory penalties or parallel claims.
+
   Authorities map.
+  - Gray v Motor Accident Commission (1998) 196 CLR 1 at 18–19 — confines exemplary awards to proportionate punishment.
+  - Uren v John Fairfax & Sons Pty Ltd (1966) 117 CLR 118 at 149 — aggravated damages repair dignitary loss.
+  - Lamb v Cotogno (1987) 164 CLR 1 at 12 — exemplary damages demand a punitive rationale.
+  - State of NSW v Ibbett (2006) 229 CLR 638 at 648 — exemplary relief remains available against the State.
+
   Statutory hook.
+  Wrongs Act 1958 (Vic) ss 28LB–28LK, 28LC(2)(a), 28LF, 28F(2), 28G–28H — certificate process, exceptions, thresholds, and caps.
+
   Tripwires.
+  - Skipping the certificate gateway before pricing damages.
+  - Collapsing aggravated with exemplary analysis.
+  - Ignoring indexed caps in ss 28G–28H or the s 28F(2) ceiling.
+  - Citing relief without Gray, Uren, or an equivalent lead authority.
+
   Conclusion.
-  Damages depend first on breaching the Pt VBA gateway, then on meticulous application of statutory caps and proper distinction between compensatory (aggravated) and punitive (exemplary) remedies.
-  mindful of Gray''s restraint.
-  Exam tip: sequence issues -> rules -> application -> conclusion; cite a lead authority and the operative section.
-  __HD__0__
-  State the governing test and any operative statutory provisions.
-  __HD__1__
-  Apply issues -> rules -> apply to facts -> conclude.
-  __HD__2__
-  Lead: Sullivan v Moody (2001) 207 Commonwealth Law Reports (CLR) 562.
-  Lead: Sullivan v Moody (2001) 207 CLR 562.
-  __HD__3__
-  Primary: Wrongs Act 1958 (Vic) s 48.
-  __HD__4__
-  
-  - Don’t exceed statutory thresholds/caps
-  
-  - Don’t conflate consequential with pure economic loss
-  
-  - Apply coherence checks before extending duties.
-  __HD__5__
-  Tie the analysis back to the pleadings and the available remedies/defences.
+  Deliver a statute-led roadmap: prove or excuse the certificate, apply the indexed caps, and separate aggravated from exemplary relief with the leading authorities.
+  That sequencing shows command of Pt VBA mechanics and earns remedial credibility under exam pressure.
 
 why_it_matters: |
-  MLS damages questions reward disciplined sequencing. Begin with the
-   Pt VBA gate: cite s 28LC(2)(a) to see if intentional or sexual misconduct bypasses
-   the certificate, otherwise run the s 28LF/LJ metrics. Only after eligibility do
-   you price the claim—loss of earnings cap (s 28F(2)) and the indexed non-economic
-   ceiling (s 28G/s 28H). Answers that recite stale dollar figures lose marks; flag
-   that caps are indexed annually. Distinguish aggravated (compensatory) from exemplary
-   (punitive) using Uren, Lamb and Gray, and note Ibbett to show punitive awards still
-   bite against the State. Mention Fontin to avoid conflating provocation with mitigation
-   of compensatory damages. This scaffold helps you survive time pressure and signals
-   policy awareness around insurance affordability versus claimant vindication.
+  Damages questions reward the student who clears Pt VBA before chasing quantum. You must show whether a significant injury certificate or statutory exception opens the gate, then demonstrate command of indexed caps and the earnings ceiling rather than reciting stale figures. Distinguishing aggravated from exemplary relief with Gray, Uren, and Ibbett avoids double counting and signals awareness of punishment restraints. This scaffold keeps you disciplined under time pressure and satisfies markers looking for statute-led reasoning.
 
-mnemonic: THRESH→CAP→CHAR→POLICY: Threshold (s 28LC/28LF) → Caps (s 28F; s 28G/H)
- → Characterise (Aggravated vs Exemplary; Gray) → Policy (insurance vs deterrance).
-
+mnemonic: TH-CAP-CHAR-POLICY
 diagram: |
   ```mermaid
   mindmap
-   root((Card overview))
-   Issue
-   Rule
-   Application
-   Conclusion
-   - Issue
-   - Rule
-   - Application
-   - Conclusion
+    root((Damages Master))
+      A. Issue
+        Significant injury eligibility
+      B. Pt VBA Process
+        Certificate or exception
+        Impairment thresholds (s 28LF)
+        Medical panel options
+      C. Quantification
+        Indexed non-economic cap (ss 28G–28H)
+        Earnings cap (s 28F(2))
+        Adjust for indexation date
+      D. Characterisation
+        Aggravated damages (Uren)
+        Exemplary restraint (Gray)
+      E. Authorities
+        Lamb v Cotogno (HCA)
+        State of NSW v Ibbett (HCA)
+        Uren v John Fairfax (HCA)
   ```
+        - "18"
+        - "19"
+      notes: Exemplary awards must remain punitive and proportionate.
 
-tripwires:
-  - "**Gateway swap**: Confusing TAC ''serious injury'' with Wrongs Act ''significant injury''."
-  - "Don’t exceed statutory thresholds/caps"
-  - "Don’t conflate consequential with pure economic loss"
+    - name: Uren v John Fairfax & Sons Pty Ltd
+      citation: (1966) 117 CLR 118
+      court: HCA
+      pinpoints:
+        - "149"
+      notes: Aggravated damages respond to injured feelings, not punishment.
 
-anchors:
-  cases:
-    - Sullivan v Moody (2001) 207 CLR 562
+    - name: Lamb v Cotogno
+      citation: (1987) 164 CLR 1
+      court: HCA
+      pinpoints:
+        - "12"
+      notes: Exemplary damages punish only where compensatory relief is insufficient.
+
+    - name: State of NSW v Ibbett
+      citation: (2006) 229 CLR 638
+      court: HCA
+      pinpoints:
+        - "648"
+      notes: Exemplary damages remain available against governmental defendants.
+
   statutes:
-    - Wrongs Act 1958 (Vic) s 48
-    - Wrongs Act 1958 (Vic) s 26
-    - Wrongs Act 1958 (Vic) s 51
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - s 28LB
+        - s 28LC(2)(a)
+        - s 28LF
+        - s 28F(2)
+        - s 28G
+        - s 28H
+      notes: Part VBA certificate gateway, impairment thresholds, and caps.
 
 reading_level: Plain English (JD)
 
 tags:
   - MLS_H1
+  - LAWS50025_Torts
+  - Exam_Fundamentals
 
 keywords:
-  - torts
-  - victoria
-  - duty
-  - breach
-  - causation
-  - damages
+  - Part VBA
+  - significant injury
+  - non-economic loss
+  - aggravated damages
+  - exemplary damages
+  - statutory caps
+  - Wrongs Act
+  - Victorian torts

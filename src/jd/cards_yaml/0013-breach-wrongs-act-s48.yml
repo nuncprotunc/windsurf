@@ -41,102 +41,31 @@ why_it_matters: |
 
 mnemonic: |
   F–NIS → 48(2) CALC → NO HINDSIGHT → QUALIFIERS → CONCLUDE
-
-diagram: |-
+diagram: |
   ```mermaid
   mindmap
-    root((Breach — s 48 + Shirt))
-      Issue
-        What precise risk?
-        Did D take reasonable precautions?
-      Rule
-        s 48(1): not-insignificant risk
-        s 48(2): prob/seriousness/burden/social utility
-        s 49: no hindsight
-      Apply
-        Define risk at correct generality
-        Weigh (a)–(d) and link to precautions
-        Decide breach on info then available
-      Authorities
-        Wyong v Shirt
-        Tapp; Dederer/Vairy
-        Dwyer (Vic)
-      Statutes
-        Qualifiers: ss 53–55; professionals s 56
+  root((Breach — s 48 + Shirt))
+    A. Issue
+      Define precise risk
+      Reasonable precautions taken?
+    B. Rule
+      s 48(1): not-insignificant risk
+      s 48(2): prob/seriousness/burden/social utility
+      s 49: no hindsight
+    C. Application
+      Define risk at correct generality
+      Weigh (a)–(d) factors
+      Decide breach on available info
+    D. Statutes
+      WA (Vic) ss 48, 49, 53–55
+    E. Authorities
+      Wyong v Shirt
+      Tapp; Dederer/Vairy
+      Dwyer (Vic)
   ```
 
 tripwires:
-  - Treating foreseeability as sufficient without proving a "not insignificant" risk.
-  - Mischaracterising the risk (too broad or too narrow) and skewing the calculus.
-  - Using hindsight contrary to s 49's prospective assessment.
-  - Ignoring the burden/cost of precautions or social utility under s 48(2)(c)–(d).
-  - Treating "obvious risk" as absolute where the defendant created or exacerbated the danger.
-
-anchors:
-  cases:
-    - name: Wyong Shire Council v Shirt
-      citation: (1980) 146 CLR 40
-      court: High Court of Australia
-      pinpoints:
-        - "43–45"
-      notes: Established the Shirt calculus for balancing breach factors.
-
-    - name: Tapp v Australian Bushmen’s Campdraft & Rodeo Association Ltd
-      citation: "[2022] HCA 11"
-      court: High Court of Australia
-      pinpoints:
-        - "[10]–[20]"
-      notes: Reinforces time-slicing and proper risk characterisation under s 48.
-
-    - name: Roads and Traffic Authority of New South Wales v Dederer
-      citation: (2007) 234 CLR 330
-      court: High Court of Australia
-      pinpoints:
-        - "337–339"
-      notes: Highlights accurate risk framing for the breach calculus.
-
-    - name: Vairy v Wyong Shire Council
-      citation: (2005) 223 CLR 422
-      court: High Court of Australia
-      pinpoints:
-        - "430–433"
-      notes: Warns against hindsight in evaluating reasonable precautions.
-
-    - name: Dwyer v Calco Timbers Pty Ltd
-      citation: "[2008] VSCA 260"
-      court: Victorian Court of Appeal
-      pinpoints:
-        - "[15]–[25]"
-      notes: Applies the Victorian statutory breach framework in practice.
-
-  statutes:
-    - name: Wrongs Act 1958 (Vic)
-      provisions:
-        - s 48
-        - s 49
-        - s 53
-        - s 54
-        - s 55
-        - s 56
-      notes: Aligns the breach calculus with Shirt, excludes hindsight, and qualifies obvious or inherent risks through ss 53–55.
-
-reading_level: "Plain English (JD)"
-
-tags:
-  - LAWS50025
-  - Breach
-  - Wrongs_Act_Vic
-  - Standard_of_Care
-  - MLS_H1
-
-keywords:
-  - Shirt-calculus
-  - s48-breach
-  - not-insignificant-risk
-  - risk-characterisation
-  - obvious-risk
-  - hindsight
-  - precautions
-  - social-utility
-  - professional-standard
-  - Victoria
+  - Assuming foreseeability alone suffices without proving "not insignificant" risk.
+  - Mischaracterising the risk, leading to flawed calculus.
+  - Applying hindsight in breach assessment contrary to s 49.
+  - Neglecting burden/cost or social utility in s 48(2)(c)–(d).

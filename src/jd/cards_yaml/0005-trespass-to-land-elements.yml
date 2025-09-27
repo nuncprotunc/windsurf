@@ -44,19 +44,22 @@ diagram: |
       Issue
         Identify elements
       Rule
-        Direct interference
-        Voluntary act
-        No lawful justification
+        Actionable per se
+        Elements
+          Possession
+          Direct act
+          No justification
       Application
         Prove possession
         Pinpoint direct entry
         Test justifications
+      Statutes
+        s 9(1)(d) Summary Offences Act (Vic)
+        ss 459, 462A Crimes Act (Vic)
       Authorities
         Kuru v State of NSW
         Plenty v Dillon
-      Statute
-        Summary Offences Act s 9(1)(d)
-        Crimes Act ss 459, 462A
+        Halliday v Nevill
   ```
 
 tripwires:

@@ -27,13 +27,15 @@ back: |
     - Tapp v Australian Bushmen's Campdraft & Rodeo Association Ltd [2022] HCA 11.
     - Roads and Traffic Authority of NSW v Dederer (2007) 234 CLR 330.
     - Vairy v Wyong Shire Council (2005) 223 CLR 422.
-    - Dwyer v Calco Timbers Pty Ltd [2008] VSCA 260.
 
   Statutory hook.
     - Wrongs Act 1958 (Vic) ss 48, 49, 53, 54, 55, 56.
 
   Tripwires.
-  Refer to the dedicated `tripwires` list for recurring analytical errors.
+  - Assuming foreseeability alone suffices without proving "not insignificant" risk.
+  - Mischaracterising the risk at an incorrect level of generality.
+  - Applying hindsight in breach analysis contrary to s 49.
+  - Neglecting cost or social utility in the s 48(2) balancing exercise.
 
   Conclusion.
   Breach arises only if, prospectively, a prudent person would have adopted proportionate, practical precautions when s 48(2) factors are balanced and no statutory qualifier displaces that result.
@@ -43,104 +45,25 @@ why_it_matters: |
 
 mnemonic: |
   RISK → F/NIS → CALC (a–d) → QUALIFIERS → CONCLUDE
-
-diagram: |-
+diagram: |
   ```mermaid
   mindmap
-    root((Breach: s 48 + Shirt))
-      Issue
-        Specific risk (not-insignificant)
-      Rule
-        s 48(1)–(2) governs breach
-        Shirt calculus (reasonable precautions)
-        Prospective, time-sliced; no hindsight (s 49)
-      Application
-        Weigh (a) probability • (b) seriousness • (c) burden/cost • (d) social utility
-        Specify practicable precautions
-        Apply qualifiers: obvious/inherent/professional (ss 53–56)
-      Authorities
-        Wyong v Shirt
-        Tapp; Dederer/Vairy
-      Statute
-        Wrongs Act s 48
-        s 49; ss 53–56
+  root((Breach: s 48 + Shirt))
+    A. Issue
+      Specific risk (not insignificant)
+    B. Rule
+      s 48(1)–(2) governs breach
+      Shirt calculus (reasonable precautions)
+      Prospective, time-sliced; no hindsight (s 49)
+    C. Application
+      Weigh (a) probability • (b) seriousness • (c) burden/cost • (d) social utility
+      Specify practicable precautions
+      Apply qualifiers: obvious/inherent/professional (ss 53–56)
+    D. Authorities
+      Wyong v Shirt
+      Tapp; Dederer/Vairy
+    E. Statute
+      s 48 Wrongs Act 1958 (Vic)
+      s 49 Wrongs Act 1958 (Vic); ss 53–56
+      s 54 Wrongs Act 1958 (Vic); s 55 Wrongs Act 1958 (Vic)
   ```
-
-tripwires:
-  - Treating foreseeability as sufficient without proving a "not insignificant" risk.
-  - Misdescribing the risk (too broad or too narrow).
-  - Using hindsight contrary to s 49's prospective assessment.
-  - Ignoring cost/practicality or social utility under s 48(2).
-  - Treating obvious risk as absolute where defendant created or heightened the danger.
-
-anchors:
-  cases:
-    - name: Wyong Shire Council v Shirt
-      citation: (1980) 146 CLR 40
-      court: High Court of Australia
-      pinpoints:
-        - 40
-      notes: Benchmarks the Shirt calculus balancing test and forecloses hindsight.
-
-    - name: Tapp v Australian Bushmen's Campdraft & Rodeo Association Ltd
-      citation: "[2022] HCA 11"
-      court: High Court of Australia
-      pinpoints:
-        - "[10]"
-        - "[20]"
-      notes: Clarifies prospective risk assessment and time-slicing in modern contexts.
-
-    - name: Roads and Traffic Authority of New South Wales v Dederer
-      citation: (2007) 234 CLR 330
-      court: High Court of Australia
-      pinpoints:
-        - 330
-      notes: Demonstrates risk characterisation discipline for breach reasoning.
-
-    - name: Vairy v Wyong Shire Council
-      citation: (2005) 223 CLR 422
-      court: High Court of Australia
-      pinpoints:
-        - 422
-      notes: Reinforces the anti-hindsight approach under s 49.
-
-    - name: Dwyer v Calco Timbers Pty Ltd
-      citation: "[2008] VSCA 260"
-      court: Victorian Court of Appeal
-      pinpoints:
-        - "[15]"
-        - "[25]"
-      notes: Applies the statutory breach framework in the Victorian context.
-
-  statutes:
-    - name: Wrongs Act 1958 (Vic)
-      provisions:
-        - s 48
-        - s 49
-        - s 53
-        - s 54
-        - s 55
-        - s 56
-      notes: Sets the statutory breach standard, anti-hindsight rule, and risk qualifiers.
-
-reading_level: Plain English (JD)
-
-tags:
-  - LAWS50025
-  - Torts
-  - Breach
-  - Wrongs_Act_Vic
-  - Standard_of_Care
-  - MLS_H1
-
-keywords:
-  - Shirt-calculus
-  - s48-breach
-  - not-insignificant-risk
-  - risk-characterisation
-  - obvious-risk
-  - hindsight
-  - precautions
-  - social-utility
-  - professional-standard
-  - Victoria

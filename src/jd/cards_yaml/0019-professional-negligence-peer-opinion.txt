@@ -1,0 +1,67 @@
+﻿front: "Professional negligence (Vic): how do Wrongs Act ss 57â€“60 frame peer opinion duties?"
+back: |
+  Issue.
+  Does the Wrongs Act 1958 (Vic) Div 5 scheme apply and, if so, can the defendant still run a s 59 peer opinion defence notwithstanding the s 60 warnings carve-out?
+
+  Rule.
+  Division 5 defines the professional, service, and timing (s 57) and fixes the reasonable-peer yardstick (s 58). A s 59 defence needs widely accepted Australian peer opinion from a significant cohort backing the conduct when done; opinions may diverge (s 59(3)) but the court can reject an irrational view (s 59(4)). Section 60 removes s 59 for warnings, reviving Rogers v Whitaker (1992) 175 CLR 479 at 490â€“493 and Wallace v Kam (2013) 250 CLR 375 at [34]â€“[40].
+
+  Application scaffold.
+  (1) Pin the professional, service, and date to activate Div 5 (s 57).
+  (2) Split allegations: warnings default to s 60 and common-law material-risk duties; practice/diagnosis invites s 59.
+  (3) For practice allegations, secure contemporaneous national peer opinion and test coherence before pleading s 59.
+  (4) For warnings, run Rogers/Wallace: identify material risk, causation, and scope of liability.
+  (5) Cross-check s 48 breach logic, ensure Evidence Act 2008 (Vic) s 79 admissibility, and flag coherence pressures (Sullivan v Moody (2001) 207 CLR 562).
+
+  Authorities map.
+  - Rogers v Whitaker (1992) 175 CLR 479 at 490â€“493 â€” Material-risk warnings outside s 59.
+  - Wallace v Kam (2013) 250 CLR 375 at [34]â€“[40] â€” Scope-of-liability discipline for warnings.
+  - Naxakis v Western General Hospital (1999) 197 CLR 269 at [27]â€“[31] â€” Court testing of expert opinion.
+  - Tanah Merah Vic Pty Ltd v Owners Corp No 1 [2011] VSCA 434 at [153]â€“[160] â€” Victorian review of peer opinion reasonableness.
+  - South Western Sydney Local Health District v Gould [2018] NSWCA 69 at [199]â€“[206] (persuasive) â€” Structured approach to s 5O/s 59 defences.
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) Div 5 (Professional negligence) ss 57â€“60.
+  - Wrongs Act 1958 (Vic) s 48 (general breach matrix).
+  - Evidence Act 2008 (Vic) s 79 (expert opinion admissibility).
+
+  Tripwires.
+  See the dedicated `tripwires` list for the four recurring missteps before pleading outlines.
+
+  Conclusion.
+  Map the allegation, pick the s 59 or s 60 pathway, and anchor each step in contemporaneous peer opinion plus statute before shifting to breach and causation.
+
+why_it_matters: |
+  MLS problems reward candidates who quarantine warnings from practice allegations, prove national peer acceptance across time, and remind the court it may still reject flimsy expert consensus. This card keeps the Division 5 sequence tight, pushes evidence preparation (s 79), and spotlights how a shaky peer defence collapses under exam cross-examination.
+
+mnemonic: PRO WARN DEF TIME COURT
+
+diagram: |
+  ```mermaid
+  mindmap
+    root((Professional negligence))
+      Issue
+        Identify Div 5 trigger (s 57)
+      Rule
+        s 58 reasonable professional care
+        s 59 defence: widely accepted peer opinion
+        Court may reject irrational opinions (s 59(4))
+      Application
+        Separate warnings vs practice
+        Prove national, time-specific acceptance
+        Apply Rogers/Wallace for warnings
+      Statutes
+        Wrongs Act ss 57â€“60
+        Evidence Act s 79
+      Authorities
+        Rogers v Whitaker
+        Wallace v Kam
+        Gould (persuasive)
+  ```
+
+tripwires:
+- Applying s 59 to warnings (barred by s 60)
+- Assuming expert evidence suffices without proving national acceptance
+- Conflating consequential with pure economic loss
+- Ignoring s 59(3) allows multiple opinions
+

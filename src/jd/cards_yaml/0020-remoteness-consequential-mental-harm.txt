@@ -1,0 +1,74 @@
+﻿front: "Consequential mental harm (Vic): is psychiatric injury too remote?"
+back: |
+  Issue.
+  Whether the plaintiffâ€™s psychiatric injury is within the scope of liability or too remote when it follows another injury.
+  __HD__0__
+  Remoteness confines liability to reasonably foreseeable kinds of harm.
+  the exact mechanism or magnitude need not be foreseen (Overseas Tankship (The Wagon Mound No 1) [1961] Appeal Cases (AC) 388 (Privy Council (PC)).
+  Hughes v Lord Advocate [1963] AC 837.
+  Chapman v Hearse [1961] HCA 46.
+  (1961) 106 Commonwealth Law Reports (Commonwealth Law Reports (CLR)) 112).
+  __HD__1__
+  1) Characterise the harm as an Recognised psychiatric injury (RPI) under s 67.
+  2) Confirm it is consequential on another injury (s 67).
+  3) Apply s 74(1)(a)-(b) normalâ€‘fortitude filter (plus known susceptibility) with s 74(2)â€™s circumstances.
+  __HD__2__
+  RPI requirement: ss 67, 74.
+  Statutory filter: s 74(1)-(2).
+  __HD__3__
+  Wrongs Act 1958 (Vic) ss 67, 74 (context: ss 72-73 for pure mental harm).
+  __HD__4__
+  Failing to classify the claim as consequential (s 74) rather than pure (ss 72-73).
+  Ignoring the normal-fortitude filter in s 74(1)(a)-(b) and known susceptibility data.
+  Confusing mere distress with a recognised psychiatric injury (RPI) under s 67.
+  Neglecting s 74(2)'s direction to assess the circumstances, including the initial injury.
+  __HD__5__
+  Consequential psychiatric injury is recoverable when an RPI of that kind was reasonably foreseeable within s 74â€™s framework.
+  mere distress without RPI fails.
+  __HD__0__
+  State the governing test and any operative statutory provisions.
+  Apply issues -> rules -> apply to facts -> conclude.
+  __HD__2__
+  Lead: Tame v New South Wales; Annetts v Australian Stations Pty Ltd [2002] HCA 35; (2002) 211 CLR 317.
+  __HD__3__
+  Primary: Wrongs Act 1958 (Vic) s 48.
+  __HD__4__
+  
+  - Donâ€™t exceed statutory thresholds/caps
+  
+  - Donâ€™t conflate consequential with pure economic loss
+  
+  - Apply coherence checks before extending duties.
+  __HD__5__
+  Tie the analysis back to the pleadings and the available remedies/defences.
+
+why_it_matters: |
+  MLS scope questions turn on whether you run remoteness or the statutory
+   mental-harm screen first. Start by classifying the claim: consequential (s 74) versus
+   pure (ss 72â€“73). Cite s 67 to confirm the harm is a recognised psychiatric illness.
+   Then apply the normal-fortitude filter and the â€œcircumstancesâ€ extension in s 74(2)
+   before finishing with remoteness (kind, not extent). Tame/Annetts and Jaensch help
+   dislodge old UK â€œshockâ€ control mechanisms, while Pusey supports thin-skull reasoning
+   once the kind is foreseeable. Answers that collapse distress with RPI or demand
+   precise mechanism predictions lose marks; sequencing statutory elements with foreseeable-kind
+   analysis earns H1 credit.
+
+mnemonic: "KINDâ€“RPIâ€“FORTITUDE: Kind foreseeable? â†’ Recognised psychiatric illness
+ (s 67) â†’ Normal fortitude / known susceptibility (s 74) â†’ Remoteness respects thin
+ skull."
+diagram: |
+  ```mermaid
+  mindmap
+    root((Consequential Mental Harm))
+    A. Issue
+      - Scope of liability for psychiatric injury
+    B. Rule
+      - RPI under s 67; consequentiality (s 67)
+    C. Application
+      - s 74 normal-fortitude filter; circumstances (s 74(2))
+    D. Limits/Statutes
+      - s 48 Wrongs Act 1958 (Vic)
+    E. Authorities
+      - Tame v New South Wales; Annetts v Australian Stations Pty Ltd [2002] HCA 35
+  ```
+

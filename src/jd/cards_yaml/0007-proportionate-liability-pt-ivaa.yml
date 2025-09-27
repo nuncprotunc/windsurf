@@ -33,113 +33,32 @@ back: |
 
 why_it_matters: |
   Knowing precisely when Pt IVAA engages—and when it does not—drives pleading strategy, settlement sequencing, and exam outcomes. Marks are often lost by treating ACL/Corporations claims as apportionable merely because they sit beside negligence, or by forgetting to plead proportionate liability at all. Correctly isolating the "same damage," naming concurrent wrongdoers, and mapping s 24AJ–24AK effects avoids empty-chair traps and preserves contribution and subsequent action rights.
-
 mnemonic: |
   ACE‑T‑X: Apportionable claim; Concurrent wrongdoers; Exclusions (s 24AM); Timing/plead; Carve‑outs eXcluded.
-
 diagram: |
   ```mermaid
   mindmap
     root((Pt IVAA — Prop. Liability))
-      Issue
-        When does Pt IVAA engage (incl. mixed claims)?
-      Rule
-        s 24AF: apportionable = econ/property loss from failure to take reasonable care
-        s 24AJ: plead early + serve notice; name/describe concurrent wrongdoers
+      A. Issue
+        When does Pt IVAA engage, especially with mixed claims?
+      B. Rule
+        s 24AF: econ/property loss from failure to take reasonable care
+        s 24AJ: plead early, serve notice, identify concurrent wrongdoers
         Carve-outs: s 24AM exclusions; s 24AK settlement bar/limits
-      Apply
-        Map each loss; isolate apportionable slice
-        "Same damage" test; identify CWs; keep empty-chair open
-        Timing: raise in first defence; particulars preserve rights
-      Authorities
-        Hunt & Hunt — “one damage” / scope
-        Selig (no sweep-in of non-apportionable); Bathurst (pleadings isolate loss)
-      Statutes
-        Wrongs Act Pt IVAA: ss 24AF, 24AJ, 24AK, 24AM
-        ACL s 18, s 236; Corps 1041H–I — usually not apportionable
+      C. Apply
+        Map each pleaded loss and isolate apportionable slice
+        Confirm loss fits s 24AF negligence requirement
+        Test for concurrent wrongdoers (Hunt & Hunt guidance)
+      D. Statutory hook
+        Wrongs Act 1958 (Vic) ss 24AF–24AP focus sections
+        Spotlight s 24AJ notice plus s 24AK/24AM consequences
+      E. Authorities
+        Hunt & Hunt (2013) 247 CLR 613
+        ABN Amro (2014) 224 FCR 1; Selig (2015) 255 CLR 661
+        St George Bank [2009] VSCA 245
   ```
-
 tripwires:
-  - Assuming apportionment applies automatically without a timely s 24AJ notice and pleading.
-  - Treating statutory claims (ACL/Corporations) as automatically apportionable instead of testing s 24AF.
-  - Ignoring s 24AK settlement consequences or s 24AM exclusions when advising on strategy.
-  - Collapsing contributory negligence or indemnity rights into Pt IVAA instead of handling them separately.
-
-anchors:
-  cases:
-    - name: Hunt & Hunt Lawyers v Mitchell Morgan Nominees Pty Ltd
-      citation: (2013) 247 CLR 613
-      court: HCA
-      pinpoints:
-        - 638
-        - "[27]"
-      notes: Defines "one damage" and scope of failure to take reasonable care.
-
-    - name: ABN Amro Bank NV v Bathurst Regional Council
-      citation: (2014) 224 FCR 1
-      court: FCA
-      pinpoints:
-        - 58
-        - "[114]"
-      notes: Isolates apportionable loss; role of pleadings.
-
-    - name: Selig v Wealthsure Pty Ltd
-      citation: (2015) 255 CLR 661
-      court: HCA
-      pinpoints:
-        - 673
-        - "[34]"
-      notes: Non-apportionable statutory claims not swept in by joinder.
-
-    - name: St George Bank Ltd v Quinerts Pty Ltd
-      citation: "[2009] VSCA 245"
-      court: VSCA
-      pinpoints: []
-      notes: State CA authority on Pt IVAA application.
-
-  statutes:
-    - name: Wrongs Act 1958 (Vic)
-      provisions:
-        - Pt IVAA
-        - s 24AF
-        - s 24AG
-        - s 24AH
-        - s 24AI
-        - s 24AJ
-        - s 24AK
-        - s 24AM
-        - s 24AP
-      notes: Establishes the framework for proportionate liability in Victoria.
-
-    - name: Competition and Consumer Act 2010 (Cth) sch 2 (ACL)
-      provisions:
-        - s 18
-        - s 236
-      notes: Contains carve-outs for certain statutory claims.
-
-    - name: Corporations Act 2001 (Cth)
-      provisions:
-        - s 1041H
-        - s 1041I
-      notes: Includes financial services provisions with separate liability rules.
-
-reading_level: "Plain English (JD)"
-
-tags:
-  - LAWS50025
-  - Torts
-  - Apportionment
-  - Exam_Fundamentals
-  - MLS_H1
-
-keywords:
-  - proportionate-liability
-  - wrongs-act-pt-ivaa
-  - apportionable-claim
-  - mixed-claims
-  - pleading-strategy
-  - concurrent-wrongdoer
-  - statutory-carve-outs
-  - contribution-bar
-  - settlement-strategy
-  - empty-chair-risk
+- Failing to plead proportionate liability early (s 24AJ).
+- Assuming all claims are apportionable without isolating economic loss (s 24AF).
+- Neglecting to identify concurrent wrongdoers (Hunt & Hunt guidance).
+- Overlooking settlement consequences (s 24AK) and exclusions (s 24AM).

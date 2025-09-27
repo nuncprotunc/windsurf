@@ -4,121 +4,57 @@ back: |
   Separate duty existence from scope so Victorian negligence stays sequenced before breach or causation.
 
   Rule.
-    - Existence turns on foreseeability filtered by salient features and coherence (Sullivan v Moody, Perre, Woolcock).
-    - Graham Barclay Oysters ties public authorities to statutory purpose.
-    - Crimmins, Stuart v Kirkland-Veenstra, and Tame/Annetts show omissions or psychiatric harm demand control or assumed responsibility.
+    - Existence: reasonable foreseeability filtered by salient features and coherence (Sullivan v Moody (2001) 207 CLR 562; Perre v Apand Pty Ltd (1999) 198 CLR 180; Woolcock Street Investments Pty Ltd v CDG Pty Ltd (2004) 216 CLR 515).
+    - Public authorities: duties align with statutory purpose; coherence can negate a duty (Graham Barclay Oysters Pty Ltd v Ryan (2002) 211 CLR 540).
+    - Omissions/psych harm: need control/assumption of responsibility; special gates for NPPH (Crimmins v Stevedoring Industry Finance Committee (1999) 200 CLR 1; Stuart v Kirkland-Veenstra (2009) 237 CLR 215; Tame v New South Wales; Annetts v Australian Stations Pty Ltd (2002) 211 CLR 317).
 
   Application scaffold.
-    (1) Existence: map foreseeability, salient features, and coherence before naming duty.
-    (2) If satisfied, define scope by isolating the risk, actors, and setting.
-    (3) Analyse breach via Wrongs Act 1958 (Vic) s 48, then causation/scope under s 51 with interveners.
+    (1) Existence: map foreseeability → salient features (vulnerability, reliance, indeterminacy) → coherence. Only then state a duty.
+    (2) Scope of duty: isolate the risk, class of persons, and context that the duty responds to.
+    (3) Breach: apply Wrongs Act 1958 (Vic) s 48 (the Shirt calculus).
+    (4) Causation/scope of liability: Wrongs Act 1958 (Vic) s 51 (factual causation; scope/remoteness, interveners).
 
   Authorities map.
-    - Sullivan v Moody — Coherence filter for duty existence.
-    - Perre v Apand — Salient features approach.
-    - Graham Barclay Oysters — Public authority duties.
-    - Crimmins/Stuart v Kirkland-Veenstra — Omissions and control.
+    - Sullivan v Moody (2001) 207 CLR 562 — coherence limit on new duties.
+    - Perre v Apand (1999) 198 CLR 180; Woolcock (2004) 216 CLR 515 — salient features.
+    - Graham Barclay Oysters (2002) 211 CLR 540 — public authorities/statutory purpose.
+    - Crimmins (1999) 200 CLR 1; Stuart (2009) 237 CLR 215; Tame/Annetts (2002) 211 CLR 317 — omissions/psych harm gates.
 
   Statutory hook.
-    - Wrongs Act 1958 (Vic) ss 26, 48, 51, 54.
-    - Pt VBA (damages caps/thresholds).
-    - Pt IVAA (proportionate liability).
-    - Consider ACL s 18 for concurrent claims.
+    - Wrongs Act 1958 (Vic) ss 48, 51.
 
   Tripwires.
-    - Importing Shirt calculus into existence analysis.
-    - Collapsing scope into s 51 causation.
-    - Missing coherence checks for public authorities.
-    - Overlooking psychiatric-harm/omission gates.
-    - Ignoring statutory defences (s 54) or damages caps (Pt VBA).
+    - Importing the Shirt calculus into existence analysis.
+    - Collapsing “scope of duty” into s 51 causation/scope-of-liability.
+    - Skipping coherence checks for public authorities.
+    - Overlooking omissions/psych-harm control or assumption gates.
 
   Conclusion.
-  Sequence: existence → scope → breach → causation → remedy. Show doctrinal discipline and statutory literacy.
+  Sequence: existence → scope → breach → causation → remedy; keep coherence and salient features up front, statutes at the right step.
 
 why_it_matters: |
+  Under exam pressure, separating existence (salient features/coherence) from scope, then sequencing s 48 before s 51, avoids mixing tests and earns roadmap marks.
 
-mnemonic: E-SCOPE (exist→scope→s48→s51→caps→exam)
+mnemonic: E-SCOPE (exist → scope → s 48 → s 51 → remedy)
 
 diagram: |
   ```mermaid
   mindmap
-    root((Duty: existence vs scope))
-      Issue
-        Keep existence distinct from scope
-      Existence
-        Foreseeability + salient features
-        Coherence discipline (Sullivan v Moody)
-        Public authority: statute purpose/control (Crimmins / Graham Barclay)
-      Scope
-        Define the risk embraced by the duty
-        Context & actors (limit the risk)
-        Statutory limits / coherence
-      Application
-        Sequence: existence → scope → s 48 breach
-        Then s 51 causation (don't collapse)
-      Anchors
-        Cases: Sullivan; Perre/Woolcock; Crimmins
-        Statutes: Wrongs Act ss 48, 51; Pt IVAA
-
-tripwires:
-  - "Importing Shirt factors into duty existence (breach lives in s 48)."
-  - "Collapsing scope into causation (s 51) — define the risk the duty embraces first."
-  - "Public-authority drift: extending duty without a statutory-purpose/coherence check (Sullivan; Graham Barclay)."
-  - "Omissions/psychiatric shortcuts: skipping control/assumption/reliance/vulnerability gates (Crimmins/Stuart/Tame–Annetts)."
-
-anchors:
-  cases:
-    - name: Sullivan v Moody
-      citation: (2001) 207 CLR 562
-      court: High Court of Australia
-      pinpoints:
-        - 579
-        - "[55]"
-      notes: Establishes coherence filter for duty existence.
-
-    - name: Perre v Apand Pty Ltd
-      citation: (1999) 198 CLR 180
-      court: High Court of Australia
-      pinpoints:
-        - "197-198"
-        - "[9]"
-        - "[10]"
-      notes: Salient features guide foreseeability and duty existence.
-
-    - name: Strong v Woolworths Ltd
-      citation: (2012) 246 CLR 182
-      court: High Court of Australia
-      pinpoints:
-        - 192
-        - "[23]"
-      notes: Defines scope as the risk embraced by the duty, shaped by statutory purpose.
-
-    - name: Caltex Refineries (Qld) Pty Ltd v Stavar
-      citation: (2009) 75 NSWLR 649
-      court: New South Wales Court of Appeal
-      pinpoints:
-        - "676-677"
-        - "[103]"
-      notes: Provides a salient-features matrix for scope and duty analysis.
- 
-  statutes:
-    - name: Wrongs Act 1958 (Vic)
-      provisions:
-        - s 48
-        - s 51
-        - Pt IVAA
-
-reading_level: Plain English (JD)
-
-tags:
-  - MLS_H1
-  - LAWS50025_Torts
-
-keywords:
-  - scope of liability
-  - salient features
-  - coherence
-  - Victorian negligence
-  - Wrongs Act
-  - proportionate liability
-  - foreseeability
+  root((Duty: existence vs scope))
+    A. Issue
+      Distinguish existence from scope
+      Sequence before breach/causation
+    B. Rule
+      Existence: foreseeability, salient features, coherence
+      Public authority duties
+    C. Application
+      Sequence: existence → scope → s 48 breach
+      Define scope: risk, actors, setting
+    D. Limits/Statutes
+      s 48 WA (Vic)
+      s 51 WA (Vic)
+    E. Authorities
+      Sullivan v Moody
+      Perre v Apand; Woolcock
+      Graham Barclay Oysters
+      Crimmins; Stuart; Tame/Annetts

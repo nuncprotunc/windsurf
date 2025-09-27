@@ -1,0 +1,131 @@
+﻿front: "What are the elements of trespass to land at common law?"
+back: |
+  Issue.
+  Identify the elements of trespass to land and note limited Victorian statutory overlays.
+
+  Rule.
+  - Trespass is actionable per se.
+  - Elements: plaintiffâ€™s possession; direct, voluntary physical act causing interference; no lawful justification. The defendant must intend the act (to step/drive/leave an object), not the unlawfulness of trespass. Actionable per se; mistake usually doesnâ€™t negate liability (may affect remedies or where statute confers power).
+  - Mistake is not a defence.
+  - Direct interference examples: entry; remaining after licence is revoked; projecting objects/particles; placing or leaving chattels.
+
+  Application scaffold.
+  (1) Prove possession (actual or constructive).
+  (2) Pinpoint direct entry, remaining after consent is withdrawn, or causing a physical intrusion.
+  (3) Confirm voluntariness.
+  (4) Test justifications: implied licence limits, necessity, and any statutory police powers.
+  (5) If D pleads statutory authority, check Crimes Act 1958 (Vic) ss 458â€“459 (arrest) and s 462A (force), and Summary Offences Act 1966 (Vic) s 9(1)(d) (wilful trespass)â€”these do not displace civil trespass. (Verify current numbering before an exam.)
+
+  Authorities map.
+  - Kuru v State of NSW (2008) 236 CLR 1, 19 [43] â€” Consent withdrawn equals trespass.
+  - Halliday v Nevill (1984) 155 CLR 1, 7â€“8 â€” Implied licence narrow, revocable.
+  - Plenty v Dillon (1991) 171 CLR 635, 647 â€” Police mistake no defence.
+  - Lincoln Hunt Australia Pty Ltd v Willesee (1986) 4 NSWLR 457 â€” Media entry beyond licence.
+  - Southwark LBC v Williams [1971] Ch 734 â€” Necessity strictly confined (UK persuasive).
+
+  Tripwires.
+  - Treating trespass as ownership protection (it protects possession).
+  - Confusing trespass (direct) with nuisance (indirect/unreasonableness).
+  - Assuming â€œmistakeâ€ or good faith defeats liability.
+  - Forgetting itâ€™s actionable per se (no proof of damage needed).
+
+  Conclusion.
+  If possession, direct interference, voluntariness, and no justification are shown, trespass is made out; address defences and tailor remedies (nominal damages, injunctions, compensatory/mesne profits, continuing trespass, aggravated/exemplary in suitable cases).
+
+why_it_matters: |
+  Trespass recurs in MLS exams. Markers expect quick separation of possession, directness, voluntariness and justification, then concise treatment of defences and remedies. Using Kuru, Halliday and Plenty, with a State CA and a careful UK nuance, shows doctrinal control.
+
+mnemonic: Dâ€“Vâ€“Jâ€“R (Directness, Voluntariness, no Justification, Remedies)
+
+diagram: |
+  ```mermaid
+  mindmap
+    root((Trespass to land))
+      Issue
+        Identify elements
+      Rule
+        Actionable per se
+        Elements
+          Possession
+          Direct act
+          No justification
+      Application
+        Prove possession
+        Pinpoint direct entry
+        Test justifications
+      Statutes
+        s 9(1)(d) Summary Offences Act (Vic)
+        ss 459, 462A Crimes Act (Vic)
+      Authorities
+        Kuru v State of NSW
+        Plenty v Dillon
+        Halliday v Nevill
+  ```
+
+tripwires:
+  - Treating trespass as ownership protection (it protects possession).
+  - Confusing trespass (direct) with nuisance (indirect/unreasonableness).
+  - Assuming â€œmistakeâ€ or good faith defeats liability.
+  - Forgetting itâ€™s actionable per se (no proof of damage needed).
+
+anchors:
+  cases:
+    - name: Kuru v State of NSW
+      citation: (2008) 236 CLR 1
+      court: HCA
+      pinpoints:
+        - 19
+        - "[43]"
+      notes: Consent withdrawn equals trespass.
+
+    - name: Plenty v Dillon
+      citation: (1991) 171 CLR 635
+      court: HCA
+      pinpoints:
+        - 647
+      notes: Police mistake is no defence.
+
+    - name: Halliday v Nevill
+      citation: (1984) 155 CLR 1
+      court: HCA
+      pinpoints:
+        - "7â€“8"
+      notes: Implied licence is narrow and revocable.
+
+    - name: Lincoln Hunt Australia Pty Ltd v Willesee
+      citation: (1986) 4 NSWLR 457
+      court: NSWCA
+      pinpoints: []
+      notes: Media entry beyond licence.
+
+    - name: Southwark LBC v Williams
+      citation: "[1971] Ch 734"
+      court: Ch
+      pinpoints: []
+      notes: Necessity strictly confined; UK persuasive only.
+
+  statutes:
+    - name: Summary Offences Act 1966 (Vic)
+      provisions:
+        - s 9(1)(d)
+      notes: Criminalises remaining on land after direction to leave.
+
+    - name: Crimes Act 1958 (Vic)
+      provisions:
+        - s 459
+        - s 462A
+      notes: Police powers of entry and search.
+
+reading_level: Plain English (JD)
+
+tags:
+  - MLS_H1
+
+keywords:
+  - trespass to land
+  - possession
+  - implied licence
+  - defences
+  - remedies
+  - victoria
+

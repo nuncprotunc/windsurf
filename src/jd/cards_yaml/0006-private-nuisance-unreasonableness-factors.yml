@@ -30,104 +30,35 @@ back: |
 
   Conclusion.
   Weigh the factors, account for any statutory authorisation, and tailor the remedy to proportionality and locality.
-
 why_it_matters: |
-  Articulating the multi-factor balance, tied to EP Act duties, planning context and calibrated remedies, is decisive on MLS nuisance fact patterns; anchoring with Hargrave, Burnie, Munro and a limited UK reference shows doctrinal control.
+  Articulating the multi-factor balance, tied to EP Act duties, planning context and calibrated remedies, is decisive on MLS nuisance fact patterns; Anchoring with Hargrave, Burnie, Munro and a limited UK reference shows doctrinal control.
 
 mnemonic: "SLURDMT: Sensitivity → Locality → Utility → Remedies → Duration → Malice → Type"
 
-diagram: |-
+diagram: |
   ```mermaid
   mindmap
     root((Private nuisance unreasonableness))
-      Issue
+      A. Issue
         Factors & statutory context
-      Rule
-        Locality
-        Duration / frequency
-        Gravity / type of harm
-      Application
+      B. Rule
+        Objective balance of locality and duration
+        Ordinary sensitivity & physical damage weight
+        Utility and malice considerations
+      C. Application
         Confirm standing & interference
-        Factor-by-factor balance
-        Statutory authority & calibrated remedy
-      Authorities
-        Hargrave v Goldman
-        Burnie Port Authority
-      Statute
-        Environment Protection Act 2017 s 25
-        Planning and Environment Act 1987
+        Balance factors against evidence
+        Calibrate remedy with statutory authority
+      D. Limits/Statutes
+        s 25 Environment Protection Act 2017 (Vic)
+        Planning and Environment Act 1987 (Vic) permits
+      E. Authorities
+        Hargrave v Goldman (HCA)
+        Burnie Port Authority v General Jones (HCA)
+        Munro v Southern Dairies (VSC)
   ```
-
 tripwires:
-  - "Conflating private nuisance with trespass (direct interference)."
-  - "Assuming public utility is a defence."
-  - "Treating extraordinary sensitivity as actionable."
-  - "Treating permit/licence compliance as complete defence."
-  - "Seeking blanket injunctions without proportional tailoring."
-
-anchors:
-  cases:
-    - name: Hargrave v Goldman
-      citation: (1963) 110 CLR 40
-      court: HCA
-      pinpoints:
-        - "66–67"
-      notes: Links reasonableness to responsibility for hazards.
-
-    - name: Burnie Port Authority v General Jones
-      citation: (1994) 179 CLR 520
-      court: HCA
-      pinpoints: []
-      notes: Integrates abnormal danger and utility into reasonableness.
-
-    - name: Munro v Southern Dairies Ltd
-      citation: "[1955] VLR 332"
-      court: VSC
-      pinpoints:
-        - 336
-      notes: Shows persistence/duration tipping liability.
-
-    - name: Sturges v Bridgman
-      citation: (1879) 11 Ch D 852
-      court: UK CA
-      pinpoints:
-        - 865
-      notes: Anchors locality; UK persuasive only.
-
-    - name: ACQ Pty Ltd v Cook
-      citation: "[2009] QCA"
-      court: QCA
-      pinpoints: []
-      notes: Illustrates planning context in balancing.
-
-  statutes:
-    - name: Environment Protection Act 2017 (Vic)
-      provisions:
-        - s 25
-
-    - name: Planning and Environment Act 1987 (Vic)
-      provisions: []
-
-    - name: Supreme Court Act 1986 (Vic)
-      provisions: []
-
-reading_level: "Plain English (JD)"
-
-tags:
-  - LAWS50025
-  - Torts
-  - Nuisance
-  - Exam_Fundamentals
-  - MLS_H1
-
-keywords:
-  - private-nuisance
-  - unreasonableness-factors
-  - locality
-  - sensitivity
-  - duration-frequency
-  - utility-vs-harm
-  - malice
-  - statutory-authority
-  - nuisance-remedies
-  - planning-permits
+- Conflating private nuisance with trespass.
+- Assuming public utility is a defence.
+- Treating extraordinary sensitivity as actionable.
+- Seeking blanket injunctions without proportional tailoring.

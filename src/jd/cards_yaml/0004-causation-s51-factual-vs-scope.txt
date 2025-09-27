@@ -1,0 +1,48 @@
+﻿front: "Causation (Vic): running factual causation and scope under ss 51â€“52"
+back: |
+  Issue.
+  Has D's negligence factually caused P's harm, and should responsibility extend to that harmâ€”applying Wrongs Act 1958 (Vic) ss 51â€“52 without conflating stages?
+
+  Rule.
+    - Factual causation (s 51(a)) asks whether negligence was a necessary condition; apply but-for with robust inference; possibilities do not suffice.
+    - Section 51(2) is exceptionalâ€”use only where but-for proof fails yet responsibility remains appropriate.
+    - After-the-event counterfactuals attract strict scrutiny: s 51â€“(4).
+    - Scope of liability (s 52) then asks whether it is appropriate to extend responsibility to the harm; focus on the risk the duty addressed and intervening conduct.
+
+  Application scaffold.
+    (1) Define the precise harm/mechanism.
+    (2) Prove but-for by evidence/inference (Strong); exclude speculation (Amaca).
+    (3) Only if proof fails, justify s 51.
+    (4) For s 52, identify that risk and test normative limits (Wallace), including third-party acts/multiple causes (Seltsam).
+
+  Authorities map.
+    - Strong v Woolworths Ltd (2012) 246 CLR 182, [5]â€“[9] â€” Proof by inference and but-for test.
+    - Amaca Pty Ltd v Booth (2011) 246 CLR 36, [49] â€” Excludes speculation in causation.
+    - Wallace v Kam (2013) 250 CLR 375 â€” Normative limits on scope of liability.
+  Statutory hook.
+    - Wrongs Act 1958 (Vic) ss 51(1)(a), 51(2), 51(3)â€“(4); s 52.
+    - Link but-for to s 51(a), exceptions to s 51, and normative scope to s 52.
+
+  Tripwires.
+    - Using s 51 as a shortcut.
+    - Collapsing factual causation and scope.
+    - Ignoring s 51â€“(4) on counterfactuals.
+    - Assuming third-party crime within scope.
+
+  Conclusion.
+  Decide s 51(a) (or justified s 51) first, then apply s 52 to confine responsibility to the risk addressed.
+
+why_it_matters: |
+  Sequencing s 51(a) but-for â†’ s 51 exceptional â†’ s 52 scope avoids conflation; Strong/Amaca model inference versus speculation, Wallace frames normative limits, and Seltsam shows handling multiple causes.
+
+mnemonic: "B-E-S: But-for (s 51(a)) â†’ Exceptional? (s 51) â†’ Scope (s 52)"
+diagram: |
+  ```mermaid
+  mindmap
+  root((Causation (Vic)))
+
+    A. Issue
+      D's negligence causation
+    B. Rule
+      Factual causation (s 51(a))
+      s 51(2) exceptional use

@@ -1,0 +1,163 @@
+﻿front: "Shopkeeper/police detention: classify battery, assault, false imprisonment, authority and remedies?"
+back: |
+  Issue.
+  In shopkeeper/police detention, which trespass torts arise (battery, assault, false imprisonment) and is restraint justified by statute or consent?
+
+  Rule.
+  - False imprisonment: total restraint of freedom of movement; no reasonable means of egress. Once restraint is shown, onus shifts to D to justify lawfulness (e.g., statutory power, consent). Bird v Jones (1845) 7 QB 742 â€” partial obstruction â‰  false imprisonment. Murray v Ministry of Defence [1988] 1 WLR 692 (HL, UK persuasive) and Myer Stores Ltd v Soo (1991) 2 VR 597 (Vic CA) â€” shopkeeper detention guidance.
+  - Battery: direct, intentional contact; no â€œhostilityâ€ requirement; contact can be through clothing/objects. Williams v Milotin (1957) 97 CLR 465.
+  - Assault: reasonable apprehension of imminent unlawful contact; no contact required.
+  - Entry onto land usually rests on an implied licence; exceeding it vitiates authority: Halliday v Nevill (1984) 155 CLR 1, 10â€“11.
+  - Aggravated and exemplary damages may be awarded for high-handed trespasses: Fontin v Katapodis (1962) 108 CLR 177, 183â€“184; New South Wales v Ibbett (2006) 229 CLR 638, 647 [28].
+  - Consent and necessity remain complete defences if established.
+
+  Application scaffold.
+  (1) Classify the torts: contact (battery), apprehension (assault), total restraint (false imprisonment).
+  (2) Identify the actor (shopkeeper, security, police) and their purpose.
+  (3) Demand proof of statutory preconditions and proportional force.
+  (4) Test entry authority and implied-licence limits.
+  (5) Shopkeeper/citizen arrest (practical test): (a) reasonable grounds to suspect an indictable offence/theft; (b) purpose = investigate/hand to police; (c) duration no longer than reasonably necessary; (d) force reasonable/proportionate; (e) call police without undue delay (Myer Stores v Soo supports these considerations).
+  (6) If detention is claimed lawful, test Crimes Act 1958 (Vic) ss 458â€“459 (arrest without warrant) and s 462A (force); for federal police, Crimes Act 1914 (Cth) ss 3W, 3ZC. (Verify current numbering before an exam.)
+  (7) Remedies: compensatory damages; consider aggravated and exemplary awards.
+
+  Authorities map.
+  - Williams v Milotin â€” Battery definition.
+  - Bird v Jones (UK persuasive) â€” partial obstruction â‰  total restraint.
+  - Murray v Ministry of Defence (HL, UK persuasive); Myer Stores v Soo (Vic CA) â€” False imprisonment onus/knowledge and shopkeeper detention.
+  - Halliday v Nevill â€” Entry and implied licence guardrails.
+  - Fontin v Katapodis; New South Wales v Ibbett â€” Aggravated/exemplary damages.
+
+  Statutory hook.
+  - Crimes Act 1958 (Vic) ss 458â€“459, 462A.
+  - Crimes Act 1914 (Cth) ss 3W, 3ZC.
+
+  Tripwires.
+  - Treating partial obstruction as false imprisonment.
+  - Requiring hostility for battery.
+  - Ignoring the onus shift once restraint is proved.
+  - Equating suspicion with reasonable grounds for detention.
+
+  Conclusion.
+  Classify the trespasses, require statutory justification, scrutinise force and entry, and if limits are exceeded award compensatory plus aggravated and exemplary damages.
+
+why_it_matters: |
+  Shopkeeper/police detention problems are MLS staples. Examiners expect you to classify each trespass, interrogate statutory authority, note the onus shifting for false imprisonment, and structure remedies (including aggravated/exemplary damages) with precise pinpoints.
+
+mnemonic: "B-A-FI-AR: Battery â†’ Assault â†’ False imprisonment â†’ Authority/Remedies"
+
+diagram: |
+  ```mermaid
+  mindmap
+    root((Detention torts))
+      A. Issue
+        Trespass torts: battery, assault, false imprisonment
+      B. Rule
+        False imprisonment: total restraint; onus on D
+        Battery: direct contact; no hostility element
+        Assault: apprehension of imminent contact
+      C. Application
+        Classify actors and purpose
+        Prove statutory authority; test proportional force
+        Record detention timeline and onus shift
+      D. Statutes
+        Crimes Act 1958 (Vic) ss 458â€“459, 462A
+        Crimes Act 1914 (Cth) ss 3W, 3ZC
+      E. Authorities
+        Williams v Milotin
+        Bird v Jones (persuasive)
+        Myer Stores v Soo
+  ```
+  
+tripwires:
+  - Treating partial obstruction as false imprisonment.
+  - Requiring hostility for battery.
+  - Ignoring the onus shift once restraint is proved.
+  - Equating suspicion with reasonable grounds for detention.
+
+anchors:
+  cases:
+    - name: Williams v Milotin
+      citation: (1957) 97 CLR 465
+      court: HCA
+      pinpoints:
+        - 474
+      notes: Defines battery as direct, intentional contact without lawful justification.
+
+    - name: Bird v Jones
+      citation: (1845) 7 QB 742
+      court: UK QB (persuasive)
+      pinpoints: []
+      notes: Partial obstruction is not false imprisonment.
+
+    - name: Murray v Ministry of Defence
+      citation: "[1988] 1 WLR 692"
+      court: House of Lords (UK persuasive)
+      pinpoints: []
+      notes: Onus shifts to defendant once false imprisonment is proved; persuasive only.
+
+    - name: Myer Stores Ltd v Soo
+      citation: "[1991] 2 VR 597"
+      court: Supreme Court of Victoria (Vic CA)
+      pinpoints:
+        - 611
+      notes: Shopkeeper detention guidance; onus to justify restraint.
+
+    - name: Halliday v Nevill
+      citation: (1984) 155 CLR 1
+      court: High Court of Australia
+      pinpoints:
+        - 10
+        - 11
+      notes: Implied licence limits on entry.
+
+    - name: Fontin v Katapodis
+      citation: (1962) 108 CLR 177
+      court: High Court of Australia
+      pinpoints:
+        - 183
+        - 184
+      notes: Aggravated damages for high-handed trespass.
+
+    - name: New South Wales v Ibbett
+      citation: (2006) 229 CLR 638
+      court: High Court of Australia
+      pinpoints:
+        - 647
+        - "[28]"
+      notes: Exemplary damages for aggravated trespass.
+
+  statutes:
+    - name: Crimes Act 1958 (Vic)
+      provisions:
+        - s 458
+        - s 459
+        - s 462A
+      notes: Arrest/force powers; civil trespass remains.
+
+    - name: Crimes Act 1914 (Cth)
+      provisions:
+        - s 3W
+        - s 3ZC
+      notes: Federal arrest powers; persuasive for Victorian problems.
+
+reading_level: "Plain English (JD)"
+
+tags:
+  - LAWS50025_Torts
+  - Torts
+  - Trespass
+  - Exam_Fundamentals
+  - MLS_H1
+
+keywords:
+  - battery
+  - assault
+  - false-imprisonment
+  - lawful-authority
+  - reasonable-grounds
+  - implied-licence
+  - aggravated-damages
+  - exemplary-damages
+  - nominal-damages
+  - police-powers
+

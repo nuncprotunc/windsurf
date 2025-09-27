@@ -1,0 +1,65 @@
+﻿front: "Under Pt IVAA of the Wrongs Act 1958 (Vic), when (and how) is proportionate liability engaged, especially with mixed claims and timing/pleading triggers?"
+back: |
+  Issue.
+  When does Pt IVAA (proportionate liability) apply to apportion economic loss or property damage in Victoria, and how do mixed claims and pleading/timing mechanics affect engagement?
+
+  Rule.
+  Pt IVAA applies only to an "apportionable claim" for economic loss or property damage arising from a failure to take reasonable care (Wrongs Act 1958 (Vic) s 24AF). A defendant who wants to rely on proportionate liability must comply with s 24AJ: plead early, serve the statutory notice, and identify (by name or description) each alleged concurrent wrongdoer, with court rules and practice notes controlling timing and detail. Mixed claims require isolating the apportionable portion of loss before apportioning; only negligence-based economic/property loss that satisfies s 24AF is within scope, so ACL/Corporations claims are not automatically apportionable. Settlements enliven s 24AK (bar on contribution/subsequent actions against a settling wrongdoer) and s 24AM exclusions capture intentional/fraudulent conduct, personal injury, and specified regimes â€” flag these before pleading.
+
+  Application scaffold.
+  (1) Identify every pleaded loss and tie it to its cause of action.
+  (2) Confirm the loss (or separable part) is economic/property loss caused by a failure to take reasonable care (s 24AF).
+  (3) Test whether the "same damage" is caused by multiple wrongdoers (Hunt & Hunt guidance).
+  (4) Serve the s 24AJ notice and plead apportionment promptly, naming or describing other wrongdoers and particularising the divisible loss.
+  (5) Address s 24AK settlement consequences and s 24AM exclusions to preserve contribution/subsequent action rights.
+  (6) Mixed-claim example: negligent valuation plus ACL misleading conduct â€” only the negligence-based economic loss may be apportionable; statutory damages remain several (Selig).
+  (7) Practical exam tip: for defendants, raise proportionate liability in the first defence to avoid waiver and always name or sufficiently describe absent wrongdoers to keep empty-chair arguments alive.
+
+  Authorities map.
+  - Hunt & Hunt Lawyers v Mitchell Morgan Nominees Pty Ltd (2013) 247 CLR 613, 638 [27] â€” Defines "one damage" and scope of failure to take reasonable care.
+  - ABN Amro Bank NV v Bathurst Regional Council (2014) 224 FCR 1, 58 [114] â€” Isolates apportionable loss; importance of pleadings.
+  - Selig v Wealthsure Pty Ltd (2015) 255 CLR 661, 673 [34] â€” Non-apportionable statutory claims are not swept in by joinder.
+  - St George Bank Ltd v Quinerts Pty Ltd [2009] VSCA 245 â€” Victorian authority on Pt IVAA engagement.
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) Pt IVAA ss 24AFâ€“24AP (spotlight: s 24AF definitional threshold; s 24AJ plead/notice; s 24AK settlement consequences; s 24AM exclusions).
+  - ACL ss 18, 236 and Corporations Act ss 1041Hâ€“1041I may travel alongside but only become apportionable if the pleaded loss falls within s 24AF (failure to take reasonable care).
+
+  Tripwires.
+  Refer to the dedicated `tripwires` list below for specific pitfalls that derail Pt IVAA analysis.
+
+  Conclusion.
+  Engage Pt IVAA only where the pleaded loss is economic/property loss from a failure to take reasonable care, the defence is pleaded with a s 24AJ notice, concurrent wrongdoers are identified, and settlement/exclusion consequences under ss 24AKâ€“24AM are managed.
+
+why_it_matters: |
+  Knowing precisely when Pt IVAA engagesâ€”and when it does notâ€”drives pleading strategy, settlement sequencing, and exam outcomes. Marks are often lost by treating ACL/Corporations claims as apportionable merely because they sit beside negligence, or by forgetting to plead proportionate liability at all. Correctly isolating the "same damage," naming concurrent wrongdoers, and mapping s 24AJâ€“24AK effects avoids empty-chair traps and preserves contribution and subsequent action rights.
+mnemonic: |
+  ACEâ€‘Tâ€‘X: Apportionable claim; Concurrent wrongdoers; Exclusions (s 24AM); Timing/plead; Carveâ€‘outs eXcluded.
+diagram: |
+  ```mermaid
+  mindmap
+    root((Pt IVAA â€” Prop. Liability))
+      A. Issue
+        When does Pt IVAA engage, especially with mixed claims?
+      B. Rule
+        s 24AF: econ/property loss from failure to take reasonable care
+        s 24AJ: plead early, serve notice, identify concurrent wrongdoers
+        Carve-outs: s 24AM exclusions; s 24AK settlement bar/limits
+      C. Apply
+        Map each pleaded loss and isolate apportionable slice
+        Confirm loss fits s 24AF negligence requirement
+        Test for concurrent wrongdoers (Hunt & Hunt guidance)
+      D. Statutory hook
+        Wrongs Act 1958 (Vic) ss 24AFâ€“24AP focus sections
+        Spotlight s 24AJ notice plus s 24AK/24AM consequences
+      E. Authorities
+        Hunt & Hunt (2013) 247 CLR 613
+        ABN Amro (2014) 224 FCR 1; Selig (2015) 255 CLR 661
+        St George Bank [2009] VSCA 245
+  ```
+tripwires:
+- Failing to plead proportionate liability early (s 24AJ).
+- Assuming all claims are apportionable without isolating economic loss (s 24AF).
+- Neglecting to identify concurrent wrongdoers (Hunt & Hunt guidance).
+- Overlooking settlement consequences (s 24AK) and exclusions (s 24AM).
+

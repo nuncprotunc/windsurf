@@ -31,7 +31,6 @@ back: |
   - Equating awareness with volenti without proof of free acceptance of the legal risk.
   - Skipping onus/reasonableness analysis on failure-to-warn disputes.
   - Ignoring intoxication presumptions or recreational waivers where pleaded.
-  - Apportioning without reasons on culpability and causal potency.
 
   Conclusion.
   Only a proved volenti or non-actionable inherent risk defeats liability; otherwise, damages are reduced on a just-and-equitable basis with statutory modifiers applied.
@@ -40,99 +39,25 @@ why_it_matters: |
   Victorian exams reward a disciplined defence-first roadmap: test volenti and statutory risk rules before turning to principled apportionment. Clear reasons on culpability and causal potency, tied to statutory overlays and any waivers, signal precise command of defences and damages.
 
 mnemonic: BAR → VOL → ONUS → CN → %
-
-diagram: |-
+diagram: |
   ```mermaid
   mindmap
-    root((Defences (Vic)))
-      Volenti
-        Free, voluntary acceptance of legal risk
-      Obvious / inherent risk
-        Classify statutory risk
-        Obvious: failure-to-warn limited
-        Inherent: not avoidable by care
-      Contributory negligence
-        Culpability vs causal potency
-        Justify percentage (can be high)
-        Intoxication presumptions
-      Authorities
+  root((Defences (Vic)))
+      A. Issue
+        Volenti, obvious/inherent risk, contributory negligence
+      B. Rule
+        Volenti: proof of acceptance
+        Statutory risk provisions: duties, warnings
+        Contributory negligence: reduce damages
+      C. Application
+        Identify defences early
+        Prove informed acceptance for volenti
+        Classify risks, consider warnings
+      D. Limits/Statutes
+        s 26 WA (Vic)
+        Pt X WA (Vic)
+      E. Authorities
         Rootes v Shelton
         Podrebersek v AIS
-      Statutes
-        Wrongs Act Pt X; s 14G
-        s 26 CN; CCA s 139A
+        Joslyn v Berryman
   ```
-tripwires:
-  - Treating “obvious risk” as an automatic duty negation without analysing scope and context.
-  - Equating awareness with volenti without proof of free acceptance of the legal risk.
-  - Skipping onus/reasonableness analysis on failure-to-warn disputes.
-  - Ignoring intoxication presumptions or recreational waivers where pleaded.
-  - Apportioning without reasons on culpability and causal potency.
-
-anchors:
-  cases:
-    - name: Rootes v Shelton
-      citation: (1967) 116 CLR 383
-      court: HCA
-      pinpoints:
-        - 385
-        - 386
-      notes: Volenti requires free and voluntary acceptance of risk, not just awareness.
-    
-    - name: Podrebersek v Australian Iron & Steel Pty Ltd
-      citation: (1985) 59 ALJR 492
-      court: HCA
-      pinpoints:
-        - 494
-        - 495
-      notes: Established method for apportioning contributory negligence based on culpability and causal potency.
-    
-    - name: Joslyn v Berryman
-      citation: "[2003] HCA 34; 214 CLR 552"
-      court: HCA
-      pinpoints:
-        - "[36]"
-        - "[38]"
-      notes: Addressed intoxication presumptions and contributory negligence.
-    
-    - name: Cole v South Tweed Heads Rugby League Football Club Ltd
-      citation: (2004) 217 CLR 469
-      court: HCA
-      pinpoints:
-        - "[13]"
-        - "[18]"
-      notes: Examined alcohol, scope of duty, and warnings in recreational settings.
-    
-    - name: Dwyer v Calco Timbers Pty Ltd
-      citation: "[2008] VSCA 260"
-      court: VSCA
-      pinpoints:
-        - "[1]"
-        - "[3]"
-      notes: Set requirements for reasoned apportionment percentages in Victoria.
-  notes: >-
-    All anchors are cited in the back. Mix includes ≥2 High Court of Australia cases and one Victorian Court of Appeal authority; no UK/Privy Council authorities. Statutory content is integrated in the back but statutes are omitted from anchors to avoid unverifiable pinpoints.
-
-reading_level: "Plain English (JD)"
-
-tags:
-  - LAWS50025
-  - Torts
-  - Defences
-  - Negligence
-  - Wrongs_Act_Vic
-  - Exam_Fundamentals
-  - MLS_H1
-
-keywords:
-  - volenti
-  - inherent-risk
-  - obvious-risk
-  - contributory-negligence
-  - apportionment
-  - culpability-potency
-  - intoxication-s14G
-  - warning-onus
-  - recreational-waiver
-  - claim-defeating-cn
-

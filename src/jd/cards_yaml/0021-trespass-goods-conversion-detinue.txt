@@ -1,0 +1,106 @@
+﻿front: "How do you classify trespass, conversion, and detinue remedies for goods?"
+back: |
+  Issue.
+  How should a Victorian court classify interference with goods as trespass, conversion, or detinue, and what remedial consequences follow for the plaintiff?
+
+  Rule.
+  Trespass to goods protects possession against direct interference and is actionable per se, supporting nominal damages without proof of loss (Hutchins v Maughan [1947] VLR 131, 132â€“133). Conversion requires deliberate or negligent dominion inconsistent with the immediate right to possession, fixing damages at value at conversion (Penfolds Wines Pty Ltd v Elliott [1946] HCA 46; (1946) 74 CLR 204, 228â€“230). Detinue responds to continued wrongful detention after demand and refusal, yielding return or judgment value assessed at trial plus detention damages (General Credits (Finance) Ltd v Stibbard (1989) 18 NSWLR 555, 561â€“562 (NSWCA)).
+
+  Application scaffold.
+  (1) Title to sue: prove actual possession or immediate right; address bailor/bailee standing and exclude jus tertii defences. (2) Characterise the interference: direct, forcible contact (trespass); dominion or disposition inconsistent with title (conversion); continuing detention after unequivocal demand (detinue). (3) Quantify relief: nominal/compensatory damages for trespass; market value at conversion plus consequential loss for conversion; specific restitution or judgment value at trial with detention damages for detinue. (4) Test statutory overlays (Wrongs Act 1958 (Vic) s 48, Pt VBA caps) and equitable defences.
+
+  Authorities map.
+  - Hutchins v Maughan [1947] VLR 131 â€” trespass to goods is actionable per se.
+  - Penfolds Wines Pty Ltd v Elliott [1946] HCA 46; (1946) 74 CLR 204 â€” dominion defining conversion.
+  - Bunnings Group Ltd v CHEP Australia Ltd [2011] NSWCA 342, [124] â€” demand/refusal indicators for conversion/detinue.
+  - General Credits (Finance) Ltd v Stibbard (1989) 18 NSWLR 555, 561â€“562 (NSWCA) â€” valuation timing in detinue.
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) s 48 â€” care and causation filters where personal injury loss is pleaded.
+  - Wrongs Act 1958 (Vic) Pt VBA caps and thresholds â€” adjust damages when applicable.
+
+  Tripwires.
+  Guard against conflating tort labels, mishandling jus tertii, overlooking possession, or mis-timing detinue valuation as detailed below.
+
+  Conclusion.
+  Classify the tort by possession, dominion, and demand/refusal, deliver the matching remedy (trespass nominal or corrective damages; conversion value at conversion; detinue return or judgment value with detention damages), and confirm statutory limits are satisfied.
+
+why_it_matters: |
+  MLS exam problems often bundle multiple interferences with goods. Sequencing title, characterisation, and remedy prevents mixing trespass with conversion, keeps the jus tertii defence in its lane, and protects marks on valuation timing for detinue.
+
+mnemonic: TITLE-DOMINION-DEMAND-VALUE
+diagram: |
+  ```mermaid
+  mindmap
+    root((Interference with goods))
+      A. Issue
+        Identify applicable tort
+      B. Rule
+        Trespass protects possession
+        Conversion = dominion
+        Detinue = demand/refusal
+      C. Application
+        Title to sue analysis
+        Characterise interference
+        Select remedy pathway
+      D. Limits/Statutes
+        Wrongs Act 1958 (Vic) s 48
+        Wrongs Act Pt VBA caps
+      E. Authorities
+        Hutchins v Maughan [1947] VLR 131
+        Penfolds Wines v Elliott (1946) 74 CLR 204
+        Bunnings Group v CHEP [2011] NSWCA 342
+  ```
+tripwires:
+- Don't confuse trespass with conversion.
+- Avoid misapplying the jus tertii rule.
+- Don't overlook the need for actual possession.
+- Ensure correct valuation timing for detinue.
+anchors:
+  cases:
+    - name: Hutchins v Maughan
+      citation: [1947] VLR 131
+      court: VSC
+      pinpoints:
+        - "132â€“133"
+      notes: Trespass to goods actionable per se with nominal damages.
+    - name: Penfolds Wines Pty Ltd v Elliott
+      citation: [1946] HCA 46; (1946) 74 CLR 204
+      court: HCA
+      pinpoints:
+        - "228â€“230"
+      notes: Dominion inconsistent with title defines conversion.
+    - name: Bunnings Group Ltd v CHEP Australia Ltd
+      citation: [2011] NSWCA 342
+      court: NSWCA
+      pinpoints:
+        - "[124]"
+      notes: Demand/refusal evidence for conversion or detinue.
+    - name: General Credits (Finance) Ltd v Stibbard
+      citation: (1989) 18 NSWLR 555
+      court: NSWCA
+      pinpoints:
+        - "561â€“562"
+      notes: Judgment-date valuation in detinue.
+  statutes:
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - s 48
+        - Pt VBA
+      notes: Standard of care and damages caps affecting interference claims with personal injury components.
+  notes: []
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+- LAWS50025_Torts
+- Exam_Fundamentals
+keywords:
+- trespass to goods
+- conversion
+- detinue
+- possession
+- dominion
+- demand refusal
+- valuation date
+- jus tertii
+

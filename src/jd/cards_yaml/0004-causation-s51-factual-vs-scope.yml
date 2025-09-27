@@ -19,8 +19,6 @@ back: |
     - Strong v Woolworths Ltd (2012) 246 CLR 182, [5]–[9] — Proof by inference and but-for test.
     - Amaca Pty Ltd v Booth (2011) 246 CLR 36, [49] — Excludes speculation in causation.
     - Wallace v Kam (2013) 250 CLR 375 — Normative limits on scope of liability.
-    - Seltsam Pty Ltd v McGuiness (2000) 49 NSWLR 262 — Multi-cause inference and scope limits.
-
   Statutory hook.
     - Wrongs Act 1958 (Vic) ss 51(1)(a), 51(2), 51(3)–(4); s 52.
     - Link but-for to s 51(a), exceptions to s 51, and normative scope to s 52.
@@ -30,7 +28,6 @@ back: |
     - Collapsing factual causation and scope.
     - Ignoring s 51–(4) on counterfactuals.
     - Assuming third-party crime within scope.
-    - Treating loss of chance as causation.
 
   Conclusion.
   Decide s 51(a) (or justified s 51) first, then apply s 52 to confine responsibility to the risk addressed.
@@ -39,85 +36,13 @@ why_it_matters: |
   Sequencing s 51(a) but-for → s 51 exceptional → s 52 scope avoids conflation; Strong/Amaca model inference versus speculation, Wallace frames normative limits, and Seltsam shows handling multiple causes.
 
 mnemonic: "B-E-S: But-for (s 51(a)) → Exceptional? (s 51) → Scope (s 52)"
-
-diagram: |-
+diagram: |
   ```mermaid
   mindmap
-    root((Causation Analysis))
-      Legal Test
-        s 51 exceptional
-      Case Law
-        Strong v Woolworths
-        Amaca v Booth
-        Seltsam v McGuiness
-      Application
-        Define harm
-        Test s 52 scope
-        Prove but-for
-      Statute
-        Wrongs Act s 51
-        Wrongs Act s 52
-      Core Principle
-        Sequence s 51(a) → s 51 → s52
-        Robust inference ≠ speculation
-  ```
+  root((Causation (Vic)))
 
-tripwires:
-  - "Using s 51 as a shortcut."
-  - "Collapsing factual causation and scope."
-  - "Ignoring s 51–(4) on counterfactuals."
-  - "Treating loss of chance as causation."
-
-anchors:
-  cases:
-    - name: Strong v Woolworths Ltd
-      citation: (2012) 246 CLR 182
-      court: High Court of Australia
-      pinpoints:
-        - "[5]"
-        - "[9]"
-      notes: "Circumstantial proof of factual causation; cite '[5]'–'[9]' for s 51(a)."
-
-    - name: Amaca Pty Ltd v Booth
-      citation: (2011) 246 CLR 36
-      court: High Court of Australia
-      pinpoints:
-        - "[49]"
-      notes: "Rejects speculative causation; '[49]' is the robust inference checkpoint."
-
-    - name: Wallace v Kam
-      citation: (2013) 250 CLR 375
-      court: High Court of Australia
-      pinpoints:
-        - "[16]"
-        - "[18]"
-      notes: "'[16]'–'[18]' delineate s 52 scope limits once factual causation is in."
-
-    - name: Seltsam Pty Ltd v McGuiness
-      citation: (2000) 49 NSWLR 262
-      court: New South Wales Court of Appeal
-      pinpoints:
-        - "[300]"
-      notes: "'[300]' supports multi-cause inference alongside Strong."
-
-  statutes:
-    - name: Wrongs Act 1958 (Vic)
-      provisions:
-        - s 51(a)
-        - s 51
-        - s 51
-        - s 51
-        - s 52
-      notes: "Maps s 51(a)/(2)/(3)-(4) to factual causation steps and s 52 to scope."
-
-reading_level: "Plain English (JD)"
-
-tags:
-  - MLS_H1
-
-keywords:
-  - torts
-  - causation
-  - scope of liability
-  - Wrongs Act
-  - proof by inference
+    A. Issue
+      D's negligence causation
+    B. Rule
+      Factual causation (s 51(a))
+      s 51(2) exceptional use

@@ -1,0 +1,70 @@
+﻿front: "Breach (Vic): how to run Wrongs Act s 48 with the Shirt calculus under exam pressure?"
+back: |
+  Issue.
+  Did the defendant breach the Victorian standard by failing to take reasonable precautions against a not-insignificant risk under Wrongs Act 1958 (Vic) s 48?
+
+  Rule.
+  Wrongs Act 1958 (Vic) s 48(1)â€“(2) requires:
+    - Foreseeability of a risk that is "not insignificant" (excluding far-fetched or fanciful risks);
+    - A reasonable person would have taken precautions after weighing:
+      (a) probability of harm if care not taken;
+      (b) likely seriousness of harm;
+      (c) burden, cost and practicality of precautions;
+      (d) social utility of the activity creating the risk.
+
+  The High Court in Wyong Shire Council v Shirt (1980) 146 CLR 40 established the balancing method and forbade hindsight. The risk must be precisely characterised and assessed prospectively, time-sliced to the information reasonably available when the conduct occurred (Tapp v Australian Bushmen's Campdraft & Rodeo Association Ltd [2022] HCA 11). Risk characterisation must avoid distortion (Roads and Traffic Authority of NSW v Dederer (2007) 234 CLR 330; Vairy v Wyong Shire Council (2005) 223 CLR 422). The Victorian Court of Appeal in Dwyer v Calco Timbers Pty Ltd [2008] VSCA 260 applies this statutory breach framework in Victoria.
+
+  Application scaffold.
+  (1) Define the specific risk at the correct level of generality.
+  (2) Establish foreseeability and that the risk was "not insignificant".
+  (3) Identify concrete precautions and weigh each s 48(2) factor (cost, time, practicality).
+  (4) Explain why a prudent person would or would not have adopted those precautions.
+  (5) Address statutory qualifiers: s 49 (exclude hindsight), ss 53â€“55 (obvious/inherent risk), s 56 (professionals).
+  (6) Conclude on breach.
+
+  Authorities map.
+    - Wyong Shire Council v Shirt (1980) 146 CLR 40.
+    - Tapp v Australian Bushmen's Campdraft & Rodeo Association Ltd [2022] HCA 11.
+    - Roads and Traffic Authority of NSW v Dederer (2007) 234 CLR 330.
+    - Vairy v Wyong Shire Council (2005) 223 CLR 422.
+
+  Statutory hook.
+    - Wrongs Act 1958 (Vic) ss 48, 49, 53, 54, 55, 56.
+
+  Tripwires.
+  - Assuming foreseeability alone suffices without proving "not insignificant" risk.
+  - Mischaracterising the risk at an incorrect level of generality.
+  - Applying hindsight in breach analysis contrary to s 49.
+  - Neglecting cost or social utility in the s 48(2) balancing exercise.
+
+  Conclusion.
+  Breach arises only if, prospectively, a prudent person would have adopted proportionate, practical precautions when s 48(2) factors are balanced and no statutory qualifier displaces that result.
+
+why_it_matters: |
+  Melbourne Law School exams reward answers that lead with s 48(1)â€“(2), time-slice the Shirt calculus, and then check statutory qualifiers. This approach keeps breach analysis distinct from duty and causation and anchors conclusions to evidence, costs, and practicality.
+
+mnemonic: |
+  RISK â†’ F/NIS â†’ CALC (aâ€“d) â†’ QUALIFIERS â†’ CONCLUDE
+diagram: |
+  ```mermaid
+  mindmap
+  root((Breach: s 48 + Shirt))
+    A. Issue
+      Specific risk (not insignificant)
+    B. Rule
+      s 48(1)â€“(2) governs breach
+      Shirt calculus (reasonable precautions)
+      Prospective, time-sliced; no hindsight (s 49)
+    C. Application
+      Weigh (a) probability â€¢ (b) seriousness â€¢ (c) burden/cost â€¢ (d) social utility
+      Specify practicable precautions
+      Apply qualifiers: obvious/inherent/professional (ss 53â€“56)
+    D. Authorities
+      Wyong v Shirt
+      Tapp; Dederer/Vairy
+    E. Statute
+      s 48 Wrongs Act 1958 (Vic)
+      s 49 Wrongs Act 1958 (Vic); ss 53â€“56
+      s 54 Wrongs Act 1958 (Vic); s 55 Wrongs Act 1958 (Vic)
+  ```
+

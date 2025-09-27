@@ -1,0 +1,61 @@
+﻿front: "How do courts distinguish the existence of a duty of care from its scope, and how should you apply that distinction in a Victorian negligence problem?"
+back: |
+  Issue.
+  Separate duty existence from scope so Victorian negligence stays sequenced before breach or causation.
+
+  Rule.
+    - Existence: reasonable foreseeability filtered by salient features and coherence (Sullivan v Moody (2001) 207 CLR 562; Perre v Apand Pty Ltd (1999) 198 CLR 180; Woolcock Street Investments Pty Ltd v CDG Pty Ltd (2004) 216 CLR 515).
+    - Public authorities: duties align with statutory purpose; coherence can negate a duty (Graham Barclay Oysters Pty Ltd v Ryan (2002) 211 CLR 540).
+    - Omissions/psych harm: need control/assumption of responsibility; special gates for NPPH (Crimmins v Stevedoring Industry Finance Committee (1999) 200 CLR 1; Stuart v Kirkland-Veenstra (2009) 237 CLR 215; Tame v New South Wales; Annetts v Australian Stations Pty Ltd (2002) 211 CLR 317).
+
+  Application scaffold.
+    (1) Existence: map foreseeability â†’ salient features (vulnerability, reliance, indeterminacy) â†’ coherence. Only then state a duty.
+    (2) Scope of duty: isolate the risk, class of persons, and context that the duty responds to.
+    (3) Breach: apply Wrongs Act 1958 (Vic) s 48 (the Shirt calculus).
+    (4) Causation/scope of liability: Wrongs Act 1958 (Vic) s 51 (factual causation; scope/remoteness, interveners).
+
+  Authorities map.
+    - Sullivan v Moody (2001) 207 CLR 562 â€” coherence limit on new duties.
+    - Perre v Apand (1999) 198 CLR 180; Woolcock (2004) 216 CLR 515 â€” salient features.
+    - Graham Barclay Oysters (2002) 211 CLR 540 â€” public authorities/statutory purpose.
+    - Crimmins (1999) 200 CLR 1; Stuart (2009) 237 CLR 215; Tame/Annetts (2002) 211 CLR 317 â€” omissions/psych harm gates.
+
+  Statutory hook.
+    - Wrongs Act 1958 (Vic) ss 48, 51.
+
+  Tripwires.
+    - Importing the Shirt calculus into existence analysis.
+    - Collapsing â€œscope of dutyâ€ into s 51 causation/scope-of-liability.
+    - Skipping coherence checks for public authorities.
+    - Overlooking omissions/psych-harm control or assumption gates.
+
+  Conclusion.
+  Sequence: existence â†’ scope â†’ breach â†’ causation â†’ remedy; keep coherence and salient features up front, statutes at the right step.
+
+why_it_matters: |
+  Under exam pressure, separating existence (salient features/coherence) from scope, then sequencing s 48 before s 51, avoids mixing tests and earns roadmap marks.
+
+mnemonic: E-SCOPE (exist â†’ scope â†’ s 48 â†’ s 51 â†’ remedy)
+
+diagram: |
+  ```mermaid
+  mindmap
+  root((Duty: existence vs scope))
+    A. Issue
+      Distinguish existence from scope
+      Sequence before breach/causation
+    B. Rule
+      Existence: foreseeability, salient features, coherence
+      Public authority duties
+    C. Application
+      Sequence: existence â†’ scope â†’ s 48 breach
+      Define scope: risk, actors, setting
+    D. Limits/Statutes
+      s 48 WA (Vic)
+      s 51 WA (Vic)
+    E. Authorities
+      Sullivan v Moody
+      Perre v Apand; Woolcock
+      Graham Barclay Oysters
+      Crimmins; Stuart; Tame/Annetts
+

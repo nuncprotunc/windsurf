@@ -1,24 +1,41 @@
-# Python bytecode / cache
+# ------------------------------
+# Python bytecode / caches
+# ------------------------------
 __pycache__/
 *.py[cod]
 *$py.class
 
+# ------------------------------
 # Packaging / build artefacts
+# ------------------------------
 build/
 dist/
 *.egg-info/
 .eggs/
 pip-wheel-metadata/
 
+# ------------------------------
 # Reports & docs (generated)
-reports/
+# ------------------------------
+# Ignore everything in reports except Markdown suggestion files
+reports/*
+!reports/**/
+!reports/**/*.suggestion.md
+
+# Still ignore JSON in reports
 reports/**/*.json
+
+# Ignore Sphinx build artefacts
 docs/_build/
 
-# Notebooks
+# ------------------------------
+# Jupyter / notebooks
+# ------------------------------
 **/.ipynb_checkpoints
 
+# ------------------------------
 # Test / coverage / tooling caches
+# ------------------------------
 .pytest_cache/
 .coverage
 .coverage.*
@@ -32,21 +49,29 @@ htmlcov/
 .pyre/
 .cache/
 
-# Virtual envs
+# ------------------------------
+# Virtual environments
+# ------------------------------
 .venv/
 .venv_*/
 .venv_windsurf/
 
-# Env files (if you use them)
+# ------------------------------
+# Environment files (if you use them)
+# ------------------------------
 .env
 .env.*
 
-# IDE / OS
+# ------------------------------
+# IDE / OS files
+# ------------------------------
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 desktop.ini
 
+# ------------------------------
 # Logs
+# ------------------------------
 *.log

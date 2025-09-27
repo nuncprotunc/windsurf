@@ -1,92 +1,66 @@
-front: "In a professional negligence problem, how do you apply Wrongs Act 1958 (Vic)"
+front: "Professional negligence (Vic): how do Wrongs Act ss 57–60 frame peer opinion duties?"
 back: |
   Issue.
-  Does the defendant meet the Division 5 professional standard or have a valid s 59 defence?
+  Does the Wrongs Act 1958 (Vic) Div 5 scheme apply and, if so, can the defendant still run a s 59 peer opinion defence notwithstanding the s 60 warnings carve-out?
+
   Rule.
-  Section 57 defines a "professional" and "professional service".
-  anyone holding out a particular skill owes the care reasonably expected of a practitioner of that skill at the time (s 58).
+  Division 5 defines the professional, service, and timing (s 57) and fixes the reasonable-peer yardstick (s 58). A s 59 defence needs widely accepted Australian peer opinion from a significant cohort backing the conduct when done; opinions may diverge (s 59(3)) but the court can reject an irrational view (s 59(4)). Section 60 removes s 59 for warnings, reviving Rogers v Whitaker (1992) 175 CLR 479 at 490–493 and Wallace v Kam (2013) 250 CLR 375 at [34]–[40].
+
   Application scaffold.
-  1) Identify the professional and professional service under s 57.
-  2) Classify the allegation: warnings (apply Rogers/Wallace.
-  s 60 bars s 59) versus diagnosis/treatment/practice.
+  (1) Pin the professional, service, and date to activate Div 5 (s 57).
+  (2) Split allegations: warnings default to s 60 and common-law material-risk duties; practice/diagnosis invites s 59.
+  (3) For practice allegations, secure contemporaneous national peer opinion and test coherence before pleading s 59.
+  (4) For warnings, run Rogers/Wallace: identify material risk, causation, and scope of liability.
+  (5) Cross-check s 48 breach logic, ensure Evidence Act 2008 (Vic) s 79 admissibility, and flag coherence pressures (Sullivan v Moody (2001) 207 CLR 562).
+
   Authorities map.
-  Duty/warnings: Rogers v Whitaker (1992) 175 Commonwealth Law Reports (Commonwealth Law Reports (CLR)) 479, 490-493.
-  Wallace v Kam (2013) 250 CLR 375, [34]-[40].
+  - Rogers v Whitaker (1992) 175 CLR 479 at 490–493 — Material-risk warnings outside s 59.
+  - Wallace v Kam (2013) 250 CLR 375 at [34]–[40] — Scope-of-liability discipline for warnings.
+  - Naxakis v Western General Hospital (1999) 197 CLR 269 at [27]–[31] — Court testing of expert opinion.
+  - Tanah Merah Vic Pty Ltd v Owners Corp No 1 [2011] VSCA 434 at [153]–[160] — Victorian review of peer opinion reasonableness.
+  - South Western Sydney Local Health District v Gould [2018] NSWCA 69 at [199]–[206] (persuasive) — Structured approach to s 5O/s 59 defences.
+
   Statutory hook.
-  Wrongs Act 1958 (Vic) ss 57-60.
+  - Wrongs Act 1958 (Vic) Div 5 (Professional negligence) ss 57–60.
+  - Wrongs Act 1958 (Vic) s 48 (general breach matrix).
+  - Evidence Act 2008 (Vic) s 79 (expert opinion admissibility).
+
   Tripwires.
-  Applying s 59 to warnings/information (barred by s 60).
-  Treating expert evidence as sufficient without proving national, time‑specific acceptance.
-  Assuming unanimity or local custom is required (s 59(3) allows multiple opinions).
+  See the dedicated `tripwires` list for the four recurring missteps before pleading outlines.
+
   Conclusion.
-  Exam tip: sequence issues -> rules -> application -> conclusion; cite a lead authority and the operative section.
-  __HD__0__
-  State the governing test and any operative statutory provisions.
-  __HD__1__
-  Apply issues -> rules -> apply to facts -> conclude.
-  __HD__2__
-  Lead: Sullivan v Moody (2001) 207 CLR 562.
-  __HD__3__
-  Primary: Wrongs Act 1958 (Vic) s 48.
-  __HD__4__
-  
-  - Don’t exceed statutory thresholds/caps
-  
-  - Don’t conflate consequential with pure economic loss
-  
-  - Apply coherence checks before extending duties.
-  __HD__5__
-  Tie the analysis back to the pleadings and the available remedies/defences.
+  Map the allegation, pick the s 59 or s 60 pathway, and anchor each step in contemporaneous peer opinion plus statute before shifting to breach and causation.
 
 why_it_matters: |
-  MLS problems demand disciplined sequencing: define the professional
-   field (s 57), separate warnings (s 60) from practice (s 59), and make the defendant
-   prove each statutory element, including national scope and timing. High‑band answers
-   show the court’s supervisory role (Naxakis), deploy Tanah Merah to test reasonableness,
-   and integrate Rogers/Wallace for warnings. Scripts that treat expert evidence or
-   local custom as dispositive, forget the burden, or ignore s 59(3)’s allowance for
-   competing opinions lose marks.
+  MLS problems reward candidates who quarantine warnings from practice allegations, prove national peer acceptance across time, and remind the court it may still reject flimsy expert consensus. This card keeps the Division 5 sequence tight, pushes evidence preparation (s 79), and spotlights how a shaky peer defence collapses under exam cross-examination.
 
-mnemonic: PRO-WIDE-TIME: PROfessional? (s 57) → Warnings out (s 60) → Identify Defence
- (s 59) with WIDely accepted In Australia, significant practitioners, During the
- relevant TIME, and court review.
+mnemonic: PRO WARN DEF TIME COURT
 
 diagram: |
   ```mermaid
   mindmap
-   root((Card overview))
-   Issue
-   Rule
-   Application
-   Conclusion
-   - Issue
-   - Rule
-   - Application
-   - Conclusion
+    root((Professional negligence))
+      Issue
+        Identify Div 5 trigger (s 57)
+      Rule
+        s 58 reasonable professional care
+        s 59 defence: widely accepted peer opinion
+        Court may reject irrational opinions (s 59(4))
+      Application
+        Separate warnings vs practice
+        Prove national, time-specific acceptance
+        Apply Rogers/Wallace for warnings
+      Statutes
+        Wrongs Act ss 57–60
+        Evidence Act s 79
+      Authorities
+        Rogers v Whitaker
+        Wallace v Kam
+        Gould (persuasive)
   ```
 
 tripwires:
-  - "Applying s 59 to warnings or risk information (barred by s 60)."
-  - "Treating expert evidence as sufficient without proving national, time-specific acceptance."
-  - "Assuming unanimity or local custom is required—s 59 allows multiple widely accepted opinions (s 59(3))."
-
-anchors:
-  cases:
-    - Sullivan v Moody (2001) 207 CLR 562
-  statutes:
-    - Wrongs Act 1958 (Vic) s 48
-    - Wrongs Act 1958 (Vic) s 26
-    - Wrongs Act 1958 (Vic) s 51
-
-reading_level: Plain English (JD)
-
-tags:
-  - MLS_H1
-
-keywords:
-  - torts
-  - victoria
-  - duty
-  - breach
-  - causation
-  - damages
+- Applying s 59 to warnings (barred by s 60)
+- Assuming expert evidence suffices without proving national acceptance
+- Conflating consequential with pure economic loss
+- Ignoring s 59(3) allows multiple opinions

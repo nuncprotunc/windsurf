@@ -1,0 +1,57 @@
+front: "Relational pure economic loss (Vic): when does a duty arise for business shutdowns or third-party property damage?"
+back: |
+  Issue.
+  When does a duty arise to protect a plaintiff from relational pure economic loss triggered by third-party property damage or business interruption?
+
+  Rule.
+  The duty to avoid relational pure economic loss is exceptional. Mere foreseeability is insufficient. A salient features analysis (Perre v Apand (1999) 198 CLR 180; Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258) asks whether:
+    - the plaintiff or class is determinate and known to the defendant;
+    - the defendant controlled the risk or assumed responsibility;
+    - the plaintiff was vulnerable, lacking reasonable contractual or insurance protections;
+    - recognising the duty coheres with contractual and statutory frameworks.
+
+  Application scaffold.
+  (1) Confirm the loss is pure economic loss, not consequential on physical damage to the plaintiff.
+  (2) Identify a determinate, known plaintiff or class.
+  (3) Establish the defendant's knowledge, control, or assumption of responsibility.
+  (4) Demonstrate vulnerability: no realistic contractual, insurance, or market self-protection.
+  (5) Check coherence with existing contractual allocations and statutory schemes.
+
+  Authorities map.
+  - Perre v Apand (1999) 198 CLR 180.  
+  - Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258.  
+  - Caltex Oil (Australia) Pty Ltd v The Dredge "Willemstad" (1976) 136 CLR 529.  
+  - Woolcock Street Investments Pty Ltd v CDG Pty Ltd [2004] HCA 16.  
+  - Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36.
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) Pt IVAA (proportionate liability).  
+  - Competition and Consumer Act 2010 (Cth) ss 18, 236 (ACL overlay).
+
+  Tripwires.
+  Refer to the `tripwires` key for rapid-fire pitfalls.
+
+  Conclusion.
+  Evaluate determinacy, control, vulnerability, and coherence to conclude whether the salient features justify imposing a duty.
+diagram: |
+  ```mermaid
+  mindmap
+  root((Relational Pure Economic Loss))
+    A. Issue
+      Duty for business shutdowns/third-party damage?
+    B. Rule
+      Duty is exceptional
+      Salient features: known class • control/knowledge • vulnerability
+      Coherence with contracts/statutes
+    C. Application
+      Confirm pure loss; identify determinate class
+      Establish control/knowledge of risk
+      Show vulnerability; check coherence
+    D. Limits/Statutes
+      s 48 WA (Vic)
+      ACL s 18, s 236 (overlay)
+    E. Authorities
+      Perre v Apand
+      Caltex Refineries
+      Woolcock Street
+  ```

@@ -1,0 +1,124 @@
+﻿front: "Victorian premises injury: occupiers' liability (Pt IIA), negligence, or trespass?"
+back: |
+  Issue.
+  How should a Victorian premises injury answer signal whether Pt IIA of the Wrongs Act governs, or whether ordinary negligence or trespass must run alongside the statutory duty?
+
+  Rule.
+  Part IIA abolishes entrant categories and substitutes a duty to take reasonable care that entrants avoid injury from the state of the premises or related acts or omissions (Wrongs Act 1958 (Vic) s 14B(2)â€“(3)).
+  Outside that nexus the common law persists, so occupiers must still satisfy ordinary negligence standards and guard against trespass exposure.
+  Breach runs through s 48 Wrongs Act 1958 (Vic), causation and scope through s 51, and any obvious or inherent risk softeners sit in ss 53â€“56 with volenti in s 54.
+
+  Application scaffold.
+  1) Classify the hazard: defective state, activity or contractor system, or deliberate force.
+  Preserve a trespass branch whenever force rather than condition caused the harm (Hackshaw v Shaw (1984) 155 CLR 614, 654 (Deane J)).
+  2) When Pt IIA applies, explain why s 14B(3) captures the hazard, then run s 48 with explicit reference to obvious-risk provisions and occupierâ€“contractor delegation (Thompson v Woolworths (Qld) Pty Ltd (2005) 221 CLR 234, 245â€“246 [23]â€“[27]).
+  3) Prove causation with inspection or system evidence; Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182, 197 [44] rejects inference from injury alone.
+
+  Authorities map.
+  - Australian Safeway Stores Pty Ltd v Zaluzna [1987] HCA 7; (1987) 162 CLR 479, 488 â€” statutory duty replaces entrant categories.
+  - Thompson v Woolworths (Qld) Pty Ltd (2005) 221 CLR 234, 245â€“246 [23]â€“[27] â€” occupier remains responsible for contractor systems.
+  - Hackshaw v Shaw (1984) 155 CLR 614, 654 (Deane J) â€” trespass branch persists when force, not condition, causes harm.
+  - Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182, 197 [44] â€” causation demands positive inspection evidence.
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) ss 14B(2)â€“(3), 48, 51, 53â€“56, 54.
+
+  Tripwires.
+  Reviving invitee or licensee categories post-Zaluzna.
+  Treating activity hazards as outside s 14B(3).
+  Ignoring obvious-risk provisions when running breach.
+  Assuming causation without inspection evidence (Strong).
+
+  Conclusion.
+  Lead with hazard classification, integrate Pt IIA with s 48 and s 51 reasoning, and keep trespass ready so the pathway from duty to defences stays statute-led.
+
+why_it_matters: |
+  MLS premises injury problems mix defective conditions, contractor activity, and deliberate force under time pressure.
+  Flagging Pt IIA early, sequencing s 48 and s 51 carefully, and citing Strong for causation proof shows doctrinal control while preserving a trespass branch avoids coherence errors.
+
+mnemonic: "SITE: Stateâ†’Integrateâ†’Trespassâ†’Evidence"
+
+diagram: |
+  ```mermaid
+  mindmap
+    root((Victorian premises injury))
+      A. Issue
+        - Frame: Pt IIA, negligence, trespass?
+      B. Rule
+        - s 14B abolishes entrant categories
+        - s 14B(3) duty: state or related acts
+        - ss 48, 51, 53â€“56 and s 54 remain operative
+      C. Application
+        - Classify hazard: state vs activity or contractor
+        - Run s 48 breach with obvious-risk overlay
+        - Prove causation with inspection evidence
+      D. Limits/Statutes
+        - Wrongs Act 1958 (Vic) ss 14B(2)â€“(3), 48, 51
+        - Wrongs Act 1958 (Vic) ss 53â€“56 and s 54
+      E. Authorities
+        - Zaluzna 162 CLR 479, 488
+        - Thompson 221 CLR 234, 245â€“246 [23]â€“[27]
+        - Strong 246 CLR 182, 197 [44]
+  ```
+
+tripwires:
+- Reviving invitee or licensee categories post-Zaluzna.
+- Treating activity hazards as outside s 14B(3).
+- Ignoring obvious-risk provisions in breach.
+- Assuming causation without inspection evidence (Strong).
+
+anchors:
+  cases:
+    - name: Australian Safeway Stores Pty Ltd v Zaluzna
+      citation: (1987) 162 CLR 479
+      court: HCA
+      pinpoints:
+        - 488
+      notes: Statutory duty replaces entrant categories in Victoria.
+    - name: Thompson v Woolworths (Qld) Pty Ltd
+      citation: (2005) 221 CLR 234
+      court: HCA
+      pinpoints:
+        - "245â€“246"
+        - "[23]â€“[27]"
+      notes: Occupier retains responsibility for contractor systems.
+    - name: Hackshaw v Shaw
+      citation: (1984) 155 CLR 614
+      court: HCA
+      pinpoints:
+        - 654
+      notes: Trespass analysis persists when force, not condition, causes harm.
+    - name: Strong v Woolworths Ltd
+      citation: (2012) 246 CLR 182
+      court: HCA
+      pinpoints:
+        - 197
+        - "[44]"
+      notes: Requires positive inspection evidence to prove causation.
+  statutes:
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - s 14B(2)
+        - s 14B(3)
+        - s 48
+        - s 51
+        - ss 53â€“56
+        - s 54
+      notes: Integrates occupiers' liability with negligence, obvious risk, and volenti.
+  notes: []
+
+reading_level: Plain English (JD)
+
+tags:
+- MLS_H1
+- LAWS50025_Torts
+- Exam_Fundamentals
+
+keywords:
+- occupiers' liability
+- Wrongs Act 1958 (Vic)
+- premises injury
+- obvious risk
+- inspection evidence
+- trespass fallback
+

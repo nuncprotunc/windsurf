@@ -1,0 +1,74 @@
+front: "In a vicarious liability problem, how do you determine whether an employer"
+back: |
+  Issue.
+  When can a defendant (typically an employer) be held liable for torts committed by another?
+  Rule.
+  Vicarious liability applies where (1) the tortfeasor is an employee (not an independent contractor) and (2) the tort occurred in the course of employment.
+  Classification uses a multifactorial test: control, integration, delegation, tools, risk allocation, remuneration (Stevens v Brodribb (1986) 160 Commonwealth Law Reports (Commonwealth Law Reports (CLR)) 16, 29-30).
+  Application scaffold.
+  1) Classify worker: apply multifactorial indicators.
+  assess business integration and economic dependence.
+  2) Connect the tort to employment: proximity to duties, benefit to employer, enterprise risk.
+  exclude frolics.
+  3) For intentional torts (eg, battery), test unauthorised mode.
+  for institutional abuse, test close connection.
+  Authorities map.
+  Statutory hook.
+  Wrongs Act 1958 (Vic) Pt Victorian statutory damages part (Pt Victorian Bar Association (VBA)) (damages caps) if personal injury.
+  otherwise no core statutory source for liability.
+  Tripwires.
+  Treating any employee tort as automatically “in course”.
+  Misclassifying contractors by single‑factor focus.
+  Ignoring Deatons for battery.
+  Confusing vicarious liability with non‑delegable duty.
+  Forgetting Pt VBA caps in personal injury.
+  Conclusion.
+  __HD__0__
+  State the governing test and any operative statutory provisions.
+  __HD__1__
+  Apply issues -> rules -> apply to facts -> conclude.
+  __HD__2__
+  Lead: [insert principal case].
+  Lead: [insert principal case].
+  __HD__3__
+  Primary: Wrongs Act 1958 (Vic) s 48.
+  __HD__4__
+  
+  - Don’t exceed statutory thresholds/caps
+  
+  - Don’t conflate consequential with pure economic loss
+  
+  - Apply coherence checks before extending duties.
+  __HD__5__
+  Tie the analysis back to the pleadings and the available remedies/defences.
+
+why_it_matters: |
+  Vicarious liability is a recurrent loss‑allocation device in exams.
+   High‑band answers cleanly classify worker status, connect the tort to authorised
+   work, and avoid conflating vicarious liability with non‑delegable duty. Adding Pt
+   VBA caps in personal injury shows statutory literacy. Policy (enterprise risk, deterrence,
+   compensation) elevates analysis.
+
+mnemonic: CLASS → Control, Labour integration, Allocation of risk, Substitution limits,
+diagram: |
+  ```mermaid
+  mindmap
+  root((Vicarious Liability))
+    A. Issue
+      Liability for employee torts
+    B. Rule
+      Employee + course of employment
+      Multifactorial test: control, integration, risk
+      Exclude independent contractors
+    C. Application
+      Classify worker, connect tort to employment
+      Assess proximity to duties, benefit to employer
+      Consider intentional torts, test unauthorised mode
+    D. Limits/Statutes
+      s 48 WA (Vic)
+      Pt VBA caps for personal injury
+    E. Authorities
+      Stevens v Brodribb
+      Deatons v Flew
+      Relevant case law
+  ```

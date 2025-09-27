@@ -25,18 +25,15 @@ back: |
     - Chapman v Hearse (1961) 106 CLR 112, 121 — Foreseeability standard.
     - Vairy v Wyong Shire Council [2005] HCA 62; (2005) 223 CLR 422 — Anti-hindsight.
     - Brodie v Singleton Shire Council (2001) 206 CLR 512 — Public authorities.
-    - Strong v Woolworths Ltd [2012] HCA 5; (2012) 246 CLR 182 — Modern application.
-
   Statutory hook.
     - Wrongs Act 1958 (Vic) ss 48-49, 51 — Breach and causation framework.
     - Consider Pt IVAA for proportionate liability where applicable.
 
   Tripwires.
-    - Treating foreseeability alone as breach without proving "not insignificant" (s 48(1)).
-    - Framing the risk with hindsight rather than ex ante (s 49 guardrail).
-    - Reducing s 48(2) to a checklist instead of a balancing exercise.
-    - Over‑relying on "obvious risk" where D's operations created the hazard.
-    - Collapsing breach with causation instead of applying s 51 separately.
+    - Treating foreseeability alone as breach without proving "not insignificant" (s 48(1))
+    - Framing the risk with hindsight rather than ex ante (s 49 guardrail)
+    - Reducing s 48(2) to a checklist instead of a balancing exercise
+    - Over-relying on "obvious risk" where D's operations created the hazard
 
   Conclusion.
   Breach is established only if the s 48 balance shows a reasonable person would have taken additional precautions. Keep causation and contributory negligence in their own steps.
@@ -45,111 +42,25 @@ why_it_matters: |
   This is the core Victorian breach scaffold. Starting at s 48(1) forces precise risk identification and a "not insignificant" screen; s 48(2) then structures a proportional response to probability, seriousness, burden, and social utility, with s 49’s anti-hindsight guardrail and s 51 separating causation.
 
 mnemonic: F.P.B.S. – Foreseeability, Probability, Burden, Social utility
-
-diagram: |-
+diagram: |
   ```mermaid
   mindmap
-    root((Breach: Shirt calculus (Vic)))
-      Issue
-        Specific risk framed ex ante
-      Rule
-        s 48(1): foreseeable & not-insignificant
-        Balance (a)–(d) — Shirt
-        No hindsight (s 49)
-      Application
-        Weigh probability • seriousness • burden/cost • social utility
-        Specify reasonable precautions
-        Keep causation separate (s 51)
-      Authorities
-        Wyong v Shirt
-        Dederer / Vairy
-      Statute
-        Wrongs Act ss 48–49
-        s 51 (separate step)
+  root((Breach: Shirt calculus (Vic)))
+    A. Issue
+      Specific risk framed ex ante
+    B. Rule
+      s 48(1): foreseeable & not-insignificant
+      Balance (a)–(d) — Shirt
+      No hindsight (s 49)
+    C. Application
+      Weigh probability • seriousness • burden/cost • social utility
+      Specify reasonable precautions
+      Keep causation separate (s 51)
+    D. Statute
+      Wrongs Act ss 48–49
+      s 51 (separate step)
+    E. Authorities
+      Wyong v Shirt
+      Dederer / Vairy
+      Chapman v Hearse
   ```
-
-tripwires:
-  - "Treating foreseeability alone as breach without proving 'not insignificant' (s 48(1))."
-  - "Framing the risk with hindsight rather than ex ante (s 49 guardrail)."
-  - "Reducing s 48(2) to a checklist instead of a balancing exercise."
-  - "Over-relying on 'obvious risk' where D's operations created the hazard."
-  - "Collapsing breach with causation instead of applying s 51 separately."
-
-anchors:
-  cases:
-    - name: Wyong Shire Council v Shirt
-      citation: (1980) 146 CLR 40
-      court: HCA
-      pinpoints:
-        - "47-48"
-      notes: Established the balancing test for breach.
-
-    - name: Chapman v Hearse
-      citation: (1961) 106 CLR 112
-      court: HCA
-      pinpoints:
-        - 121
-      notes: Foreseeability standard (not far-fetched or fanciful).
-
-    - name: Vairy v Wyong Shire Council
-      citation: "[2005] HCA 62; (2005) 223 CLR 422"
-      court: HCA
-      pinpoints:
-        - "[51]"
-      notes: Anti-hindsight principle and risk framing.
-
-    - name: Brodie v Singleton Shire Council
-      citation: (2001) 206 CLR 512
-      court: HCA
-      pinpoints: []
-      notes: Public authority standard of care.
-
-    - name: Strong v Woolworths Ltd
-      citation: "[2012] HCA 5; (2012) 246 CLR 182"
-      court: HCA
-      pinpoints:
-        - 189
-        - "[23]"
-      notes: Modern application of breach principles.
-
-    - name: Roads and Traffic Authority of NSW v Dederer
-      citation: (2007) 234 CLR 330
-      court: HCA
-      pinpoints:
-        - "345-346"
-        - "[44]"
-      notes: Importance of careful risk characterisation.
-
-    - name: Podrebersek v Australian Iron & Steel Pty Ltd
-      citation: (1985) 59 ALJR 492
-      court: HCA
-      pinpoints:
-        - 494
-      notes: Contributory negligence principles.
-
-    - name: Bolton v Stone
-      citation: "[1951] AC 850"
-      court: HL
-      pinpoints:
-        - 860
-      notes: Illustrates acceptable residual risk.
-
-  statutes:
-    - name: Wrongs Act 1958 (Vic)
-      provisions:
-        - s 48
-        - s 49
-        - s 51
-      notes: Provides the statutory breach, hindsight exclusion, and causation framework.
-
-reading_level: Plain English (JD)
-
-tags:
-  - MLS_H1
-keywords:
-  - torts
-  - victoria
-  - breach
-  - Shirt calculus
-  - Wrongs Act
-  - causation

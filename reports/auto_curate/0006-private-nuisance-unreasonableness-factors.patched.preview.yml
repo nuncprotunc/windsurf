@@ -1,0 +1,81 @@
+front: "What factors determine whether interference is unreasonable in private nuisance?"
+back: |
+  Issue.
+  Which factors determine unreasonable interference in private nuisance, and how do Victorian statutes affect the balance?
+
+  Rule.
+  - Unreasonableness is assessed by ordinary sensitivity (not the unusually delicate), locality, duration/frequency, gravity/type of harm, malice, and the utility of the conduct; physical damage strongly weighs against the defendant.
+  - The test is objective and contextual.
+
+  Application scaffold.
+  (1) Confirm proprietary standing and the interference (noise/odour/vibration/damage).
+  (2) Work factor-by-factor (sensitivity, locality, duration/frequency, gravity, utility, malice) with evidence.
+  (3) Consider statutory authority/defences and select remedy (damages v calibrated injunction).
+
+  Authorities map.
+  - Hargrave v Goldman (HCA) — Links reasonableness to responsibility for hazards.
+  - Burnie Port Authority v General Jones (HCA) — Integrates abnormal danger/utility into a reasonableness frame.
+  - Munro v Southern Dairies (VSC) — Shows persistence/duration tipping liability.
+  - Sturges v Bridgman (UK CA) — Anchors locality.
+  - ACQ Pty Ltd v Cook (QCA) — Illustrates planning context in the balance.
+
+  Statutory hook.
+  - Environment Protection Act 2017 (Vic) s 25 (general environmental duty).
+  - Planning and Environment Act 1987 (Vic) permits as context.
+  - Supreme Court Act 1986 (Vic) injunction power.
+  - Compliance informs reasonableness but is not a defence without express authority.
+
+  Tripwires.
+  Refer to the dedicated `tripwires` list for recurring pitfalls in execution.
+
+  Conclusion.
+  Weigh the factors, account for any statutory authorisation, and tailor the remedy to proportionality and locality.
+
+why_it_matters: |
+  Articulating the multi-factor balance, tied to EP Act duties, planning context and calibrated remedies, is decisive on MLS nuisance fact patterns; anchoring with Hargrave, Burnie, Munro and a limited UK reference shows doctrinal control.
+
+mnemonic: "SLURDMT: Sensitivity → Locality → Utility → Remedies → Duration → Malice → Type"
+
+diagram: |-
+  ```mermaid
+  mindmap
+    root((Private nuisance unreasonableness))
+      Issue
+        Factors & statutory context
+      Rule
+        Locality
+        Duration / frequency
+        Gravity / type of harm
+      Application
+        Confirm standing & interference
+        Factor-by-factor balance
+        Statutory authority & calibrated remedy
+      Authorities
+        Hargrave v Goldman
+        Burnie Port Authority
+      Statute
+        Environment Protection Act 2017 s 25
+        Planning and Environment Act 1987
+  ```
+tripwires:
+- Conflating private nuisance with trespass.
+- Assuming public utility is a defence.
+- Treating extraordinary sensitivity as actionable.
+- Seeking blanket injunctions without proportional tailoring.
+
+diagram: |
+  ```mermaid
+  mindmap
+    root((Private nuisance unreasonableness))
+    A. Issue
+      - Factors & statutory context
+    B. Rule
+      - Unreasonableness factors
+    C. Application
+      - Confirm standing & interference
+    D. Limits/Statutes
+      - s 25 Environment Protection Act (Vic)
+    E. Authorities
+      - Hargrave v Goldman
+      - Burnie Port Authority
+  ```

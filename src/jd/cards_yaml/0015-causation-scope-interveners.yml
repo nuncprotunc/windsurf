@@ -18,7 +18,6 @@ back: |
   Authorities map.
   - `Strong v Woolworths Ltd (2012) 246 CLR 182` (HCA)
   - `Amaca Pty Ltd v Booth (2011) 246 CLR 36` (HCA)
-  - `Tabet v Gett (2010) 240 CLR 537` (HCA)
   - `Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem (2009) 239 CLR 420` (HCA)
 
   Statutory hook.
@@ -34,87 +33,31 @@ why_it_matters: |
   Exams punish conflating causation limbs. Sequencing ss 51–52 lets you cite the right authorities, rebut 'material risk' shortcuts, and analyse interveners with Wallace's normative lens—hallmarks of H1 reasoning.
 
 mnemonic: B-E-S-I → But-for → Exceptional? → Scope → Interveners
-
-diagram: |-
+diagram: |
   ```mermaid
   mindmap
     root((Causation: ss 51–52 (Vic)))
-      Issue
-        But-for → exceptional? → scope with interveners
-      Rule
+      A. Issue
+        Interveners complicating factual vs scope links
+      B. Rule
         s 51(a): necessary condition (but-for)
-        s 51: departures only in exceptional cases
-        s 52: scope of liability (justice/policy)
-      Application
-        But-for with circumstantial inference; exclude bare possibility
-        Exceptional case? only per established principles
-        Scope: interveners, volition, foreseeability, policy (keep separate from causation)
-      Authorities
-        Strong v Woolworths
-        Adeels Palace v Moubarak
-      Statute
-        Wrongs Act s 51
-        Wrongs Act s 52
+        s 51(2): exceptional departures only
+        s 52: justice and policy extension
+      C. Application
+        But-for test with circumstantial inference
+        Exclude bare possibility per Booth
+        Exceptional cases demand clear proof
+      D. Limits/Statutes
+        s 51 Wrongs Act 1958 (Vic)
+        s 52 Wrongs Act 1958 (Vic)
+      E. Authorities
+        Strong v Woolworths (HCA)
+        Amaca v Booth (HCA)
+        Tabet v Gett (HCA)
   ```
 
 tripwires:
-  - "Treating s 51 as a material-risk shortcut."
-  - "Collapsing factual causation with scope contrary to Wallace."
-  - "Assuming third-party crime satisfies causation absent but-for proof."
-  - "Letting routine medical negligence break the chain contra Mahony."
-  - "Declaring suicide wholly voluntary despite impaired volition."
-  - "Ignoring P’s onus and Evidence Act s 140 calibration."
-
-anchors:
-  cases:
-    - name: Strong v Woolworths Ltd
-      citation: (2012) 246 CLR 182
-      court: HCA
-      pinpoints:
-        - "[5]"
-        - "[9]"
-      notes: Established approach to but-for test using circumstantial evidence.
-
-    - name: Amaca Pty Ltd v Booth
-      citation: (2011) 246 CLR 36
-      court: HCA
-      pinpoints:
-        - 49
-      notes: Excludes bare possibilities from causation analysis.
-
-    - name: Tabet v Gett
-      citation: (2010) 240 CLR 537
-      court: HCA
-      pinpoints:
-        - "[111]"
-        - "[112]"
-      notes: Limits on loss of chance claims in negligence.
-
-    - name: Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem
-      citation: (2009) 239 CLR 420
-      court: HCA
-      pinpoints:
-        - "[52]"
-        - "[57]"
-      notes: Cautions against finding exceptional cases under s 51.
-
-  statutes:
-    - name: Wrongs Act 1958 (Vic)
-      provisions:
-        - s 48
-        - s 26
-        - s 51
-      notes: Key provisions for causation analysis in Victoria.
-
-reading_level: Plain English (JD)
-
-tags:
-  - MLS_H1
-
-keywords:
-  - torts
-  - victoria
-  - duty
-  - breach
-  - causation
-  - damages
+- Treating s 51 as a material-risk shortcut.
+- Confusing factual causation with scope contrary to Wallace.
+- Assuming third-party actions satisfy causation without but-for proof.
+- Neglecting P's onus and Evidence Act s 140 calibration.

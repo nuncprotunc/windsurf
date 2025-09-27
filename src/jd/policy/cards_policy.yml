@@ -20,6 +20,7 @@ global_rules:
   enforce_pinpoints: true
   prefer_quotes: double
   zero_invented_authorities: true
+  statute_shorthand: "Use 's 48 Wrongs Act 1958 (Vic)' (not 's 48 WA')."
 
   front:
     max_words: 30
@@ -56,7 +57,8 @@ anchors:
   max_items: 8
   each_item_max_words: 120
   require_case_or_statute_ref_per_item: true
-  uk_or_persuasive_requires_note: true # note the nuance/approval if using UK/PC
+  uk_or_persuasive_requires_note: true
+  persuasive_label_required: true
 
 statutes:
   include_only_operational_sections: true
@@ -65,7 +67,8 @@ statutes:
 
 authorities:
   priority_order: ["HCA", "State CA", "Other Aus", "UK/PC (nuance)"]
-  uk_nuance_note_required: true # specify the nuance supplied by UK/PC authority
+  uk_nuance_note_required: true
+  persuasive_label_required: true          # ensure “(persuasive)” tag appears
   flag_overruled_or_distinguished: true
   require_year_and_neutral_or_report_cite: true
   min_unique_authorities_in_back: 2
@@ -87,25 +90,33 @@ keywords:
 diagram:
   type: mindmap
   must_be_valid_mermaid: true
-  max_total_nodes: 18          # was 12
+  # Budget = 5 fixed branch labels + children
   top_level_branches_min: 5
   top_level_branches_max: 5
-  child_node_distribution:
-    - [1,3,3,2,2]              # 17 total nodes
-    - [2,2,2,1,4]              # 17 total nodes
-    - [2,3,3,3,1]              # 18 total nodes
-  enforce_pareto_format: true
+  # Caps:
+  max_child_nodes: 12                  # children across all 5 branches
+  max_total_nodes: 18                  # = 1 root + 5 branches + sum(children)
+  # child_vector counts CHILDREN ONLY per branch (NOT the branch label)
+  child_vector_children_only: true
+  child_node_distribution_children:
+    - [1,3,3,2,3]                      # sums to 12
+    - [2,2,2,1,5]                      # sums to 12
+    - [2,3,3,3,1]                      # sums to 12
   format_guidance: |
-    Return a fenced Mermaid mindmap with exactly 5 top-level branches;
-    child vector must match one of the allowed distributions;
-    total nodes ≤18.
-    If over cap, prune by merging/deleting longest branches;
+    Return a fenced Mermaid mindmap with exactly 5 top-level branches.
+    child_vector lists the number of CHILD nodes under each branch (branch labels not counted).
+    total_nodes = 1 (root) + 5 (branch labels) + sum(child_vector) ≤ 18.
+    If the child budget would be exceeded, merge/umbrella subpoints;
     if still impossible, return "[DIAGRAM TOO LARGE]".
   discourage_heading_mirroring: true
+  root_title:
+    must_match_card_topic: true
+    max_words: 4
+
 
 tripwires:
-  min: 3
-  max: 6
+  exact: 4                         # was min/max — align to curator
+  enforce_distinctness: true       # no synonyms/near-dupes
   examples_to_encourage:
     - conflating duty existence vs scope
     - citing multiple authorities for the same bare proposition
@@ -140,3 +151,9 @@ lint:
     - "TBD"
     - "lorem ipsum"
   allow_explicit_uncertainty_token: "\\[NO VERIFIED AUTHORITY FOUND\\]"
+
+coverage_guardrails:
+  allow_umbrella_terms: true             # prefer “defences” umbrella, etc.
+  forbid_new_inventions: true            # do not add anchors/tests absent in YAML
+  require_risk_note_if_nodes_dropped: true
+  risk_note_hint: "Add a one-line note under anchors.notes if pruning dropped a sub-issue purely for node budget."

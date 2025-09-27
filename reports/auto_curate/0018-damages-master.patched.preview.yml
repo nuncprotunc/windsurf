@@ -1,0 +1,72 @@
+front: "In a Victorian personal injury problem, how do you (i) clear the Part VBA 'significant"
+back: |
+  Issue.
+  Has the plaintiff established eligibility for non-economic loss and ancillary heads of damage under the Wrongs Act 1958 (Vic), and how should aggravated and exemplary damages be characterised.
+  and limited?
+  Rule.
+  Part Victorian statutory damages part (Pt Victorian Bar Association (VBA)) requires a "significant injury" certificate unless an exception applies.
+  Sections 28LB-28LK prescribe the process.
+  s 28LF defines thresholds (generally >5% Whole person impairment (WPI) for physical injury, extra criteria for psychiatric impairment via s 28LJ).
+  Application scaffold.
+  Authorities map.
+  Statutory hook.
+  Tripwires.
+  Conclusion.
+  Damages depend first on breaching the Pt VBA gateway, then on meticulous application of statutory caps and proper distinction between compensatory (aggravated) and punitive (exemplary) remedies.
+  mindful of Gray''s restraint.
+  Exam tip: sequence issues -> rules -> application -> conclusion; cite a lead authority and the operative section.
+  __HD__0__
+  State the governing test and any operative statutory provisions.
+  __HD__1__
+  Apply issues -> rules -> apply to facts -> conclude.
+  __HD__2__
+  Lead: Sullivan v Moody (2001) 207 Commonwealth Law Reports (CLR) 562.
+  Lead: Sullivan v Moody (2001) 207 CLR 562.
+  __HD__3__
+  Primary: Wrongs Act 1958 (Vic) s 48.
+  __HD__4__
+  
+  - Don’t exceed statutory thresholds/caps
+  
+  - Don’t conflate consequential with pure economic loss
+  
+  - Apply coherence checks before extending duties.
+  __HD__5__
+  Tie the analysis back to the pleadings and the available remedies/defences.
+
+why_it_matters: |
+  MLS damages questions reward disciplined sequencing. Begin with the
+   Pt VBA gate: cite s 28LC(2)(a) to see if intentional or sexual misconduct bypasses
+   the certificate, otherwise run the s 28LF/LJ metrics. Only after eligibility do
+   you price the claim—loss of earnings cap (s 28F(2)) and the indexed non-economic
+   ceiling (s 28G/s 28H). Answers that recite stale dollar figures lose marks; flag
+   that caps are indexed annually. Distinguish aggravated (compensatory) from exemplary
+   (punitive) using Uren, Lamb and Gray, and note Ibbett to show punitive awards still
+   bite against the State. Mention Fontin to avoid conflating provocation with mitigation
+   of compensatory damages. This scaffold helps you survive time pressure and signals
+   policy awareness around insurance affordability versus claimant vindication.
+
+mnemonic: THRESH→CAP→CHAR→POLICY: Threshold (s 28LC/28LF) → Caps (s 28F; s 28G/H)
+ → Characterise (Aggravated vs Exemplary; Gray) → Policy (insurance vs deterrance).
+diagram: |
+  ```mermaid
+  mindmap
+  root((Damages Overview))
+    A. Issue
+      Eligibility for non-economic loss
+    B. Rule
+      s 28LB-28LK process
+      s 28LF thresholds
+      s 28LC(2)(a) exceptions
+    C. Application
+      Distinction between damages types
+      Aggravated vs Exemplary
+      Pricing claims (s 28F)
+    D. Limits/Statutes
+      Indexed caps (s 28G/H)
+      Gray's restraint
+    E. Authorities
+      Sullivan v Moody (HCA)
+      Uren (HCA)
+      Ibbett (HCA)
+  ```

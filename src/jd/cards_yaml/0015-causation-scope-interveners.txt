@@ -1,0 +1,64 @@
+﻿front: "Causation (Vic): how do ss 51â€“52 handle factual causation, exceptional cases, and scope when interveners appear?"
+back: |
+  Issue.
+  Has D's negligence factually caused P's harm, and should liability extend to that harm under Wrongs Act ss 51â€“52 when interveners arise?
+
+  Rule.
+  - Wrongs Act 1958 (Vic) s 51(a) requires a "necessary condition" (but-for) link.
+  - Section 51(2) allows departures only in exceptional cases consistent with established principles.
+  - Section 52 tasks the court with deciding whether responsibility should extend, weighing justice and policy, with the onus on P.
+
+  Application scaffold.
+  (1) Run but-for test, using circumstantial inference where needed (`Strong v Woolworths (2012) 246 CLR 182` at [5]-[9]).
+  (2) Exclude bare possibility (`Amaca v Booth (2011) 246 CLR 36` at [49]).
+  (3) Remember loss-of-chance limits (`Tabet v Gett (2010) 240 CLR 537` at [111]-[112]).
+  (4) For exceptional cases under s 51, require clear proof of established principles.
+  (5) Under s 52, weigh policy factors for scope, especially with interveners.
+
+  Authorities map.
+  - `Strong v Woolworths Ltd (2012) 246 CLR 182` (HCA)
+  - `Amaca Pty Ltd v Booth (2011) 246 CLR 36` (HCA)
+  - `Adeels Palace Pty Ltd v Moubarak; Adeels Palace Pty Ltd v Bou Najem (2009) 239 CLR 420` (HCA)
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) ss 51â€“52 (consider s 51(2) exceptional cases discipline).
+
+  Tripwires.
+  See dedicated `tripwires` field.
+
+  Conclusion.
+  Separate factual causation under s 51 from scope under s 52, signpost exceptional departures, and confront interveners with Wallace's normative lens to keep liability tightly reasoned.
+
+why_it_matters: |
+  Exams punish conflating causation limbs. Sequencing ss 51â€“52 lets you cite the right authorities, rebut 'material risk' shortcuts, and analyse interveners with Wallace's normative lensâ€”hallmarks of H1 reasoning.
+
+mnemonic: B-E-S-I â†’ But-for â†’ Exceptional? â†’ Scope â†’ Interveners
+diagram: |
+  ```mermaid
+  mindmap
+    root((Causation: ss 51â€“52 (Vic)))
+      A. Issue
+        Interveners complicating factual vs scope links
+      B. Rule
+        s 51(a): necessary condition (but-for)
+        s 51(2): exceptional departures only
+        s 52: justice and policy extension
+      C. Application
+        But-for test with circumstantial inference
+        Exclude bare possibility per Booth
+        Exceptional cases demand clear proof
+      D. Limits/Statutes
+        s 51 Wrongs Act 1958 (Vic)
+        s 52 Wrongs Act 1958 (Vic)
+      E. Authorities
+        Strong v Woolworths (HCA)
+        Amaca v Booth (HCA)
+        Tabet v Gett (HCA)
+  ```
+
+tripwires:
+- Treating s 51 as a material-risk shortcut.
+- Confusing factual causation with scope contrary to Wallace.
+- Assuming third-party actions satisfy causation without but-for proof.
+- Neglecting P's onus and Evidence Act s 140 calibration.
+

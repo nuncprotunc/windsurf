@@ -25,6 +25,12 @@ back: |
   - Wrongs Act 1958 (Vic) s 48 and ss 83–85 (public-authority principles).
   - Mental Health and Wellbeing Act 2022 (Vic) Part 5.2, ss 232–239 for crisis “care and control” powers.
 
+  Tripwires.
+  - Assuming foreseeability alone establishes duty when salient features or coherence cut against it.
+  - Failing to distinguish recognised categories from genuinely novel duty claims before applying salient features.
+  - Neglecting public authority statutory purpose, policy/operational character, or resource considerations.
+  - Collapsing duty recognition into breach by applying Wrongs Act 1958 (Vic) s 48 within the duty analysis.
+
   Conclusion.
   State yes/no on duty with brief reasons keyed to decisive features; then move to breach, causation, and damage.
 
@@ -32,107 +38,25 @@ why_it_matters: |
   MLS problems often hinge on novel or omissions duty. Markers reward: (1) sequencing (recognised category → salient features → coherence), (2) a public-authority discipline pass (Wrongs Act ss 83–85), and (3) clean separation of duty from breach (s 48), causation, and damages. Use feature signposts as headings and justify which decide these facts.
 
 mnemonic: "FVC-CARC: Foreseeability → Vulnerability → Control → Coherence → Assumption/reliance → Range/indeterminacy → Choice/autonomy"
-
-diagram: |-
+diagram: |
   ```mermaid
   mindmap
-    root((Duty of care recognition))
-      Issue
-        Recognised category or truly novel?
-      Rule
-        Foreseeability necessary, not sufficient
-        Salient features: vulnerability • control/reliance • indeterminacy
-        Coherence constraint (keep systems consistent)
-      Application
-        Classify first; then isolate decisive features
-        Public authority step: statute purpose • policy/operational • resources
-        Conclude on duty; keep breach (s 48) separate
-      Authorities
-        Stavar (salient features)
-        Crimmins (public-body factors)
-      Statute
-        Wrongs Act s 48 (breach kept distinct)
-        Wrongs Act ss 83–85 (public-authority principles)
+  root((Duty of care recognition))
+    A. Issue
+      Recognised category or novel?
+    B. Rule
+      Foreseeability necessary, not sufficient
+      Salient features: vulnerability • control/reliance • indeterminacy
+      Coherence constraint
+    C. Application
+      Classify duties; isolate decisive features
+      Public authority: statute purpose • policy/operational • resources
+      Conclude on duty; keep breach (s 48) separate
+    D. Authorities
+      Stavar (salient features)
+      Crimmins (public-body factors)
+      Perre (vulnerability/indeterminacy)
+    E. Statute
+      Wrongs Act s 48 (breach distinct)
+      Wrongs Act ss 83–85 (public-authority principles)
   ```
-
-tripwires:
-  - "Treating foreseeability as sufficient for duty recognition."
-  - "Listing all Stavar features without identifying the decisive ones."
-  - "Collapsing duty into breach under Wrongs Act s 48."
-  - "Imposing affirmative duties on authorities absent control/statutory preconditions."
-  - "Ignoring statutory purpose/resource and coherence constraints."
-
-anchors:
-  cases:
-    - name: Caltex Refineries (Qld) Pty Ltd v Stavar
-      citation: "[2009] NSWCA 258; (2009) 75 NSWLR 649"
-      court: NSWCA
-      pinpoints:
-        - "[103]"
-      notes: Non-exhaustive salient features for duty recognition.
-    
-    - name: Perre v Apand Pty Ltd
-      citation: (1999) 198 CLR 180
-      court: HCA
-      pinpoints:
-        - "[118]"
-        - "[122]"
-      notes: Vulnerability and indeterminacy in pure economic loss.
-    
-    - name: Sullivan v Moody
-      citation: (2001) 207 CLR 562
-      court: HCA
-      pinpoints:
-        - "[49]"
-        - "[55]"
-      notes: Coherence constraints on duty recognition.
-    
-    - name: Crimmins v Stevedoring Industry Finance Committee
-      citation: (1999) 200 CLR 1
-      court: HCA
-      pinpoints:
-        - "[93]"
-      notes: Six factors for public-authority duties.
-    
-    - name: Stuart v Kirkland-Veenstra
-      citation: (2009) 237 CLR 215
-      court: HCA
-      pinpoints:
-        - "[41]"
-        - "[45]"
-      notes: No duty absent control or satisfaction of statutory preconditions.
-  
-  statutes:
-    - name: Wrongs Act 1958 (Vic)
-      provisions:
-        - s 48
-        - ss 83–85
-    
-    - name: Mental Health and Wellbeing Act 2022 (Vic)
-      provisions:
-        - Part 5.2
-        - ss 232–239
-      notes: Care and control powers in a mental-health crisis.
-
-reading_level: Plain English (JD)
-
-tags:
-  - torts
-  - duty of care
-  - omissions
-  - public authorities
-
-keywords:
-  - duty of care
-  - novel duty
-  - omissions
-  - public authorities
-  - salient features
-  - foreseeability
-  - vulnerability
-  - control
-  - coherence
-  - assumption
-  - reliance
-  - indeterminacy
-  - statutory context

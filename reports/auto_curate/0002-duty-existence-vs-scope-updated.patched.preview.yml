@@ -1,0 +1,62 @@
+front: "How do courts distinguish the existence of a duty of care from its scope, and how should you apply that distinction in a Victorian negligence problem?"
+back: |
+  Issue.
+  Separate duty existence from scope so Victorian negligence stays sequenced before breach or causation.
+
+  Rule.
+    - Existence turns on foreseeability filtered by salient features and coherence (Sullivan v Moody, Perre, Woolcock).
+    - Graham Barclay Oysters ties public authorities to statutory purpose.
+    - Crimmins, Stuart v Kirkland-Veenstra, and Tame/Annetts show omissions or psychiatric harm demand control or assumed responsibility.
+
+  Application scaffold.
+    (1) Existence: map foreseeability, salient features, and coherence before naming duty.
+    (2) If satisfied, define scope by isolating the risk, actors, and setting.
+    (3) Analyse breach via Wrongs Act 1958 (Vic) s 48, then causation/scope under s 51 with interveners.
+
+  Authorities map.
+    - Sullivan v Moody — Coherence filter for duty existence.
+    - Perre v Apand — Salient features approach.
+    - Graham Barclay Oysters — Public authority duties.
+    - Crimmins/Stuart v Kirkland-Veenstra — Omissions and control.
+
+  Statutory hook.
+    - Wrongs Act 1958 (Vic) ss 26, 48, 51, 54.
+    - Pt VBA (damages caps/thresholds).
+    - Pt IVAA (proportionate liability).
+    - Consider ACL s 18 for concurrent claims.
+
+  Tripwires.
+    - Importing Shirt calculus into existence analysis.
+    - Collapsing scope into s 51 causation.
+    - Missing coherence checks for public authorities.
+    - Overlooking psychiatric-harm/omission gates.
+    - Ignoring statutory defences (s 54) or damages caps (Pt VBA).
+
+  Conclusion.
+  Sequence: existence → scope → breach → causation → remedy. Show doctrinal discipline and statutory literacy.
+
+why_it_matters: |
+
+mnemonic: E-SCOPE (exist→scope→s48→s51→caps→exam)
+diagram: |
+  ```mermaid
+  mindmap
+  root((Duty: existence vs scope))
+    A. Issue
+      Distinguish existence from scope
+      Sequence before breach/causation
+    B. Rule
+      Existence: foreseeability, salient features, coherence
+      Public authority duties
+    C. Application
+      Sequence: existence → scope → s 48 breach
+      Define scope: risk, actors, setting
+    D. Limits/Statutes
+      s 48 WA (Vic)
+    E. Authorities
+      Sullivan v Moody
+      Perre v Apand
+      Graham Barclay Oysters
+      Crimmins/Stuart v Kirkland-Veenstra
+      Tame/Annetts
+  ```

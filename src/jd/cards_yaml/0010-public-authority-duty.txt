@@ -1,0 +1,126 @@
+﻿front: "When will a Victorian court recognise a negligence duty against a public authority?"
+back: |
+  Issue.
+  When should a Victorian court recognise a private-law duty of care owed by a public authority to the plaintiff?
+
+  Rule.
+  Foreseeability is necessary but not sufficient. Duty turns on salient features constrained by institutional and statutory coherence; the policy/operational distinction is a filter, not an immunity. Central indicators include the authorityâ€™s control, knowledge, assumption/responsibility, reliance/vulnerability, resource allocation limits, and risks of indeterminate liability. Key authorities: Sullivan v Moody (2001) 207 CLR 562, 579â€“580 [49]â€“[53]; Pyrenees Shire Council v Day (1998) 192 CLR 330, [347]â€“[349], [355]â€“[357].
+
+  Application scaffold.
+  (1) Run the statutory coherence gate: identify the empowering scheme, its purpose/limits, and any preconditions.
+  (2) Characterise the impugned act/omission (policy vs operational) and any specific undertaking or control.
+  (3) Evaluate salient features: control, vulnerability/reliance, knowledge, indeterminacy, autonomy, and third-party agency.
+  (4) Check statutory purpose, resource allocation provisions, and Charter coherence before extending duty.
+  (5) Supporting authorities: Hunter and New England Local Health District v McKenna (2014) 253 CLR 270, 279â€“284 [17]â€“[40]; Stuart v Kirkland-Veenstra (2009) 237 CLR 215, 230â€“236 [43]â€“[81]; Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [103].
+
+  Authorities map.
+  - Sullivan v Moody (2001) 207 CLR 562 â€” coherence limits on recognising new duties.
+  - Pyrenees Shire Council v Day (1998) 192 CLR 330 â€” fire inspection duties; policy/operational calibration.
+  - Stuart v Kirkland-Veenstra (2009) 237 CLR 215 â€” control and statutory preconditions.
+  - Hunter and New England Local Health District v McKenna (2014) 253 CLR 270 â€” statutory coherence and resource constraints.
+  - Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [103] â€” salient-features synthesis (persuasive).
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) s 48 (general negligence); ss 83â€“85 (public-authority principles, resource and responsibility filters).
+  - Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 7, 21, 38 â€” coherence check, not a direct cause of action.
+
+  Tripwires.
+  Refer to the dedicated `tripwires` list below for recurring public authority duty pitfalls before finalising any argument.
+
+  Conclusion.
+  No standing duty exists; recognition is most likely where the authority undertook or controlled a specific operational function, knew of a discrete risk to a vulnerable plaintiff who reasonably relied, and coherence with the empowering statute and rights framework is maintained.
+
+why_it_matters: |
+  MLS problems often involve councils, police, or health services. This card supplies an IRAC gateway focused on statutory coherence, policy/operational character, and salient features, avoiding common errors (assuming a rescue duty; merits-review drift; ignoring resource limits and Charter coherence). The cited pinpoints enable fast, authoritative duty analysis under exam pressure.
+
+mnemonic: POLAR-CC
+
+diagram: |-
+  ```mermaid
+  mindmap
+    root((Public authority duty))
+      A. Issue
+        Duty of care recognition
+      B. Rule
+        Foreseeability necessary, not sufficient
+        Salient features + coherence (no blanket immunity)
+        Policy/operational = filter, not defence
+      C. Application
+        Read empowering statute; purpose/limits
+        Control/assumption â€¢ reliance/vulnerability â€¢ indeterminacy
+      D. Authorities
+        Sullivan v Moody (2001) 207 CLR 562
+        Pyrenees Shire Council v Day (1998) 192 CLR 330
+        Stuart v Kirkland-Veenstra (2009) 237 CLR 215
+      E. Statutes
+        Wrongs Act 1958 (Vic) s 48; ss 83â€“85
+        Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 7, 21, 38
+  ```
+tripwires:
+- Policy/operational distinction is not an immunity.
+- No general rescue duty exists for public authorities.
+- Statutory purpose/resource limits must be considered.
+- Charter coherence is essential before duty extension.
+anchors:
+  cases:
+  - name: Sullivan v Moody
+    citation: (2001) 207 CLR 562
+    court: HCA
+    pinpoints:
+    - "579â€“580"
+    - "[49]â€“[53]"
+    notes: Coherence limits on novel duties.
+  - name: Pyrenees Shire Council v Day
+    citation: (1998) 192 CLR 330
+    court: HCA
+    pinpoints:
+    - "347â€“349"
+    - "355â€“357"
+    notes: Fire inspection duties; policy versus operational calibration.
+  - name: Stuart v Kirkland-Veenstra
+    citation: (2009) 237 CLR 215
+    court: HCA
+    pinpoints:
+    - "230â€“236"
+    - "[43]â€“[81]"
+    notes: Control and statutory preconditions for public authority liability.
+  - name: Hunter and New England Local Health District v McKenna
+    citation: (2014) 253 CLR 270
+    court: HCA
+    pinpoints:
+    - "279â€“284"
+    - "[17]â€“[40]"
+    notes: Statutory coherence and resource allocation limits.
+  - name: Caltex Refineries (Qld) Pty Ltd v Stavar
+    citation: [2009] NSWCA 258
+    court: NSWCA
+    pinpoints:
+    - "[103]"
+    notes: Salient-features synthesis (persuasive).
+  statutes:
+  - name: Wrongs Act 1958 (Vic)
+    provisions:
+    - s 48
+    - ss 83â€“85
+    notes: Public authority resource and responsibility filters.
+  - name: Charter of Human Rights and Responsibilities Act 2006 (Vic)
+    provisions:
+    - s 7
+    - s 21
+    - s 38
+    notes: Coherence check on duty recognition; no direct cause of action.
+  notes: []
+reading_level: Plain English (JD)
+tags:
+- MLS_H1
+- LAWS50025_Torts
+- Exam_Fundamentals
+keywords:
+- public authority duty
+- salient features
+- statutory coherence
+- policyâ€“operational distinction
+- resource allocation
+- Charter coherence
+- indeterminate liability
+- vulnerability and reliance

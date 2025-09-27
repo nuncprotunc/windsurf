@@ -1,0 +1,103 @@
+﻿front: "In a vicarious liability problem, how do you decide if an employer is liable for a worker's tort?"
+back: |
+  Issue.
+  When will a Victorian defendant be vicariously liable for a tort committed by another person, usually an employee, instead of leaving liability solely with the tortfeasor?
+
+  Rule.
+  Vicarious liability attaches only if the tortfeasor is an employee and the tort is committed in the course of employment. Classify status using the multifactorial test: control, integration, delegation rights, supply of tools, allocation of enterprise risk, and remuneration structure (Stevens v Brodribb (1986) 160 CLR 16, 29â€“30). Intentional torts may still be â€œin courseâ€ if the enterprise risk materialised and the act was an unauthorised mode of the authorised task (Deatons v Flew (1949) 79 CLR 370, 381â€“382).
+
+  Application scaffold.
+  1) Identify the tortfeasor and walk through each indicator, explaining why contractor hallmarks (independence, own business, assumption of risk) are outweighed by employment features.
+  2) Link the tort to employment by testing temporal and geographic proximity, benefit to the employer, and whether enterprise risk materialised; exclude frolics or personal vendettas.
+  3) For intentional torts or institutional settings, show how the unauthorised mode analysis keeps liability within or outside the course of employment.
+  4) Address statutory overlays: Wrongs Act 1958 (Vic) s 48 breach calculus, Pt VBA damages caps, and any indemnity or contribution regimes.
+  5) Conclude with liability, remedies, and follow-up issues such as contribution, insurance, or compliance responses.
+
+  Authorities map.
+  - Stevens v Brodribb (1986) 160 CLR 16, 29â€“30 â€” Multifactorial employment classification; contractors typically outside vicarious liability.
+  - Deatons v Flew (1949) 79 CLR 370, 381â€“382 â€” Intentional torts as unauthorised modes when enterprise risk is engaged.
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) s 48 â€” Reasonable-response calculus for employer precautions.
+  - Wrongs Act 1958 (Vic) Pt VBA â€” Damages thresholds and caps for personal injury claims.
+
+  Tripwires.
+  - Assuming every employee tort is automatically "in course".
+  - Misclassifying a contractor by privileging a single indicator.
+  - Ignoring Deatons v Flew when intentional battery is pleaded.
+  - Conflating vicarious liability with non-delegable duties.
+
+  Conclusion.
+  Deliver the classification, connect the tort to enterprise risk, address statutory overlays, and state liability plus remedial consequences so the advice remains exam-ready.
+
+why_it_matters: |
+  Vicarious liability frequently couples with breach and damages in Victorian exams. High-band answers classify the relationship, isolate enterprise risk, and explain intentional tort coverage while name-checking Wrongs Act 1958 (Vic) s 48 and Pt VBA caps. Doing so avoids conflating non-delegable duties, meets statutory literacy expectations, and flags contribution or insurance follow-up.
+
+mnemonic: CLASS â†’ Control, Labour, Allocation, Scope
+diagram: |
+  ```mermaid
+  mindmap
+  root((Vicarious Liability))
+    A. Issue
+      Liability for employee torts
+    B. Rule
+      Employee + course of employment
+      Multifactorial test: control, integration, risk
+      Exclude independent contractors
+    C. Application
+      Classify worker, connect tort to employment
+      Assess proximity to duties, benefit to employer
+      Consider intentional torts, test unauthorised mode
+    D. Limits/Statutes
+      s 48 Wrongs Act 1958 (Vic)
+      Pt VBA caps for personal injury
+    E. Authorities
+      Stevens v Brodribb
+      Deatons v Flew
+      Relevant case law
+  ```
+
+tripwires:
+  - Assuming all employee torts are in course of employment.
+  - Misclassifying workers based on a single factor.
+  - Neglecting the Deatons test for battery cases.
+  - Confusing vicarious liability with non-delegable duties.
+
+anchors:
+  cases:
+    - name: Stevens v Brodribb Sawmilling Co Pty Ltd v Hughes
+      citation: (1986) 160 CLR 16
+      court: HCA
+      pinpoints:
+        - "29â€“30"
+      notes: Multifactorial employment classification; contractors generally outside vicarious liability.
+    - name: Deatons Pty Ltd v Flew
+      citation: (1949) 79 CLR 370
+      court: HCA
+      pinpoints:
+        - "381â€“382"
+      notes: Unauthorised mode analysis for intentional torts within enterprise risk.
+  statutes:
+    - name: Wrongs Act 1958 (Vic)
+      provisions:
+        - s 48
+        - Pt VBA
+      notes: s 48 breach calculus and Pt VBA damages caps for personal injury claims.
+  notes: []
+
+reading_level: Plain English (JD)
+
+tags:
+  - MLS_H1
+  - LAWS50025_Torts
+  - Exam_Fundamentals
+
+keywords:
+  - vicarious liability
+  - course of employment
+  - multifactorial test
+  - enterprise risk
+  - intentional torts
+  - Wrongs Act 1958 (Vic)
+  - damages caps
+

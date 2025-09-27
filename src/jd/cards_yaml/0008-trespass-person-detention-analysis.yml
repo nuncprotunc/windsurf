@@ -32,8 +32,8 @@ back: |
   - Crimes Act 1914 (Cth) ss 3W, 3ZC.
 
   Tripwires.
-  - Treating partial obstruction as false imprisonment (Bird v Jones).
-  - Requiring “hostility” for battery.
+  - Treating partial obstruction as false imprisonment.
+  - Requiring hostility for battery.
   - Ignoring the onus shift once restraint is proved.
   - Equating suspicion with reasonable grounds for detention.
 
@@ -49,28 +49,28 @@ diagram: |
   ```mermaid
   mindmap
     root((Detention torts))
-      Classify
-        Battery / Assault / FI
-        Total restraint (FI)
-      Elements
-        Battery = direct, voluntary contact
-        FI: onus shifts after restraint shown
-        Assault = apprehension of imminent contact
-      Apply
-        Prove restraint; statutory preconditions; proportional force
-        Check implied-licence limits on entry
-        Call police without undue delay
-      Cases
+      A. Issue
+        Trespass torts: battery, assault, false imprisonment
+      B. Rule
+        False imprisonment: total restraint; onus on D
+        Battery: direct contact; no hostility element
+        Assault: apprehension of imminent contact
+      C. Application
+        Classify actors and purpose
+        Prove statutory authority; test proportional force
+        Record detention timeline and onus shift
+      D. Statutes
+        Crimes Act 1958 (Vic) ss 458–459, 462A
+        Crimes Act 1914 (Cth) ss 3W, 3ZC
+      E. Authorities
+        Williams v Milotin
+        Bird v Jones (persuasive)
         Myer Stores v Soo
-        Halliday v Nevill
-      Statutes
-        Vic Crimes Act ss 458–459; s 462A
-        Cth Crimes Act ss 3W, 3ZC
   ```
   
 tripwires:
-  - Treating partial obstruction as false imprisonment (Bird v Jones).
-  - Requiring “hostility” for battery.
+  - Treating partial obstruction as false imprisonment.
+  - Requiring hostility for battery.
   - Ignoring the onus shift once restraint is proved.
   - Equating suspicion with reasonable grounds for detention.
 
@@ -143,7 +143,7 @@ anchors:
 reading_level: "Plain English (JD)"
 
 tags:
-  - LAWS50025
+  - LAWS50025_Torts
   - Torts
   - Trespass
   - Exam_Fundamentals

@@ -5,12 +5,12 @@ back: |
 
   Rule.
     - Injury: negligence or intentional-tort scaffolds with material-risk warnings (Rogers v Whitaker (1992) 175 CLR 479, 490–493) and the Chapman v Hearse (1961) 106 CLR 112, 121 foreseeability threshold.
-    - Property: trespass protects possession and requires direct, unauthorised physical interference; nuisance liability turns on unreasonableness (Entick v Carrington (1765) 19 St Tr 1029; Overseas Tankship (UK) Ltd v Morts Dock (The Wagon Mound) (No 1) [1961] — persuasive AC 388 (PC) 426 — persuasive).
+    - Property: trespass protects possession and requires direct, unauthorised physical interference; nuisance turns on unreasonableness (Entick v Carrington (1765) 19 St Tr 1029; Overseas Tankship (UK) Ltd v Morts Dock (The Wagon Mound) (No 1) [1961] AC 388 (PC) 426 (persuasive)).
     - Pure economic loss: no general duty—confine liability with salient features (Perre v Apand Pty Ltd [1999] HCA 36, [118]–[122]; Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36).
 
   Application scaffold.
     - Classify the interest and separate consequential loss from pure economic loss.
-    - For injury, apply Wrongs Act s 48 (standard of care), s 51 (causation/scope), and any Pt XI mental-harm gates before remedies.
+    - For injury, apply Wrongs Act s 48 (standard of care), s 51 (causation/scope), and any Pt XI mental-harm gates (s 74) before remedies.
     - For property, confirm possession, characterise the interference (direct trespass versus nuisance reasonableness), and select proportionate remedies.
     - For pure economic loss, run the salient-features matrix—vulnerability, assumption of responsibility, reliance, indeterminacy, and coherence (Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [103]; Caltex Oil (Australia) Pty Ltd v The Dredge "Willemstad" (1976) 136 CLR 529).
     - Close with remoteness (Wagon Mound 426), statutory overlays (Pt VBA thresholds/caps, Pt XI mental harm), and any defences.
@@ -19,121 +19,46 @@ back: |
   Authorities map.
     - Rogers v Whitaker (1992) 175 CLR 479, 490–493 — injury warnings and standard of care.
     - Chapman v Hearse (1961) 106 CLR 112, 121 — foreseeability floor for injury/property.
-    - Entick v Carrington (1765) 19 St Tr 1029 — possession-centred trespass liability.
-    - Overseas Tankship (UK) Ltd v Morts Dock (The Wagon Mound) (No 1) [1961] — persuasive AC 388 (PC) 426 — persuasive — remoteness of kind (persuasive).
     - Perre v Apand Pty Ltd (1999) 198 CLR 180; Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36 — salient features constrain economic loss duties.
+    - Entick v Carrington (1765) 19 St Tr 1029 — possession-centred trespass liability.
+    - Overseas Tankship (UK) Ltd v Morts Dock (The Wagon Mound) (No 1) [1961] AC 388 (PC) 426 (persuasive) — remoteness of kind.
     - Sullivan v Moody (2001) 207 CLR 562; Modbury Triangle Shopping Centre Pty Ltd v Anzil (2000) 205 CLR 254 — coherence when extending duties to omissions/public actors.
 
   Statutory hook.
-    - Wrongs Act 1958 (Vic) ss 26, 48, 51(1)(b), 51(4), s 74, Pt XI, Pt VBA (including s 28G threshold).
+    - Wrongs Act 1958 (Vic) ss 48, 51(1)(b), 51(4), s 74, Pt XI, Pt VBA (including s 28G threshold).
 
   Tripwires.
     - Misclassifying consequential loss as pure economic loss.
     - Ignoring Pt VBA thresholds or caps for damages.
-    - Skipping Pt XI and s 74 when reframing mental harm.
-    - Assuming trespass protects ownership rather than possession.
+    - Neglecting Pt XI and s 74 for mental harm.
+    - Confusing possession with ownership in trespass.
 
   Conclusion.
   Start with the interest classification, apply the tailored doctrine plus statutory overlays, then deliver liability and remedy so the exam roadmap stays coherent.
 
 why_it_matters: |
-  Interest-first triage keeps Victorian negligence answers coherent, letting you separate possession, directness, remoteness, and salient features while signalling Wrongs Act s 48/s 51 literacy under pressure.
+  Starting with the protected interest (people, property, pure economic) keeps the exam roadmap tight: you signpost s 48/s 51 early, separate consequential from pure economic loss, and avoid coherence traps under Pt XI and Pt VBA under time pressure.
 
 mnemonic: 3Ps → People, Property, Pure economic
-
-diagram: |-
+diagram: |
   ```mermaid
   mindmap
-    root((Protected interests → roadmap))
-      Issue
-        Classify: injury / property / pure econ
-      Injury
-        s 48/49 breach scaffold
-        Material-risk warnings (Rogers)
-        Foreseeability floor (Chapman)
-      Property
-        Trespass = possession + directness
-        Nuisance = unreasonableness
-        Remoteness of kind (Wagon Mound)
-      Pure economic loss
-        Salient features: vulnerability • assumption/reliance • indeterminacy
-        Coherence with contracts/statutes (Perre/Brookfield)
-      Statutory/flow
-        Sequence: Duty → Breach (s 48) → Causation (s 51)
-        Overlays: Pt XI (mental harm) • Pt VBA caps
+  root((Protected interests → roadmap))
+    A. Issue
+      Classify: injury / property / pure econ
+    B. Rule
+      Injury: s 48/51 breach, warnings (Rogers), foreseeability (Chapman)
+      Property: trespass (possession), nuisance (unreasonableness)
+      Pure economic loss: salient features (Perre/Brookfield)
+    C. Application
+      Classify interest, apply relevant statutes, confirm possession
+      For injury, apply s 48/51, mental harm gates
+      For property, characterise interference, select remedies
+    D. Limits/Statutes
+      s 48 WA (Vic)
+      s 51 WA (Vic)
+    E. Authorities
+      HCA: Rogers, Perre, Brookfield
+      Persuasive: Entick (persuasive), Wagon Mound (persuasive)
+      HCA: Chapman, Sullivan, Modbury
   ```
-
-tripwires:
-  - Conflating pure economic with consequential loss.
-  - Ignoring Pt VBA thresholds or caps.
-  - Treating salient features as elements.
-  - Overlooking psychiatric-harm coherence limits.
-  - Treating trespass as ownership protection.
-
-anchors:
-  cases:
-    - name: Rogers v Whitaker
-      citation: (1992) 175 CLR 479
-      court: High Court of Australia
-      pinpoints:
-        - 490
-        - 493
-
-    - name: Perre v Apand Pty Ltd
-      citation: "[1999] HCA 36; (1999) 198 CLR 180"
-      court: High Court of Australia
-      pinpoints:
-        - "[118]"
-        - "[122]"
-
-    - name: Brookfield Multiplex Ltd v Owners Corporation Strata Plan 61288
-      citation: (2014) 254 CLR 185
-      court: High Court of Australia
-      pinpoints:
-        - "[66]"
-        - "[69]"
-
-    - name: Plenty v Dillon
-      citation: (1991) 171 CLR 635
-      court: High Court of Australia
-      pinpoints:
-        - 639
-        - 640
-
-    - name: Caltex Refineries (Qld) Pty Ltd v Stavar
-      citation: "[2009] NSWCA 258"
-      court: New South Wales Court of Appeal
-      pinpoints:
-        - "[103]"
-
-    - name: Overseas Tankship (UK) Ltd v Morts Dock & Engineering Co Ltd (The Wagon Mound) (No 1)
-      citation: "[1961] AC 388 (PC)"
-      court: Privy Council
-      pinpoints:
-        - "426"
-
-  statutes:
-    - name: Wrongs Act 1958 (Vic)
-      provisions:
-        - s 26
-        - s 48
-        - s 51(b)
-        - s 51
-        - s 74
-        - Pt XI
-        - Pt VBA
-      notes: >-
-        Mix includes at least two High Court authorities and a single UK/PC authority (used with nuance); all anchors connect to the back section.
-
-reading_level: Plain English (JD)
-
-tags:
-  - MLS_H1
-
-keywords:
-  - torts
-  - victoria
-  - duty
-  - breach
-  - causation
-  - damages
