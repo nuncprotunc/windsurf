@@ -93,7 +93,9 @@ class PinpointVerifier:
         for url in urls:
             try:
                 paragraphs = self._fetcher(url)
-            except Exception:  # pragma: no cover - network/parse errors handled upstream.
+            except (
+                Exception
+            ):  # pragma: no cover - network/parse errors handled upstream.
                 continue
             candidates = slice_candidate_paragraphs(
                 paragraphs,
@@ -101,7 +103,9 @@ class PinpointVerifier:
                 window=2,
                 max_total=6,
             )
-            target = next((para for para in candidates if para.para_no == target_para), None)
+            target = next(
+                (para for para in candidates if para.para_no == target_para), None
+            )
             if not target:
                 continue
             try:
@@ -399,7 +403,9 @@ class _UrllibResponse:
 
 
 class _UrllibSession:
-    def get(self, url: str, params: dict | None = None, timeout: int = 30) -> _UrllibResponse:
+    def get(
+        self, url: str, params: dict | None = None, timeout: int = 30
+    ) -> _UrllibResponse:
         if params:
             query = urlencode(params)
             url = f"{url}?{query}"
@@ -421,7 +427,9 @@ def _select_verbatim_quote(text: str, *, min_words: int, max_words: int) -> str:
 
     words = text.strip().split()
     if len(words) < min_words:
-        raise ValueError("Paragraph text is too short for the verbatim quote requirement.")
+        raise ValueError(
+            "Paragraph text is too short for the verbatim quote requirement."
+        )
     end = min(len(words), max_words)
     quote_words = words[:end]
     return " ".join(quote_words)
@@ -437,5 +445,3 @@ def _build_reason(paragraph_text: str, proposition: str) -> str:
         f"The paragraph explains that {snippet} This supports the proposition "
         f"'{proposition}'."
     )
-
-

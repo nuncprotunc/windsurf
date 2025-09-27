@@ -73,7 +73,9 @@ def _parse_list_value(lines: list[str], index: int, indent: int) -> Tuple[Any, i
     return nested, index
 
 
-def _parse_mapping_entry(lines: list[str], index: int, indent: int) -> Tuple[str, Any, int]:
+def _parse_mapping_entry(
+    lines: list[str], index: int, indent: int
+) -> Tuple[str, Any, int]:
     raw_line = lines[index]
     stripped = _strip_comments(raw_line).rstrip()
     current = stripped[indent:]
@@ -88,7 +90,9 @@ def _parse_mapping_entry(lines: list[str], index: int, indent: int) -> Tuple[str
     return key, value, index
 
 
-def _parse_scalar(token: str, lines: list[str], index: int, indent: int) -> Tuple[Any, int]:
+def _parse_scalar(
+    token: str, lines: list[str], index: int, indent: int
+) -> Tuple[Any, int]:
     if token.startswith("'") or token.startswith('"'):
         quote = token[0]
         if token.endswith(quote) and not token.endswith(f"\\{quote}"):

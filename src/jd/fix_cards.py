@@ -15,13 +15,17 @@ try:
     import openai  # type: ignore[import-not-found]
     from openai import OpenAI  # type: ignore[import-not-found]
 except ImportError:
-    print("Error: 'openai' package is required. Please install it with: pip install openai")
+    print(
+        "Error: 'openai' package is required. Please install it with: pip install openai"
+    )
     sys.exit(1)
 
 try:
     import yaml
 except ImportError:
-    print("Error: 'pyyaml' package is required. Please install it with: pip install pyyaml")
+    print(
+        "Error: 'pyyaml' package is required. Please install it with: pip install pyyaml"
+    )
     sys.exit(1)
 
 print("Using API Key:", (os.environ.get("OPENAI_API_KEY") or "<missing>")[:10], "...")
@@ -43,9 +47,11 @@ CANON_MM = (
 API_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("API_KEY")
 # Ensure URL is properly formatted without double dots
 base_url = os.getenv("OPENAI_BASE", "https://api.openai.com/v1")
-API_BASE = base_url.replace('..', '.')  # Fix any double dots in URL
-MODEL     = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")  # Using gpt-3.5-turbo for better compatibility
-USE_API  = os.getenv("USE_API", "1") != "0"
+API_BASE = base_url.replace("..", ".")  # Fix any double dots in URL
+MODEL = os.getenv(
+    "OPENAI_MODEL", "gpt-3.5-turbo"
+)  # Using gpt-3.5-turbo for better compatibility
+USE_API = os.getenv("USE_API", "1") != "0"
 
 # Debug info
 print(f"Using API: {USE_API}")
@@ -58,10 +64,11 @@ if not API_KEY:
     print("Please set it with: $env:OPENAI_API_KEY='your-api-key'")
     sys.exit(1)
 
+
 def chat(messages, temperature=None, max_completion_tokens=1800, max_retries=3):
     """Send messages to the OpenAI API with retries and timeouts using the official client."""
     client = OpenAI(api_key=API_KEY, base_url=API_BASE)
-    
+
     for attempt in range(max_retries):
         try:
             # Prepare the request parameters
@@ -69,29 +76,30 @@ def chat(messages, temperature=None, max_completion_tokens=1800, max_retries=3):
                 "model": MODEL,
                 "messages": messages,
                 "temperature": temperature or 0.7,
-                "timeout": 60  # 60 seconds timeout
+                "timeout": 60,  # 60 seconds timeout
             }
-            
+
             # Only include max_completion_tokens for OpenAI's API v1
             if "openai.com" in API_BASE:
                 params["max_completion_tokens"] = max_completion_tokens
-                
+
             # Make the API call
             response = client.chat.completions.create(**params)
             return response.choices[0].message.content
-            
+
         except Exception as err:
-            error_msg = str(err).replace('openaai.com', 'openai.com')
+            error_msg = str(err).replace("openaai.com", "openai.com")
             if attempt == max_retries - 1:  # Last attempt
                 print(f"  - ❌ Final attempt failed: {error_msg[:200]}...")
                 raise
-                
-            wait_time = (2 ** attempt) * 2
+
+            wait_time = (2**attempt) * 2
             print(f"  - ⚠️  Error: {error_msg[:200]}...")
             print(f"  - Waiting {wait_time}s before retry...")
             time.sleep(wait_time)
-    
+
     raise RuntimeError(f"Failed after {max_retries} retries")
+
 
 # ---- I/O & validation helpers ----
 def yload(s: str) -> Dict[str, Any]:
@@ -101,10 +109,12 @@ def yload(s: str) -> Dict[str, Any]:
 def ydump(d: Dict[str, Any]) -> str:
     return yaml.safe_dump(d, sort_keys=False, allow_unicode=True, width=1000)
 
+
 ROOT = Path(__file__).parent / "cards_yaml"
 timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 BACKUP = Path("backups") / f"llm_fix_{timestamp}"
 BACKUP.mkdir(parents=True, exist_ok=True)
+
 
 @dataclass
 class ValidationReport:
@@ -121,8 +131,13 @@ def clean_yaml_noise(text: str) -> str:
 
 
 REQ_HEADINGS = [
-    "Issue.", "Rule.", "Application scaffold.", "Authorities map.",
-    "Statutory hook.", "Tripwires.", "Conclusion."
+    "Issue.",
+    "Rule.",
+    "Application scaffold.",
+    "Authorities map.",
+    "Statutory hook.",
+    "Tripwires.",
+    "Conclusion.",
 ]
 
 CANON_MM = (
@@ -138,10 +153,11 @@ CANON_MM = (
 
 DIAG_RX = re.compile(
     r"```mermaid\s*?\nmindmap\s*?\n\s*root\(\(.*?\)\)\s*?\n"  # mermaid header and root
-    r"(?:\s{2,}-\s.*\n){4}"                                   # at least four children lines
+    r"(?:\s{2,}-\s.*\n){4}"  # at least four children lines
     r"\s*```",
     re.S,
 )
+
 
 def is_structural_canon(diagram: str) -> bool:
     """Accept any mermaid mindmap with exactly four hyphen-children under root, ignoring whitespace."""
@@ -149,16 +165,18 @@ def is_structural_canon(diagram: str) -> bool:
         return False
     lines = [line.rstrip() for line in diagram.splitlines()]
     try:
-        root_idx = next(i for i, line in enumerate(lines) 
-                       if re.search(r"^\s*root\(\(", line))
+        root_idx = next(
+            i for i, line in enumerate(lines) if re.search(r"^\s*root\(\(", line)
+        )
     except StopIteration:
         return False
-    kids = [line for line in lines[root_idx + 1:] 
-            if re.match(r"^\s{4}-\s", line)]
+    kids = [line for line in lines[root_idx + 1 :] if re.match(r"^\s{4}-\s", line)]
     return len(kids) == 4
+
 
 def force_canonical_diagram(_: str) -> str:
     return CANON_MM
+
 
 def normalise_diagram_in_card(d: dict) -> bool:
     """If diagram is missing or non-canonical, replace with the canonical block."""
@@ -168,7 +186,9 @@ def normalise_diagram_in_card(d: dict) -> bool:
         return True
     return False
 
+
 H_RX = r"^(Issue\.|Rule\.|Application scaffold\.|Authorities map\.|Statutory hook\.|Tripwires\.|Conclusion\.)$"
+
 
 def extract_sections(back: str) -> Dict[str, List[str]]:
     """Return {heading: [lines]} for the required headings."""
@@ -184,9 +204,10 @@ def extract_sections(back: str) -> Dict[str, List[str]]:
     secs: Dict[str, List[str]] = {h: [] for h in REQ_HEADINGS}
     for i in range(1, len(parts), 2):
         h = parts[i]
-        body = parts[i+1] if i+1 < len(parts) else ""
+        body = parts[i + 1] if i + 1 < len(parts) else ""
         secs[h] = [ln for ln in body.splitlines() if ln.strip()]
     return secs
+
 
 def wordcount_content(sections: Dict[str, List[str]]) -> int:
     """Count words in all sections except headings."""
@@ -196,13 +217,16 @@ def wordcount_content(sections: Dict[str, List[str]]) -> int:
     # exclude headings; count just text
     return len(" ".join(lines).split())
 
+
 def needs_llm_for_fill(d: Dict) -> bool:
     """Check if this card needs LLM processing."""
     back = d.get("back") or ""
     secs = extract_sections(back)
 
     # any required section empty?
-    empties = any(not any(line.strip() for line in secs.get(h, [])) for h in REQ_HEADINGS)
+    empties = any(
+        not any(line.strip() for line in secs.get(h, [])) for h in REQ_HEADINGS
+    )
 
     # placeholder markers?
     placeholders = bool(re.search(r"__HD__\d+__", back))
@@ -219,15 +243,25 @@ def needs_llm_for_fill(d: Dict) -> bool:
     anc = d.get("anchors") or {}
     cases = anc.get("cases") or []
     stats = anc.get("statutes") or []
-    anchors_bad = (len(cases) == 0) or (not any(re.search(r"\b(?:s|ss)\s*\d|\bsch\s*\d", str(s) or "", flags=re.I) for s in stats))
+    anchors_bad = (len(cases) == 0) or (
+        not any(
+            re.search(r"\b(?:s|ss)\s*\d|\bsch\s*\d", str(s) or "", flags=re.I)
+            for s in stats
+        )
+    )
 
     # back must be >=160 words
     too_short = wordcount_content(secs) < 160
 
     return placeholders or empties or no_lead or no_oper or anchors_bad or too_short
 
+
 def has_operative_section(stat_text: str) -> bool:
-    return bool(re.search(r"\b(s|ss)\s*\d", str(stat_text))) or "sch " in str(stat_text).lower()
+    return (
+        bool(re.search(r"\b(s|ss)\s*\d", str(stat_text)))
+        or "sch " in str(stat_text).lower()
+    )
+
 
 def ensure_headings(back: str) -> str:
     """Ensure all required headings exist once, in order; remove 'Step X' noise; seed minimal content when absent."""
@@ -251,6 +285,7 @@ def ensure_headings(back: str) -> str:
     # strip lines that look like 'Step X'
     body = re.sub(r"^.*Step\s*\d+.*$", "", body, flags=re.M)
     return body
+
 
 def validate_card(d: Dict[str, Any], fname: str) -> ValidationReport:
     """Validate a card dictionary and return errors and warnings."""
@@ -311,10 +346,11 @@ def validate_card(d: Dict[str, Any], fname: str) -> ValidationReport:
 
     return ValidationReport(errors=errors, warnings=warnings)
 
+
 # ---- Prompt template (surgical, deterministic-ish) ----
 SYSTEM = (
-"You are a meticulous JD flashcard editor and legal writing coach for Australia (Vic/NSW/Cth). "
-"Follow AGLC4. Never invent authorities. Use Australian English."
+    "You are a meticulous JD flashcard editor and legal writing coach for Australia (Vic/NSW/Cth). "
+    "Follow AGLC4. Never invent authorities. Use Australian English."
 )
 
 USER_TMPL = """You will fix ONE YAML card to comply with this strict policy:
@@ -368,14 +404,21 @@ def build_fill_messages(card_text: str) -> List[Dict[str, str]]:
 
 
 def build_audit_messages(card_text: str, warnings: List[str]) -> List[Dict[str, str]]:
-    warn_block = "\n".join(f"- {w}" for w in warnings) or "- Resolve any latent clarity issues."
+    warn_block = (
+        "\n".join(f"- {w}" for w in warnings) or "- Resolve any latent clarity issues."
+    )
     return [
         {"role": "system", "content": SYSTEM},
-        {"role": "user", "content": AUDIT_TMPL.format(card=card_text, warnings=warn_block)},
+        {
+            "role": "user",
+            "content": AUDIT_TMPL.format(card=card_text, warnings=warn_block),
+        },
     ]
 
 
-def run_fill_model(card: Dict[str, Any]) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
+def run_fill_model(
+    card: Dict[str, Any],
+) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
     try:
         response = chat(
             messages=build_fill_messages(ydump(card)),
@@ -390,7 +433,9 @@ def run_fill_model(card: Dict[str, Any]) -> Tuple[Optional[Dict[str, Any]], Opti
         return None, str(err)
 
 
-def run_audit_model(card: Dict[str, Any], warnings: List[str]) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
+def run_audit_model(
+    card: Dict[str, Any], warnings: List[str]
+) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
     try:
         response = chat(
             messages=build_audit_messages(ydump(card), warnings),
@@ -428,7 +473,9 @@ def main():
         try:
             card = yload(cleaned_raw) or {"diagram": "", "back": "", "anchors": {}}
         except Exception as exc:
-            report = ValidationReport(errors=[f"cannot parse original YAML: {exc}"], warnings=[])
+            report = ValidationReport(
+                errors=[f"cannot parse original YAML: {exc}"], warnings=[]
+            )
             summary.append((path.name, report))
             continue
 
@@ -437,7 +484,11 @@ def main():
         card["back"] = ensure_headings(card.get("back", ""))
 
         sections = extract_sections(card["back"])
-        auth_lines = [ln for ln in sections.get("Authorities map.", []) if not re.match(r"^\s*Step\s+\d+\s*:", ln)]
+        auth_lines = [
+            ln
+            for ln in sections.get("Authorities map.", [])
+            if not re.match(r"^\s*Step\s+\d+\s*:", ln)
+        ]
         if not any(re.match(r"^\s*Lead\s*:", ln) for ln in auth_lines):
             auth_lines.insert(0, "Lead: Case name")
         sections["Authorities map."] = auth_lines
@@ -446,7 +497,9 @@ def main():
         if not any(has_operative_section(line) for line in hook_lines):
             sections["Statutory hook."].insert(0, "Wrongs Act 1958 (Vic) s 48")
 
-        card["back"] = "\n\n".join(f"{heading}\n" + "\n".join(lines) for heading, lines in sections.items())
+        card["back"] = "\n\n".join(
+            f"{heading}\n" + "\n".join(lines) for heading, lines in sections.items()
+        )
 
         anchors_obj = card.get("anchors")
         anchors = anchors_obj if isinstance(anchors_obj, dict) else {}
@@ -456,7 +509,11 @@ def main():
         anchors["cases"] = cases[:8]
 
         statutes = anchors.get("statutes") if isinstance(anchors, dict) else None
-        if not isinstance(statutes, list) or not statutes or not any(has_operative_section(str(s)) for s in statutes):
+        if (
+            not isinstance(statutes, list)
+            or not statutes
+            or not any(has_operative_section(str(s)) for s in statutes)
+        ):
             statutes = ["Wrongs Act 1958 (Vic) s 48"]
         anchors["statutes"] = statutes[:8]
         card["anchors"] = anchors
@@ -469,7 +526,10 @@ def main():
             print(f"  - 🤖 Filling gaps in {path.name} via {MODEL}...")
             candidate, err = run_fill_model(card)
             if candidate is not None:
-                merged = {**card, **{k: v for k, v in candidate.items() if v is not None}}
+                merged = {
+                    **card,
+                    **{k: v for k, v in candidate.items() if v is not None},
+                }
                 card = merged
                 report = validate_card(card, path.name)
                 used_api = True

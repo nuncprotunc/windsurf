@@ -4,6 +4,7 @@ To use ``verify_once``:
 * install ``openai`` (``pip install openai``)
 * export ``OPENAI_API_KEY`` in your environment
 """
+
 from __future__ import annotations
 
 import json
@@ -15,7 +16,7 @@ try:  # pragma: no cover - optional dependency in some envs.
 except Exception:  # pragma: no cover - allow script to run without the package.
     OpenAI = None  # type: ignore
 
-from tools.legal_pinpoint_pipeline import (
+from windsurf.tools.legal_pinpoint_pipeline import (
     CaseSearchClient,
     LegalDocumentFetcher,
     build_pinpoint_prompt,

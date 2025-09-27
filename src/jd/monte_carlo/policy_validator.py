@@ -1,8 +1,9 @@
 """Validate mindmap diagrams against cards policy constraints."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import List, Sequence
+from typing import List
 import re
 
 from .config import (
@@ -37,7 +38,11 @@ def validate_diagram(diagram: str) -> ValidationResult:
         errors.append("Diagram must start with ```mermaid")
 
     # Identify top-level and child lines by indentation
-    top_level = [line for line in lines if line.startswith("    ") and not line.startswith("      ")]
+    top_level = [
+        line
+        for line in lines
+        if line.startswith("    ") and not line.startswith("      ")
+    ]
     if len(top_level) != TOP_LEVEL_BRANCHES:
         errors.append(
             f"Top level branches {len(top_level)} does not match required {TOP_LEVEL_BRANCHES}"
@@ -72,6 +77,8 @@ def validate_diagram(diagram: str) -> ValidationResult:
                 child_vector[idx] += 1
 
         if child_vector and child_vector not in ALLOWED_CHILD_VECTORS:
-            errors.append(f"Child vector {child_vector} not in allowed sets {ALLOWED_CHILD_VECTORS}")
+            errors.append(
+                f"Child vector {child_vector} not in allowed sets {ALLOWED_CHILD_VECTORS}"
+            )
 
     return ValidationResult(valid=not errors, errors=errors)

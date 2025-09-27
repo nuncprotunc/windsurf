@@ -1,9 +1,9 @@
 """Optimise the diagram for 0004-causation-s51-factual-vs-scope.yml."""
+
 from __future__ import annotations
 
 import argparse
 import json
-from pathlib import Path
 from typing import Dict, Optional
 
 import yaml
@@ -13,10 +13,12 @@ from .diagram_generator import DiagramCandidate, generate_candidate
 from .evaluation import compute_metrics, score_candidate
 from .policy_validator import validate_diagram
 from .score_optimizer import load_score_weights, optimise_score_weights
-from .weight_optimizer import default_weights, load_weights, optimise_weights
+from .weight_optimizer import load_weights, optimise_weights
 
 
-def _maybe_optimise_section_weights(force: bool, max_iterations: int) -> Dict[str, float]:
+def _maybe_optimise_section_weights(
+    force: bool, max_iterations: int
+) -> Dict[str, float]:
     if force:
         return optimise_weights(max_iterations=max_iterations)
     try:
@@ -88,12 +90,29 @@ def update_card(diagram_text: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Optimise the causation diagram")
-    parser.add_argument("--iterations", type=int, default=2000, help="Monte Carlo iterations")
-    parser.add_argument("--force-section-weights", action="store_true", help="Re-optimise section weights")
-    parser.add_argument("--force-score-weights", action="store_true", help="Re-optimise scoring weights")
+    parser.add_argument(
+        "--iterations", type=int, default=2000, help="Monte Carlo iterations"
+    )
+    parser.add_argument(
+        "--force-section-weights",
+        action="store_true",
+        help="Re-optimise section weights",
+    )
+    parser.add_argument(
+        "--force-score-weights", action="store_true", help="Re-optimise scoring weights"
+    )
     parser.add_argument("--seed", type=int, help="Deterministic random seed")
-    parser.add_argument("--dry-run", action="store_true", help="Do not write to card; just print diagram")
-    parser.add_argument("--max-weight-iters", type=int, default=150, help="Iterations for weight optimisation")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Do not write to card; just print diagram",
+    )
+    parser.add_argument(
+        "--max-weight-iters",
+        type=int,
+        default=150,
+        help="Iterations for weight optimisation",
+    )
     args = parser.parse_args()
 
     section_weights = _maybe_optimise_section_weights(
@@ -123,6 +142,7 @@ def main() -> None:
         "candidate": _candidate_to_dict(candidate),
     }
     print(json.dumps(debug_info, indent=2))
+
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -6,12 +6,20 @@ __pycache__/
 *.egg-info/
 .build/
 dist/
+reports/
+docs/_build/
+**/.ipynb_checkpoints
+*.json
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
 
 # Virtual envs
 .venv/
 .venv_windsurf/
 
-# OS/editor
+# IDE/editor
+.idea/
 .DS_Store
 Thumbs.db
 .vscode/

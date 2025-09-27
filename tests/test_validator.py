@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from tools.schema_validator import SchemaValidator
+from windsurf.tools.schema_validator import SchemaValidator
 
 POLICY_PATH = Path(__file__).resolve().parents[1] / "jd/policy/cards_policy.yml"
 
@@ -200,7 +200,9 @@ def validator() -> SchemaValidator:
     return SchemaValidator(POLICY_PATH, policy_data=POLICY_DATA)
 
 
-def build_back(overrides: dict[str, str] | None = None, omit: set[str] | None = None) -> str:
+def build_back(
+    overrides: dict[str, str] | None = None, omit: set[str] | None = None
+) -> str:
     overrides = overrides or {}
     omit = omit or set()
     parts = []
@@ -229,7 +231,10 @@ def test_missing_required_field(validator: SchemaValidator, base_card: dict) -> 
     card = copy.deepcopy(base_card)
     card.pop("mnemonic")
     result = validator.validate_card(card)
-    assert any("Missing required field" in err or "Field 'mnemonic'" in err for err in result.errors)
+    assert any(
+        "Missing required field" in err or "Field 'mnemonic'" in err
+        for err in result.errors
+    )
 
 
 def test_missing_rule_heading(validator: SchemaValidator, base_card: dict) -> None:
@@ -251,7 +256,9 @@ def test_too_many_authorities(validator: SchemaValidator, base_card: dict) -> No
     assert any("lists" in err for err in result.errors)
 
 
-def test_uk_authority_requires_nuance(validator: SchemaValidator, base_card: dict) -> None:
+def test_uk_authority_requires_nuance(
+    validator: SchemaValidator, base_card: dict
+) -> None:
     card = copy.deepcopy(base_card)
     authorities = (
         "Step 1 — Sullivan v Moody (HCA 2001) [2001] HCA 59; 207 CLR 562 emphasises coherence when recognising duties. "
@@ -284,7 +291,9 @@ def test_keywords_below_minimum(validator: SchemaValidator, base_card: dict) -> 
     assert any("keywords" in err.lower() for err in result.errors)
 
 
-def test_duplicate_sentences_flagged(validator: SchemaValidator, base_card: dict) -> None:
+def test_duplicate_sentences_flagged(
+    validator: SchemaValidator, base_card: dict
+) -> None:
     card = copy.deepcopy(base_card)
     duplicate_sentence = "This negligence duty question demands mapping the plaintiff relationship and noting the risk context for exam precision."
     card["why_it_matters"] = duplicate_sentence

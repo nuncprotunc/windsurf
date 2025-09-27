@@ -1,4 +1,5 @@
 """Shared configuration for Monte Carlo diagram optimisation."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass

@@ -1,4 +1,5 @@
 """Utilities for generating and evaluating candidate diagrams."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -11,6 +12,7 @@ from .config import (
     get_card_context,
     get_max_children_per_label,
 )
+
 
 @dataclass
 class DiagramCandidate:

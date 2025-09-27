@@ -1,4 +1,5 @@
 """Differential evolution optimiser for section weighting."""
+
 from __future__ import annotations
 
 from typing import Dict, List

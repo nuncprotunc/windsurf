@@ -11,7 +11,7 @@ from typing import Dict, Iterable, List, Optional, Tuple
 try:  # pragma: no cover - exercised via runtime checks
     import yaml  # type: ignore
 except ImportError:  # pragma: no cover - fallback for restricted environments
-    from tools import yaml_fallback as yaml  # type: ignore
+    from . import yaml_fallback as yaml  # type: ignore
 
 
 @dataclass
@@ -88,10 +88,14 @@ class SchemaValidator:
                 )
             )
         self.back_min_words = int(back.get("min_words", 0) or 0)
-        self.back_max_words = int(back.get("max_words", 10 ** 6) or 10 ** 6)
-        self.back_max_sentence_words = int(back.get("max_sentence_words", 10 ** 6) or 10 ** 6)
+        self.back_max_words = int(back.get("max_words", 10**6) or 10**6)
+        self.back_max_sentence_words = int(
+            back.get("max_sentence_words", 10**6) or 10**6
+        )
         authority_cfg = back.get("authority_per_step", {})
-        self.back_allow_missing_blocks = bool(back.get("allow_missing_blocks_if_not_applicable", False))
+        self.back_allow_missing_blocks = bool(
+            back.get("allow_missing_blocks_if_not_applicable", False)
+        )
         self.authority_rules = AuthorityDiscipline(
             lead_required=bool(authority_cfg.get("lead_required", False)),
             fallback_allowed=bool(authority_cfg.get("fallback_allowed", False)),
@@ -105,11 +109,18 @@ class SchemaValidator:
         self.tripwires_policy = tripwires
         self.lint_policy = lint
         self.tags_policy = tags
-        self.placeholder_regexes = [re.compile(pat, re.IGNORECASE) for pat in lint.get("forbid_placeholder_text_regex", [])]
+        self.placeholder_regexes = [
+            re.compile(pat, re.IGNORECASE)
+            for pat in lint.get("forbid_placeholder_text_regex", [])
+        ]
         allow_token = lint.get("allow_explicit_uncertainty_token")
-        self.allowed_uncertainty_token = allow_token if isinstance(allow_token, str) else None
+        self.allowed_uncertainty_token = (
+            allow_token if isinstance(allow_token, str) else None
+        )
         self.priority_order = authorities.get("priority_order", [])
-        self.priority_index = {name: idx for idx, name in enumerate(self.priority_order)}
+        self.priority_index = {
+            name: idx for idx, name in enumerate(self.priority_order)
+        }
         self.recommended_keywords = keywords.get("recommended_include_if_relevant", [])
 
     # ------------------------------------------------------------------
@@ -132,8 +143,13 @@ class SchemaValidator:
         self._check_diagram(card.get("diagram"), sections, result)
         self._check_abbreviations(back_text, result)
 
-        if self.allowed_uncertainty_token and self.allowed_uncertainty_token in back_text:
-            result.add_warning("Back includes explicit uncertainty token; ensure follow-up research")
+        if (
+            self.allowed_uncertainty_token
+            and self.allowed_uncertainty_token in back_text
+        ):
+            result.add_warning(
+                "Back includes explicit uncertainty token; ensure follow-up research"
+            )
 
         self._check_placeholder_text(card, result)
         self._check_repeated_sentences(card, result)
@@ -143,20 +159,24 @@ class SchemaValidator:
     # Required fields
     # ------------------------------------------------------------------
     def _check_required_fields(self, card: Dict, result: ValidationResult) -> None:
-        for field in self.required_fields:
-            value = card.get(field)
+        for fld in self.required_fields:
+            value = card.get(fld)
             if value is None:
                 result.add_error(f"Missing required field: {field}")
                 continue
             if isinstance(value, str) and not value.strip():
                 result.add_error(f"Field '{field}' must not be empty")
-            elif isinstance(value, (list, tuple, set)) and not any(str(item).strip() for item in value):
+            elif isinstance(value, (list, tuple, set)) and not any(
+                str(item).strip() for item in value
+            ):
                 result.add_error(f"Field '{field}' must contain at least one value")
 
     # ------------------------------------------------------------------
     # Back sections
     # ------------------------------------------------------------------
-    def _parse_back_sections(self, back_text: str) -> Tuple[Dict[str, str], Dict[str, int]]:
+    def _parse_back_sections(
+        self, back_text: str
+    ) -> Tuple[Dict[str, str], Dict[str, int]]:
         sections: Dict[str, str] = {}
         heading_counts: Dict[str, int] = defaultdict(int)
         if not back_text:
@@ -198,12 +218,15 @@ class SchemaValidator:
             count = heading_count.get(requirement.label, 0)
             if count == 0:
                 missing.append(requirement.label)
-            elif count > 1 and self.lint_policy.get("forbid_duplicate_section_headers", False):
+            elif count > 1 and self.lint_policy.get(
+                "forbid_duplicate_section_headers", False
+            ):
                 result.add_error(f"Duplicate heading detected: {requirement.label}")
         if missing:
             if self.back_allow_missing_blocks and self._has_rationale_marker(back_text):
                 result.add_warning(
-                    "Missing sections replaced with rationale marker: " + ", ".join(missing)
+                    "Missing sections replaced with rationale marker: "
+                    + ", ".join(missing)
                 )
             else:
                 for label in missing:
@@ -215,9 +238,13 @@ class SchemaValidator:
     def _check_back_word_counts(self, back_text: str, result: ValidationResult) -> None:
         words = self._tokenize_words(back_text)
         if words < self.back_min_words:
-            result.add_error(f"Back must contain at least {self.back_min_words} words (found {words})")
+            result.add_error(
+                f"Back must contain at least {self.back_min_words} words (found {words})"
+            )
         if words > self.back_max_words:
-            result.add_error(f"Back must contain no more than {self.back_max_words} words (found {words})")
+            result.add_error(
+                f"Back must contain no more than {self.back_max_words} words (found {words})"
+            )
 
         sentences = re.split(r"[\.\?\!]", back_text)
         for idx, sentence in enumerate(sentences, start=1):
@@ -230,7 +257,9 @@ class SchemaValidator:
     # ------------------------------------------------------------------
     # Authorities discipline
     # ------------------------------------------------------------------
-    def _check_authorities(self, section_text: Optional[str], result: ValidationResult) -> None:
+    def _check_authorities(
+        self, section_text: Optional[str], result: ValidationResult
+    ) -> None:
         if not section_text:
             result.add_error("Authorities map section is empty")
             return
@@ -272,7 +301,9 @@ class SchemaValidator:
         authorities: List[SchemaValidator.ExtractedAuthority] = []
         explicit_token = self.allowed_uncertainty_token
         if explicit_token and explicit_token in line:
-            authorities.append(self.ExtractedAuthority(text=explicit_token, category="Token"))
+            authorities.append(
+                self.ExtractedAuthority(text=explicit_token, category="Token")
+            )
             return authorities
 
         case_pattern = re.compile(r"([A-Z][A-Za-z]+ v [A-Z][A-Za-z][^;\.,]*)")
@@ -293,7 +324,13 @@ class SchemaValidator:
         lowered = authority.lower()
         if "hca" in lowered:
             return "HCA"
-        if "vsca" in lowered or "nswca" in lowered or "qsca" in lowered or "sascfc" in lowered or "wasca" in lowered:
+        if (
+            "vsca" in lowered
+            or "nswca" in lowered
+            or "qsca" in lowered
+            or "sascfc" in lowered
+            or "wasca" in lowered
+        ):
             return "State CA"
         if "uk" in lowered or "pc" in lowered or "privy" in lowered:
             return "UK/PC (nuance)"
@@ -314,19 +351,29 @@ class SchemaValidator:
             last_index = idx
         return True
 
-    def _validate_authority_details(self, authority: "SchemaValidator.ExtractedAuthority", result: ValidationResult) -> None:
+    def _validate_authority_details(
+        self, authority: "SchemaValidator.ExtractedAuthority", result: ValidationResult
+    ) -> None:
         text = authority.text
         if authority.category == "Token":
-            result.add_warning("Authority placeholder used; follow up to locate verified authority")
+            result.add_warning(
+                "Authority placeholder used; follow up to locate verified authority"
+            )
             return
         if re.search(r"\[(overruled|distinguished)\]", text, re.IGNORECASE):
             result.add_warning(f"Authority marked as {text}")
         if authority.category == "UK/PC (nuance)":
-            if not re.search(r"nuance|approved|persuasive|caution", text, re.IGNORECASE):
+            if not re.search(
+                r"nuance|approved|persuasive|caution", text, re.IGNORECASE
+            ):
                 result.add_error("UK/PC authority requires a nuance note")
-        if self.authorities_policy.get("require_year_and_neutral_or_report_cite", False):
+        if self.authorities_policy.get(
+            "require_year_and_neutral_or_report_cite", False
+        ):
             if not self._has_year_and_citation(text):
-                result.add_error(f"Authority missing year and neutral/report citation: {text}")
+                result.add_error(
+                    f"Authority missing year and neutral/report citation: {text}"
+                )
 
     def _has_year_and_citation(self, text: str) -> bool:
         year_match = re.search(r"\b(19|20)\d{2}\b", text)
@@ -337,7 +384,9 @@ class SchemaValidator:
     # ------------------------------------------------------------------
     # Statutes discipline
     # ------------------------------------------------------------------
-    def _check_statutes(self, section_text: Optional[str], back_text: str, result: ValidationResult) -> None:
+    def _check_statutes(
+        self, section_text: Optional[str], back_text: str, result: ValidationResult
+    ) -> None:
         if not section_text:
             result.add_warning("Statutory hook section is empty")
             return
@@ -354,18 +403,36 @@ class SchemaValidator:
                 mentions.append(mention)
                 if self.statutes_policy.get("include_only_operational_sections", False):
                     lowered = mention.lower()
-                    if " s " not in lowered and " section " not in lowered and "s." not in lowered:
-                        result.add_error(f"Statute reference must include operational section: {mention}")
+                    if (
+                        " s " not in lowered
+                        and " section " not in lowered
+                        and "s." not in lowered
+                    ):
+                        result.add_error(
+                            f"Statute reference must include operational section: {mention}"
+                        )
         if not mentions:
             result.add_warning("No statutes referenced in statutory hook")
         if self.statutes_policy.get("prefer_victoria_first", False) and mentions:
             first = mentions[0]
             if "(Vic" not in first:
-                result.add_warning("Victorian legislation should be prioritised before other jurisdictions")
+                result.add_warning(
+                    "Victorian legislation should be prioritised before other jurisdictions"
+                )
         if self.statutes_policy.get("require_commonwealth_if_engaged", False):
-            if re.search(r"\b(Cth|Commonwealth(?!\s+Law Reports)|federal)\b", back_text, re.IGNORECASE):
-                if not any("(Cth" in mention or re.search(r"Commonwealth(?!\s+Law Reports)", mention) for mention in mentions):
-                    result.add_error("Commonwealth engagement flagged but no Commonwealth statute cited")
+            if re.search(
+                r"\b(Cth|Commonwealth(?!\s+Law Reports)|federal)\b",
+                back_text,
+                re.IGNORECASE,
+            ):
+                if not any(
+                    "(Cth" in mention
+                    or re.search(r"Commonwealth(?!\s+Law Reports)", mention)
+                    for mention in mentions
+                ):
+                    result.add_error(
+                        "Commonwealth engagement flagged but no Commonwealth statute cited"
+                    )
 
     # ------------------------------------------------------------------
     # Diagram discipline
@@ -394,14 +461,19 @@ class SchemaValidator:
             result.add_error("Diagram must be a fenced mermaid block")
             return
         header, body = mermaid_block
-        if self.diagram_policy.get("must_be_valid_mermaid", False) and header != "mermaid":
+        if (
+            self.diagram_policy.get("must_be_valid_mermaid", False)
+            and header != "mermaid"
+        ):
             result.add_error("Diagram fence must declare mermaid language")
         lines = [line.rstrip() for line in body.splitlines() if line.strip()]
         if not lines:
             result.add_error("Diagram mermaid content is empty")
             return
         first_line = lines[0].strip()
-        if self.diagram_policy.get("type") == "mindmap" and not first_line.lower().startswith("mindmap"):
+        if self.diagram_policy.get(
+            "type"
+        ) == "mindmap" and not first_line.lower().startswith("mindmap"):
             result.add_error("Diagram must declare a mindmap")
 
         node_lines = lines[1:] if first_line.lower().startswith("mindmap") else lines
@@ -433,7 +505,8 @@ class SchemaValidator:
             ]
             if mirrored:
                 result.add_warning(
-                    "Mindmap branches mirror back section headings: " + ", ".join(sorted(set(mirrored)))
+                    "Mindmap branches mirror back section headings: "
+                    + ", ".join(sorted(set(mirrored)))
                 )
 
     # ------------------------------------------------------------------
@@ -448,10 +521,14 @@ class SchemaValidator:
         min_items = int(self.anchors_policy.get("min_items", 0))
         max_items = int(self.anchors_policy.get("max_items", len(items) or 0))
         if len(items) < min_items:
-            result.add_error(f"Anchors must include at least {min_items} items (found {len(items)})")
+            result.add_error(
+                f"Anchors must include at least {min_items} items (found {len(items)})"
+            )
         if max_items and len(items) > max_items:
-            result.add_error(f"Anchors must include no more than {max_items} items (found {len(items)})")
-        each_item_max = int(self.anchors_policy.get("each_item_max_words", 10 ** 6))
+            result.add_error(
+                f"Anchors must include no more than {max_items} items (found {len(items)})"
+            )
+        each_item_max = int(self.anchors_policy.get("each_item_max_words", 10**6))
         for idx, item in enumerate(items, start=1):
             words = self._tokenize_words(item)
             if words > each_item_max:
@@ -474,7 +551,9 @@ class SchemaValidator:
             items: List[str] = []
             for value in anchors.values():
                 if isinstance(value, list):
-                    items.extend(str(item).strip() for item in value if str(item).strip())
+                    items.extend(
+                        str(item).strip() for item in value if str(item).strip()
+                    )
                 elif isinstance(value, str) and value.strip():
                     items.append(value.strip())
             return items
@@ -505,7 +584,9 @@ class SchemaValidator:
             seen[abbreviation] = match.start()
             if self._is_all_caps_word_allowed(abbreviation):
                 continue
-            if not self._has_abbreviation_definition(back_text, abbreviation, match.start()):
+            if not self._has_abbreviation_definition(
+                back_text, abbreviation, match.start()
+            ):
                 result.add_error(
                     f"Abbreviation '{abbreviation}' must be expanded on first use"
                 )
@@ -514,18 +595,24 @@ class SchemaValidator:
         whitelist = {"HCA", "AGLC", "JD", "LLB", "NSW", "VIC", "SA", "WA", "QLD", "ACT"}
         return token in whitelist
 
-    def _has_abbreviation_definition(self, text: str, abbreviation: str, index: int) -> bool:
+    def _has_abbreviation_definition(
+        self, text: str, abbreviation: str, index: int
+    ) -> bool:
         window_start = max(0, index - 80)
         window_end = index + len(abbreviation) + 80
         window = text[window_start:window_end]
         # Long form (ABBR)
-        pattern = re.compile(rf"([A-Za-z][A-Za-z\s'-]{{3,}})\s*\({re.escape(abbreviation)}\)")
+        pattern = re.compile(
+            rf"([A-Za-z][A-Za-z\s'-]{{3,}})\s*\({re.escape(abbreviation)}\)"
+        )
         for match in pattern.finditer(window):
             start = window_start + match.start(0)
             end = window_start + match.end(0)
             if start <= index <= end:
                 return True
-        reverse = re.compile(rf"{re.escape(abbreviation)}\s*\([A-Za-z][A-Za-z\s'-]{{3,}}\)")
+        reverse = re.compile(
+            rf"{re.escape(abbreviation)}\s*\([A-Za-z][A-Za-z\s'-]{{3,}}\)"
+        )
         for match in reverse.finditer(window):
             start = window_start + match.start(0)
             end = window_start + match.end(0)
@@ -548,13 +635,21 @@ class SchemaValidator:
         min_tripwires = int(self.tripwires_policy.get("min", 0))
         max_tripwires = int(self.tripwires_policy.get("max", len(tripwires) or 0))
         if len(tripwires) < min_tripwires:
-            result.add_error(f"At least {min_tripwires} tripwires required (found {len(tripwires)})")
+            result.add_error(
+                f"At least {min_tripwires} tripwires required (found {len(tripwires)})"
+            )
         if max_tripwires and len(tripwires) > max_tripwires:
-            result.add_error(f"No more than {max_tripwires} tripwires allowed (found {len(tripwires)})")
+            result.add_error(
+                f"No more than {max_tripwires} tripwires allowed (found {len(tripwires)})"
+            )
         self._check_tripwire_duplicates(tripwires, result)
 
-    def _check_tripwire_duplicates(self, tripwires: List[str], result: ValidationResult) -> None:
-        threshold = float(self.tripwires_policy.get("duplicate_similarity_threshold", 0.8))
+    def _check_tripwire_duplicates(
+        self, tripwires: List[str], result: ValidationResult
+    ) -> None:
+        threshold = float(
+            self.tripwires_policy.get("duplicate_similarity_threshold", 0.8)
+        )
         for first, second in itertools.combinations(enumerate(tripwires, start=1), 2):
             (idx_a, trip_a), (idx_b, trip_b) = first, second
             if self._text_similarity(trip_a, trip_b) >= threshold:
@@ -574,9 +669,13 @@ class SchemaValidator:
         min_keywords = int(self.keywords_policy.get("min", 0))
         max_keywords = int(self.keywords_policy.get("max", len(keywords) or 0))
         if len(keywords) < min_keywords:
-            result.add_error(f"At least {min_keywords} keywords required (found {len(keywords)})")
+            result.add_error(
+                f"At least {min_keywords} keywords required (found {len(keywords)})"
+            )
         if max_keywords and len(keywords) > max_keywords:
-            result.add_error(f"No more than {max_keywords} keywords allowed (found {len(keywords)})")
+            result.add_error(
+                f"No more than {max_keywords} keywords allowed (found {len(keywords)})"
+            )
         recommended = set(k.lower() for k in self.recommended_keywords)
         chosen = set(k.lower() for k in keywords)
         missing_recommended = [kw for kw in recommended if kw not in chosen]
@@ -606,20 +705,28 @@ class SchemaValidator:
             "why_it_matters": card.get("why_it_matters", ""),
             "mnemonic": card.get("mnemonic", ""),
         }
-        for field, value in fields_to_scan.items():
+        for fld, value in fields_to_scan.items():
             text = str(value)
             for regex in self.placeholder_regexes:
                 if regex.search(text):
-                    result.add_error(f"Field '{field}' contains placeholder text matching '{regex.pattern}'")
+                    result.add_error(
+                        f"Field '{field}' contains placeholder text matching '{regex.pattern}'"
+                    )
 
     def _check_repeated_sentences(self, card: Dict, result: ValidationResult) -> None:
-        threshold = float(self.lint_policy.get("forbid_repeated_sentences_similarity_threshold", 0.8))
+        threshold = float(
+            self.lint_policy.get("forbid_repeated_sentences_similarity_threshold", 0.8)
+        )
         sentences = []
-        for field in ("front", "back", "why_it_matters"):
-            text = str(card.get(field, ""))
-            for sentence in filter(None, [segment.strip() for segment in re.split(r"[\.\?\!]", text)]):
+        for fld in ("front", "back", "why_it_matters"):
+            text = str(card.get(fld, ""))
+            for sentence in filter(
+                None, [segment.strip() for segment in re.split(r"[\.\?\!]", text)]
+            ):
                 sentences.append((field, sentence))
-        for (field_a, sent_a), (field_b, sent_b) in itertools.combinations(sentences, 2):
+        for (field_a, sent_a), (field_b, sent_b) in itertools.combinations(
+            sentences, 2
+        ):
             if self._text_similarity(sent_a, sent_b) >= threshold:
                 result.add_error(
                     f"Sentences from {field_a} and {field_b} are near-duplicates (>= {threshold})"
@@ -675,8 +782,8 @@ class SchemaValidator:
         counter_b = Counter(tokens_b)
         intersection = set(counter_a) & set(counter_b)
         dot = sum(counter_a[token] * counter_b[token] for token in intersection)
-        norm_a = math.sqrt(sum(count ** 2 for count in counter_a.values()))
-        norm_b = math.sqrt(sum(count ** 2 for count in counter_b.values()))
+        norm_a = math.sqrt(sum(count**2 for count in counter_a.values()))
+        norm_b = math.sqrt(sum(count**2 for count in counter_b.values()))
         if norm_a == 0 or norm_b == 0:
             return 0.0
         return dot / (norm_a * norm_b)

@@ -1,28 +1,26 @@
-﻿#!/usr/bin/env python3
+# ruff: noqa: E402
+from windsurf.paths import REPO_ROOT, REPORTS_DIR, JD_CARDS_DIR
+#!/usr/bin/env python3
 """Pareto flashcard processor.
 
 Consolidated normalization, repair, curated edits, authority checks,
 and scaffold generation. Designed for your Windsurf repo layout.
 """
 
-from __future__ import annotations
-
 import argparse
 import json
 import re
+import shutil
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional
-import shutil
 
 # ---------------------------------------------------------------------------
 # Repo layout
 # ---------------------------------------------------------------------------
-ROOT = Path(__file__).resolve().parents[1]  # repo root (…/Windsurf)
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+from windsurf.paths import POLICY_PATH, SRC_ROOT
 
 # ---------------------------------------------------------------------------
 # Third-party deps
@@ -30,22 +28,21 @@ if str(ROOT) not in sys.path:
 try:
     import yaml  # type: ignore
 except ImportError:  # pragma: no cover - fallback when PyYAML is unavailable
-    from tools import yaml_fallback as yaml  # type: ignore
+    from windsurf.tools import yaml_fallback as yaml  # type: ignore
 
 CARD_DIRS = [
-    ROOT / "jd" / "cards_yaml",
-    ROOT / "jd" / "LAWS50025 - Torts",                # your folder with cards
-    ROOT / "jd" / "LAWS50025 - Torts" / "cards_yaml",
-    ROOT / "jd" / "LAWS50029 - Contracts" / "cards_yaml",
+    JD_CARDS_DIR,
+    SRC_ROOT / "jd" / "LAWS50025 - Torts",  # optional historical folders
+    SRC_ROOT / "jd" / "LAWS50025 - Torts" / "cards_yaml",
+    SRC_ROOT / "jd" / "LAWS50029 - Contracts" / "cards_yaml",
 ]
 CARD_DIRS = [d for d in CARD_DIRS if d.exists()]
 
 if not CARD_DIRS:
-    default_dir = ROOT / "jd" / "cards_yaml"
+    default_dir = JD_CARDS_DIR
     default_dir.mkdir(parents=True, exist_ok=True)
     CARD_DIRS = [default_dir]
 
-REPORTS_DIR = ROOT / "reports"
 REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
 # ---------------------------------------------------------------------------
@@ -105,6 +102,7 @@ AUTHORITY_HINTS: Dict[str, List[str]] = {
     "Apportionment": [r"Pt\s*IVAA"],
 }
 
+
 # ---------------------------------------------------------------------------
 # Domain model
 # ---------------------------------------------------------------------------
@@ -122,6 +120,7 @@ class Flashcard:
     _errors: List[str] = field(default_factory=list)
     _warnings: List[str] = field(default_factory=list)
 
+
 # ---------------------------------------------------------------------------
 # Processor
 # ---------------------------------------------------------------------------
@@ -137,13 +136,15 @@ class FlashcardProcessor:
 
     def __init__(self, policy_path: Optional[str] = None) -> None:
         self.card_dirs = [d for d in CARD_DIRS if d.exists()]
-        default_policy = ROOT / "jd" / "policy" / "cards_policy.yml"
-        self._policy_path = Path(policy_path).expanduser().resolve() if policy_path else default_policy
+        default_policy = POLICY_PATH
+        self._policy_path = (
+            Path(policy_path).expanduser().resolve() if policy_path else default_policy
+        )
 
         self._schema_validator = None
         self._schema_validator_error = ""
         self._schema_validator_loaded = False
-        self.backup_root = ROOT / "backups"
+        self.backup_root = REPO_ROOT / "backups"
         self._current_backup_run: Optional[str] = None
         self._dry_run = False
 
@@ -162,11 +163,9 @@ class FlashcardProcessor:
             return self._schema_validator
         self._schema_validator_loaded = True
         try:
-            from tools.schema_validator import SchemaValidator
+            from windsurf.tools.schema_validator import SchemaValidator
         except ImportError as exc:
-            self._schema_validator_error = (
-                f"Warning: Could not import SchemaValidator ({exc}); validation disabled."
-            )
+            self._schema_validator_error = f"Warning: Could not import SchemaValidator ({exc}); validation disabled."
             return None
         if not self._policy_path.exists():
             self._schema_validator_error = (
@@ -176,11 +175,16 @@ class FlashcardProcessor:
         try:
             self._schema_validator = SchemaValidator(str(self._policy_path))
         except Exception as exc:
-            self._schema_validator_error = f"Warning: Failed to load schema validator: {exc}"
+            self._schema_validator_error = (
+                f"Warning: Failed to load schema validator: {exc}"
+            )
         return self._schema_validator
 
     def _add_validator_warning(self, card: Flashcard) -> None:
-        if self._schema_validator_error and self._schema_validator_error not in card._warnings:
+        if (
+            self._schema_validator_error
+            and self._schema_validator_error not in card._warnings
+        ):
             card._warnings.append(self._schema_validator_error)
 
     # ---------------- Persistence ----------------
@@ -225,16 +229,26 @@ class FlashcardProcessor:
             card.path.parent.mkdir(parents=True, exist_ok=True)
 
         if backup and card.path.exists():
-            run_folder = self._current_backup_run or datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+            run_folder = self._current_backup_run or datetime.utcnow().strftime(
+                "%Y%m%dT%H%M%SZ"
+            )
             backup_dir = self.backup_root / run_folder
             backup_dir.mkdir(parents=True, exist_ok=True)
             timestamp = datetime.utcnow().strftime("%H%M%S")
-            backup_path = backup_dir / f"{card.path.stem}-{timestamp}{card.path.suffix or '.yml'}"
+            backup_path = (
+                backup_dir / f"{card.path.stem}-{timestamp}{card.path.suffix or '.yml'}"
+            )
             shutil.copy2(card.path, backup_path)
 
         try:
             with open(card.path, "w", encoding="utf-8") as fh:
-                yaml.safe_dump(card._raw, fh, default_flow_style=False, sort_keys=False, allow_unicode=True)
+                yaml.safe_dump(
+                    card._raw,
+                    fh,
+                    default_flow_style=False,
+                    sort_keys=False,
+                    allow_unicode=True,
+                )
             return True
         except Exception as exc:
             card._errors.append(f"Failed to save card: {exc}")
@@ -275,32 +289,42 @@ class FlashcardProcessor:
             topics.append("defamation")
         if "proportionate" in stem or "ivaa" in content_lower:
             topics.append("apportionment")
-        if self.is_contract_card(card, content_lower, card.path.parent) or ("contract" in tags or "contracts" in tags):
+        if self.is_contract_card(card, content_lower, card.path.parent) or (
+            "contract" in tags or "contracts" in tags
+        ):
             topics.append("contracts")
 
         # de-dup, preserve order
         return list(dict.fromkeys(topics))
 
-    def check_authorities(self, card: Flashcard, content: str, is_contract: bool) -> List[str]:
+    def check_authorities(
+        self, card: Flashcard, content: str, is_contract: bool
+    ) -> List[str]:
         missing: List[str] = []
         topics = self._detect_topics(card, content.lower())
 
         for topic in topics:
             for pat in self._compiled_topic_patterns.get(topic, []):
                 if not pat.search(content):
-                    missing.append(f"Missing authority reference: {pat.pattern} (topic: {topic})")
+                    missing.append(
+                        f"Missing authority reference: {pat.pattern} (topic: {topic})"
+                    )
 
         # If it looks like contracts but topic detection missed it
         if not topics and is_contract:
             for pat in self._compiled_topic_patterns.get("contracts", []):
                 if not pat.search(content):
-                    missing.append(f"Missing authority reference: {pat.pattern} (topic: contracts)")
+                    missing.append(
+                        f"Missing authority reference: {pat.pattern} (topic: contracts)"
+                    )
 
         # Friendly hint if we see nearby signals but no exact matches above
         if missing:
             for hint_topic, hint_pats in self._compiled_authority_hints.items():
                 if any(h.search(content) for h in hint_pats):
-                    missing.append(f"Consider referencing key {hint_topic.lower()} authorities.")
+                    missing.append(
+                        f"Consider referencing key {hint_topic.lower()} authorities."
+                    )
                     break
 
         return missing
@@ -371,7 +395,11 @@ class FlashcardProcessor:
     def apply_curated_edits(self, card: Flashcard) -> bool:
         edited = False
         # Style polish for case names on front if tagged torts
-        if "tort" in {t.lower() for t in card.tags} and "v." in card.front and " v. " not in card.front:
+        if (
+            "tort" in {t.lower() for t in card.tags}
+            and "v." in card.front
+            and " v. " not in card.front
+        ):
             card.front = card.front.replace(" v ", " v. ")
             edited = True
         return edited
@@ -379,7 +407,9 @@ class FlashcardProcessor:
     def _check_contract_requirements(self, card: Flashcard, content_lower: str) -> None:
         missing = [e for e in self.CONTRACT_REQUIRED_ELEMENTS if e not in content_lower]
         if missing:
-            card._warnings.append(f"Contract card missing key elements: {', '.join(missing)}")
+            card._warnings.append(
+                f"Contract card missing key elements: {', '.join(missing)}"
+            )
 
         # nudge to include foundational contract authorities
         has_key = any(
@@ -387,7 +417,9 @@ class FlashcardProcessor:
             for pat in self._compiled_topic_patterns.get("contracts", [])
         )
         if not has_key:
-            card._warnings.append("Contract card should reference key cases (Carlill, Masters v Cameron, etc.)")
+            card._warnings.append(
+                "Contract card should reference key cases (Carlill, Masters v Cameron, etc.)"
+            )
 
     # ---------------- Public interface ----------------
     def process_card(self, path: Path, apply_changes: bool = False) -> Dict:
@@ -437,11 +469,12 @@ class FlashcardProcessor:
     def find_cards(self, pattern: str = "*.yml") -> List[Path]:
         matches: List[Path] = []
         if any(sep in pattern for sep in ("/", "\\")):
-            matches.extend(sorted((ROOT).glob(pattern)))
+            matches.extend(sorted((REPO_ROOT).glob(pattern)))
         else:
             for base in self.card_dirs:
                 matches.extend(sorted(base.glob(pattern)))
         return matches
+
 
 # ---------------------------------------------------------------------------
 # Reporting
@@ -455,12 +488,14 @@ def _print_result(card_path: Path, result: Dict, verbose: bool = False) -> None:
         for warning in result.get("warnings", []):
             print(f"  WARN: {warning}")
 
+
 def _print_summary(results: List[Dict]) -> None:
     print("\nProcessing complete!")
     print(f"Total cards: {len(results)}")
     print(f"Valid: {sum(1 for r in results if r.get('valid'))}")
     print(f"Errors: {sum(1 for r in results if r.get('errors'))}")
     print(f"Warnings: {sum(1 for r in results if r.get('warnings'))}")
+
 
 def _write_json_report(results: List[Dict], destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -472,7 +507,10 @@ def _write_json_report(results: List[Dict], destination: Path) -> None:
         },
         "cards": results,
     }
-    destination.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    destination.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+
 
 def _write_markdown_report(results: List[Dict], destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -505,6 +543,7 @@ def _write_markdown_report(results: List[Dict], destination: Path) -> None:
         lines.append("")
     destination.write_text("\n".join(lines), encoding="utf-8")
 
+
 # ---------------------------------------------------------------------------
 # Commands
 # ---------------------------------------------------------------------------
@@ -531,11 +570,22 @@ def process_cards(
     _print_summary(results)
 
     if report_json:
-        _write_json_report(results, (ROOT / report_json) if not Path(report_json).is_absolute() else Path(report_json))
+        _write_json_report(
+            results,
+            (
+                (REPORTS_DIR / Path(report_json).name) if not Path(report_json).is_absolute() else Path(report_json)
+            ),
+        )
     if report_md:
-        _write_markdown_report(results, (ROOT / report_md) if not Path(report_md).is_absolute() else Path(report_md))
+        _write_markdown_report(
+            results,
+            (
+                (REPORTS_DIR / Path(report_md).name) if not Path(report_md).is_absolute() else Path(report_md)
+            ),
+        )
 
     return 0 if all(r.get("valid") for r in results) else 1
+
 
 def _run_single_stage(
     processor: FlashcardProcessor,
@@ -560,13 +610,32 @@ def _run_single_stage(
     _print_summary(results)
     return 0 if all(r.get("valid") for r in results) else 1
 
-def normalize_cards(processor: FlashcardProcessor, pattern: str, apply_changes: bool, verbose: bool) -> int:
+
+def normalize_cards(
+    processor: FlashcardProcessor, pattern: str, apply_changes: bool, verbose: bool
+) -> int:
     def handler(card_path: Path, apply_changes: bool) -> Dict:
         card = processor.load_card(card_path)
         if card._errors:
-            return {"path": str(card_path), "status": "error", "errors": card._errors, "warnings": card._warnings, "repairs": False, "edits": False, "valid": False}
+            return {
+                "path": str(card_path),
+                "status": "error",
+                "errors": card._errors,
+                "warnings": card._warnings,
+                "repairs": False,
+                "edits": False,
+                "valid": False,
+            }
         processor.normalize_card(card)
-        result = {"path": str(card_path), "status": "valid" if not card._errors else "invalid", "errors": card._errors, "warnings": card._warnings, "repairs": False, "edits": False, "valid": not bool(card._errors)}
+        result = {
+            "path": str(card_path),
+            "status": "valid" if not card._errors else "invalid",
+            "errors": card._errors,
+            "warnings": card._warnings,
+            "repairs": False,
+            "edits": False,
+            "valid": not bool(card._errors),
+        }
         if apply_changes and result["valid"]:
             saved = processor.save_card(card)
             result["saved"] = saved
@@ -574,15 +643,37 @@ def normalize_cards(processor: FlashcardProcessor, pattern: str, apply_changes: 
             if not saved:
                 result["valid"] = False
         return result
-    return _run_single_stage(processor, pattern, "normalizing", handler, apply_changes, verbose)
 
-def repair_cards(processor: FlashcardProcessor, pattern: str, apply_changes: bool, verbose: bool) -> int:
+    return _run_single_stage(
+        processor, pattern, "normalizing", handler, apply_changes, verbose
+    )
+
+
+def repair_cards(
+    processor: FlashcardProcessor, pattern: str, apply_changes: bool, verbose: bool
+) -> int:
     def handler(card_path: Path, apply_changes: bool) -> Dict:
         card = processor.load_card(card_path)
         if card._errors:
-            return {"path": str(card_path), "status": "error", "errors": card._errors, "warnings": card._warnings, "repairs": False, "edits": False, "valid": False}
+            return {
+                "path": str(card_path),
+                "status": "error",
+                "errors": card._errors,
+                "warnings": card._warnings,
+                "repairs": False,
+                "edits": False,
+                "valid": False,
+            }
         repairs = processor.repair_yaml(card)
-        result = {"path": str(card_path), "status": "repaired" if repairs else "unchanged", "errors": card._errors, "warnings": card._warnings, "repairs": repairs, "edits": False, "valid": not bool(card._errors)}
+        result = {
+            "path": str(card_path),
+            "status": "repaired" if repairs else "unchanged",
+            "errors": card._errors,
+            "warnings": card._warnings,
+            "repairs": repairs,
+            "edits": False,
+            "valid": not bool(card._errors),
+        }
         if apply_changes and repairs:
             saved = processor.save_card(card)
             result["saved"] = saved
@@ -590,15 +681,37 @@ def repair_cards(processor: FlashcardProcessor, pattern: str, apply_changes: boo
             if not saved:
                 result["valid"] = False
         return result
-    return _run_single_stage(processor, pattern, "repairing", handler, apply_changes, verbose)
 
-def edit_cards(processor: FlashcardProcessor, pattern: str, apply_changes: bool, verbose: bool) -> int:
+    return _run_single_stage(
+        processor, pattern, "repairing", handler, apply_changes, verbose
+    )
+
+
+def edit_cards(
+    processor: FlashcardProcessor, pattern: str, apply_changes: bool, verbose: bool
+) -> int:
     def handler(card_path: Path, apply_changes: bool) -> Dict:
         card = processor.load_card(card_path)
         if card._errors:
-            return {"path": str(card_path), "status": "error", "errors": card._errors, "warnings": card._warnings, "repairs": False, "edits": False, "valid": False}
+            return {
+                "path": str(card_path),
+                "status": "error",
+                "errors": card._errors,
+                "warnings": card._warnings,
+                "repairs": False,
+                "edits": False,
+                "valid": False,
+            }
         edits = processor.apply_curated_edits(card)
-        result = {"path": str(card_path), "status": "edited" if edits else "unchanged", "errors": card._errors, "warnings": card._warnings, "repairs": False, "edits": edits, "valid": not bool(card._errors)}
+        result = {
+            "path": str(card_path),
+            "status": "edited" if edits else "unchanged",
+            "errors": card._errors,
+            "warnings": card._warnings,
+            "repairs": False,
+            "edits": edits,
+            "valid": not bool(card._errors),
+        }
         if apply_changes and edits:
             saved = processor.save_card(card)
             result["saved"] = saved
@@ -606,7 +719,11 @@ def edit_cards(processor: FlashcardProcessor, pattern: str, apply_changes: bool,
             if not saved:
                 result["valid"] = False
         return result
-    return _run_single_stage(processor, pattern, "editing", handler, apply_changes, verbose)
+
+    return _run_single_stage(
+        processor, pattern, "editing", handler, apply_changes, verbose
+    )
+
 
 def scaffold_cards(
     processor: FlashcardProcessor,
@@ -622,24 +739,26 @@ def scaffold_cards(
         with open(policy_path, "r", encoding="utf-8") as fh:
             policy = yaml.safe_load(fh) or {}
 
-    required_fields: Iterable[str] = policy.get("schema", {}).get("required_fields", ["front", "back", "tags"])
+    required_fields: Iterable[str] = policy.get("schema", {}).get(
+        "required_fields", ["front", "back", "tags"]
+    )
 
     type_path = Path(card_type)
     if not type_path.is_absolute():
-        within_jd = ROOT / "jd" / card_type
+        within_jd = REPO_ROOT / "jd" / card_type
         if (within_jd / "cards_yaml").exists():
-            target_dir = (within_jd / "cards_yaml")
+            target_dir = within_jd / "cards_yaml"
         elif within_jd.exists():
             target_dir = within_jd
         else:
-            target_dir = ROOT / "jd" / "cards_yaml"
+            target_dir = REPO_ROOT / "jd" / "cards_yaml"
     else:
         if (type_path / "cards_yaml").exists():
-            target_dir = (type_path / "cards_yaml")
+            target_dir = type_path / "cards_yaml"
         elif type_path.is_dir():
             target_dir = type_path
         else:
-            target_dir = ROOT / "jd" / "cards_yaml"
+            target_dir = REPO_ROOT / "jd" / "cards_yaml"
 
     target_dir = target_dir.resolve()
     target_dir.mkdir(parents=True, exist_ok=True)
@@ -658,7 +777,7 @@ def scaffold_cards(
             [
                 "```mermaid",
                 "mindmap",
-                f"  root(({name.strip()} scaffold))",
+                f"  REPO_ROOT(({name.strip()} scaffold))",
                 "    Step 1",
                 "    Step 2",
                 "    Step 3",
@@ -701,11 +820,11 @@ def scaffold_cards(
         if type_tag:
             tags.append(type_tag)
 
-        for field in required_fields:
-            if field == "front":
-                card_data[field] = f"{name.strip()}?"
+        for fld in required_fields:
+            if fld == "front":
+                card_data[fld] = f"{name.strip()}?"
             elif field == "back":
-                card_data[field] = "\n".join(
+                card_data[fld] = "\n".join(
                     [
                         "Issue. <State the controversy needing resolution>",
                         "",
@@ -730,21 +849,25 @@ def scaffold_cards(
                     ]
                 )
             elif field == "why_it_matters":
-                card_data[field] = "Highlight how this scaffold wins time and marks under exam pressure."
+                card_data[fld] = (
+                    "Highlight how this scaffold wins time and marks under exam pressure."
+                )
             elif field == "mnemonic":
-                card_data[field] = "Mnemonic to be confirmed"
+                card_data[fld] = "Mnemonic to be confirmed"
             elif field == "diagram":
-                card_data[field] = diagram_block
+                card_data[fld] = diagram_block
             elif field == "tripwires":
-                card_data[field] = tripwire_list
+                card_data[fld] = tripwire_list
             elif field == "anchors":
-                card_data[field] = anchors_block
+                card_data[fld] = anchors_block
             elif field == "keywords":
-                card_data[field] = keywords
+                card_data[fld] = keywords
             elif field == "reading_level":
-                card_data[field] = policy.get("reading_level", {}).get("target", "Plain English (JD)")
+                card_data[fld] = policy.get("reading_level", {}).get(
+                    "target", "Plain English (JD)"
+                )
             elif field == "tags":
-                card_data[field] = tags
+                card_data[fld] = tags
             else:
                 card_data.setdefault(field, "")
 
@@ -759,6 +882,7 @@ def scaffold_cards(
 
     print(f"Created {len(created_files)} scaffold card(s) in {target_dir}")
     return 0
+
 
 # ---------------------------------------------------------------------------
 # CLI plumbing
@@ -780,18 +904,34 @@ def process_command(args, processor: FlashcardProcessor) -> int:
     if args.command == "edit":
         return edit_cards(processor, args.pattern, args.apply, args.verbose)
     if args.command == "scaffold":
-        return scaffold_cards(processor, args.type, args.name, args.count, args.prefix, args.verbose)
+        return scaffold_cards(
+            processor, args.type, args.name, args.count, args.prefix, args.verbose
+        )
     print(f"Unknown command: {args.command}", file=sys.stderr)
     return 1
 
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Process flashcards through various stages.")
+    parser = argparse.ArgumentParser(
+        description="Process flashcards through various stages."
+    )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
 
-    process_parser = subparsers.add_parser("process", help="Process cards through all stages")
-    process_parser.add_argument("pattern", nargs="?", default="*.yml", help="File pattern to match (default: *.yml)")
-    process_parser.add_argument("--apply", action="store_true", help="Apply changes to files")
-    process_parser.add_argument("--verbose", action="store_true", help="Show detailed output")
+    process_parser = subparsers.add_parser(
+        "process", help="Process cards through all stages"
+    )
+    process_parser.add_argument(
+        "pattern",
+        nargs="?",
+        default="*.yml",
+        help="File pattern to match (default: *.yml)",
+    )
+    process_parser.add_argument(
+        "--apply", action="store_true", help="Apply changes to files"
+    )
+    process_parser.add_argument(
+        "--verbose", action="store_true", help="Show detailed output"
+    )
     process_parser.add_argument(
         "--report-json",
         nargs="?",
@@ -807,29 +947,71 @@ def build_parser() -> argparse.ArgumentParser:
         help="Write Markdown summary report (default path if flag provided)",
     )
 
-    norm_parser = subparsers.add_parser("normalize", help="Normalize card content and format")
-    norm_parser.add_argument("pattern", nargs="?", default="*.yml", help="File pattern to match (default: *.yml)")
-    norm_parser.add_argument("--apply", action="store_true", help="Apply changes to files")
-    norm_parser.add_argument("--verbose", action="store_true", help="Show detailed output")
+    norm_parser = subparsers.add_parser(
+        "normalize", help="Normalize card content and format"
+    )
+    norm_parser.add_argument(
+        "pattern",
+        nargs="?",
+        default="*.yml",
+        help="File pattern to match (default: *.yml)",
+    )
+    norm_parser.add_argument(
+        "--apply", action="store_true", help="Apply changes to files"
+    )
+    norm_parser.add_argument(
+        "--verbose", action="store_true", help="Show detailed output"
+    )
 
-    repair_parser = subparsers.add_parser("repair", help="Repair YAML structure and formatting")
-    repair_parser.add_argument("pattern", nargs="?", default="*.yml", help="File pattern to match (default: *.yml)")
-    repair_parser.add_argument("--apply", action="store_true", help="Apply changes to files")
-    repair_parser.add_argument("--verbose", action="store_true", help="Show detailed output")
+    repair_parser = subparsers.add_parser(
+        "repair", help="Repair YAML structure and formatting"
+    )
+    repair_parser.add_argument(
+        "pattern",
+        nargs="?",
+        default="*.yml",
+        help="File pattern to match (default: *.yml)",
+    )
+    repair_parser.add_argument(
+        "--apply", action="store_true", help="Apply changes to files"
+    )
+    repair_parser.add_argument(
+        "--verbose", action="store_true", help="Show detailed output"
+    )
 
-    edit_parser = subparsers.add_parser("edit", help="Apply curated content improvements")
-    edit_parser.add_argument("pattern", nargs="?", default="*.yml", help="File pattern to match (default: *.yml)")
-    edit_parser.add_argument("--apply", action="store_true", help="Apply changes to files")
-    edit_parser.add_argument("--verbose", action="store_true", help="Show detailed output")
+    edit_parser = subparsers.add_parser(
+        "edit", help="Apply curated content improvements"
+    )
+    edit_parser.add_argument(
+        "pattern",
+        nargs="?",
+        default="*.yml",
+        help="File pattern to match (default: *.yml)",
+    )
+    edit_parser.add_argument(
+        "--apply", action="store_true", help="Apply changes to files"
+    )
+    edit_parser.add_argument(
+        "--verbose", action="store_true", help="Show detailed output"
+    )
 
-    scaffold_parser = subparsers.add_parser("scaffold", help="Generate new card templates")
+    scaffold_parser = subparsers.add_parser(
+        "scaffold", help="Generate new card templates"
+    )
     scaffold_parser.add_argument("--type", required=True, help="Type of card to create")
     scaffold_parser.add_argument("--name", required=True, help="Name for the new card")
-    scaffold_parser.add_argument("--count", type=int, default=1, help="Number of cards to generate")
-    scaffold_parser.add_argument("--prefix", default="card", help="Prefix for generated filenames")
-    scaffold_parser.add_argument("--verbose", action="store_true", help="Show detailed output")
+    scaffold_parser.add_argument(
+        "--count", type=int, default=1, help="Number of cards to generate"
+    )
+    scaffold_parser.add_argument(
+        "--prefix", default="card", help="Prefix for generated filenames"
+    )
+    scaffold_parser.add_argument(
+        "--verbose", action="store_true", help="Show detailed output"
+    )
 
     return parser
+
 
 def main() -> int:
     parser = build_parser()
@@ -845,8 +1027,10 @@ def main() -> int:
         print(f"Error: {exc}", file=sys.stderr)
         if getattr(args, "verbose", False):
             import traceback
+
             traceback.print_exc()
         return 1
+
 
 if __name__ == "__main__":
     sys.exit(main())

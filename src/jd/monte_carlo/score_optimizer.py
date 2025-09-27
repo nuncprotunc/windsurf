@@ -1,12 +1,10 @@
 """Pareto-like optimiser for diagram scoring weights."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Dict, List, Tuple
 import json
-import math
-import random
-from pathlib import Path
 
 import numpy as np
 from scipy.optimize import differential_evolution
@@ -15,8 +13,6 @@ from .config import (
     DEFAULT_SCORE_WEIGHTS,
     KEY_ITEM_PRIORITY,
     SCORE_CACHE,
-    SECTION_CONTENT,
-    SECTION_LABELS,
 )
 from .diagram_generator import DiagramCandidate, generate_candidate
 
@@ -91,9 +87,7 @@ def _evaluate(weights: np.ndarray, sample_size: int = 200) -> float:
     for candidate in samples:
         coverage, priority_score, balance = _candidate_metrics(candidate)
         score = (
-            weights[0] * coverage
-            + weights[1] * priority_score
-            + weights[2] * balance
+            weights[0] * coverage + weights[1] * priority_score + weights[2] * balance
         )
         scores.append(score)
 

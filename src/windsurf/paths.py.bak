@@ -1,0 +1,43 @@
+"""Shared filesystem helpers for the Windsurf project."""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+from typing import Iterable
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+SRC_ROOT = REPO_ROOT / "src"
+JD_ROOT = SRC_ROOT / "jd"
+JD_CARDS_DIR = JD_ROOT / "cards_yaml"
+POLICY_PATH = JD_ROOT / "policy" / "cards_policy.yml"
+REPORTS_DIR = REPO_ROOT / "reports"
+DOCS_DIR = REPO_ROOT / "docs"
+
+
+def _expand_sys_path(candidates: Iterable[Path]) -> None:
+    """Ensure each candidate directory is present on ``sys.path``."""
+
+    for candidate in candidates:
+        resolved = candidate.resolve()
+        path_str = str(resolved)
+        if path_str not in sys.path:
+            sys.path.insert(0, path_str)
+
+
+def ensure_import_path() -> None:
+    """Insert the ``src`` and repository roots into ``sys.path`` if needed."""
+
+    _expand_sys_path((SRC_ROOT, REPO_ROOT))
+
+
+__all__ = [
+    "REPO_ROOT",
+    "SRC_ROOT",
+    "JD_ROOT",
+    "JD_CARDS_DIR",
+    "POLICY_PATH",
+    "REPORTS_DIR",
+    "DOCS_DIR",
+    "ensure_import_path",
+]

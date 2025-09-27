@@ -1,8 +1,9 @@
 """Scoring utilities for diagram candidates."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Dict, Tuple
+from typing import Dict
 
 import numpy as np
 
