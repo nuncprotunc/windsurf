@@ -1,64 +1,61 @@
 front: "When will a Victorian court recognise a negligence duty against a public authority?"
 back: |
-  Issue — When should a Victorian court recognise a private-law duty of care owed by a public authority to the plaintiff?
+  Issue.
+  When should a Victorian court recognise a private-law duty of care owed by a public authority to the plaintiff?
 
-  Rule —
-  - Foreseeability is necessary but not sufficient. Duty turns on salient features constrained by institutional and statutory coherence; the policy/operational distinction is a filter, not an immunity.
-  - Central indicators: the authority’s control, knowledge, assumption/responsibility, reliance/vulnerability, and risks of indeterminate liability.
-  - Key authorities: Sullivan v Moody (2001) 207 CLR 562, 579–580 [49]–[53]; Pyrenees Shire Council v Day (1998) 192 CLR 330, [347]–[349], [355]–[357] (verify pinpoints).
+  Rule.
+  Foreseeability is necessary but not sufficient. Duty turns on salient features constrained by institutional and statutory coherence; the policy/operational distinction is a filter, not an immunity. Central indicators include the authority’s control, knowledge, assumption/responsibility, reliance/vulnerability, and risks of indeterminate liability. Key authorities: Sullivan v Moody (2001) 207 CLR 562, 579–580 [49]–[53]; Pyrenees Shire Council v Day (1998) 192 CLR 330, [347]–[349], [355]–[357].
 
-  Application scaffold —
-  (1) Statutory coherence gate: identify the empowering scheme, its purpose/limits, and any preconditions.
+  Application scaffold.
+  (1) Run the statutory coherence gate: identify the empowering scheme, its purpose/limits, and any preconditions.
   (2) Characterise the impugned act/omission (policy vs operational) and any specific undertaking or control.
-  (3) Evaluate salient features (control; vulnerability/reliance; knowledge; indeterminacy; autonomy).
+  (3) Evaluate salient features: control, vulnerability/reliance, knowledge, indeterminacy, autonomy, and third-party agency.
   (4) Check consistency with remedial/rights frameworks and resource allocation provisions.
-  - Supporting authorities: Hunter and New England Local Health District v McKenna (2014) 253 CLR 270, 279–284 [17]–[40]; Stuart v Kirkland-Veenstra (2009) 237 CLR 215, 230–236 [43]–[81]; Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [103].
+  (5) Supporting authorities: Hunter and New England Local Health District v McKenna (2014) 253 CLR 270, 279–284 [17]–[40]; Stuart v Kirkland-Veenstra (2009) 237 CLR 215, 230–236 [43]–[81]; Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [103].
 
-  Authorities map —
+  Authorities map.
   - Sullivan v Moody — Coherence limits on duty recognition.
   - Pyrenees Shire Council v Day — Fire inspection duties; policy/operational calibration.
   - Stuart v Kirkland-Veenstra — Control/statutory preconditions.
   - Hunter v McKenna — Statutory coherence and resource constraints.
   - Stavar — Salient-features synthesis.
 
-  Statutory hook —
+  Statutory hook.
   - Wrongs Act 1958 (Vic) s 48 (general negligence); ss 83–85 (public-authority principles, resource and responsibility filters).
   - Charter of Human Rights and Responsibilities Act 2006 (Vic) ss 7, 21, 38 — coherence check, not a direct cause of action.
 
-  Tripwires —
-  - Treating policy/operational as automatic immunity.
-  - Assuming a general governmental rescue duty to prevent third-party harm.
-  - Ignoring statutory purpose or resource-allocation limits when framing duty.
-  - Conflating third-party wrongdoing with control/assumption by the authority.
-  - Skipping Charter coherence before extending duty.
+  Tripwires.
+  Refer to the dedicated `tripwires` list below for recurring pitfalls when arguing public authority duties.
 
-  Conclusion — No standing duty exists; recognition is most likely where the authority undertook or controlled a specific operational function, knew of a discrete risk to a vulnerable plaintiff who reasonably relied, and recognition aligns with the statute and rights framework.
+  Conclusion.
+  No standing duty exists; recognition is most likely where the authority undertook or controlled a specific operational function, knew of a discrete risk to a vulnerable plaintiff who reasonably relied, and recognition aligns with the statute and rights framework.
 
 why_it_matters: |
   MLS problems often involve councils, police, or health services. This card supplies an IRAC gateway focused on statutory coherence, policy/operational character, and salient features, avoiding common errors (assuming a rescue duty; merits-review drift; ignoring resource limits and Charter coherence). The cited pinpoints enable fast, authoritative duty analysis under exam pressure.
 
-mnemonic: "POLAR-CC → Policy vs Operational → Legal coherence → Assumption/Responsibility → Reliance/Vulnerability → Control → Charter & causation"
+mnemonic: |
+  POLAR-CC → Policy vs Operational → Legal coherence → Assumption/Responsibility → Reliance/Vulnerability → Control → Charter & causation
 
-diagram: |
+diagram: |-
   ```mermaid
   mindmap
-    root((Public authority duty (recognition)))
+    root((Public authority duty — Vic))
       Issue
-        Recognise negligence duty against authority?
+        When will a court recognise a negligence duty?
       Rule
         Foreseeability necessary, not sufficient
-        Salient features: control/assumption • reliance/vulnerability • indeterminacy
-        Coherence discipline (keep systems/statutes consistent)
-      Application
-        Statutory gate: purpose, preconditions, resources
-        Policy vs operational; specific undertaking/control
-        Conclude on duty; keep breach (s 48) distinct
+        Salient features + coherence (no blanket immunity)
+        Policy/operational = filter, not defence
+      Apply
+        Read empowering statute; purpose/limits
+        Control/assumption • reliance/vulnerability • indeterminacy
+        Charter/resource coherence; avoid merits-review
       Authorities
-        Sullivan v Moody
-        Pyrenees Shire v Day
-      Statute
-        Wrongs Act ss 83–85 (public-authority principles)
-        Wrongs Act s 48; Charter coherence (ss 7, 21, 38)
+        Sullivan v Moody; Pyrenees
+        Kirkland-Veenstra; McKenna
+      Statutes
+        Wrongs Act ss 83–85; s 48
+        Charter ss 7, 21, 38 (coherence)
   ```
 
 tripwires:

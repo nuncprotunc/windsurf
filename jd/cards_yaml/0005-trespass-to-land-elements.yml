@@ -1,37 +1,36 @@
 front: "What are the elements of trespass to land at common law?"
 back: |
-  Issue — Identify the elements of trespass to land and note limited Victorian statutory overlays.
+  Issue.
+  Identify the elements of trespass to land and note limited Victorian statutory overlays.
 
-  Rule —
+  Rule.
   - Trespass is actionable per se.
-  - Elements: (1) direct interference with land in the plaintiff's possession; (2) a voluntary act (no intention to trespass required); (3) absence of lawful justification (consent/licence, necessity, statutory authority).
+  - Elements: plaintiff’s possession; direct, voluntary physical act causing interference; no lawful justification. The defendant must intend the act (to step/drive/leave an object), not the unlawfulness of trespass. Actionable per se; mistake usually doesn’t negate liability (may affect remedies or where statute confers power).
   - Mistake is not a defence.
+  - Direct interference examples: entry; remaining after licence is revoked; projecting objects/particles; placing or leaving chattels.
 
-  Application scaffold —
+  Application scaffold.
   (1) Prove possession (actual or constructive).
   (2) Pinpoint direct entry, remaining after consent is withdrawn, or causing a physical intrusion.
   (3) Confirm voluntariness.
   (4) Test justifications: implied licence limits, necessity, and any statutory police powers.
+  (5) If D pleads statutory authority, check Crimes Act 1958 (Vic) ss 458–459 (arrest) and s 462A (force), and Summary Offences Act 1966 (Vic) s 9(1)(d) (wilful trespass)—these do not displace civil trespass. (Verify current numbering before an exam.)
 
-  Authorities map —
+  Authorities map.
   - Kuru v State of NSW (2008) 236 CLR 1, 19 [43] — Consent withdrawn equals trespass.
   - Halliday v Nevill (1984) 155 CLR 1, 7–8 — Implied licence narrow, revocable.
   - Plenty v Dillon (1991) 171 CLR 635, 647 — Police mistake no defence.
   - Lincoln Hunt Australia Pty Ltd v Willesee (1986) 4 NSWLR 457 — Media entry beyond licence.
   - Southwark LBC v Williams [1971] Ch 734 — Necessity strictly confined (UK persuasive).
 
-  Statutory hook —
-  - Summary Offences Act 1966 (Vic) s 9(1)(d) — Wilful trespass offence.
-  - Crimes Act 1958 (Vic) ss 459, 462A — Police entry/force powers; civil tort persists.
+  Tripwires.
+  - Treating trespass as ownership protection (it protects possession).
+  - Confusing trespass (direct) with nuisance (indirect/unreasonableness).
+  - Assuming “mistake” or good faith defeats liability.
+  - Forgetting it’s actionable per se (no proof of damage needed).
 
-  Tripwires —
-  - Confusing trespass (direct) with nuisance (indirect).
-  - Forgetting it is actionable per se (no proof of damage).
-  - Treating implied licence as general or irrevocable.
-  - Assuming mistake or good faith defeats liability.
-  - Not proving possession (title is unnecessary).
-
-  Conclusion — If possession, direct interference, voluntariness, and no justification are shown, trespass is made out; address defences and tailor remedies (injunction, nominal/compensatory damages, mesne profits, continuing trespass).
+  Conclusion.
+  If possession, direct interference, voluntariness, and no justification are shown, trespass is made out; address defences and tailor remedies (nominal damages, injunctions, compensatory/mesne profits, continuing trespass, aggravated/exemplary in suitable cases).
 
 why_it_matters: |
   Trespass recurs in MLS exams. Markers expect quick separation of possession, directness, voluntariness and justification, then concise treatment of defences and remedies. Using Kuru, Halliday and Plenty, with a State CA and a careful UK nuance, shows doctrinal control.
@@ -61,11 +60,10 @@ diagram: |
   ```
 
 tripwires:
-  - "Confusing trespass (direct) with nuisance (indirect)."
-  - "Forgetting it is actionable per se (no proof of damage)."
-  - "Treating implied licence as general or irrevocable."
-  - "Assuming mistake or good faith defeats liability."
-  - "Not proving possession (title is unnecessary)."
+  - Treating trespass as ownership protection (it protects possession).
+  - Confusing trespass (direct) with nuisance (indirect/unreasonableness).
+  - Assuming “mistake” or good faith defeats liability.
+  - Forgetting it’s actionable per se (no proof of damage needed).
 
 anchors:
   cases:

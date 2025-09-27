@@ -1,20 +1,40 @@
-front: >
-  Relational pure economic loss (Vic): when does a duty arise for business shutdowns or third-party property damage?
+front: "Relational pure economic loss (Vic): when does a duty arise for business shutdowns or third-party property damage?"
 back: |
-  Issue — When does a duty arise to protect a plaintiff from relational pure economic loss, such as business loss caused by a utility outage or third-party property damage?
+  Issue.
+  When does a duty arise to protect a plaintiff from relational pure economic loss triggered by third-party property damage or business interruption?
 
-  Rule — The duty to avoid relational pure economic loss is exceptional; mere foreseeability is insufficient. The High Court in Perre v Apand (1999) 198 CLR 180 established a salient features test, refined in Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, requiring:
-  - a determinate plaintiff or class known to the defendant;
-  - defendant's knowledge or control over the risk;
-  - plaintiff's vulnerability and inability to self-protect (e.g., no reasonable contractual or insurance protection);
-  - coherence with existing contractual and statutory frameworks.
+  Rule.
+  The duty to avoid relational pure economic loss is exceptional. Mere foreseeability is insufficient. A salient features analysis (Perre v Apand (1999) 198 CLR 180; Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258) asks whether:
+    - the plaintiff or class is determinate and known to the defendant;
+    - the defendant controlled the risk or assumed responsibility;
+    - the plaintiff was vulnerable, lacking reasonable contractual or insurance protections;
+    - recognising the duty coheres with contractual and statutory frameworks.
 
-  Application scaffold —
-  (1) Confirm the loss is pure economic loss (not consequential physical damage).
+  Application scaffold.
+  (1) Confirm the loss is pure economic loss, not consequential on physical damage to the plaintiff.
   (2) Identify a determinate, known plaintiff or class.
-  (3) Establish defendant's knowledge or assumption of responsibility/control.
-  (4) Demonstrate plaintiff's vulnerability (lack of reasonable self-protection).
-diagram: |
+  (3) Establish the defendant's knowledge, control, or assumption of responsibility.
+  (4) Demonstrate vulnerability: no realistic contractual, insurance, or market self-protection.
+  (5) Check coherence with existing contractual allocations and statutory schemes.
+
+  Authorities map.
+  - Perre v Apand (1999) 198 CLR 180.  
+  - Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258.  
+  - Caltex Oil (Australia) Pty Ltd v The Dredge "Willemstad" (1976) 136 CLR 529.  
+  - Woolcock Street Investments Pty Ltd v CDG Pty Ltd [2004] HCA 16.  
+  - Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36.
+
+  Statutory hook.
+  - Wrongs Act 1958 (Vic) Pt IVAA (proportionate liability).  
+  - Competition and Consumer Act 2010 (Cth) ss 18, 236 (ACL overlay).
+
+  Tripwires.
+  Refer to the `tripwires` key for rapid-fire pitfalls.
+
+  Conclusion.
+  Evaluate determinacy, control, vulnerability, and coherence to conclude whether the salient features justify imposing a duty.
+
+diagram: |-
   ```mermaid
   mindmap
     root((Relational Pure Economic Loss))
@@ -35,6 +55,12 @@ diagram: |
         Wrongs Act Pt IVAA (apportionment context)
         ACL s 18 / s 236 (overlay)
   ```
+
+tripwires:
+  - "Assuming pure economic loss duties arise on foreseeability alone."
+  - "Collapsing vulnerability into mere financial exposure without self-protection analysis."
+  - "Ignoring contractual/statutory coherence when weighing salient features."
+  - "Treating proportionate liability or ACL overlays as duty substitutes instead of separate regimes."
 
 why_it_matters: |
   Melbourne Law School exams reward rigorous application of the salient features test beyond mere foreseeability. Strong answers isolate a determinate plaintiff or class, critically analyse vulnerability and contractual risk allocation, and integrate statutory overlays such as the Wrongs Act Pt IVAA and the Australian Consumer Law with a concise, policy-based conclusion.

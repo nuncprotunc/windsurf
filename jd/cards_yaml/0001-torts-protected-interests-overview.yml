@@ -1,37 +1,40 @@
 front: "Protected interests in tort: identify and apply injury, property, and pure economic loss?"
 back: |
-  Issue — How does classifying the claimant’s protected interest (injury, property, or pure economic loss) shape the Victorian negligence roadmap before breach, causation, and remedies?
+  Issue.
+  How does classifying the claimant’s protected interest (injury, property, or pure economic loss) shape the Victorian negligence roadmap before breach, causation, and remedies?
 
-  Rule —
-  - Injury: negligence or intentional-tort scaffolds with material-risk warnings (Rogers v Whitaker (1992) 175 CLR 479, 490–493) and the Chapman v Hearse (1961) 106 CLR 112, 121 foreseeability threshold.
-  - Property: exclusive possession plus directness govern trespass; nuisance liability turns on unreasonableness (Entick v Carrington (1765) 19 St Tr 1029; Overseas Tankship (UK) Ltd v Morts Dock (The Wagon Mound) (No 1) [1961] AC 388 (PC) 426).
-  - Pure economic loss: no general duty—confine liability with salient features (Perre v Apand Pty Ltd [1999] HCA 36, [118]–[122]; Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36).
+  Rule.
+    - Injury: negligence or intentional-tort scaffolds with material-risk warnings (Rogers v Whitaker (1992) 175 CLR 479, 490–493) and the Chapman v Hearse (1961) 106 CLR 112, 121 foreseeability threshold.
+    - Property: trespass protects possession and requires direct, unauthorised physical interference; nuisance liability turns on unreasonableness (Entick v Carrington (1765) 19 St Tr 1029; Overseas Tankship (UK) Ltd v Morts Dock (The Wagon Mound) (No 1) [1961] — persuasive AC 388 (PC) 426 — persuasive).
+    - Pure economic loss: no general duty—confine liability with salient features (Perre v Apand Pty Ltd [1999] HCA 36, [118]–[122]; Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36).
 
-  Application scaffold —
-  - Classify the interest and separate consequential loss from pure economic loss.
-  - For injury, apply Wrongs Act s 48 (standard of care), s 51 (causation/scope), and any Pt XI mental-harm gates before remedies.
-  - For property, confirm possession, characterise the interference (direct trespass versus nuisance reasonableness), and select proportionate remedies.
-  - For pure economic loss, run the salient-features matrix—vulnerability, assumption of responsibility, reliance, indeterminacy, and coherence (Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [103]; Caltex Oil (Australia) Pty Ltd v The Dredge "Willemstad" (1976) 136 CLR 529).
-  - Close with remoteness (Wagon Mound 426), statutory overlays (Pt VBA thresholds/caps, Pt XI mental harm), and any defences.
+  Application scaffold.
+    - Classify the interest and separate consequential loss from pure economic loss.
+    - For injury, apply Wrongs Act s 48 (standard of care), s 51 (causation/scope), and any Pt XI mental-harm gates before remedies.
+    - For property, confirm possession, characterise the interference (direct trespass versus nuisance reasonableness), and select proportionate remedies.
+    - For pure economic loss, run the salient-features matrix—vulnerability, assumption of responsibility, reliance, indeterminacy, and coherence (Caltex Refineries (Qld) Pty Ltd v Stavar [2009] NSWCA 258, [103]; Caltex Oil (Australia) Pty Ltd v The Dredge "Willemstad" (1976) 136 CLR 529).
+    - Close with remoteness (Wagon Mound 426), statutory overlays (Pt VBA thresholds/caps, Pt XI mental harm), and any defences.
+    - (Example) Consequential vs pure: profits lost due to physical factory damage = consequential; profits lost from negligent advice with no physical damage = pure economic loss. <!-- loss example added -->
 
-  Authorities map —
-  - Rogers v Whitaker (1992) 175 CLR 479, 490–493 — injury warnings and standard of care.
-  - Chapman v Hearse (1961) 106 CLR 112, 121 — foreseeability floor for injury/property.
-  - Entick v Carrington (1765) 19 St Tr 1029 — possession-centred trespass liability.
-  - Overseas Tankship (UK) Ltd v Morts Dock (The Wagon Mound) (No 1) [1961] AC 388 (PC) 426 — remoteness of kind (persuasive).
-  - Perre v Apand Pty Ltd (1999) 198 CLR 180; Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36 — salient features constrain economic loss duties.
-  - Sullivan v Moody (2001) 207 CLR 562; Modbury Triangle Shopping Centre Pty Ltd v Anzil (2000) 205 CLR 254 — coherence when extending duties to omissions/public actors.
+  Authorities map.
+    - Rogers v Whitaker (1992) 175 CLR 479, 490–493 — injury warnings and standard of care.
+    - Chapman v Hearse (1961) 106 CLR 112, 121 — foreseeability floor for injury/property.
+    - Entick v Carrington (1765) 19 St Tr 1029 — possession-centred trespass liability.
+    - Overseas Tankship (UK) Ltd v Morts Dock (The Wagon Mound) (No 1) [1961] — persuasive AC 388 (PC) 426 — persuasive — remoteness of kind (persuasive).
+    - Perre v Apand Pty Ltd (1999) 198 CLR 180; Brookfield Multiplex Ltd v Owners SP 61288 [2014] HCA 36 — salient features constrain economic loss duties.
+    - Sullivan v Moody (2001) 207 CLR 562; Modbury Triangle Shopping Centre Pty Ltd v Anzil (2000) 205 CLR 254 — coherence when extending duties to omissions/public actors.
 
-  Statutory hook —
-  - Wrongs Act 1958 (Vic) ss 26, 48, 51(1)(b), 51(4), s 74, Pt XI, Pt VBA (including s 28G threshold).
+  Statutory hook.
+    - Wrongs Act 1958 (Vic) ss 26, 48, 51(1)(b), 51(4), s 74, Pt XI, Pt VBA (including s 28G threshold).
 
-  Tripwires —
-  - Misclassifying consequential loss as pure economic loss.
-  - Ignoring Pt VBA thresholds or caps for damages.
-  - Skipping Pt XI and s 74 when reframing mental harm.
-  - Assuming trespass protects ownership rather than possession.
+  Tripwires.
+    - Misclassifying consequential loss as pure economic loss.
+    - Ignoring Pt VBA thresholds or caps for damages.
+    - Skipping Pt XI and s 74 when reframing mental harm.
+    - Assuming trespass protects ownership rather than possession.
 
-  Conclusion — Start with the interest classification, apply the tailored doctrine plus statutory overlays, then deliver liability and remedy so the exam roadmap stays coherent.
+  Conclusion.
+  Start with the interest classification, apply the tailored doctrine plus statutory overlays, then deliver liability and remedy so the exam roadmap stays coherent.
 
 why_it_matters: |
   Interest-first triage keeps Victorian negligence answers coherent, letting you separate possession, directness, remoteness, and salient features while signalling Wrongs Act s 48/s 51 literacy under pressure.
@@ -114,8 +117,8 @@ anchors:
       provisions:
         - s 26
         - s 48
-        - s 51(1)(b)
-        - s 51(4)
+        - s 51(b)
+        - s 51
         - s 74
         - Pt XI
         - Pt VBA
