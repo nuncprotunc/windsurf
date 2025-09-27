@@ -1,168 +1,276 @@
-import os, json, re, sys, glob, fitz, pandas as pd, time, logging
-from datetime import datetime
+"""Robust batch generator for Windsurf base case briefs.
+
+The module is designed to run unattended for long stretches.  It keeps
+running even if individual cases fail, records useful telemetry, and can be
+safely resumed after an interruption.  The code is intentionally defensive
+and keeps side-effects (file system + API calls) contained in the higher
+level helpers so that individual components remain testable.
+"""
+
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass
 from pathlib import Path
-from striprtf.striprtf import rtf_to_text
-from openai import OpenAI
+from typing import Any, Dict, Iterable, List, Sequence, Tuple
 
-# Paths
-ROOT = Path(r"D:\Code\windsurf")
-CASES_DIR = ROOT / "cases"
-OUT_DIR = ROOT / "outputs"; OUT_DIR.mkdir(parents=True, exist_ok=True)
-JSONL = OUT_DIR / "case_cards.jsonl"
-CSV   = OUT_DIR / "case_cards.csv"
-LOG   = OUT_DIR / "batch_status.log"
-FAILED_LOG = OUT_DIR / "failed_responses.jsonl"
-
-# Logging
-logging.basicConfig(filename=LOG, level=logging.INFO,
-                    format="%(asctime)s [%(levelname)s] %(message)s")
-print(f"Logging to {LOG}")
-
-# API client
-client = OpenAI()  # requires $env:OPENAI_API_KEY
-
-# Regex to find "hot" pages
-HOT_PAT = re.compile(r"\b(held|ratio|reason|foreseeab|salient|Wrongs Act|s\s*48|s\s*51|trespass|nuisance|wagon\s+mound|psychi|econ|remoteness)\b", re.I)
-
-def read_pdf_text(path: Path):
-    pages = []
-    with fitz.open(str(path)) as doc:
-        for i, page in enumerate(doc):
-            txt = page.get_text("text")
-            if txt: pages.append((i+1, txt))
-    return pages
-
-def read_rtf_text(path: Path):
-    try:
-        raw = path.read_text(errors="ignore")
-    except Exception as exc:
-        logging.error(f"[err] failed to read RTF {path.name}: {exc}")
-        return []
-    return [(1, rtf_to_text(raw))]
-
-def pick_hot_pages(pages, max_chars=6000, max_pages=4):
-    picks = [pages[0]] if pages else []
-    hits = [p for p in pages[1:] if HOT_PAT.search(p[1])]
-    for p in hits:
-        if p not in picks: picks.append(p)
-        if len(picks) >= max_pages: break
-    buf, kept = "", []
-    for n, t in picks:
-        if len(buf) + len(t) > max_chars: break
-        buf += t; kept.append((n,t))
-    return kept
+try:  # pragma: no cover - exercised in integration only
+    from openai import OpenAI  # type: ignore
+except Exception as exc:  # pragma: no cover - exercised in integration only
+    raise RuntimeError(
+        "OpenAI SDK not available. Install with `pip install openai`."
+    ) from exc
 
 
-SKIP_PAT = re.compile(r"(BarNet|jade\.io|Publication number|User:|Date:|This is not legal advice)", re.I)
+# ---------------------------------------------------------------------------
+# Configuration knobs (tuned for reliability)
+# ---------------------------------------------------------------------------
+MAX_CHARS_PRIMARY = 4000  # first attempt excerpt cap
+MAX_CHARS_RETRY = 2500  # fallback excerpt cap
+MAX_PAGES = 4  # cap hot pages sampled
+MODEL = "gpt-4o-mini"
+MAX_TOKENS_FULL = 340
+MAX_TOKENS_MIN = 220
+
+PROJECT_ROOT = Path.cwd()
+OUT_DIR = PROJECT_ROOT / "outputs"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+OK_PATH = OUT_DIR / "case_briefs.jsonl"
+FAIL_PATH = OUT_DIR / "failed_responses.jsonl"
+STATUS_LOG = OUT_DIR / "batch_status.log"
 
 
-def clean_page_text(text: str) -> str:
-    lines = []
-    for line in text.splitlines():
-        stripped = line.strip()
-        if not stripped:
-            lines.append("")
-            continue
-        if SKIP_PAT.search(stripped):
-            continue
-        lines.append(line)
-    return "\n".join(lines)
-
-PRIMARY_PROMPT = """Return compact JSON with keys:
-citation (AGLC4 if possible),
-court, year, jurisdiction,
-holding (<=70 words),
-props (<=2; each {quote, pinpoint, gloss}),
+# ---------------------------------------------------------------------------
+# Prompt templates (primary + deterministic fallback)
+# ---------------------------------------------------------------------------
+PROMPT_FULL = """Return compact JSON with keys:
+citation, court, year, jurisdiction,
+holding (<=80 words),
+props (<=2; each {{quote, pinpoint, gloss}}),
 tags (<=4 from duty, breach, causation, remoteness, psych_harm, nuisance, trespass, econ_loss, vicarious),
-tripwires (0-2 distinct pitfalls, optional),
+tripwires (<=1 pitfall),
 persuasive (Yes/No vs Vic/HCA),
 confidence (0–1).
-Rules: Only use provided text. Leave "" if missing. ≤220 tokens."""
+Rules: Only use provided text. Leave "" if missing. ≤220 tokens.
 
-FALLBACK_PROMPT = """Return compact JSON with keys:
-citation,
-court,
-year,
-jurisdiction,
-holding (<=60 words),
-ratio {proposition, support_pinpoint},
-confidence (0–1).
-Rules: Use only provided text. If unsure, leave fields "". ≤200 tokens."""
+FILE: {filename}
+EXCERPT:
+<<<{excerpt}>>>"""
+
+PROMPT_MIN = """Return compact JSON with keys:
+citation, court, year, jurisdiction, holding (<=60 words), confidence (0–1).
+Rules: Only use provided text. Leave "" if missing. ≤160 tokens.
+
+FILE: {filename}
+EXCERPT:
+<<<{excerpt}>>>"""
 
 
-def call_mini(prompt: str, user: str, max_tokens: int = 320, retries: int = 3, delay: int = 5):
-    """Call API with retries and basic backoff."""
-    for attempt in range(1, retries + 1):
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+def trim_excerpt(text: str, limit: int) -> str:
+    """Trim *text* to *limit* characters trying not to cut mid-sentence."""
+
+    if len(text) <= limit:
+        return text
+
+    cut = text[:limit]
+    dot = cut.rfind(". ")
+    if dot > 0:
+        return cut[: dot + 1]
+    return cut
+
+
+def log_jsonl(path: Path, obj: Dict[str, Any]) -> None:
+    """Append *obj* as JSON to *path*, creating the file if required."""
+
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(obj, ensure_ascii=False) + "\n")
+
+
+def load_done(path: Path) -> set[str]:
+    """Return set of file names that already have an entry in *path*."""
+
+    done: set[str] = set()
+    if not path.exists():
+        return done
+
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            try:
+                done.add(json.loads(line)["file"])
+            except Exception:
+                # Ignore malformed lines – they are logged separately.
+                continue
+    return done
+
+
+# ---------------------------------------------------------------------------
+# Page selection
+# ---------------------------------------------------------------------------
+def score_pages_for_relevance(pages: Sequence[str]) -> List[Tuple[float, str]]:
+    """Simple relevance proxy used if the project does not provide one.
+
+    The default prefers longer pages (up to 5k characters).  Projects that
+    maintain their own scorer can monkey-patch or replace this function.
+    """
+
+    scored: List[Tuple[float, str]] = []
+    for page in pages:
+        score = min(len(page), 5000) / 5000.0
+        scored.append((score, page))
+    scored.sort(key=lambda item: item[0], reverse=True)
+    return scored
+
+
+def pick_hot_pages(pages: Sequence[str], max_pages: int = MAX_PAGES) -> List[str]:
+    """Return the *max_pages* highest scoring pages."""
+
+    scored = score_pages_for_relevance(pages)
+    return [page for _, page in scored[:max_pages]]
+
+
+# ---------------------------------------------------------------------------
+# Model wrapper
+# ---------------------------------------------------------------------------
+_client = OpenAI()
+
+
+def ask_model(prompt: str, *, model: str = MODEL, max_tokens: int = MAX_TOKENS_FULL) -> str:
+    """Call the chat completion endpoint and return the raw JSON string."""
+
+    response = _client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": "You are an Australian torts case auditor."},
+            {"role": "user", "content": prompt},
+        ],
+        response_format={"type": "json_object"},
+        temperature=0,
+        max_tokens=max_tokens,
+    )
+    return response.choices[0].message.content or ""
+
+
+def parse_json_or_raise(raw: str) -> Dict[str, Any]:
+    """Normalise and validate the model response."""
+
+    data = json.loads(raw.strip())
+    data.setdefault("props", [])
+    data.setdefault("tags", [])
+    data.setdefault("tripwires", [])
+    return data
+
+
+@dataclass
+class QueryMeta:
+    attempt: str
+    raw_len: int
+
+
+def query_case(filename: str, sample_text: str) -> Tuple[Dict[str, Any], QueryMeta]:
+    """Query the model with progressively simpler prompts/excerpts."""
+
+    prompt_full_primary = PROMPT_FULL.format(
+        filename=filename, excerpt=trim_excerpt(sample_text, MAX_CHARS_PRIMARY)
+    )
+    try:
+        raw1 = ask_model(prompt_full_primary, max_tokens=MAX_TOKENS_FULL)
+        data1 = parse_json_or_raise(raw1)
+        return data1, QueryMeta("full/4k", len(raw1))
+    except Exception:
+        prompt_full_retry = PROMPT_FULL.format(
+            filename=filename, excerpt=trim_excerpt(sample_text, MAX_CHARS_RETRY)
+        )
         try:
-            resp = client.chat.completions.create(
-                model="gpt-4o-mini",
-                temperature=0,
-                max_tokens=max_tokens,
-                response_format={"type": "json_object"},
-                messages=[
-                    {"role": "system", "content": "You are an Australian torts case auditor."},
-                    {"role": "user", "content": f"{prompt}\n\n{user}"},
-                ],
+            raw2 = ask_model(prompt_full_retry, max_tokens=MAX_TOKENS_FULL)
+            data2 = parse_json_or_raise(raw2)
+            return data2, QueryMeta("full/2.5k", len(raw2))
+        except Exception:
+            prompt_min = PROMPT_MIN.format(
+                filename=filename, excerpt=trim_excerpt(sample_text, MAX_CHARS_RETRY)
             )
-            payload = resp.choices[0].message.content
-            return json.loads(payload)
-        except json.JSONDecodeError as exc:
-            logging.warning(f"JSON decode failed: {exc}")
-            with FAILED_LOG.open("a", encoding="utf-8") as fw:
-                fw.write(
-                    json.dumps(
-                        {
-                            "error": "bad_json",
-                            "detail": str(exc),
-                            "payload": payload,
-                            "prompt": prompt,
-                            "attempt": attempt,
-                        }
-                    )
-                    + "\n"
-                )
+            raw3 = ask_model(prompt_min, max_tokens=MAX_TOKENS_MIN)
+            data3 = parse_json_or_raise(raw3)
+            return data3, QueryMeta("min/2.5k", len(raw3))
+
+
+def run_case(doc: Dict[str, Any]) -> None:
+    """Process a single case document, logging success or failure."""
+
+    filename = doc["filename"]
+    pages: Sequence[str] = doc.get("pages", [])
+    hot_pages = pick_hot_pages(pages, MAX_PAGES)
+    sample = "\n\n".join(hot_pages)
+
+    try:
+        data, meta = query_case(filename, sample)
+        log_jsonl(OK_PATH, {"file": filename, "data": data})
+        log_jsonl(STATUS_LOG, {"file": filename, "status": "ok", "attempt": meta.attempt})
+    except Exception as exc:  # Broad by design – we log & continue.
+        log_jsonl(
+            FAIL_PATH,
+            {
+                "file": filename,
+                "error": str(exc),
+                "sample_len": len(sample),
+                "sample_head": sample[:200],
+            },
+        )
+        log_jsonl(
+            STATUS_LOG,
+            {"file": filename, "status": "fail", "error": str(exc)},
+        )
+
+
+def _load_docs_from_jsonl(path: Path) -> List[Dict[str, Any]]:
+    docs: List[Dict[str, Any]] = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            try:
+                item = json.loads(line)
+            except Exception:
+                continue
+            if isinstance(item, dict) and "filename" in item and "pages" in item:
+                docs.append(item)
+    return docs
+
+
+def load_documents() -> List[Dict[str, Any]]:
+    """Load case documents using the preferred project mechanism."""
+
+    try:
+        from src.windsurf.tools.doc_loader import load_case_pdfs  # type: ignore
+
+        docs = load_case_pdfs()
+        if not isinstance(docs, Iterable):  # pragma: no cover - defensive
+            raise TypeError("load_case_pdfs() must return an iterable")
+        return list(docs)
+    except Exception:
+        fallback = OUT_DIR / "cases.jsonl"
+        if not fallback.exists():
+            raise RuntimeError(
+                "No document loader found. Provide `load_case_pdfs()` or create "
+                "outputs/cases.jsonl with objects: {\"filename\": str, \"pages\": [str, ...]}"
             )
-        except Exception as e:  # includes API errors/timeouts
-            logging.warning(f"Attempt {attempt} failed: {e}")
-            time.sleep(delay * attempt)  # exponential-ish backoff
-    return {"error": "max_retries_exceeded"}
-                        continue
-                except Exception as exc:
-                    continue
-            except Exception as exc:
-                logging.error(f"[fail] {f.name}: primary prompt failed ({exc})")
-                continue
+        return _load_docs_from_jsonl(fallback)
 
-            if js.get("error"):
-                logging.error(f"[fail] {f.name}: {js['error']}")
-                continue
 
-            rec = {"file": f.name, **js}
-            with JSONL.open("a", encoding="utf-8") as w:
-                w.write(json.dumps(rec, ensure_ascii=False) + "\n")
+def main() -> None:
+    """Entry point used by the CLI script."""
 
-            # Append summary row
-            tags = ",".join(rec.get("tags",[])) if isinstance(rec.get("tags"), list) else ""
-            tripwires = "|".join(rec.get("tripwires",[])) if isinstance(rec.get("tripwires"), list) else ""
-            rows.append({
-                "file": f.name,
-                "citation": rec.get("citation",""),
-                "holding": rec.get("holding",""),
-                "tags": tags,
-                "tripwires": tripwires,
-                "confidence": rec.get("confidence",""),
-                "run_ts": datetime.utcnow().isoformat(timespec="seconds"),
-            })
-            logging.info(f"[ok] {f.name}")
-        except Exception as e:
-            logging.error(f"[err] {f.name}: {e}")
+    docs = load_documents()
+    done_ok = load_done(OK_PATH)
 
-    if rows:
-        pd.DataFrame(rows).to_csv(CSV, index=False, encoding="utf-8")
-        logging.info(f"Finished. Wrote {JSONL} and {CSV}")
-        print(f"\nWrote {JSONL} and {CSV}")
-    else:
-        logging.error("No rows produced!")
+    for doc in docs:
+        filename = doc.get("filename")
+        if not filename:
+            continue
+        if filename in done_ok:
+            continue
+        run_case(doc)
 
-if __name__ == "__main__":
+
+if __name__ == "__main__":  # pragma: no cover - CLI entry point
     main()
