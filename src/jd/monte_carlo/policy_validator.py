@@ -62,9 +62,8 @@ def validate_diagram(diagram: str) -> ValidationResult:
 
     # Check distribution matches allowed vectors
     if len(top_level) == TOP_LEVEL_BRANCHES:
-        counts = []
-        for top in top_level:
-            prefix = top
+        for _ in top_level:
+            pass
             # gather child lines following this label until next top-level
         index_lookup = {label.strip(): idx for idx, label in enumerate(top_level)}
         child_vector: List[int] = [0] * TOP_LEVEL_BRANCHES
